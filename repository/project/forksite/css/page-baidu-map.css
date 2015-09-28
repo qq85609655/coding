@@ -764,3 +764,148 @@
   background-position: -139px -167px;
   _background: none;
 }
+.section .s-search-type {
+  padding: 15px 40px;
+  text-align: center;
+  border-bottom: 1px solid #cccccc;
+}
+.section .s-search-colle {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 25%;
+  font-family: 'Microsoft Yahei';
+  font-size: 13px;
+}
+.section .s-search-colle .fa {
+  width: 44px;
+  height: 44px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  cursor: pointer;
+}
+.section .s-search-colle .fa-food {
+  background-image: url("../images/map-search-1.png");
+  background-repeat: no-repeat;
+  background-position: 0 -262px;
+  _background: none;
+}
+.section .s-search-colle .fa-hotel {
+  background-image: url("../images/map-search-1.png");
+  background-repeat: no-repeat;
+  background-position: 0 -111px;
+  _background: none;
+}
+.section .s-search-colle .fa-movie {
+  background-image: url("../images/map-search-1.png");
+  background-repeat: no-repeat;
+  background-position: -47px -111px;
+  _background: none;
+}
+.section .s-search-traffic {
+  line-height: 55px;
+  font-size: 13px;
+  font-family: 'Microsoft Yahei';
+  padding-left: 20px;
+  border-bottom: 1px solid #f2f5f8;
+}
+.section .s-search-traffic .fa {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+.section .s-search-traffic .fa-traffic-icon {
+  background-image: url("../images/map-search-4.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  _background: none;
+}
+.section .s-search-traffic .fa-rest-icon {
+  background-image: url("../images/map-search-3.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  _background: none;
+}
+.section .s-search-traffic .fa-service-icon {
+  background-image: url("../images/map-search-2.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  _background: none;
+}
+.section .s-search-traffic .s-traffic-icon {
+  padding-left: 10px;
+  cursor: pointer;
+}
+.section .s-search-baner1 {
+  background-image: url("../images/map-banner-2.png");
+  background-repeat: no-repeat;
+  background-position: 0 -110px;
+  _background: none;
+  width: 300px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  *display: inline;
+  *zoom: 1;
+}
+.section .s-search-banner2 {
+  background-image: url("../images/map-app-icon.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  _background: none;
+  width: 300px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  *display: inline;
+  *zoom: 1;
+  border-right: 1px solid #ceced0;
+}
+.section .s-search-banner {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+.section .s-search-footer {
+  color: #999999;
+  font-family: 'Microsoft Yahei';
+  font-size: 12px;
+  text-align: center;
+  line-height: 35px;
+}
+.section .s-banner2-btn {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  line-height: 25px;
+  font-size: 13px;
+  position: absolute;
+  border: 1px solid #cccccc;
+  padding: 0 5px;
+}
+.section .btn-android {
+  left: 140px;
+  top: 105px;
+}
+.section .btn-iphone {
+  left: 220px;
+  top: 105px;
+}
+.section .s-search-forward {
+  color: #999999;
+  padding: 0 5px;
+}
+.section .purple {
+  color: #a3a9c7;
+}
+.section .red {
+  color: #ea8887;
+}
+.section .green {
+  color: #a2c159;
+}
