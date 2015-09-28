@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>collapse demo</title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="renderer" content="webkit">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/common.css">
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.collapse.js"></script>
+		<style type="text/css">
+		.clps{
+			width: 20%;
+			}
+		</style>
+	    <script type="text/javascript">
+	   $(function(){
+          var data = [{
+                icon: "",
+                activeicon: "",
+                title: "数据资源",
+                uid: "datasrc",
+                sublist: [{
+                    icon: "",
+                    activeicon: "",
+                    title: "数据资源注册",
+                    uid: "datareg",
+                    sublist: []
+                }]
+            }, {
+                icon: "",
+                activeicon: "",
+                title: "服务资源",
+                uid: "serv",
+                sublist: [{
+                    icon: "",
+                    activeicon: "",
+                    title: "服务资源注册",
+                    uid: "servreg",
+                    sublist: []
+                }, {
+                    icon: "",
+                    activeicon: "",
+                    title: "服务资源监控",
+                    uid: "servmonitor",
+                    sublist: []
+                }, {
+                    icon: "",
+                    activeicon: "",
+                    title: "服务资源目录",
+                    uid: "servdir",
+                    url:"",
+                    sublist: []
+                }, {
+                    icon: "",
+                    activeicon: "",
+                    title: "服务资源申请",
+                    uid: "servappl",
+                    sublist: []
+                }]
+            }, {
+                icon: "",
+                activeicon: "",
+                title: "操作指引",
+                uid: "operationgard",
+                sublist: [
+                {
+                    icon: "",
+                    activeicon: "",
+                    title: "指南",
+                    uid: "guard",
+                    sublist: []
+                }]
+            }, {
+                icon: "",
+                activeicon: "",
+                title: "标准规范",
+                uid: "stdgard",
+                sublist: []
+            }];
+	       $(".clps").grpcollapse({"data":data,"isHidePre":true,"hideArrow":false,"hasdot":true,"clickEvent":function(event,data){
+	                console.log("点击item的uid为："+$(this).data("uid"));
+	                console.log("点击item的url为："+data.url);
+	            }}).grpcollapse("datasrc");
+	        });
+    </script>
+	</head>
+	<body>
+		<div class="clps"></div>
+	</body>
+</html>
+     

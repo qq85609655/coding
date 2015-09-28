@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>clone prototype test</title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="renderer" content="webkit">
+	    <style>
+	    	
+	    </style>
+	    <script type="text/javascript">
+			var people=function(){
+				this.name="hello";
+			}
+			people.prototype.getName=function(){
+				return this.name;
+			}
+
+			var man=function(){
+				this.sex="man";
+				people.call(this);
+			}
+			man.prototype=new people();
+			var m=new man();
+			alert(m.getName());
+			people.prototype.getName=function(){
+				return "world";
+			}
+			alert(m.getName());
+	    </script>
+	</head>
+	<body>
+
+	</body>
+</html>
+     

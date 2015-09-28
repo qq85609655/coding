@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <script type="text/javascript" >
+        var selElem =null;
+        var origBorder ="";
+        function OnMouseMove (event) {
+        var posX = event.clientX,
+        posY =event.clientY;
+        
+        var ua = navigator.userAgent,
+        isIE = /msie/i.test(ua),
+        isFF = /firefox/i.test(ua);
+        
+        if(!isIE && !isFF) {
+        posX = event.pageX;
+        posY = event.pageY;
+        }
+        
+        var info = document.getElementById("info");
+        info.innerHTML = event.clientX + ", " + event.clientY;
+        
+        var overElem = document.elementFromPoint(posX, posY);
+        if(overElem && !overElem.tagName) {
+        overElem = overElem.parentNode;
+        }
+        if (selElem) {
+        if (selElem == overElem) {
+        return ;
+        }
+        selElem.style.border = origBorder;
+        selElem = null;
+        }
+        
+        if (overElem && !/^(html|body)$/.test(overElem.tagName.toLowerCase()) ) {
+        selElem = overElem;
+        origBorder = overElem.style.border;
+        overElem.style.border = "3px solid red" ;
+        }
+        }
+        </script>
+    </head>
+    <body onmousemove="OnMouseMove (event);">
+        <div style="height:200px">
+            test test test test test test test
+        </div>
+        <div style="position:absolute; right:20px; top:30px;">
+            The current mouse position: <span id="info" style="border:1px solid #606060; background-color:e0d0e0; padding:5px;"></span>
+        </div>
+        <br/><br/>
+        <textarea rows="4" style="width:200px; height:100px;">
+        test test test test test test test test test test test test test test
+        </textarea>
+        
+        <div style="height:100px; margin-top:20px;">
+            test test test test test test testtest test test test test test testtest test test test test test testtest test test test test test test
+        </div>
+    </body>
+</html>

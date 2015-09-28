@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>star draw</title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <style>
+	    	
+	    </style>
+	    <script type="text/javascript">
+			window.addEventListener("DOMContentLoaded",function(){
+			var cvs=document.getElementById("cvs");
+			cvs.width=800;
+			cvs.height=800;
+			var cxt=cvs.getContext("2d");
+			cxt.beginPath();
+			cxt.strokeStyle="#ccc";
+			for(var i=0;i<5;i++){
+				cxt.lineTo(Math.cos((18+i*72)/180*Math.PI)*300+400,-(Math.sin((18+i*72)/180*Math.PI))*300+400);
+				cxt.lineTo(Math.cos((54+i*72)/180*Math.PI)*150+400,-(Math.sin((54+i*72)/180*Math.PI))*150+400);
+			}
+			cxt.closePath();
+			cxt.stroke();
+			});
+	    </script>
+	</head>
+	<body>
+	lineCap:butt(default),square,round;
+	lineJoin:miter(default),bevel（斜接）,round（圆角接）;--miter-miterlimit尖角最大值
+		<canvas id="cvs"></canvas>
+	</body>
+</html>
+     

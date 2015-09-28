@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>line-height test</title>
+	<meta charset='utf-8'/>
+	<style type="text/css">
+	.lhs{
+		border:1px solid red;
+		line-height: 2;
+		vertical-align: top;
+	}
+	.border{
+		border:1px solid #ccc;
+		line-height: 46px;
+	}
+	.border span{
+		border:1px solid red;
+
+	}
+	.span1,.span2{
+		
+		display: inline-block;
+	}
+	.aa{
+		width: 42px;
+		height: 50px;
+		display: inline-block;
+	}
+	.br{
+		background-color: yellow;
+		line-height:40px;
+	}
+	.heig{
+		line-height: 2;
+	}
+	.heigh{
+		display: inline-block;
+	}
+	.container{
+		line-height: 30px;
+		background-color: lightgreen;
+		margin-top:2px;
+	}
+	.b{
+		margin-left:20px; 
+		display: inline-block;
+		width: 6px;
+		height: 12px;
+		background-color: white;
+	}
+	</style>
+</head>
+<body>
+	<span class="lhs">hhh</span>
+	<span class="lhs">sss</span>
+	<br>
+	<span class="lhs">hhh</span>
+	<span class="lhs">sss</span>
+	<div class="lhs">
+		8888
+		<div class="">8888</div>
+	</div>
+	<br>
+	<div class="border">
+		<span class="span1">
+			<span class="aa"></span>
+		</span>
+		<span class="span2">ss</span>
+	</div>
+	<div style="font-size:30px;line-height:40px;border:1px solid #ccc;">
+		<span>
+			<span class="aa"></span>
+		</span>
+	</div>
+	<div class="br">zz</div>
+	<div class="br">zz</div>
+	<div class="heig">
+		<span class="heigh">21z</span>
+	</div>
+	<div class="container">
+		<span class="b" style="vertical-align: bottom"></span>
+		zx只是
+	</div>
+	<div class="container">
+		<span class="b" style="vertical-align: text-bottom"></span>
+		zx只是
+	</div>
+	<div class="container">
+		<span class="b" style="vertical-align: top"></span>
+		zx只是
+	</div>
+	<div class="container">
+		<span class="b" style="vertical-align: text-top"></span>
+		zx只是
+	</div>
+	<div class="container">
+		<span class="b" style="vertical-align: middle"></span>
+		zx只是
+	</div>
+	<div class="container">
+		<span class="b" style="vertical-align: sub"></span>
+		zx只是
+	</div>
+	<div class="container">
+		<span class="b" style="vertical-align: super"></span>
+		zx只是
+	</div>
+	<div class="container">
+		<span class="b"  ></span>
+		<span style="vertical-align: text-bottom;">zx只是</span>
+		<span style="font-size: 24px">zx只是</span>
+		x
+	</div>
+	<div class="container">
+		<span>zx只是</span>
+		zx只是
+	</div>
+	<div class="container">
+		<span style="line-height:40px">szx只是</span>
+		<span>zx只是</span>
+		zx只是
+	</div>
+	<div class="container">
+		<span style="display:inline-block;line-height:10px">zx只是</span>
+		zx只是
+	</div>
+
+	<hr>
+	<p class="container" style="line-height:150px;font-size: 0;">
+		<span style="font-size:20px;line-height: 1.4;display: inline-block;border:1px solid red">
+			这里是高度为150像素的标签内的多行文字，文字大小为20像素。
+			<br>这里是第二行，用来测试多行的显示效果。</span>
+	</p>
+
+	<br>
+	<div style="line-height:200px; border:1px solid #34538b;">
+		<span style="font-size:60px; border:1px solid #a0b3d6; vertical-align:text-top;">大大的文字</span>
+		<span>后面是静止的文字。</span>
+	</div>
+
+	<div class="container">
+		<span style="line-height:10px">
+			<span style="line-height:20px">zx只是</span>
+			<span style="line-height:10px">dzx只是</span>
+			z
+		</span>
+		zx只是，span之中套span
+	</div>
+</body>
+</html>

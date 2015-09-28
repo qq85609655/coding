@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ie6 clear </title>
+	<style type="text/css">
+	.container{
+
+	}
+	.down{
+		background-color: red;
+	}	
+	.clearfix{
+		*clear:both;
+		_line-height:0;
+	}
+	.fu{
+		float:left;
+	}
+	.float:after{
+		clear: both;
+		display: block;
+		content:"";
+	}
+	.span{
+		/*line-height: 0px;*/
+	}
+	.fu{
+		background-color:green;
+	}
+	.float{
+		/*清除浮动带来的父元素塌陷*/
+		_height: 1px;
+	}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="float"><span class="span">ssss</span><div class="clearfix"></div></div>
+	<div>hhhh</div>
+	<div class="float"><div class="fu">up</div></div>
+	<div class="down">down<br>down<br>down<br>down<br></div>
+</div
+</body>
+</html>

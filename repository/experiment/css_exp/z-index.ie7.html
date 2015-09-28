@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>z-index test</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="renderer" content="webkit">
+	<style></style>
+	<script type="text/javascript"></script>
+</head>
+<body>
+	<div style="position:relative;z-index:2">
+		<div style="position:absolute;z-index:100;width:100px;height:100px;background:red;"></div>
+	</div>
+	<div style="position:relative;z-index:1">
+		<div style="position:absolute;z-index:10;width:120px;height:40px;background:black;"></div>
+	</div>
+</body>
+</html>

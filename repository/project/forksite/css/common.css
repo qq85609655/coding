@@ -1,0 +1,589 @@
+/**
+ * v1.1
+ *20150922 去除不常用样式，并作为基础版本
+ */
+/************support style****/
+/**
+ * position
+ */
+.pv {
+  position: relative;
+}
+.pa {
+  position: absolute;
+}
+/**
+ * vertical align
+ */
+.vm {
+  vertical-align: middle;
+}
+.vt {
+  vertical-align: top;
+}
+.vb {
+  vertical-align: bottom;
+}
+/*边距*/
+/**
+ font
+ */
+/* cursor */
+.poi {
+  cursor: pointer;
+}
+.def {
+  cursor: default;
+}
+/*overflow*/
+.ovh {
+  overflow: hidden;
+}
+.ova {
+  overflow: auto;
+}
+/* visibility */
+.vh {
+  visibility: hidden;
+}
+.vv {
+  visibility: visible;
+}
+.hide {
+  display: none;
+}
+/**
+ * float
+ */
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+/**
+ * text-align
+ */
+.txtr {
+  text-align: right;
+}
+.txtc {
+  text-align: center;
+}
+.txtl {
+  text-align: left;
+}
+.clear {
+  clear: both;
+}
+/******** multiple css **************/
+.mw {
+  max-width: 100%;
+  min-width: 1100px;
+  *width: 1100px;
+}
+.bfc {
+  overflow: hidden;
+  *zoom: 1;
+}
+.txto {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  *display: inline;
+  *zoom: 1;
+}
+.inline-block {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+/* 清除浮动-1*/
+.clearfix:after {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clear {
+  clear: both;
+}
+/* 清除浮动-2*/
+.fix {
+  *zoom: 1;
+}
+.fix:after {
+  display: table;
+  content: '';
+  clear: both;
+}
+/**
+**向下三角
+*/
+/* css3过渡动画效果 */
+.trans {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/* 无框文本框文本域 */
+.b-none {
+  border: 0;
+  outline: none;
+}
+/* 绝对定位隐藏 */
+.abs-out {
+  position: absolute;
+  left: -999em;
+  top: -999em;
+}
+.abs-clip {
+  position: absolute;
+  clip: rect(0 0 0 0);
+}
+/* 按钮禁用 */
+.disabled {
+  color: #acacac !important;
+  border-color: #acacac !important;
+  text-shadow: 1px 1px #fff !important;
+  outline: 0 !important;
+  cursor: default !important;
+  pointer-events: none;
+}
+.disabled:hover {
+  text-decoration: none !important;
+}
+/*inline-block与float等宽列表*/
+.inline-box {
+  font-size: 1em;
+  letter-spacing: -0.25em;
+}
+.inline-fix {
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+}
+.inline-two,
+.inline-three,
+.inline-four,
+.inline-five,
+.inline-six,
+.inline-any {
+  display: inline-block;
+  *display: inline;
+  letter-spacing: 0;
+  vertical-align: top;
+  *zoom: 1;
+}
+.float-two,
+.float-three,
+.float-four,
+.float-five,
+.float-six {
+  float: left;
+}
+.inline-two,
+.float-two {
+  width: 49.9%;
+}
+.inline-three,
+.float-three {
+  width: 33.3%;
+}
+.inline-four,
+.float-four {
+  width: 24.9%;
+}
+.inline-five,
+.float-five {
+  width: 19.9%;
+}
+.inline-six,
+.float-six {
+  width: 16.6%;
+}
+/**
+ * 页面整体布局样式
+ */
+.main-flow {
+  margin-right: calc(100%-100vw);
+  position: relative;
+  *text-align: center;
+}
+.main-full {
+  margin-right: calc(100%-100vw);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  *text-align: center;
+}
+.wrap {
+  max-width: 100%;
+  min-width: 1100px;
+  *width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  *display: inline;
+  *zoom: 1;
+}
+/**
+ *time axis  IE7+
+ */
+.time-axis {
+  padding-top: 20px;
+  width: 200px;
+  font-family: 'Microsoft Yahei';
+  font-size: 14px;
+  position: relative;
+  color: #aeaeae;
+}
+.time-axis .tl-year {
+  padding-top: 0px;
+}
+.time-axis .time {
+  width: 60%;
+  text-align: right;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  font-weight: bold;
+  cursor: pointer;
+}
+.time-axis .icon {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 38px;
+  height: 38px;
+  vertical-align: -15px;
+  cursor: pointer;
+  zoom: 1;
+}
+.time-axis .icon:hover + .toast {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.time-axis .toast {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  position: absolute;
+  left: 90%;
+  width: 400px;
+  border: 1px solid #003385;
+  height: 80px;
+  border-radius: 6px;
+  top: -2px;
+  z-index: 999;
+}
+.time-axis .toast:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-width: 5px;
+  border-style: dashed solid  dashed dotted;
+  border-color: transparent #003385 transparent transparent;
+  vertical-align: bottom;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  position: absolute;
+  top: 10px;
+  left: -20px;
+  border-width: 10px;
+}
+.time-axis .tl-year {
+  margin-bottom: 20px;
+}
+.time-axis .tl-year .time {
+  font-size: 18px;
+  color: #000000;
+}
+.time-axis .tl-year .icon {
+  height: 38px;
+  vertical-align: -12px;
+  background-image: url("../images/y-clocks.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.time-axis .tl-month .triangle-down {
+  vertical-align: -3px;
+}
+.time-axis .tl-month .time {
+  font-size: 16px;
+  color: #000000;
+  font-weight: lighter;
+}
+.time-axis .tl-month .icon {
+  background-image: url("../images/m-clocks.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  _background: none;
+}
+.time-axis .tl-day .icon {
+  background-image: url("../images/points.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  *margin-left: -5px;
+}
+.time-axis .time-line {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 68%;
+  border-left: 1px solid #354751;
+  z-index: -1;
+  *margin-left: -4px;
+}
+.time-axis .triangle-down {
+  width: 0;
+  height: 0;
+  border-width: 5px;
+  border-style: solid dashed dotted dashed;
+  border-color: #cccccc transparent transparent;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: bottom;
+  display: inline-block;
+}
+.time-axis .rote180 {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.time-axis .tli {
+  position: relative;
+  zoom: 1;
+}
+* + html .time-axis .triangle-left {
+  position: absolute;
+  top: 10px;
+  width: 11px;
+  height: 21px;
+  left: -10px;
+  background-image: url("../images/icon/trangle.gif");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  _background: none;
+  background-color: #ff0000;
+}
+/**
+ * 重写select组件  IE7+
+ */
+.default-reset-select {
+  width: 75px;
+  position: absolute;
+  z-index: 99;
+  background-color: #ffffff;
+  font-size: 14px;
+}
+.default-reset-select .thriangle-down {
+  width: 0;
+  height: 0;
+  border-width: 5px;
+  border-color: #cccccc transparent transparent;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: bottom;
+  display: block;
+  float: right;
+  cursor: pointer;
+  border-width: 6px;
+  margin-top: 8px;
+  border-style: solid dashed dotted dashed;
+}
+.default-reset-select .triangle-up {
+  width: 0;
+  height: 0;
+  border-width: 5px;
+  border-style: dotted dashed solid dashed;
+  border-color: transparent transparent #cccccc;
+  vertical-align: bottom;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+.default-reset-select .reset-select-show {
+  border: 1px solid #cccccc;
+  padding: 1px 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: #ffffff;
+}
+.default-reset-select .reset-select-ul {
+  border: 1px solid #cccccc;
+  border-top: 1px solid transparent;
+  display: none;
+  background-color: #ffffff;
+}
+.default-reset-select .reset-select-ul .active {
+  background-color: #2193f0;
+  color: #ffffff;
+}
+.default-reset-select .reset-select-li {
+  padding: 1px 5px;
+  cursor: pointer;
+}
+.default-reset-select .reset-select-ul:hover {
+  outline: 1px solid #7A9CD3;
+}
+.default-reset-select .reset-select-ul:hover .active {
+  background-color: transparent;
+  color: #000000;
+}
+.default-reset-select .reset-select-ul .reset-select-li:hover {
+  background-color: #2193f0;
+  color: #ffffff;
+}
+/**
+ * 重写radio组件，支持ie9+
+ */
+.reset-radio {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: green;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+.reset-radio input[type="radio"] {
+  opacity: 0;
+}
+.reset-radio input[type="radio"]:checked + span {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -3px 0 0 -3px;
+}
+/**
+ * search component
+ */
+.search {
+  width: 730px;
+  font-family: 'Microsoft Yahei';
+  color: #7A559A;
+  overflow: hidden;
+}
+.search .search-class .up {
+  margin: 0;
+  margin-left: 145px;
+  padding: 0;
+  list-style: none;
+}
+.search .search-class .up a {
+  color: #555555;
+  text-decoration: none;
+  font-size: 14px;
+}
+.search .search-class .up .active {
+  font-weight: bold;
+}
+.search .search-class .fsl {
+  float: left;
+  padding-right: 20px;
+}
+.search .search-key .fsr-logo {
+  width: 140px;
+  height: 46px;
+  background-image: url("../images/baidu-map.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: contain;
+}
+.search .search-key .fsr {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: bottom;
+}
+.search .search-key .searchkey {
+  width: 460px;
+  height: 38px;
+  line-height: 38px;
+  color: #000;
+  font-size: 18px;
+}
+.search .search-key .fsr-btn {
+  width: 100px;
+  line-height: 38px;
+  *line-height: 38px;
+  background-color: #405bcc;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  margin-left: -5px;
+}
+/**
+ * 蒙版
+ */
+.mask {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #cccccc;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  z-index: 99;
+}
+/**
+ * 弹层
+ */
+.popup-main {
+  display: none;
+  position: absolute;
+  z-index: 999;
+  min-width: 600px;
+  min-height: 300px;
+  top: 100px;
+  left: 50%;
+  margin-left: -300px;
+  background-color: #ffffff;
+}
+/**
+ * 分页
+ */
+.page {
+  background-color: #ffffff;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+.page .page-index {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  border: 1px solid #cccccc;
+  padding: 6px 10px;
+  width: 20px;
+  text-align: center;
+  margin-left: 5px;
+}
+.page .page-up,
+.page .page-down {
+  padding: 6xp 15px;
+  width: 60px;
+}
+.page .cur-index {
+  font-weight: bold;
+}

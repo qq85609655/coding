@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+</head>
+<style>
+ div{position: relative;height: 50px;width: 100%;font-size: 2em;color: #000;line-height: 50px;}
+div:before {
+  content: ""; position: absolute;bottom: 0;left: 0;right: 0;
+  border-bottom: 1px solid #c8c7cc;
+  -webkit-transform: scaleY(.5);
+  -webkit-transform-origin: 0 0;
+  pointer-events: none;
+}
+</style>
+<body>
+        <div>看!边框是不是变细了? </div>
+</body>
+</html>

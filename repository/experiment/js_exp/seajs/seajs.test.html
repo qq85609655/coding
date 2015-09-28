@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>seajs test</title>
+	<script type="text/javascript" src="js/sea.js"></script>
+	<script type="text/javascript">
+		seajs.config({
+			base:"./js",
+			alias:{
+				"a":"a.js",
+				"b":"b.js",
+				"jquery":"d.js",
+				"c":"c.js"
+			}
+		});
+		//模块加载部分：两种方式
+		seajs.use("main");
+		seajs.use(["a","b"],function(a,b){
+		//该方法相比较use（main）先执行，同时，require（a）以后与后面的require（a）以后是相同的引用，即单例模式会启动
+			a.setA("seajs");
+			console.log(a.getA());
+		});
+	</script>
+</head>
+<body>
+	 this is seajs test.
+</body>
+</html>

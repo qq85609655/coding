@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dom loaded and script execute order</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<style></style>
+	<script type="text/javascript">
+		// setTimeout(function(){
+		// 	var test=document.getElementById("test");
+		// 	alert(test.innerText);
+		// },1)
+		var t1=+new Date();
+		var i=0;
+		while(i<1000000000){
+			i++;
+		}
+		console.log(+new Date()-t1);
+		var test=document.getElementById("test");
+		alert(test.innerText);
+	</script>
+</head>
+<body>
+	<div id="test">ss</div>
+</body>
+</html>

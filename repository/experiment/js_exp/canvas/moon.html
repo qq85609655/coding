@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>draw canvas of moon</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+</head>
+<body>
+	<canvas id="cvs"></canvas>
+	<script type="text/javascript">
+		var cvs=document.getElementById("cvs");
+		cvs.width=800;
+		cvs.height=800;
+		var ctx=cvs.getContext("2d");
+		ctx.save();
+		ctx.translate(400,400);
+		ctx.scale(100,100);
+		ctx.rotate(1/3*Math.PI);
+
+		drawMoon(2);
+		ctx.fillStyle="yellow";
+		ctx.fill();
+		
+		ctx.restore();
+		function calcRadius(x1,y1,x2,y2,x3,y3){
+			var ah=(y3-y1)/2;
+			var hc=x2-x1;
+			var ac=Math.sqrt(ah*ah+hc*hc);
+			var r=ah*ac/hc;
+			return r;
+		}
+		function drawMoon(d){
+			ctx.beginPath();
+			ctx.arc(0,0,1,0.5*Math.PI,1.5*Math.PI,true);
+			ctx.moveTo(0,-1);
+			ctx.arcTo(d,0,0,1,calcRadius(0,-1,d,0,0,1));
+			ctx.closePath();
+		}
+    </script>
+</body>
+</html>

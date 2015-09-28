@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>iframe test</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="../jquery/dist/jquery.js"></script>
+	<script type="text/javascript">
+	var url="https://www.baidu.com/home/xman/data/superload?type=weather&_req_seqid=0xd16d52c500002b83&asyn=1&t=1434698522525&sid=14742_1445_14410_14510_14444_14734_10812_14432_12867_14871_12723_14957_14962_14920_14903_12427_13937_13189_15964";
+	var a={
+			bsToken:"74c1e0ab40acc1122c11cf7beaf1d9e3",
+			asyn:"1",
+			info:"pid=se&method=search&query=jsonp%20%E8%B7%A8%E5%9F%9F",
+			se:"utf-8",
+			ge:"utf-8",
+		};
+	$.ajax({      
+           url: url,  // 跨域URL   
+           type: 'GET',    
+           dataType: 'jsonp',    
+           jsonp: 'jsoncallback', //默认callback   
+           data: {}, //请求数据   
+           timeout: 5000,    
+           beforeSend: function(){  //jsonp 方式此方法不被触发。原因可能是dataType如果指定为jsonp的话，就已经不是ajax事件了   
+           },   
+           success: function (json) { 
+           //客户端jquery预先定义好的callback函数，成功获取跨域服务器上的json数据后，会动态执行这个callback函数    
+               if(json.actionErrors.length!=0){    
+                   alert(json.actionErrors);    
+               }    
+                  
+           },    
+           complete: function(XMLHttpRequest, textStatus){    
+                 
+           },    
+           error: function(xhr){    
+               //jsonp 方式此方法不被触发   
+               //请求出错处理    
+               alert("请求出错(请检查相关度网络状况.)");    
+           }    
+       });  
+	</script>
+</head>
+<body>
+		this is iframe test<br>
+		this is iframe test<br>
+
+		this is iframe test<br>
+
+		this is iframe test<br>
+
+ 		<iframe src="https://www.baidu.com/home/treasure/data/treasuretips?_req_seqid=0xa9c56d7600011f42&asyn=1&t=1434696038024&sid=14742_1445_14410_14510_14444_14734_10812_14432_12867_14622_14871_12723_14957_14962_14920_14903_12427_13937_13189_15964" frameborder="3" class="iframe"></iframe>
+</body>
+</html>

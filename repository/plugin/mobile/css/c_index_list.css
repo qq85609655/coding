@@ -1,0 +1,48 @@
+.ui_button_c_left {
+	display: inline-block;
+	font-size: 0.9em;
+	margin-left: 0.5em;
+}
+.ui_button_c_right {
+	display: inline-block;
+	line-height: 2.5em;
+	margin-right: 0.6em;
+	width: 1em;
+	height:1.5em;
+}
+.ui_header h1 {
+	font-size: 1.1em;
+	height: 1.4em;
+	line-height: 1.4em;
+	padding-top:6px;
+}
+.ui_header {
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3196DC), to(#3297DB));
+	position: relative;
+	width: 100%;
+	height: 8%;
+	background-color: #414243;
+	overflow: hidden;
+	color: white;
+}
+.a_user {
+	background-image: url(../images/personal-center.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
+}
+.a_search {
+	background-image: url(../images/search.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
+}
+.ui_header_right {
+	top: 2px;
+}
+.ui_header_left, .ui_header_right {
+	position: absolute;
+	top: 0;
+	height: 1.5em;
+	line-height: 1.5em;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>outline.test</title>
+	<meta http-equiv="Content-type" content="text/html;charset=utf-8">
+	<style type="text/css">
+
+.use-outline-offset{
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height: 200px;
+  border:40px solid #000000;
+  background-color:#cccccc;
+  outline-width:40px;
+  outline-style:dotted;
+  outline-offset:-80px;
+  box-sizing: border-box;
+}
+
+input[type=text]{
+  margin-top: -110px;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-indent: 0;
+  text-align: center;
+  width: 190px;
+  height: 300px;
+  display: block;
+  padding: 0;
+  border-width: 0;
+  font-size: 290px;
+  color: #cccccc;
+  background-color: #000000;
+}
+
+#iframe2{
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  height: 400px;
+  display: block;
+}
+.cilp_path1{
+width: 100%;
+height: 100%;
+-webkit-clip-path: polygon(45% 10%, 55% 10%, 55% 45%, 90% 45%, 90% 55%, 45% 55%);
+clip-path: 35%, 35% 0%, 65% 0%, 65% 35%, 100% 35%, 100% 60%, 65% 60%, 65% 100%, 35% 100%, 35% 60%, 0% 60%);
+background: #7ED320;
+}{
+
+}
+.cilp_path2{
+		width: 30px;
+height: 30px;
+border-radius: 50%;
+border:3px solid #7ED320;
+}
+	</style>
+}
+</head>
+<body>
+<p>第一个方法是使用outline－offset的向内偏移结合border实现的，不兼容所有IE，safari上也有点问题，要用chrome查看才行</p>
+<div class="use-outline-offset"></div>
+<div class="cilp_path2">
+	<div class="cilp_path1">
+	
+</div>
+</div>
+
+<p>第二个方法和内嵌“＋”号的做法没有本质的区别，还是换汤没换药，只是把“＋”放到了input的value属性里面而已，当然，类似的，把“＋”号放到img的alt属性里，然后src给一个空值也是可以的，只不过觉得这种方法换汤没换药，也就没写出来了，而且存在的一个问题是“＋”号在input里面垂直方向上面多出来一个空白距离，我没找到控制的办法，于是就用margin－top做偏移，把上面多出来的那部分给隐藏掉了，这种做法也很不符合逻辑</p>
+  <div style='position:relative;height:120px;background:#ff4400;'></div>  
+
+   <input type="text" value="L" disabled="disabled" />
+
+
+<p>第三个方法也是换汤没换药，而且不兼容所有IE,做法是使用iframe的srcdoc属性，把html内嵌在iframe的srcdoc属性中，srcdoc属性里面定义的html会渲染在iframe替换区域里面</p>
+<iframe style="display: block;margin-left: auto;margin-right: auto;width: 250px;height: 250px;background-color: #cccccc;" srcdoc="<style type='text/css'>html,body{width:100%;height:100%;margin:0;}</style><div style='width:100%;height:100%;position:relative;'><div style='position:absolute;left:50%;top:50%;margin-left:-10px;margin-top:-100px;width:20px;height:200px;background-color:#000000;'></div><div style='position:absolute;left:50%;top:50%;margin-left:-100px;margin-top:-10px;width:200px;height:20px;background-color:#000000;'></div></div>" frameborder="0"></iframe>
+
+<p><b style="font-size:24px;">150416,22:16补充：</b>刚在微博上看到@一丝老师关于张鑫旭老师那个“加号”效果的实现，<b><a href="http://codepen.io/yisi/details/yymGqm/">链接</a></b>，其中我最感到诧异的是border-style:dotted的实现，我昨天都想到了outline-offset，竟然没想到这里来，但是一丝老师的这个实现有个问题就是在“加号”的十字外面没法定义背景颜色，因为背景颜色最多只能到border上，而margin上是没法定义背景颜色的，如果没明白我表达的意思的话，可以查看一丝的那个实现，应该能明白我所要说的这个问题在哪的<br>
+但是html元素是个例外，背景颜色能定义在它的margin上，不信你可以试试，所以我就想到了用iframe，然后把这个“加号”效果设置在html元素上，然后在srcdoc属性里面嵌一个style标签用来给html定义样式，其它条件都满足，就是由于srcdoc不兼容IE，所以IE全系列不支持。style除外，满足一个标签实现的条件
+</p>
+<iframe id="iframe2" srcdoc="
+  <style type='text/css'>
+      html{
+        margin:50px;
+        width:300px;
+        height:300px;
+        border-style:dotted;
+        border-width:100px;
+        box-sizing:border-box;
+        background-color:#cccccc;
+        outline:50px solid;
+      }
+  </style>
+  " frameborder="0"></iframe> 
+
+
+</body>
+</html>

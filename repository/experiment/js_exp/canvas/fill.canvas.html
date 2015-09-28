@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>未命名文件</title>
+<style>
+#diagonal {
+    background-color:#ccc
+}
+</style>
+<script>
+window.onload=function(){
+    var canvas = document.getElementById('diagonal');
+    var context = canvas.getContext('2d');
+    context.translate(100,100);
+    // 创建用作树干纹理的三阶水平渐变
+    var trunkGradient = context.createLinearGradient(-5, -50, 50, -50);
+    // 树干的左侧边缘是一般程度的棕色
+    trunkGradient.addColorStop(0, '#663300');
+    // 树干中间偏左的位置颜色要淡一些
+    trunkGradient.addColorStop(0.4, '#996600');
+    // 树干右侧边缘的颜色要深一些
+    trunkGradient.addColorStop(1, '#552200');
+    // 使用渐变色填充树干
+    context.fillStyle = trunkGradient;
+    context.fillRect(-5, -50, 50, 100);
+    // 接下来，创建垂直渐变，以用作树冠在树干上投影
+    var canopyShadow = context.createLinearGradient(0, -50, 50, 100);
+    // 投影渐变的起点是透明度设为50%的黑色
+    canopyShadow.addColorStop(0, 'rgba(0, 0, 0, 0.5)');
+    // 方向垂直向下，渐变色在很短的距离内迅速渐变至完全透明，这段长度之外的树干上没有投影
+    canopyShadow.addColorStop(0.2, 'rgba(0, 0, 0, 0.0)');
+    // 在树干上填充投影渐变
+    context.fillStyle = canopyShadow;
+    context.fillRect(-5, -50, 50, 100);    
+}
+</script>
+</head>
+
+<body>
+<canvas id="diagonal" width="200" height="200"> </canvas>
+</body>
+</html>

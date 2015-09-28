@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>this test</title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="renderer" content="webkit">
+	    <style>
+	    	
+	    </style>
+	    <script type="text/javascript">
+	    var jquery=function(){
+	    	consloe.log("this is  constructor")
+	    }
+	    jquery.tst=function(){
+	    	console.log(this.toString());
+	    }
+	    jquery.tst();
+	    var m=jquery.tst;
+	    m();
+	    var n=m.bind(jquery);
+	    n();
+	    </script>
+	</head>
+	<body>
+
+	</body>
+</html>

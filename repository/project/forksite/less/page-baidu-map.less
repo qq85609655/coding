@@ -1,0 +1,151 @@
+@import  "common.less";
+
+/**
+ * header 部分
+ */
+.h-b-head {
+	.txtr;
+	.pr(2px);
+	.mt(4px);
+	.mb(-5px);
+
+	.h-b-forward {
+		.color(#4C73C2);
+		.fs(13px);
+		.pr(10px);
+
+		&.active {
+			.fw;
+		}
+	}
+	.triangle-down {
+		.triangle-down(#4C73C2);
+	}
+}
+.nav {
+	.n-banner {
+		.fr;
+		width: 230px;
+		height: 75px;
+		.bgimg("../images/map-banner-1.jpg", 0 0);
+	}
+	.n-search {
+		.ml(20px);
+	}
+}
+.section {
+	.s-container {
+		.pa;
+		width: 100%;
+		top: 105px;
+		left: 0px;
+		bottom: 0px;
+		user-select: none;
+		
+	}
+	.s-navbar {
+		.color(#999999);
+		.ff;
+		.fl;
+		.bgcolor(#252525);
+		width: 60px;
+		height: 100%;
+		.bt(#B5B9C0);
+		.txtc;
+		.pv;
+
+		.fa {
+			width: 28px;
+			height: 28px;
+			.inline-block;
+		}
+		.fa-search {
+			.bgimg("../images/map-icon-2.png", -21px -163px);
+		}
+		.fa-route {
+			.bgimg("../images/map-icon-2.png", -48px -163px);
+		}
+		.fa-subway {
+			.bgimg("../images/map-icon-2.png", 5px -163px);
+		}
+		.fa-collect {
+			.bgimg("../images/map-icon-2.png", -75px -163px);
+		}
+		.active {
+			.bgcolor(#3385FF);
+			.color(#fff);
+		}
+		.s-navbar-li {
+			.pt(8px);
+			.poi;
+		}
+		//样式清零
+		.s-bar-ul:hover .s-navbar-li {
+			.bgcolor(transparent);
+			.color(#999999);
+		}
+		//样式添加
+		.s-bar-ul .s-navbar-li:hover {
+			.bgcolor(#3385FF);
+			.color(#fff);
+		}
+		.s-bar-ul{
+			height: 100%;
+		}
+		.s-bar-txt {
+			.mt(-4px);
+		}
+	}
+	.s-nav-tab {
+		width: 350px;
+		.fl;
+		.bgcolor(#fff);
+		height: 100%;
+		.bt(#B5B9C0);
+		.pv;
+		.br(#A0A1A3);
+
+	}
+	.s-map {
+		.bfc;
+		.bgcolor(lightgreen);
+		height: 100%;
+		.bt(#B5B9C0);
+	}
+	.s-navbar-weather {
+		.fs(12px);
+		.pa;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+
+		.fa-weather {
+			.bgimgs("../images/map-weather-1.png", center center);
+		}
+	}
+	.s-hide-bar {
+		.pa;
+		top: 50%;
+		left: 409px;
+		line-height: 58px;
+		width: 15px;
+		.bgcolor(#fff);
+		.txtc;
+		.poi;
+		.b(#A0A1A3);
+		.bl(transparent);
+		.mt(-30px);
+		.s-icon-left {
+			.inline-block;
+			width: 5px;
+			height: 9px;
+			.bgimg("../images/map-icon-2.png", -109px -167px);
+		}
+	}
+	.act{
+		left: 0;
+		.s-icon-left {
+			.bgimg("../images/map-icon-2.png", -139px -167px);
+		}
+	}
+}

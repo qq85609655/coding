@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>droplist demo</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="renderer" content="webkit">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/common.css">
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.droplist.js"></script>
+        <script type="text/javascript">
+        $(function(){
+        $(".grp_head_txt").eq(0).droplist({
+        data: [{
+            "name": "数据资源",
+            "href": "http://www.baidu.com"
+            }, {
+            "name": "服务资源",
+            "href": "http://www.sina.com"
+            }, {
+            "name": "数据标准",
+            "href": "http://www.qq.com"
+            }]
+        });
+        });
+        </script>
+        <body>
+            <div class="downlist-menu">
+                <span class="grp_head_txt">
+                    产品导航
+                    <a href="#" class="grp_prd_icon">
+                        <span class="grp_png_fix grp_png_icon"></span>
+                    </a>
+                </span>
+            </div>
+        </body>
+    </html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>height&width</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<style>
+	    *{
+	    	box-sizing: border-box;
+	    }
+	    body{
+	    	margin:0px;
+	    	border:10px solid #ccc;
+	    	padding:10px;
+	    	
+	    }
+	    .cmain{
+	    	position: relative;
+	    	padding:10px;
+	    }
+	    .box{
+	    	position: relative;
+	    	left:20px;
+	    	top:15px;
+	    	border:2px solid #ccc;
+	    	padding:10px;
+	    	margin:6px;
+	    }
+    	.c_box,.c_box1{
+    		width:30px;
+    		height:30px;
+    		padding:10px;
+    		margin:5px;
+    		background-color: #ccc;
+    		border:4px solid #ccc;
+    		position: relative;
+    		left:5px;
+    		top:3px;
+    	}
+    	.main{
+
+		position: relative;
+		 
+		height: 300px;
+		 
+		width: 100%;
+		 
+		background-color: red;
+		 
+		border:1px solid #000;
+		 
+		}
+		 
+		.container1{
+		 
+		margin-top: 100px;
+		 
+		width: 200px;
+		 
+		height: 200px;
+		 
+		background-color: yellow;
+		 
+		}
+		 
+		.container2{
+		 
+		position: absolute;
+		 
+		width: 50%;
+		 
+		height: 50%;
+		 
+		top:0;
+		 
+		background-color: green;
+		 
+		}
+		.navt{
+			width: 30px;
+			height: 30px;
+			background-color: blue;
+			margin:10px;
+			border:2px solid #ccc;
+			padding:3px;
+		}
+	    </style>
+	<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+
+</head>
+<body>
+	<div class="cmain">
+		<div class="box">
+			<div class="c_box"></div>
+		</div>
+		<br>
+		<div class="c_box1"></div>
+		<div class="main">
+			<div class="container1">
+				<div class="container2"></div>
+			</div>
+		</div>
+		<div class="navt"></div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			var w=$(".c_box").width();
+			var h=$(".c_box").height();
+			var iw=$(".c_box").innerWidth();
+			var ih=$(".c_box").innerHeight();
+			var ow=$(".c_box").outerWidth();
+			var oh=$(".c_box").outerHeight();
+			console.log("width="+w);
+			console.log("height="+h);
+			console.log("iwidth="+iw);
+			console.log("iheight="+ih);
+			console.log("owidth="+ow);
+			console.log("oheight="+oh);
+			console.log("c_box offset.left="+$(".c_box").offset().left+" .top="+$(".c_box").offset().top);
+			console.log("c_box position.left="+$(".c_box").position().left+" .top="+$(".c_box").position().top);
+			console.log("box position.left="+$(".box").position().left+" .top="+$(".box").position().top);
+		});
+		var dom=document.querySelector(".navt");
+		console.log("navt clientWidth="+dom.clientWidth);
+		console.log("navt clientHeight="+dom.clientHeight);
+		console.log("navt offsetWidth="+dom.offsetWidth);
+		console.log("navt offsetHeight="+dom.offsetHeight);
+		console.log("navt scrollWidth="+dom.scrollWidth);
+		console.log("navt scrollHeight="+dom.scrollHeight);
+		var dom=document.querySelector(".box");
+		console.log("box offsetLeft="+dom.offsetLeft);
+		console.log("box offsetTop="+dom.offsetTop);
+	</script>
+</body>
+</html>

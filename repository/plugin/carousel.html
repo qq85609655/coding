@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="renderer" content="webkit">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.carousel.js"></script>
+	<style></style>
+	<script type="text/javascript">
+	    $(function(){
+	      $(".grp_section_carousel").carousel({
+	            interval:3000
+	        });
+	  });
+	    </script>
+</head>
+<body>
+	<div class="grp_section_carousel">
+		<div class="grp_carousel_box">
+			<span class="grp_carousel_page grp_carousel_prev">上一张</span>
+			<dl class="grp_carousel_imgcoll">
+				<dd class="grp_carousel_img" id="g1">
+					<img src="images/carousel4.png" alt=""></dd>
+				<dd class="grp_carousel_img" id="g2">
+					<img src="images/carousel2.png" alt=""></dd>
+				<dd class="grp_carousel_img"  id="g3">
+					<img src="images/carousel3.png" alt=""></dd>
+				<dd class="grp_carousel_img"  id="g4">
+					<img src="images/carousel4.png" alt=""></dd>
+				<dd class="clear"></dd>
+
+			</dl>
+			<span class="grp_carousel_page grp_carousel_next">下一张</span>
+			<div class="grp_carousel_index">
+				<div>
+					<a href="#" class="grp_carousel_link active"></a>
+					<a href="#" class="grp_carousel_link"></a>
+					<a href="#" class="grp_carousel_link"></a>
+					<a href="#" class="grp_carousel_link"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

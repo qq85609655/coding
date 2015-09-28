@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>baidu map fork by ynchuan</title>
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1"/>
+		<meta name="renderer"content="webkit">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/page-baidu-map.css">
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/baidu-map-index.js"></script>
+		<script type="text/javascript" src="js/page.js"></script>
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="js/json2.js"></script>
+		<script type="text/javascript" src="js/html5shiv.js"></script>
+		<![endif]-->
+		<script>
+		window.addEventListener("DOMContentLoaded",function(){
+			new Page({"container":document.getElementById("page1")}).init();
+		});
+		</script>
+	</head>
+	<body>
+		<div class="main-full">
+			<header class="header">
+				<div class="wrap">
+					<div class="h-b-head">
+						<a href="#" class="h-b-forward active"><i class="fa"></i>返回旧版地图</a>|
+						<a href="#" class="h-b-forward">ynhcuan <i class="triangle-down"></i></a>|
+						<a href="#" class="h-b-forward">订单查询 <i class="triangle-down"></i></a>|
+						<a href="#" class="h-b-forward">商户免费标注</a>
+						<a href="#" class="h-b-forward">地图开放平台</a>|
+						<a href="#" class="h-b-forward">百度首页</a>
+					</div>
+				</div>
+			</header>
+			<nav class="nav">
+				<div class="wrap">
+					<div class="n-banner"></div>
+					<div class="n-search">
+						<div class="search">
+							<div class="search-class">
+								<ul class="up">
+									<li class="fsl active">
+										<a href="#">新闻</a>
+									</li>
+									<li class="fsl">
+										<a href="#">网页</a>
+									</li>
+									<li class="fsl">
+										<a href="#">贴吧</a>
+									</li>
+									<li class="fsl">
+										<a href="#">知道</a>
+									</li>
+									<li class="fsl">
+										<a href="#">音乐</a>
+									</li>
+									<li class="fsl">
+										<a href="#">图片</a>
+									</li>
+									<li class="fsl">
+										<a href="#">视频</a>
+									</li>
+									<li class="fsl active">
+										<a href="#">地图</a>
+									</li>
+									<li class="fsl">
+										<a href="#">百科</a>
+									</li>
+									<li class="fsl">
+										<a href="#">文库</a>
+									</li>
+									<div class="clear"></div>
+								</ul>
+							</div>
+							<div class="search-key">
+								<div class="fsr fsr-logo"></div>
+								<div class="fsr fsr-input">
+									<input type="text" id="searchkey" class="searchkey"/>
+									<div class="fsr fsr-btn">百度一下</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</nav>
+			<section class="section">
+				<div class="wrap">
+					<div class="s-container">
+						<div class="s-navbar">
+							<ul class="s-bar-ul">
+								<li class="s-navbar-li active">
+									<i class="fa fa-search"></i>
+									<div class="s-bar-txt">搜索</div>
+								</li>
+								<li class="s-navbar-li">
+									<i class="fa fa-route"></i>
+									<div class="s-bar-txt">路线</div>
+								</li>
+								<li class="s-navbar-li">
+									<i class="fa fa-subway"></i>
+									<div class="s-bar-txt">地铁</div>
+								</li>
+								<li class="s-navbar-li">
+									<i class="fa fa-collect"></i>
+									<div class="s-bar-txt">收藏</div>
+								</li>
+							</ul>
+							<div class="s-navbar-weather">
+								<i class="fa fa-weather"></i>
+								<div class="s-weather-decr">
+									28~20℃<br>
+									轻度污染
+								</div>
+							</div>
+						</div>
+						<div class="s-nav-tab">
+							<div class="s-tab-search">
+								<div class="s-search-type">
+									<ul>
+										<li class="s-search-colle">
+											<i class="fa fa-food"></i>
+											<div class="s-search-txt">找美食</div>
+										</li>
+										<li class="s-search-colle">
+											<i class="fa fa-food"></i>
+											<div class="s-search-txt">定酒店</div>
+										</li>
+										<li class="s-search-colle">
+											<i class="fa fa-food"></i>
+											<div class="s-search-txt">看电影</div>
+										</li>
+									</ul>
+								</div>
+								<div class="s-search-nav">
+									<div class="s-search-traffic">
+										<span class="s-traffic-icon"><i class="fa fa-traffic-icon"></i>出行</span>
+										<a href="#" class="s-traffic-icon">公交站</a>
+										<a href="#" class="s-traffic-icon">地铁站</a>
+										<a href="#" class="s-traffic-icon">加油站</a>
+										<a href="#" class="s-traffic-icon">停车站</a>
+									</div>
+									<div class="s-search-traffic">
+										<span class="s-traffic-icon"><i class="fa fa-traffic-icon"></i>休闲</span>
+										<a href="#" class="s-traffic-icon">景点</a>
+										<a href="#" class="s-traffic-icon">KTV</a>
+										<a href="#" class="s-traffic-icon">丽人</a>
+										<a href="#" class="s-traffic-icon">洗浴</a>
+									</div>
+									<div class="s-search-traffic">
+										<span class="s-traffic-icon"><i class="fa fa-traffic-icon"></i>服务</span>
+										<a href="#" class="s-traffic-icon">银行</a>
+										<a href="#" class="s-traffic-icon">超市</a>
+										<a href="#" class="s-traffic-icon">药店</a>
+										<a href="#" class="s-traffic-icon">ATM</a>
+									</div>
+								</div>
+								<div class="s-search-banner">
+									<div class="s-search-baner1"></div>
+									<div class="s-search-banner2">
+										<a href="#" class="s-banner2-btn btn-android">Android版</a>
+										<a href="#" class="s-banner2-btn btn-iphone">iPhone版</a>
+									</div>
+									<div class="s-search-footer">
+										<a href="#" class="s-search-forward">商户标注</a>
+										<a href="#" class="s-search-forward">地图开放平台</a>
+										<a href="#" class="s-search-forward">数据纠错</a>
+										<a href="#" class="s-search-forward">意见建议</a>
+									</div>
+								</div>
+							</div>
+							<div class="s-tab-route hide">
+								<div class="s-route-nav">
+									<ul>
+										<li class="s-route-li active">
+											<i class="fa fa-bus"></i>
+											公交
+											<div class="arrow-up"></div>
+										</li>
+										<li class="s-route-li">
+											<i class="fa fa-bus"></i>
+											驾车
+											<div class="arrow-up"></div>
+										</li>
+										<li class="s-route-li">
+											<i class="fa fa-bus"></i>
+											步行
+											<div class="arrow-up"></div>
+										</li>
+										<li class="s-route-li">
+											<i class="fa fa-bus"></i>
+											骑行
+											<div class="arrow-up"></div>
+										</li>
+									</ul>
+								</div>
+								<div class="s-route-search">
+									<div class="s-route-exchange"></div>
+									<div class="s-route-input">
+										<span class="s-route-icon icon-green-cicle"></span><input type="text" class="s-route-i"><br>
+										<span class="s-route-icon icon-green-cicle"></span><input type="text" class="s-route-i">
+									</div>
+									<div class="s-route-btn"></div>
+								</div>
+								<div class="s-route-histroy">
+									<ul>
+										<li class="s-history-li"><i class="fa fa-clock"></i>草山岭西区-皇家花园酒店</li>
+										<li class="s-history-li"><i class="fa fa-clock"></i>草山岭西区-皇家花园酒店</li>
+										<li class="s-history-li"><i class="fa fa-clock"></i>草山岭西区-皇家花园酒店</li>
+										<li class="s-history-li"><i class="fa fa-clock"></i>草山岭西区-皇家花园酒店</li>
+										<li class="s-history-li"><i class="fa fa-clock"></i>草山岭西区-皇家花园酒店</li>
+										<li class="s-history-li s-h-bottom"><i class="fa fa-clock"></i>删除历史</li>
+									</ul>
+								</div>
+								<div class="s-route-banner">
+									<img src="images/map-route-1.jpg" alt="map-route-banner">
+								</div>
+							</div>
+							<div class="s-tab-subway hide">
+								<div class="s-subway-nav">
+									<ul>
+										<li class="s-subway-li">
+											<i class="fa"></i>换乘查询
+											<div class="arrow-up"></div>
+										</li>
+										<li class="s-subway-li">
+											<i class="fa"></i>站点查询
+											<div class="arrow-up"></div>
+										</li>
+									</ul>
+								</div>
+								<div class="s-route-search">
+									<div class="s-route-exchange"></div>
+									<div class="s-route-input">
+										<span class="s-route-icon icon-green-cicle"></span><input type="text" class="s-route-i"><br>
+										<span class="s-route-icon icon-green-cicle"></span><input type="text" class="s-route-i">
+									</div>
+									<div class="s-route-btn"></div>
+								</div>
+								<div class="s-route-banner">
+									<img src="images/map-route-1.jpg" alt="map-route-banner">
+								</div>
+							</div>
+							<div class="s-tab-collect hide">
+								<div class="s-subway-nav">
+									<ul>
+										<li class="s-subway-li">
+											<i class="fa"></i>地点
+											<div class="arrow-up"></div>
+										</li>
+										<li class="s-subway-li">
+											<i class="fa"></i>线路
+											<div class="arrow-up"></div>
+										</li>
+									</ul>
+								</div>
+								<div class="s-collect-catalog">
+									<ul class="s-c-ul">
+										<li class="s-c-li filter"><span class="s-c-txt">筛选</span><i class="fa fa-arrow"></i></li>
+										<li class="s-c-li sort"><span class="s-c-txt">顺序</span><i class="fa fa-arrow"></i></li>
+										<li class="s-c-li edit"><span class="s-c-txt">编辑</span><i class="fa fa-arrow"></i></li>
+									</ul>
+								</div>
+								<div class="s-collect-list">
+									<ul class="s-coll-ul">
+										<li class="s-coll-li">
+											<div class="s-coll-location"></div>
+											<div class="s-coll-pic"></div>
+											<div class="s-coll-itmes">
+												<ul>
+													<li class="s-coll-item item-name">山东省公安厅</li>
+													<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
+													<li class="s-coll-item item-date">2015-09-11 来自手机</li>
+													<li class="s-coll-item">
+														<i class="fa"></i>标签
+														<i class="fa"></i>重命名
+														<i class="fa"></i>删除
+													</li>
+												</ul>
+												<ul>
+													<li class="s-coll-item item-name">山东省公安厅</li>
+													<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
+													<li class="s-coll-item item-date">2015-09-11 来自手机</li>
+													<li class="s-coll-item">
+														<i class="fa"></i>标签
+														<i class="fa"></i>重命名
+														<i class="fa"></i>删除
+													</li>
+												</ul>
+												<ul>
+													<li class="s-coll-item item-name">山东省公安厅</li>
+													<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
+													<li class="s-coll-item item-date">2015-09-11 来自手机</li>
+													<li class="s-coll-item">
+														<i class="fa"></i>标签
+														<i class="fa"></i>重命名
+														<i class="fa"></i>删除
+													</li>
+												</ul>
+												<ul class="page-ul">
+													<li class="page-li">&lt;上一页</li>
+													<li class="page-li">1</li>
+													<li class="page-li">2</li>
+													<li class="page-li">3</li>
+													<li class="page-li">4</li>
+													<li class="page-li">下一页&gt;</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						
+						<div class="s-hide-bar">
+							<i class="s-icon-left"></i>
+						</div>
+						
+						<div class="s-map">
+							<div class="s-map-contain" id="s-map-contain">
+							<div id="page1"></div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</section>
+		</div>
+		<div class="mask" id="mask">
+			
+		</div>
+		<div class="popup-main" id="popup-main">
+			<div class="popup-titile">
+				<div class="pop-close"></div>
+			</div>
+			<div class="popup-body">
+				<div>
+					<div class="float-three">1</div>
+					<div class="float-three">2</div>
+					<div class="float-three">3</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="popup-footer">
+				<div class="popup-btns">
+					<button class="popup-btn">取消</button>
+					<button class="popup-btn">确定</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>load time test</title>
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1"/>
+		<meta name="renderer"content="webkit">
+		<style>
+		.demo{
+			background-color: lightgreen;
+			height: 20px;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="demo">22</div>
+	</body>
+	<script>
+	function wastime(){
+		var timestamp=+new Date();
+		var now=timestamp;
+		while(now-timestamp<10000){
+			console.log(now);
+			now=+new Date;
+
+		}
+		alert(now);
+		
+		document.querySelector(".demo").innerHTML+=now;
+	}
+	window.addEventListener("DOMContentLoaded", function(){
+		wastime();
+		wastime();
+		// setTimeout(wastime, 0);
+	});
+	</script>
+</html>

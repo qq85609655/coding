@@ -1,0 +1,9 @@
+兼容ie6中需要测试的地方:
+display:inline-block;center
+line-height;
+vertical-align;
+margin\padding; auto
+position:absolute; bottom; width 100%;
+zoom haslayout?
+height width:23%
+line-height下不同高度内容区居中的问题

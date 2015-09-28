@@ -1,0 +1,83 @@
+body {
+	width: 95%;
+	height: 100%;
+	margin: 0 auto;
+}
+.head_f_title {
+	width: 80%;
+	margin: 0 auto;
+	font-size: 4em;
+	text-align: center;
+	
+}
+.article_f_descr {
+	width: 80%;
+	margin: 0 auto;
+}
+.section_s_p {
+	width: 80%;
+	font-size: 2em;
+	margin: 0 auto;
+	text-align: left;
+	border: 1px solid #ccc;
+}
+.footer_f_end {
+	width: 80%;
+	height: 2em;
+	font-size: 2em;
+	line-height: 2em;
+	text-align: center;
+	margin: 0 auto;
+}
+.div_t_header {
+	width: 100%;
+	text-align: left;
+	font-weight: bold;
+	text-decoration:underline;
+	padding-bottom: 0.4em;
+}
+.div_t_body {
+	display: -webkit-box;
+}
+.div_t_body_left {
+	width: 70%;
+	font-size: 0.8em;
+	margin-top:0.8em;
+}
+.div_t_body_right {
+	width: 30%;
+	background-image: url(../image/wangxunxun.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size:contain;
+}
+.ul_f_contian {
+	display: -webkit-box;
+}
+.ul_f_contian li {
+	width: 50%;
+	text-align: left;
+}
+.div_f_item{
+	border-bottom: 1px solid #ccc;
+	font-size: 0.8em;
+}
+.li_f_item{
+	white-space: nowrap;
+	text-overflow:ellipsis;
+	overflow: hidden;
+}
+
+.div_t_borderline{
+	display: -webkit-box
+}
+.div_t_borderline_left{
+	width:20%;
+	height: 5px;
+	background-color: rgb(119, 160, 249);
+}
+.div_t_borderline_right{
+	width:80%;
+	height: 5px;
+	background-color: #ccc;
+}

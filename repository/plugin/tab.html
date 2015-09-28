@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>tab demo</title>
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1"/>
+		<meta name="renderer"content="webkit">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/common.css">
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.tab.js"></script>
+		<script>
+		$(function(){
+			$(".grp_tab_1").tab();
+		})
+		</script>
+	</head>
+	<body>
+		<div class="grp_tab_1">
+			<div class="yc_tab_h">
+				<ul class="yc_tab_ul">
+					<li class="yc_tab_li active">
+						<span class="hosticon icon">24小时逐时使用量</span>
+					</li>
+					<li class="yc_tab_li">
+						<span class="dataicon icon">浏览统计</span>
+					</li>
+					<li class="yc_tab_li">
+						<span class="servicon icon">人像对比使用情况</span>
+					</li>
+				</ul>
+			</div>
+			<div class="yc_tab_container">
+				tab1
+			</div>
+			<div class="yc_tab_container yc_tab_hide">tab2</div>
+			<div class="yc_tab_container yc_tab_hide">tab3</div>
+		</div>
+	</div>
+</body>
+</html>

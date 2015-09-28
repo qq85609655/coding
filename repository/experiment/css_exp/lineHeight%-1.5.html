@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>line-height %--1.5|dl dt dd|ul</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<style>
+	    	#div{
+	    		line-height: 150%;
+	    		/*line-height: 1.5;*/
+	    		font-size:30px;
+	    	}
+	    	#div1{
+				font-size:20px;
+	    	}
+	    </style>
+	<script type="text/javascript"></script>
+</head>
+<body>
+	<div id="div">
+		z
+		<div id="div1">
+			z
+			<div>z</div>
+		</div>
+	</div>
+	<div>
+		说明：line-height采用百分数设置使得该节点的子节点的行高为该节点的font-size*line-height{为一个具体像素};
+		如果采用小数进行行高的设置，则其子节点的行高为各子节点的font-size*line-height。二者不同表现在子元素继承的数值不同：前者为继承实际像素值，后者继承小数进行自我放缩。
+		<dl>
+		   <dt>计算机</dt>
+		   <dd>用来计算的仪器 ... ...</dd>
+		   <dt>显示器</dt>
+		   <dd>以视觉方式显示信息的装置 ... ...</dd>
+		</dl>
+		<ol>
+			<li>HSh</li>
+			<li>HSh</li>
+			<li>HSh</li>
+		</ol>
+		<input type="text">
+	</div>
+</body>
+</html>

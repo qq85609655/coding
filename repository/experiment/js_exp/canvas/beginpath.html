@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>begin path test</title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <style>
+	    	
+	    </style>
+	    <script type="text/javascript">
+	    window.addEventListener("DOMContentLoaded",function(){
+	    	var cvs=document.getElementById("cvs");
+	    	var context=cvs.getContext("2d");
+	    	cvs.width=500;
+	    	cvs.height=500;
+	    	context.beginPath();
+	    	context.moveTo(10,10);
+	    	context.lineTo(50,50);
+	    	context.lineTo(10,90);
+	    	context.closePath();//自动补充闭合线
+
+	    	context.fillStyle="red";
+	    	context.strokeStyle="#ccc";
+	    	context.lineWidth=10;
+
+	    	context.fill();
+	    	context.stroke();//在fill之后可以实现边宽度的一半不被填充
+
+	    	context.beginPath();
+	    	context.rect(190,190,50,20);
+
+	    	context.lineWidth=2;
+	    	context.strokeStyle="green";
+	    	context.fillStyle="#ccc";
+
+	    	context.fill();
+	    	context.stroke();
+
+	    	context.fillRect(280,20,30,30);//实现设置完路径以后直接填充完成 填充色继承上面
+	    	context.strokeRect(240,20,30,30);//实现设置路径以后直接绘制完成 描边色继承
+	    })
+	    </script>
+	</head>
+	<body>
+		<canvas id="cvs" style="border:1px solid #ccc"></canvas>
+	</body>
+</html>
+     

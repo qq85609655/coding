@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charSet="UTF-8"/>
+	<style type="text/css">
+		.float-left {
+		    float: left; 
+		    margin-right: 20px; 
+		    width:10%
+		}
+		.float-right {
+		    float: right; 
+		    margin-left: 20px; 
+		    width:10%;
+		}
+		.bfc-content {
+		    overflow: hidden; 
+		    background-color: #beceeb;
+		     /*_zoom: 1;*//*兼容ie5的办法*/
+		     _display: inline-block;/*兼容ie5的办法*/
+		     /*display: inline-block*/
+		     width:75%;
+		}
+	</style>
+</head>
+<body style="">
+	<div class="flow-box">
+		<div class="float-left"><img src="mm1.jpg" width="100%"></div>
+			<div class="float-right">
+			<img src="mm1.jpg" width="100%">
+		</div>
+		<div class="bfc-content">
+			<p style="float:left;width:100px">
+				BFC自适应布局优势我总结了下面2点：
+			自适应内容由于封闭，更健壮，容错性强。比方说，内部clear:both不会与兄弟float产生矛盾。而纯流体布局，clear:both会让后面内容无法和float元素在一个水平上，产生布局问题。
+			</p>
+			<p style="clear:both">
+				自适应内容自动填满浮动以为区域，无需关心浮动元素宽度，可以整站大规模应用。而纯流体布局，需要大小不确定的margin/padding等值撑开合适间距，无法CSS组件化。
+			</p>
+		</div>
+
+	</div>
+</body>
+</html>

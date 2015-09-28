@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>canvas line</title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <style>
+	    	canvas{
+	    		border:1px solid #ccc;
+	    	}
+	    </style>
+	    <script type="text/javascript">
+	    window.addEventListener("DOMContentLoaded",function(){
+	    	var canvas=document.getElementById("canvas");
+	    	var cvs=canvas.getContext("2d");
+	    	cvs.width=800;
+	    	cvs.height=800;
+	    	// cvs.moveTo(100,100);
+	    	// cvs.lineTo(700,700);
+	    	cvs.strokeStyle="#ccc";
+	    	// cvs.lineWidth="1";
+	    	// cvs.stroke();
+	    	cvs.beginPath();
+	    	cvs.arc(50, 50, 50, 0, 1/2*Math.PI, false);
+	    	cvs.stroke();
+
+	    	context.save();
+			 context.translate(100,100);
+			 context.beginPath();
+			 // 第一条曲线向右上方弯曲
+			 context.moveTo(0, 0);
+			 context.quadraticCurveTo(170, -50, 260, -190);
+			 // 第二条曲线向右下方弯曲
+			 context.quadraticCurveTo(310, -250, 410,-250);
+			 // 使用棕色的粗线条来绘制路径
+			 //context.lineTo(100,100);
+			 context.strokeStyle = '#663300';
+			 context.lineWidth = 3;
+			 context.stroke();
+			 context.restore(); 
+	    });
+	    </script>
+	</head>
+	<body>
+	<canvas id="canvas"></canvas>
+	</body>
+</html>
+     

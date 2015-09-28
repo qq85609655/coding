@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>restful api test</title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="renderer" content="webkit">
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/sha1.js"></script>
+	    <style>
+	    	
+	    </style>
+	   
+	</head>
+	<body>
+
+		 <script type="text/javascript">
+
+	 		var now = Date.now();
+			var appKey = hex_sha1("A6972163644105"+"UZ"+"7A216C64-CA98-3305-45F1-C879CBF192B8"+"UZ"+now)+"."+now
+			 $.ajax({
+				  "url": "http://www.apicloud.com//mcm/api/city/55209dcd691a66515c1638e5/exists",
+				  "method": "GET",
+				  "contentType":"application/json",
+				  "headers": {
+				    "X-APICloud-AppId": "A6972163644105",
+				    "X-APICloud-AppKey": appKey
+				  }
+				}).success(function (data, status, header) {
+				  alert(data.exists);
+				}).fail(function (header, status, errorThrown) {
+				  alert(status);
+				  console.log(status)
+				})
+	    </script>
+	</body>
+</html>
+     

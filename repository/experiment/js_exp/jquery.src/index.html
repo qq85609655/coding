@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>title</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<style>
+	body{
+		margin:0;
+	}
+	.name{
+		box-sizing:border-box;
+		background-color: red;
+		width:100px;
+		height:300px;
+		border:3px solid #ccc;
+		padding:5px;
+		margin:10px;
+		overflow: auto;
+		}
+	.namet{
+		height:400px;
+		width:400px;
+		background-color: lightgreen;
+		margin:5px;
+		border:2px solid yellow;
+		padding:3px;
+	}
+	</style>
+</head>
+<body>
+<div style="height:600px;width: 221px"></div>
+	<div id="test" class="name" hello="wxx" data-v="ds" click="func2()">
+		<div class="namet" id="namet">hellp0</div>
+		<!-- <div class="namet">hellp1</div> -->
+	</div>
+	<span></span>
+
+
+	<p></p>
+	<!-- <div id="test1" class="name">display1</div> -->
+	<!-- <div id="test2" class="name">after display1</div> -->
+	<!-- <div id="test2" class="name" style='display: hidden'>hidden</div> -->
+	<input type="text" value="text test">
+	<script type="text/javascript" src="jquery.js"></script>
+
+	<script type="text/javascript">
+		var cl=jQuery(".name");
+		var nt=jQuery(".namet");
+		var dnt=document.getElementById("namet");
+		var n=document.getElementById("test")
+		// var cd=document.querySelectorAll(".name");
+		// var cl=jQuery(".name");
+		// var cl=jQuery(".name");
+		// var cl=jQuery(".name");
+		// var tag=jQuery("div");
+		// var id=jQuery("#test2");
+		// var test=document.getElementById("test");
+		// $(test);	
+		// console.log(cl);
+		var first=cl.first();
+		var last=cl.last();
+		// console.log("first"+first);
+		// console.log("last"+last);
+		$("body").on("click",".name",function(event){
+			// console.log(event.target)
+		});
+
+		function func2(){
+			alert("onclick fun");
+			// return false;
+		}
+		// var cbk=jQuery.Callbacks("stopOnFalse")
+		// cbk.add(function(a){console.info("first"+" "+a)});
+		// cbk.fire("first");
+		// cbk.add(function(a){console.info("second"+" "+a)});
+		// cbk.fire("second");
+		// cbk.fire("third");
+		// cbk.add(function(a){console.info("third"+" "+a)});
+
+		var aa1=$("#test");
+		var aa2=$("#test");
+		aa1.data('a',1111);
+		aa2.data('a',2222);
+		var inner=function(e){
+			console.log(".name click test  inner");
+		};
+		var outter=function(e){
+			console.log("#aa1 click test  outter");
+			// aa1.off("click",outter)
+			outter=null;
+		};
+
+		aa1.on("click",".namet,.name1","i am data",inner);
+		aa1.on("click", outter);
+		// $(".name").off("click",".namet",inner);
+		// $(".namet").trigger("click");
+		//sizzle selector test 
+		$.find("body #test .namet"); 
+		$.find("div:first-child"); 
+		$.find("div:first-child div:eq(0)"); 
+		$.find("#test div:eq(0)"); 
+		$.find("#test~div:eq(0)"); 
+		$.find("[hello=wxx]"); 
+		$.find(":input"); 
+		$.find(":input:text"); 
+		$("#test").filter(".namet");
+
+		var t=$("#test").clone(true);
+		$("body").append(t);
+
+		var div=aa1;
+		function runIt() {
+		  // div.show("slow");
+		  div.animate({"margin-left":'150px','opacity':'0.5'},10000);
+		  div.animate({opacity:'0.3'},2000); 
+		  div.animate({"margin-left":'300px'},5000); 
+		  // div.slideToggle(1000);
+		  // div.slideToggle("fast");
+		  // div.animate({left:'-=200'},1500);
+		  // div.hide("slow");
+		  // div.show(1200);
+		  // div.slideUp("normal", runIt);
+		}
+		 
+		function showIt() {
+		  var n = div.queue("fx");
+		  $("span").text( n.length );
+		  setTimeout(showIt, 100);
+		}
+ 
+		// runIt();
+		// showIt();
+		function testAjax(){
+			$.ajax({
+				url:"https://api.github.com",
+				// url:"https://www.baidu.com",
+				async:false,
+				dataType:"json",
+				statusCode:{
+					"404":function(){alert("404")},
+					"200":function(){alert("200")},
+				},
+				data:{
+					"h":"test",
+					"l":"world"
+				}
+			}).done(function(data){
+				console.log(data);
+			}).fail(
+			function(status){
+				console.error(status);
+			}).complete(function(){
+				console.info("complete");
+			});
+		}
+		function tajaxP(){
+			$.ajax({
+				url:"https://api.github.com",
+				// url:"https://www.baidu.com",
+				dataType:"jsonp",
+				statusCode:{
+					"404":function(){alert("404")},
+					"200":function(){alert("200")},
+				}
+			}).done(function(data){
+				console.log(data);
+			}).fail(
+			function(status){
+				console.error(status);
+			}).complete(function(){
+				console.info("complete");
+			}).abort();
+		}
+
+
+
+		aa1.ajaxStart(function() {
+		    alert( "Triggered ajaxStart handler." );
+		});
+
+
+		var filterResolve = function() {
+			var defer = $.Deferred(),
+			    filtered = defer.then(function( value ) {
+			       return value * 2;
+			    });
+			 
+			defer.resolve( 5 );//只能触发一次
+
+			filtered.then(function(k){
+				console.log("then done="+k);
+			});
+			filtered.done(function( value ) {
+			   console.log("done="+value);
+			});
+			
+			filtered.always(function(k){
+				console.log("always="+k);
+			});
+		};
+
+		function getPosition(){
+			console.log("postion="+aa1.position());
+			console.log("offset="+aa1.offset());
+		}
+		
+		nt.offset()
+	</script>
+</body>
+
+</html>

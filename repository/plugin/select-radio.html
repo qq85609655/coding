@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>select|radio reset demo</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="renderer" content="webkit">
+		<link rel="stylesheet"type="text/css"href="css/normalize.css">
+		<link rel="stylesheet"type="text/css"href="css/common.css">
+		<style>
+		.demo{
+			position: relative;
+			margin:30px;
+			background-color: lightgreen;
+			padding:20px;
+		}
+		.radio{
+			margin-right:5px;
+		}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.resetselect.js"></script>
+	</head>
+	<body>
+		<div class="demo">
+			<form action="https://www.baidu.com" onsubmit="return true;">
+				<h1>reset select|radio 使用说明</h1>
+				<div style="border-left:4px solid  #ccc;padding:10px">重写select表单组件，实现跨浏览器页面样式统一，使用方法：给select标签添加<b>data-reset="select"</b>属性，并引入jquery.resetselect.js文件，注意该组件依赖jquery库,支持ie7+</div>
+				<h4>select 重写 demo1</h4>
+				<select name="brand" data-reset="select">
+					<option value="volvo">Volvo</option>
+					<option value="saab" selected>Saab</option>
+					<option value="opel">Opel</option>
+					<option value="audi selected">Audi</option>
+				</select>
+				<br />
+				<br />
+				<h4>默认 select</h4>
+				<select name="country">
+					<option value="中国">中国</option>
+					<option value="韩国">韩国</option>
+					<option value="印度" selected>印度</option>
+					<option value="澳大利亚">澳大利亚</option>
+				</select>
+				<br />
+				<br />
+				<h4>select 重写 demo2</h4>
+				<select name="brandq" data-reset="select">
+					<option value="中国">中国</option>
+					<option value="韩国">韩国</option>
+					<option value="印度" selected>印度</option>
+					<option value="澳大利亚">澳大利亚</option>
+				</select>
+				<br />
+				<br />
+				
+				<br />
+				<input type="text" name="text" vaule="inputtext" vaule="test">
+				<br />
+				<br />
+				<input type="checkbox" name="checkbox">
+				是
+				<br />
+				<input type="checkbox" name="checkbox">
+				否
+				<br />
+				<input type="checkbox" name="checkbox" value="dd">
+				待定
+				<br />
+				<br />
+				
+				<h4>radio 重写 </h4>
+				<div style="border-left:4px solid  #ccc;padding:10px">重写radio表单组件，实现跨浏览器页面样式统一，基于css3
+				实现，支持ie9+</div>
+				<div class="radio-wrap">
+					<div class="reset-radio">
+						<input type="radio" id="usr1" checked="checked" name="xes">
+						<span></span>
+					</div>
+					<label for="usr1">男</label>
+				</div>
+				<div class="radio-wrap">
+					<div class="reset-radio">
+						<input type="radio" name="xes" id="usr2">
+						<span></span>
+					</div>
+					<label for="usr2" >女</label>
+				</div>
+				<br />
+				<br />
+				<h4>radio 默认 </h4>
+				<input type="radio" checked="checked" name="Sex" class="radio"  id="male"/><label for="male">male</label>
+				<br />
+				<input type="radio" name="Sex" id="female" class="radio"  /><label for="female">female</label>
+				<br />
+				<br />
+				<input type="submit" value="提交，看url测试select获取的值"/>
+			</form>
+		</div>
+	</body>
+</html>

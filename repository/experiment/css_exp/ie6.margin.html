@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ie6 margin 加倍</title>
+	<meta charset="utf-8"/>
+	<style type="text/css">
+	.main{
+		border: 1px solid #ccc;
+		box-sizing:border-box;
+		overflow:hidden;
+		zoom:1;
+	}
+	.fix{
+		clear:both;
+
+	}
+	.div_float{
+	float:left;
+	margin:10px;
+	border:1px solid red;
+	}
+	li{
+		border:1px solid  #ccc;
+		float:left;
+		width: 200px;
+		list-style-type: none;
+	}
+	dd,dt,i,u{
+		border:1px solid  #ccc;
+	}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="div_float">hi</div>
+		<div class="div_float">this is john</div>
+		<div class="fix"></div>
+	</div>
+	<!-- <div>
+		<ul>
+			<li>li设宽、高，并且li里面的标签浮动，那么li之间会有间距</li>
+			<li>li设宽、高，并且li里面的标签浮动，那么li之间会有间距</li>
+			<li>li设宽、高，并且li里面的标签浮动，那么li之间会有间距</li>
+		</ul>
+	</div> -->
+	<dd>我们是dd</dd><dt>我们是dt</dt>
+	<i>世界</i>
+	<u>世界</u>
+</body>
+</html>

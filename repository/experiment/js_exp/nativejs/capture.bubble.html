@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>capture&bubble</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="renderer" content="webkit">
+	<style>
+	#cb{
+		border:1px solid #ccc;
+	}
+	</style>
+</head>
+<body>
+	<div id="cb" onclick="fun1()"> this is outter box <div id="tj">cick here to test capture and bubble.</div></div>
+	<script type="text/javascript">
+		var dom=document.querySelector("#cb");
+		var dom1=document.querySelector("#tj");
+		
+		function fun1(){
+			alert("inner click fun");
+		}
+		// dom.onclick=function(){
+		// 	alert("this is outter click function");
+		// }
+		dom.addEventListener("click",function(){
+			alert("bubble");
+		},false);
+		
+		dom.addEventListener("click",function(){
+			alert("capture");
+		},true);
+		var ev=document.createEvent("MouseEvent");
+		// var ev=new Event("click");
+		ev.initMouseEvent("click", true, true, document.defaultView, 0, 100, 0, 0, 0, false, 
+                                 false, false, false, 0, dom1);
+		// ev.eventPhase=2;
+		// ev.bubble=true;
+		// ev.target=dom1;
+		// ev.currentTarget=dom1;
+		// ev.type="click";
+		dom1.dispatchEvent(ev);
+	</script>
+</body>
+</html>

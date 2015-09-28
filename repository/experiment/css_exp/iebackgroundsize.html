@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>让IE兼容background-size的方法</title>
+ 
+<style>
+.bgpic {
+    background-image: url('http://img0.bdstatic.com/img/image/6992fdda3cc7cd98d10273a6b34233fb80e7aec90cc.jpg');
+    background-size: cover;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+    src='background.gif',
+    sizingMethod='scale');
+    display: absolute;
+}
+</style>
+</head>
+<body>
+ 
+    <div  class="bgpic" style="height:1500px;width:1000px"></div>
+ 
+</body>
+</html> 

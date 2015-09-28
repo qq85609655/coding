@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>关于前端代码的一些习惯</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family:Consolas, Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>关于前端代码编写的一些习惯</h1>
+<p>前端是什么？打来浏览器，输入一个网址，呈现在面前的就是前端。前端开发一部分就是网页开发，网页开发就是编写html、css以及js代码，来实现对用户的信息呈现。</p>
+<p>跟所有的代码开发一样，前端代码也要做一些编码约定来规范我们的代码，目的就是使我们大家协作开发的代码更加规范、美观、可读，更重要的是便于项目管理，以及需求变更。</p>
+<p>下面我们普及一些前端编码习惯，请大家养成，这也会使我们更方便的维护项目。网页代码的开发讲求内容、表现以及交互的分离，就是在项目中html代码文件负责页面的内容，css文件负责外观表现，js负责与用户的交互，三者项目结合给用户带来更好的前端体验。至于所谓分离，就是将代码分开放在各自对应 的文件里，实现代码整洁。下面我们就从css、js以及html的角度具体说说应该怎样规范。</p>
+<h2>css部分</h2>
+<h3>1、代码组织方式：</h3>
+<p>css是样式级联表，负责页面展示，该部分代码主要有三种写法：</p>
+<ul>
+<li>属性式写法：
+<code>&lt;div style=&quot;width:20px;height:40px&quot;&gt;&lt;/div&gt;</code></li>
+</ul>
+<blockquote>
+<p>这种写法直接将样式写在标签的属性上，首先导致代码可复用度很低，其次属性式的样式也是css选择器中权重去高的方式，不方便样式在变更的时候修改样式，例如：通过jquery给该div addClass（&quot;demo&quot;），其中.demo{width:300px;height:700px},这样修改样式是不能修改成功的。所以该方式是应该较少的写的一种方式。</p>
+</blockquote>
+<ul>
+<li>
+内联样式：
+<code>&lt;style&gt;.demo{width:200px;height:40px;} #id{width:300px;}&lt;/style&gt;</code>
+</li>
+</ul>
+<blockquote>
+<p>该写法是将样式代码放在html文件中，css代码很少的情况下可以使用，但是当该部分代码多的情况下，影响html代码整洁度和可读性，从性能优化上讲虽减少了css文件，降低了http请求但是不利于静态文件缓存。</p>
+</blockquote>
+<ul>
+<li>
+外链样式：
+<code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/wfbase.css&quot;&gt;</code>
+</li>
+</ul>
+<blockquote>
+<p>该写法虽然增加了http请求数，但是利于代码维护和可读性，并通过缓存解决http数量过多问题，所以当css代码很多的情况下，要使用外链样式的形式，这也是我们项目中通常采用的代码编写方式。</p>
+</blockquote>
+<p>小结：css的写法，在项目中请创建外链样式文件进行样式的编写。</p>
+<h3>2、css选择器</h3>
+<p>jquery的选择器是参考css来的，所以学会的了css的选择器就学会了jquery的。</p>
+<p>css在添加样式的过程中，除了采用外链样式文件以外，在dom标签上请采用class属性进行样式的添加：
+例如：<code>&lt;div class=&quot;demo demo2 demo3&quot;&gt;&lt;/div&gt;</code>,class属性可以添加多个，最后将<code>.demo{}</code>、<code>.demo2{}</code>、<code>.demo3{}</code>定义在外链样式文件中。</p>
+<p>请尽量少使用<code>#id{....}</code>定义样式以及<code>tag{}，例如div.li.a{}</code>等选择器。</p>
+<p>同时样式class的定义可以层级嵌套的，常见写法为 <code>div.demo&gt;.subdemo{}</code>,也可用来限制选择器选择的dom，但是层级嵌套不要太深。</p>
+<h3>3、选择器命名</h3>
+<p>选择器命名应小心重名，尤其为协作项目，如果出现重名可能会影响其他人定义的界面样式，所以可以为命名做唯一标识，或者添加命名空间的处理来降低重名概率。</p>
+<p>唯一标识：例如潍坊项目上，class可以添加<strong>wf_demo</strong>的<strong>wf</strong>标识进行；</p>
+<p>命名空间：通过在上层添加标识，在底层定义的时候添加标识限制，例如下例中的<code>.wf</code>：</p>
+<pre><code>&lt;header class=&quot;wf&quot;&gt;
+    &lt;div class=&quot;wrap&quot;&gt;
+        &lt;div class=&quot;wfh&quot;&gt;
+            您好，
+            &lt;a class=&quot;wfh_usr&quot;&gt;SUPERADMIN&lt;/a&gt;
+            |
+            &lt;a class=&quot;wfh_logout&quot;&gt;退出&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/header&gt;
+
+css部分:
+.wf .wrap{}
+.wf .wfh_usr{}
+.wf .wfh_logout{}
+</code></pre>
+
+<h2>js部分</h2>
+<h3>1、减少全局变量污染</h3>
+<p>我们平时写的js代码是有执行环境的，所有的js代码都是执行在window环境中。例如我们新建一个js文件，其中直接定义一个变量arg，代码如下：</p>
+<pre><code>var arg = &quot;father scrop--window scope&quot;;
+
+console.log(&quot;father arg=&quot; + arg); 
+console.log(&quot;this father arg=&quot; + this.arg);
+console.log(&quot;window father arg=&quot; + window.arg);
+
+result:
+father arg=father scope
+this father arg=father scope
+window father arg=father scope
+</code></pre>
+
+<p>代码结论：我们定义的arg变量是定义在window环境中的，如果大家都将变量定义在window中，导致window环境中变量重名的可能性很大，所以我们不建议这样写。（ps:this=window,此处涉及js的面向对象，属于进阶部分，请有兴趣的可以研究一下。）我们建议将该变量定义在window的局部环境中，其中涉及匿名自执行函数。</p>
+<pre><code>(function() {
+    var arg = &quot;children scope&quot;;
+    console.log(&quot;child arg=&quot; + arg);
+})();
+console.log(&quot;  arg=&quot; + arg); 
+console.log(&quot;this  arg=&quot; + this.arg);
+console.log(&quot;window arg=&quot; + window.arg);
+
+result:
+child arg=children scope
+Uncaught ReferenceError: arg is not defined
+at &lt;anonymous&gt;:6:28
+at Object.InjectedScript._evaluateOn (&lt;anonymous&gt;:895:140)
+at Object.InjectedScript._evaluateAndWrap (&lt;anonymous&gt;:828:34)
+at Object.InjectedScript.evaluate (&lt;anonymous&gt;:694:21)
+
+
+
+去掉console.log(&quot;  arg=&quot; + arg):
+(function() {
+    var arg = &quot;children scope&quot;;
+    console.log(&quot;child arg=&quot; + arg);
+})();
+console.log(&quot;this  arg=&quot; + this.arg);
+console.log(&quot;window arg=&quot; + window.arg);
+child arg=children scope
+this  arg=undefined
+window arg=undefined
+</code></pre>
+
+<p>匿名函数：function(){}，就是一个没法再次调用的函数，没什么东西。</p>
+<p>自执行匿名函数：（function(){}）（），此时即可以看到arg并没有在window环境中，可以将变量的作用范围设置在局部function中,这样的好处是不会产生各种各样的变量冲突，尤其是合作项目中，同时有助于js模块化，代码规范可读，如果删除该模块，自身不能工作，但是不会影响其他的模块部分，实现js代码的松耦合轻依赖。</p>
+<h2>html部分</h2>
+<p>html中尽量只有标签以及标签属性，不要包含样式style，同时建议不强制dom标签上的事件响应不通过on**属性监听，采用jquery中的事件代理，使用办法请参见jquery文档中on方法，这样写dom可实现复用性，同时事件代理更节省浏览器性能。（此处为个人倾向推荐）</p>
+<p>html代码请语义化，语义化可以参见
+<a href="http://10.110.1.135:8888/?p=86">html 语义化布局(一)</a>、（二）、<a href="http://10.110.1.135:8888/?p=108">（三）</a>文章</p>
+<p>后续会继续补充。</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

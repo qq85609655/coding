@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta http-equiv="window-target" content="_top">
+    <title>Writing to Same Doc</title>
+    <script language="JavaScript">
+    var after = function(target, method, cb, originalArgs){
+    var existing = target[method];
+    var dispatcher = existing;
+    if (!existing || existing.target !== target) {
+        //如果target中没有method方法，则为他添加一个方法method方法
+        //如果target已经拥有method方法，但target[method]中target不符合要求则将method方法他替换
+        dispatcher = target[method] = function(){
+            //由于js是此法作用域：通过阅读包括变量定义在内的数行源码就能知道变量的作用域。
+            //局部变量在声明它的函数体内以及其所嵌套的函数内始终是有定义的
+            //所以在这个函数中可以访问到dispatcher变量
+            var results = null;
+            var args = arguments;
+            if (dispatcher.around) {//如果原先拥有method方法，先调用原始method方法
+                //此时this关键字指向target所以不用target
+                results = dispatcher.around.advice.apply(this, args);
+            }
+            
+            if (dispatcher.after) {//如果存在after链则依次访问其中的advice方法
+                var _after = dispatcher.after;
+                while(_after && _after.advice) {
+                    //如果需要原始参数则传入arguments否则使用上次执行结果作为参数
+                    args = _after.originalArgs ? arguments : results;
+                    results = _after.advice.apply(this, args);
+                    _after = _after.next;
+                }
+            }
+        }
+        
+        if (existing) {
+        //函数也是对象，也可以拥有属性跟方法
+        //这里将原有的method方法放到dispatcher中
+            dispatcher.around = {
+                advice: function(){
+                    return existing.apply(target, arguments);
+                }
+            }
+        }
+        dispatcher.target = target;
+    }
+    
+    
+    var signal = {
+        originalArgs: originalArgs,//对于每个cb的参数是否使用最初的arguments
+        advice: cb,
+        remove: function() {
+            if (!signal.advice) {
+                return;
+            }
+            //remove的本质是将cb从函数链中移除，删除所有指向他的链接
+            var previous = signal.previous;
+            var next = signal.next;
+            if (!previous && !next) {
+                dispatcher.after = signal.advice = null;
+                dispatcher.target = null;
+                delete dispatcher.after;
+            } else if (!next){
+                signal.advice = null;
+                previous.next = null;
+                signal.previous = null;
+            } else if (!previous){
+                signal.advice = null;
+                dispatcher.after = next;
+                next.previous = null;
+                signal.next = null;
+            } else {
+                signal.advice = null;
+                previous.next = next;
+                next.previous = previous;
+                signal.previous = null;
+                signal.next = null;
+            }
+        }
+    }
+    
+    
+    var previous = dispatcher.after;
+    if (previous) {//将signal加入到链式结构中，处理指针关系
+        while(previous && previous.next && (previous = previous.next)){};
+        previous.next = signal;
+        signal.previous = previous;
+    } else {//如果是第一次使用调用after方法，则dispatcher的after属性指向signal
+        dispatcher.after = signal;
+    }
+    
+    cb = null;//防止内存泄露
+    return signal;
+}
+
+//1、统一事件触发顺序
+//2、标准化事件对象
+//3、模拟冒泡 emit时保持冒泡行为，注意input.onclick这种方式是不冒泡的
+//4、保持冒泡过程中event的唯一性
+
+window.Evt = (function(){
+    var on = function(target, type, listener){
+    debugger;
+        if (!listener){
+            return;
+        }
+        // 处理stopImmediatePropagation，通过包装listener来支持stopImmediatePropagation
+        if (!(window.Event && window.Event.prototype && window.Event.prototype.stopImmediatePropagation)) {
+            listener = _addStopImmediate(listener);
+        }
+    
+        if (target.addEventListener) {
+            target.addEventListener(type, listener, false);
+            
+            return {
+                remove: function(){
+                    target.removeEventListener(type, listener);
+                }
+            }
+        } else {
+            return fixAttach(target, type, listener);
+        }
+    };
+    var lastEvent; // 使用全局变量来保证一个元素的多个listenser中事件对象的一致性，冒泡过程中事件对象的一致性；在chrome这些过程中使用的是同一个event
+    //1、统一事件触发顺序
+    function fixAttach(target, type, listener) {
+    debugger;
+        var listener = fixListener(listener);
+        var method = 'on' + type;
+        return after(target, method, listener, true);
+    };
+    
+    function fixListener(listener) {
+        return function(evt){
+            //每次调用listenser之前都会调用fixEvent
+            debugger;
+            var e = _fixEvent(evt, this);//this作为currentTarget
+            if (e && e.cancelBubble && (e.currentTarget !== e.target)){
+                return;
+            }
+            var results =  listener.call(this, e);
+
+            if (e && e.modified) {
+                // 在整个函数链执行完成后将lastEvent回归到原始状态，
+                //利用异步队列，在主程序执行完后再执行事件队列中的程序代码
+                //常规的做法是在emit中判断lastEvent并设为null
+                //这充分体现了js异步编程的优势，把变量赋值跟清除代码放在一起，避免逻辑分散，缺点是不符合程序员正常思维方式
+                if(!lastEvent){
+                    setTimeout(function(){
+                        lastEvent = null;
+                    });
+                }
+                lastEvent = e;
+            }
+            return results;
+        }
+    }
+    
+    function _fixEvent(evt, sender){
+        if (!evt) {
+            evt = window.event;
+        }
+        if (!evt) { // emit没有传递事件参数，或者通过input.onclick方式调用
+            return evt;
+        }
+        if(lastEvent && lastEvent.type && evt.type == lastEvent.type){
+        //使用一个全局对象来保证在冒泡过程中访问的是同一个event对象
+        //chrome中整个事件处理过程event是唯一的
+            evt = lastEvent;
+        }
+        var fixEvent = evt;
+        // bubbles 和cancelable根据每次emit时手动传入参数设置
+        fixEvent.bubbles = typeof evt.bubbles !== 'undefined' ? evt.bubbles : false;
+        fixEvent.cancelable = typeof evt.cancelable !== 'undefined' ? evt.cancelable : true;
+        fixEvent.currentTarget = sender;
+        if (!fixEvent.target){ // 多次绑定统一事件，只fix一次
+            fixEvent.target = fixEvent.srcElement || sender;
+            
+            fixEvent.eventPhase = fixEvent.target === sender ? 2 : 3;
+            if (!fixEvent.preventDefault) {
+                fixEvent.preventDefault = _preventDefault;
+                fixEvent.stopPropagation = _stopPropagation;
+                fixEvent.stopImmediatePropagation = _stopImmediatePropagation;
+            }
+            //参考：http://www.nowamagic.net/javascript/js_EventMechanismInDetail.php
+            if( fixEvent.pageX == null && fixEvent.clientX != null ) {
+                var doc = document.documentElement, body = document.body;
+                fixEvent.pageX = fixEvent.clientX + (doc && doc.scrollLeft || body && body.scrollLeft || 0) - (doc && doc.clientLeft || body && body.clientLeft || 0);
+                fixEvent.pageY = fixEvent.clientY + (doc && doc.scrollTop  || body && body.scrollTop  || 0) - (doc && doc.clientTop  || body && body.clientTop  || 0);
+            }
+            if (!fixEvent.relatedTarget && fixEvent.fromEvent) {
+                fixEvent.relatedTarget = fixEvent.fromEvent === fixEvent.target ? fixEvent.toElement : fixEvent.fromElement;
+            }
+            // 参考: http://www.cnblogs.com/hsapphire/archive/2009/12/18/1627047.html
+            if (!fixEvent.which && fixEvent.keyCode) {
+                fixEvent.which = fixEvent.keyCode;
+            }
+        }
+        
+        return fixEvent;
+    }
+    
+    function _preventDefault(){
+        this.defaultPrevented = true;
+        this.returnValue = false;
+
+        this.modified = true;
+    }
+    
+    function _stopPropagation(){
+        this.cancelBubble = true;
+
+        this.modified = true;
+    }
+    
+    function _stopImmediatePropagation(){
+        this.isStopImmediatePropagation = true;
+        this.modified = true;
+    }
+    
+    function _addStopImmediate(listener) {
+        return function(evt) { // 除了包装listener外，还要保证所有的事件函数共用一个evt对象
+            if (!evt.isStopImmediatePropagation) {
+                //evt.stopImmediatePropagation = _stopImmediateProgation;
+                return listener.apply(this, arguments);
+            }
+        }
+    }
+    
+    // 模拟冒泡事件
+    var sythenticBubble = function(target, type, evt){
+        var method = 'on' + type;
+        var args = Array.prototype.slice.call(arguments, 2);
+        // 保证使用emit触发dom事件时，event的有效性
+        if ('parentNode' in target) {
+            var newEvent = args[0] = {};
+            for (var p in evt) {
+                newEvent[p] = evt[p];
+            }
+            
+            newEvent.preventDefault = _preventDefault;
+            newEvent.stopPropagation = _stopPropagation;
+            newEvent.stopImmediatePropagation = _stopImmediatePropagation;
+            newEvent.target = target;
+            newEvent.type = type;
+        }
+        
+        do{
+            if (target && target[method]) {
+                target[method].apply(target, args);
+            }
+        }while(target && (target = target.parentNode) && target[method] && newEvent && newEvent.bubbles);
+    }
+    
+    var emit = function(target, type, evt){
+        if (target.dispatchEvent && document.createEvent){
+            var newEvent = document.createEvent('HTMLEvents');
+            newEvent.initEvent(type, evt && !!evt.bubbles, evt && !!evt.cancelable);
+            if (evt) {
+                for (var p in evt){
+                    if (!(p in newEvent)){
+                        newEvent[p] = evt[p];
+                    }
+                }
+            }
+            
+            target.dispatchEvent(newEvent);
+        } /*else if (target.fireEvent) {
+            target.fireEvent('on' + type);// 使用fireEvent在evt参数中设置bubbles:false无效，所以弃用
+        } */else {
+            return sythenticBubble.apply(on, arguments);
+        }
+    }
+    
+    return {
+        on: on,
+        emit: emit
+    };
+})()
+</script>
+    <style type="text/css"></style>
+</head>
+<body>
+    <form>
+        <input type="button" value="Replace Content" />
+    </form>
+</body>
+</html>

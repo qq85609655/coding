@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>时间轴</title>
+	<meta http-equiv="Content-type" content="text/html;charset=utf-8">
+	<style type="text/css">
+		.clock_inner{
+			width: 100%;
+			height: 100%;
+			-webkit-clip-path: polygon(45% 10%, 55% 10%, 55% 45%, 90% 45%, 90% 55%, 45% 55%);
+			background: #7ED320;
+		}
+		.clock_outter{
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			border:3px solid #7ED320;
+			display: inline-block;
+		}
+		.circle{
+			width: 10px;
+			height:10px;
+			border-radius: 50%;
+			background: #7ED320;
+			border:2px solid transparent;
+			margin: 2px;
+		}
+		.line_vertical{
+			width:4px;
+			height: 40px;
+			background: #7ED320;
+			margin-left:7px;
+		}
+		.h10{
+			height:10px;
+		}
+		.m{
+			margin-left: 15px;
+		}
+		.timel,.timeh{
+			width:30px;
+		}
+		.timel div,.timeh div{
+			margin-left:auto;
+			margin-right:auto;
+		}
+		.timeline{
+			display:-webkit-box;
+			-webkit-box-align:center;
+		}
+	</style>
+</head>
+<body>
+<div class="timeline">
+	<div class="timeline_l">
+		12:32:32<br>03-24
+	</div>
+	<div class="timeline_r">
+		<div class="timeh">
+			<div class="clock_outter">
+				<div class="clock_inner"></div>
+			</div>
+			<div class="line_vertical h10 m"></div>
+		</div>
+		<div class="timel">
+			<div class="line_vertical"></div>
+			<div class="circle"></div>
+			<div class="line_vertical"></div>
+		</div>
+	</div>
+	</div>
+</body>
+</html>

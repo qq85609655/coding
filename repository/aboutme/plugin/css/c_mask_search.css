@@ -1,0 +1,198 @@
+/**
+ * 样式初始化
+ */
+body,
+ul,
+ol,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+table,
+td,
+img,
+div {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+html {
+  -webkit-text-size-adjust: none;
+}
+body {
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  -webkit-user-select: none;
+  user-select: none;
+}
+div {
+  outline: 0 !important;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+/*
+布局样式
+ */
+.ui {
+  display: box;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+.borderstyle {
+  border: 1px solid #ccc;
+  border-radius: 1px;
+}
+.div_main_f_content {
+  width: 100%;
+  font-size: 2.5em;
+  margin-top: 10%;
+}
+.div_main_f_content .div_main_s_search {
+  margin: 0 auto;
+}
+.div_main_f_content .div_search_t_bg {
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  margin-top: 2em;
+}
+.a_search_t,
+.ui_input_t {
+  display: block;
+  width: 5em;
+  height: 2.2em;
+  line-height: 2.2em;
+  border: 1px solid #ccc;
+  border-radius: 1px;
+}
+.div_search_t_img {
+  text-align: center;
+}
+.div_input_hislist .ui_input_t {
+  width: 30em;
+  display: block;
+  font-size: 1em;
+  border: 1px solid #C3C6C9;
+  padding-left: 10px;
+}
+.a_search_t {
+  background-color: #4990E2;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+.search_click_t {
+  font-size: 0.8em;
+}
+.ul_hislist_n {
+  margin-top:4px;
+  width: 100%;
+  font-size: 0.6em;
+}
+.ul_hislist {
+  background-color: white;
+  -webkit-border-radius: 0.6em;
+}
+.li_hislist {
+  width: 100%;
+  height: 3em;
+  line-height: 3em;
+  font-size: 1.1em;
+  border-bottom: 3px solid #ccc;
+  padding-left: 0.5em;
+}
+.li_clearhis {
+  width: 100%;
+  height: 3em;
+  font-size: 1.1em;
+  line-height: 3em;
+  padding-left: 20%;
+  background-position: 0.6em center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-image: url(../images/deleteHis.png);
+}
+.div_mask {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  background-color: #7F7F7F;
+  opacity: 0.5;
+  z-index: 100;
+}
+.li_select_item_mask {
+  background-color: white;
+  font-size: 4em;
+}
+.li_select_item_three {
+  border-left: 5px solid #ccc;
+  border-right: 5px solid #ccc;
+  border-bottom: 5px solid #ccc;
+}
+.bg_img {
+  background-image: url(../images/search-bg.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/**
+ * 背景为黑时的查询界面
+ */
+.div_f_mask {
+  background-color: rgba(0,0,0,0.5);
+  z-index: 100;
+  font-size: 2.5em;
+}
+.div_search_t_bg_mask {
+  display: -webkit-box;
+  font-size: 0.7em;
+}
+.ui_input_t_mask {
+  height: 1.9em;
+  line-height: 2.1em;
+  font-size: 0.8em;
+  border-top-left-radius: 0.75em;
+  border-bottom-left-radius: 0.75em;
+  display: block;
+  border: 0;
+  padding-left: 5px;
+  outline: none;
+}
+.a_search_t_mask {
+  display: block;
+  width: 1.8em;
+  height: 1.5em;
+  line-height: 1.5em;
+  padding-right: 2px;
+  border-top-right-radius: 45%;
+  border-bottom-right-radius: 45%;
+  background-image: url(../images/search-btn2.png);
+  background-repeat: no-repeat;
+  background-position: 2px center;
+  background-size: 1.2em;
+  background-color: white;
+  border-left: 1px solid #ccc;
+}
