@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>event order test</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="renderer" content="webkit">
+		<style>
+			.demo{
+				height: 50px;
+				background-color: lightgreen;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div class="demo" onclick="fun1()">
+			<div>2222</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+	var dom=document.querySelector(".demo");
+	dom.addEventListener("click",function(){
+		alert(0);
+	},true);
+	
+	dom.addEventListener("click",function(event){
+		alert(2);
+		event.preventDefault();
+	});
+	dom.addEventListener("click",function(){
+		alert(3);
+	});
+	
+	function fun1(){
+		alert(1);
+	}
+	</script>
+</html>

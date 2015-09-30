@@ -1,6 +1,8 @@
 (function() {
 	window.addEventListener("DOMContentLoaded", function(e) {
 		init();
+		var e=new Event("click",{"bubbles":true,"cancelable":false});
+		document.querySelectorAll(".s-navbar-li").item(1).dispatchEvent(e);
 	}, false);
 	function init() {
 		var pre = document.querySelector(".s-tab-search"),
@@ -28,7 +30,8 @@
 					tarh.classList.toggle("act");
 				})()
 			e.target.classList.contains("n-banner")&&popup();
-		}, false)
+		}, false);
+
 	}
 })();
 
