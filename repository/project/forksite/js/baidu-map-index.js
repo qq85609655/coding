@@ -1,9 +1,13 @@
 (function() {
 	window.addEventListener("DOMContentLoaded", function(e) {
 		init();
-		var e=new Event("click",{"bubbles":true,"cancelable":false});
+		var e = new Event("click", {
+			"bubbles": true,
+			"cancelable": false
+		});
 		document.querySelectorAll(".s-navbar-li").item(1).dispatchEvent(e);
 	}, false);
+
 	function init() {
 		var pre = document.querySelector(".s-tab-search"),
 			hide = false;
@@ -25,18 +29,18 @@
 
 			var tarh = e.target.classList.contains('s-hide-bar') ? e.target : e.target.parentElement;
 			tarh.classList.contains('s-hide-bar') && (function() {
-					tarh.parentNode.children.item(0).classList.toggle("hide");
-					tarh.parentNode.children.item(1).classList.toggle("hide");
-					tarh.classList.toggle("act");
-				})()
-			e.target.classList.contains("n-banner")&&popup();
+				tarh.parentNode.children.item(0).classList.toggle("hide");
+				tarh.parentNode.children.item(1).classList.toggle("hide");
+				tarh.classList.toggle("act");
+			})()
+			e.target.classList.contains("n-banner") && popup();
 		}, false);
 
 	}
 })();
 
-function popup(target){
-	document.getElementById("mask").style.display="block";
-	var tar=target||document.getElementById("popup-main");
-	tar.style.display="block";
+function popup(target) {
+	document.getElementById("mask").style.display = "block";
+	var tar = target || document.getElementById("popup-main");
+	tar.style.display = "block";
 }

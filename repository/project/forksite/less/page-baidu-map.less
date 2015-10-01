@@ -220,7 +220,6 @@
 		.pa;
 		bottom: 0px;
 		width: 100%;
-
 	}
 	.s-search-footer {
 		.color(#999999);
@@ -258,22 +257,53 @@
 	.green {
 		color: #a2c159;
 	}
-
-	.s-tab-route{
-		.s-route-li{
-			width:20%;
+	.s-tab-route {
+		.s-route-li {
+			width: 20%;
 			.inline-block;
 			line-height: 30px;
-		}	
-		.fa{
-			width: 13px;
+		}
+		.fa {
+			width: 15px;
 			height: 16px;
 			.inline-block;
 			.vm;
+			.mr(5px);
+			vertical-align: text-bottom;
 		}
-		.fa-bus{
-			.bgimg("../images/map-search-1.png",-15px -192px);
+		.fa-bus {
+			.bgimg("../images/map-search-1.png", 1px -192px);
 		}
-
+		.fa-car {
+			.bgimg("../images/map-search-1.png", -29px -194px);
+		}
+		.fa-foot {
+			.bgimg("../images/map-search-1.png", -102px -190px);
+		}
+		.fa-bike {
+			.bgimg("../images/map-search-1.png", -85px -217px);
+		}
+		.active {
+			.color(#3385FF);
+			.fw;
+			.fa-bus {
+				.bgimg("../images/map-search-1.png", -14px -192px);
+			}
+			.fa-car {
+				.bgimg("../images/map-search-1.png", -45px -194px);
+			}
+			.fa-foot {
+				.bgimg("../images/map-search-1.png",-120px -190px);
+			}
+			.fa-bike {
+				.bgimg("../images/map-search-1.png",-108px -217px);
+			}
+		}
+		.s-route-nav {
+			.txtc;
+			.fs(12px);
+			.ff;
+			.bb(#A5C4FF);
+		}
 	}
 }

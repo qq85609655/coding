@@ -917,16 +917,70 @@
   line-height: 30px;
 }
 .section .s-tab-route .fa {
-  width: 13px;
+  width: 15px;
   height: 16px;
   display: inline-block;
   *display: inline;
   *zoom: 1;
   vertical-align: middle;
+  margin-right: 5px;
+  vertical-align: text-bottom;
 }
 .section .s-tab-route .fa-bus {
   background-image: url("../images/map-search-1.png");
   background-repeat: no-repeat;
-  background-position: -15px -192px;
+  background-position: 1px -192px;
   _background: none;
+}
+.section .s-tab-route .fa-car {
+  background-image: url("../images/map-search-1.png");
+  background-repeat: no-repeat;
+  background-position: -29px -194px;
+  _background: none;
+}
+.section .s-tab-route .fa-foot {
+  background-image: url("../images/map-search-1.png");
+  background-repeat: no-repeat;
+  background-position: -102px -190px;
+  _background: none;
+}
+.section .s-tab-route .fa-bike {
+  background-image: url("../images/map-search-1.png");
+  background-repeat: no-repeat;
+  background-position: -85px -217px;
+  _background: none;
+}
+.section .s-tab-route .active {
+  color: #3385ff;
+  font-weight: bold;
+}
+.section .s-tab-route .active .fa-bus {
+  background-image: url("../images/map-search-1.png");
+  background-repeat: no-repeat;
+  background-position: -14px -192px;
+  _background: none;
+}
+.section .s-tab-route .active .fa-car {
+  background-image: url("../images/map-search-1.png");
+  background-repeat: no-repeat;
+  background-position: -45px -194px;
+  _background: none;
+}
+.section .s-tab-route .active .fa-foot {
+  background-image: url("../images/map-search-1.png");
+  background-repeat: no-repeat;
+  background-position: -120px -190px;
+  _background: none;
+}
+.section .s-tab-route .active .fa-bike {
+  background-image: url("../images/map-search-1.png");
+  background-repeat: no-repeat;
+  background-position: -108px -217px;
+  _background: none;
+}
+.section .s-tab-route .s-route-nav {
+  text-align: center;
+  font-size: 12px;
+  font-family: 'Microsoft Yahei';
+  border-bottom: 1px solid #a5c4ff;
 }
