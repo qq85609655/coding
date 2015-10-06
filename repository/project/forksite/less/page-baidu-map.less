@@ -262,6 +262,7 @@
 			width: 20%;
 			.inline-block;
 			line-height: 30px;
+			.pv;
 		}
 		.fa {
 			width: 15px;
@@ -286,6 +287,7 @@
 		.active {
 			.color(#3385FF);
 			.fw;
+
 			.fa-bus {
 				.bgimg("../images/map-search-1.png", -14px -192px);
 			}
@@ -293,10 +295,10 @@
 				.bgimg("../images/map-search-1.png", -45px -194px);
 			}
 			.fa-foot {
-				.bgimg("../images/map-search-1.png",-120px -190px);
+				.bgimg("../images/map-search-1.png", -120px -190px);
 			}
 			.fa-bike {
-				.bgimg("../images/map-search-1.png",-108px -217px);
+				.bgimg("../images/map-search-1.png", -108px -217px);
 			}
 		}
 		.s-route-nav {
@@ -305,5 +307,333 @@
 			.ff;
 			.bb(#A5C4FF);
 		}
+		.s-route-histroy {
+			font-size: 13px;
+			font-weight: normal;
+			.b(#ccc);
+			.m(10px);
+
+			.fa {
+				width: 20px;
+				height: 14px;
+				.inline-block;
+				.bgimg("../images/map-route-1.png", 3px 0px);
+			}
+			.s-history-li {
+				.pl(10px);
+				.pt(5px);
+				line-height: 30px;
+			}
+			.s-h-bottom {
+				.txtr;
+				.pr(20px);
+				color: #B2B2B2;
+				.poi;
+			}
+		}
+	}
+	.arrow-up {
+		.pa;
+		.bt(#A5C4FF);
+		.bl(#A5C4FF);
+		transform: rotate(45deg);
+		width: 7px;
+		height: 7px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		bottom: -4px;
+		background-color: #fff;
+		.hide;
+	}
+	.active .arrow-up {
+		display: block;
+	}
+	.s-route-banner {
+		.txtc;
+		.pa;
+		width: 100%;
+		bottom: 0;
+		.mb(14px);
+	}
+	.s-route-search {
+		.bb(#ccc);
+
+		.s-route-exchange {
+			.inline-block;
+			width: 10%;
+			height: 70px;
+			line-height: 70px;
+			vertical-align: top;
+			.txtc;
+
+			.s-r-ex {
+				.inline-block;
+				width: 17px;
+				height: 14px;
+				.bgimg("../images/map-search-1.png", -38px -224px);
+			}
+		}
+		.s-route-input {
+			.inline-block;
+			width: 70%;
+		}
+		.s-route-btn {
+			.inline-block;
+			width: 15%;
+			height: 70px;
+			line-height: 70px;
+			vertical-align: top;
+			background: #F5F7FA;
+			border: 1px solid #f2f2f2;
+			text-align: center;
+			cursor: pointer;
+			font-size: 13px;
+			color: #999;
+		}
+		.s-route-btn:hover {
+			.bgcolor(rgb(51, 133, 255));
+			color: #fff;
+		}
+		.s-route-i {
+			line-height: 35px;
+			width: 90%;
+			border: none;
+			outline: none;
+			border-bottom: 1px solid #EAEBED;
+			font-size: 13px;
+			font-weight: normal;
+			.pl(5px);
+			.ml(5px);
+		}
+		.s-route-icon {
+			width: 11px;
+			height: 11px;
+			.bgimg("../images/map-search-1.png", -44px -210px);
+			.inline-block;
+			.vm;
+		}
+		.icon-red-cicle {
+			.bgimg("../images/map-search-1.png", -57px -210px);
+		}
+		.border-none {
+			border: none;
+		}
+	}
+	.s-tab-subway {
+		.s-subway-nav {
+			.bb(#A5C4FF);
+		}
+		.fa {
+			.bgimg("../images/map-subway-icon-1.png", -60px 0);
+			width: 16px;
+			height: 16px;
+			.inline-block;
+			.vm;
+			.fs(13px);
+			.pr(5px);
+		}
+		.fa-station {
+			.bgimg("../images/map-subway-icon-1.png", -20px 0);
+		}
+		.active {
+			.fa {
+				.bgimg("../images/map-subway-icon-1.png", -40px 0);
+				.fw;
+			}
+			.fa-station {
+				.bgimg("../images/map-subway-icon-1.png", 0px 0);
+			}
+			.s-route-search {
+				display: block;
+			}
+		}
+		.s-subway-station {
+			.hide;
+
+			.s-route-i {
+				height: 70px;
+				line-height: 70px;
+				vertical-align: top;
+			}
+			.s-route-input {
+				height: 70px;
+				line-height: 70px;
+			}
+		}
+	}
+	.s-subway-li {
+		width: 45%;
+		.inline-block;
+		.txtc;
+		line-height: 30px;
+		.pv;
+	}
+	.s-tab-collect {
+		.fs(13px);
+
+		.s-subway-nav {
+			.fw;
+		}
+		.fa {
+			width: 16px;
+			height: 16px;
+			.inline-block;
+			.vm;
+			.fs(13px);
+			.pr(5px);
+		}
+		.fa-route {
+			.bgimg("../images/map-collection.png", 0 -320px);
+		}
+		.fa-local {
+			.bgimg("../images/map-collection.png", 0 -280px);
+		}
+		.s-subway-nav {
+			.bb(#A5C4FF);
+		}
+		.s-subway-nav {
+			.active {
+				color: #3385ff;
+
+				.fa-route {
+					.bgimg("../images/map-collection.png", 0 -300px);
+				}
+				.fa-local {
+					.bgimg("../images/map-collection.png", 0 -260px);
+				}
+			}
+		}
+		.s-collect-catalog {
+			.m(10px 5px);
+			line-height: 25px;
+			.txtc;
+			.fs(0px);
+
+			.s-c-li {
+				.inline-block;
+				width: 30%;
+				.b(#D5D8DC);
+				.bgcolor(#F8F9FC);
+				.fs(13px);
+				.poi;
+			}
+			.fa-arrow {
+				.triangle-down;
+				.vm;
+				.ml(10px);
+				border-width: 4px;
+			}
+			.edit {
+				.bgcolor(#fff);
+				.ml(10px);
+			}
+			.filter {
+				border-right: none;
+			}
+		}
+		.s-coll-ul-sub {
+			.fs(13px);
+			.mt(5px);
+			.m(0 10px);
+			.pt(14px);
+		}
+		.s-coll-ul-sub:hover {
+			.bgcolor(#F6F6F6);
+			.poi;
+
+			.s-coll-item:last-child {
+				visibility: visible;
+			}
+		}
+		.s-coll-item {
+			color: #999999;
+			line-height: 28px;
+			.pl(30px);
+			.m(0px 5px);
+		}
+		.item-name {
+			.color(#3366CC);
+			.bgimg("../images/map-collection.png", 5px -60px);
+			line-height: 22px;
+		}
+		.item-addr {
+			.color(#666666);
+		}
+	}
+	.page {
+		.page-index {
+			width: 18px;
+			line-height: 16px;
+			.fs(12px);
+			padding: 6px 6px
+		}
+		.page-up, .page-down {
+			width: 50px;
+		}
+	}
+	#coll-div {
+		.txtc;
+		.mt(30px);
+		.mb(20px);
+	}
+	.fa-mark {
+		.bgimg("../images/map-collection-icon.png", 0 0);
+	}
+	.fa-del {
+		.bgimg("../images/map-collection-icon.png", 0 -20px);
+	}
+	.fa-rename {
+		.bgimg("../images/map-collection-icon.png", 0 -40px);
+	}
+	.s-coll-item:last-child {
+		visibility: hidden;
+	}
+	.s-collect-list {
+		.s-coll-itmes {
+			.pa;
+			bottom: 0px;
+			top: 70px;
+			width: 100%;
+			overflow: hidden;
+		}
+	}
+	.scroll-emulate {
+		.scroll-emulate-area {
+			.mr(15px);
+		}
+		.scroll-bar {
+			.pa;
+			width:9px;
+			right:4px;
+			top:0px;
+			height:100%;
+			.bgimg("../images/scroll-bar.gif",3px 0);
+			.poi;
+		}
+		
+		.scroll-bg{
+			.pa;
+			width:100%;
+			top:0;
+			left:0;
+			height:40%;
+		}
+		.scroll-bar-up{
+			width:100%;
+			height:95%;
+			.bgimg("../images/scroll-bar.gif",-12px 50%);
+		}
+		.scroll-up-point{
+			height:4px;
+			.bgimg("../images/scroll-bar.gif",-36px 0);
+		}
+		.scroll-down-point{
+			height:4px;
+			.bgimg("../images/scroll-bar.gif",-36px -4px);
+		}
+	}
+	.page{
+		.pb(20px);
 	}
 }

@@ -5,8 +5,8 @@
  */
 function Page(option) {
 	this.index = option.index || 1,
-		this.size = option.size || 10,
-		this.totle = option.totle || 23, //测试数据8 10 11 19 23
+		this.size = option.size || 4,
+		this.totle = option.totle || 6, //测试数据8 10 11 19 23
 		this.startindex = 1,
 		this.endindex = this.size > this.totle ? this.totle : this.size,
 		this.pagecontainer = option.container || document,

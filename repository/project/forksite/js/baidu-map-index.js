@@ -5,7 +5,7 @@
 			"bubbles": true,
 			"cancelable": false
 		});
-		document.querySelectorAll(".s-navbar-li").item(1).dispatchEvent(e);
+		document.querySelectorAll(".s-navbar-li").item(3).dispatchEvent(e);
 	}, false);
 
 	function init() {

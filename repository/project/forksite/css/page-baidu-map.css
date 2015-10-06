@@ -915,6 +915,7 @@
   *display: inline;
   *zoom: 1;
   line-height: 30px;
+  position: relative;
 }
 .section .s-tab-route .fa {
   width: 15px;
@@ -983,4 +984,402 @@
   font-size: 12px;
   font-family: 'Microsoft Yahei';
   border-bottom: 1px solid #a5c4ff;
+}
+.section .s-tab-route .s-route-histroy {
+  font-size: 13px;
+  font-weight: normal;
+  border: 1px solid #cccccc;
+  margin: 10px;
+}
+.section .s-tab-route .s-route-histroy .fa {
+  width: 20px;
+  height: 14px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  background-image: url("../images/map-route-1.png");
+  background-repeat: no-repeat;
+  background-position: 3px 0px;
+  _background: none;
+}
+.section .s-tab-route .s-route-histroy .s-history-li {
+  padding-left: 10px;
+  padding-top: 5px;
+  line-height: 30px;
+}
+.section .s-tab-route .s-route-histroy .s-h-bottom {
+  text-align: right;
+  padding-right: 20px;
+  color: #B2B2B2;
+  cursor: pointer;
+}
+.section .arrow-up {
+  position: absolute;
+  border-top: 1px solid #a5c4ff;
+  border-left: 1px solid #a5c4ff;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  width: 7px;
+  height: 7px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -4px;
+  background-color: #fff;
+  display: none;
+}
+.section .active .arrow-up {
+  display: block;
+}
+.section .s-route-banner {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  margin-bottom: 14px;
+}
+.section .s-route-search {
+  border-bottom: 1px solid #cccccc;
+}
+.section .s-route-search .s-route-exchange {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 10%;
+  height: 70px;
+  line-height: 70px;
+  vertical-align: top;
+  text-align: center;
+}
+.section .s-route-search .s-route-exchange .s-r-ex {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 17px;
+  height: 14px;
+  background-image: url("../images/map-search-1.png");
+  background-repeat: no-repeat;
+  background-position: -38px -224px;
+  _background: none;
+}
+.section .s-route-search .s-route-input {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 70%;
+}
+.section .s-route-search .s-route-btn {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 15%;
+  height: 70px;
+  line-height: 70px;
+  vertical-align: top;
+  background: #F5F7FA;
+  border: 1px solid #f2f2f2;
+  text-align: center;
+  cursor: pointer;
+  font-size: 13px;
+  color: #999;
+}
+.section .s-route-search .s-route-btn:hover {
+  background-color: #3385ff;
+  color: #fff;
+}
+.section .s-route-search .s-route-i {
+  line-height: 35px;
+  width: 90%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #EAEBED;
+  font-size: 13px;
+  font-weight: normal;
+  padding-left: 5px;
+  margin-left: 5px;
+}
+.section .s-route-search .s-route-icon {
+  width: 11px;
+  height: 11px;
+  background-image: url("../images/map-search-1.png");
+  background-repeat: no-repeat;
+  background-position: -44px -210px;
+  _background: none;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+}
+.section .s-route-search .icon-red-cicle {
+  background-image: url("../images/map-search-1.png");
+  background-repeat: no-repeat;
+  background-position: -57px -210px;
+  _background: none;
+}
+.section .s-route-search .border-none {
+  border: none;
+}
+.section .s-tab-subway .s-subway-nav {
+  border-bottom: 1px solid #a5c4ff;
+}
+.section .s-tab-subway .fa {
+  background-image: url("../images/map-subway-icon-1.png");
+  background-repeat: no-repeat;
+  background-position: -60px 0;
+  _background: none;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+  font-size: 13px;
+  padding-right: 5px;
+}
+.section .s-tab-subway .fa-station {
+  background-image: url("../images/map-subway-icon-1.png");
+  background-repeat: no-repeat;
+  background-position: -20px 0;
+  _background: none;
+}
+.section .s-tab-subway .active .fa {
+  background-image: url("../images/map-subway-icon-1.png");
+  background-repeat: no-repeat;
+  background-position: -40px 0;
+  _background: none;
+  font-weight: bold;
+}
+.section .s-tab-subway .active .fa-station {
+  background-image: url("../images/map-subway-icon-1.png");
+  background-repeat: no-repeat;
+  background-position: 0px 0;
+  _background: none;
+}
+.section .s-tab-subway .active .s-route-search {
+  display: block;
+}
+.section .s-tab-subway .s-subway-station {
+  display: none;
+}
+.section .s-tab-subway .s-subway-station .s-route-i {
+  height: 70px;
+  line-height: 70px;
+  vertical-align: top;
+}
+.section .s-tab-subway .s-subway-station .s-route-input {
+  height: 70px;
+  line-height: 70px;
+}
+.section .s-subway-li {
+  width: 45%;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  text-align: center;
+  line-height: 30px;
+  position: relative;
+}
+.section .s-tab-collect {
+  font-size: 13px;
+}
+.section .s-tab-collect .s-subway-nav {
+  font-weight: bold;
+}
+.section .s-tab-collect .fa {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+  font-size: 13px;
+  padding-right: 5px;
+}
+.section .s-tab-collect .fa-route {
+  background-image: url("../images/map-collection.png");
+  background-repeat: no-repeat;
+  background-position: 0 -320px;
+  _background: none;
+}
+.section .s-tab-collect .fa-local {
+  background-image: url("../images/map-collection.png");
+  background-repeat: no-repeat;
+  background-position: 0 -280px;
+  _background: none;
+}
+.section .s-tab-collect .s-subway-nav {
+  border-bottom: 1px solid #a5c4ff;
+}
+.section .s-tab-collect .s-subway-nav .active {
+  color: #3385ff;
+}
+.section .s-tab-collect .s-subway-nav .active .fa-route {
+  background-image: url("../images/map-collection.png");
+  background-repeat: no-repeat;
+  background-position: 0 -300px;
+  _background: none;
+}
+.section .s-tab-collect .s-subway-nav .active .fa-local {
+  background-image: url("../images/map-collection.png");
+  background-repeat: no-repeat;
+  background-position: 0 -260px;
+  _background: none;
+}
+.section .s-tab-collect .s-collect-catalog {
+  margin: 10px 5px;
+  line-height: 25px;
+  text-align: center;
+  font-size: 0px;
+}
+.section .s-tab-collect .s-collect-catalog .s-c-li {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 30%;
+  border: 1px solid #d5d8dc;
+  background-color: #f8f9fc;
+  font-size: 13px;
+  cursor: pointer;
+}
+.section .s-tab-collect .s-collect-catalog .fa-arrow {
+  width: 0;
+  height: 0;
+  border-width: 5px;
+  border-style: solid dashed dotted dashed;
+  border-color: #cccccc transparent transparent;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: bottom;
+  vertical-align: middle;
+  margin-left: 10px;
+  border-width: 4px;
+}
+.section .s-tab-collect .s-collect-catalog .edit {
+  background-color: #ffffff;
+  margin-left: 10px;
+}
+.section .s-tab-collect .s-collect-catalog .filter {
+  border-right: none;
+}
+.section .s-tab-collect .s-coll-ul-sub {
+  font-size: 13px;
+  margin-top: 5px;
+  margin: 0 10px;
+  padding-top: 14px;
+}
+.section .s-tab-collect .s-coll-ul-sub:hover {
+  background-color: #f6f6f6;
+  cursor: pointer;
+}
+.section .s-tab-collect .s-coll-ul-sub:hover .s-coll-item:last-child {
+  visibility: visible;
+}
+.section .s-tab-collect .s-coll-item {
+  color: #999999;
+  line-height: 28px;
+  padding-left: 30px;
+  margin: 0px 5px;
+}
+.section .s-tab-collect .item-name {
+  color: #3366cc;
+  background-image: url("../images/map-collection.png");
+  background-repeat: no-repeat;
+  background-position: 5px -60px;
+  _background: none;
+  line-height: 22px;
+}
+.section .s-tab-collect .item-addr {
+  color: #666666;
+}
+.section .page .page-index {
+  width: 18px;
+  line-height: 16px;
+  font-size: 12px;
+  padding: 6px 6px;
+}
+.section .page .page-up,
+.section .page .page-down {
+  width: 50px;
+}
+.section #coll-div {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.section .fa-mark {
+  background-image: url("../images/map-collection-icon.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  _background: none;
+}
+.section .fa-del {
+  background-image: url("../images/map-collection-icon.png");
+  background-repeat: no-repeat;
+  background-position: 0 -20px;
+  _background: none;
+}
+.section .fa-rename {
+  background-image: url("../images/map-collection-icon.png");
+  background-repeat: no-repeat;
+  background-position: 0 -40px;
+  _background: none;
+}
+.section .s-coll-item:last-child {
+  visibility: hidden;
+}
+.section .s-collect-list .s-coll-itmes {
+  position: absolute;
+  bottom: 0px;
+  top: 70px;
+  width: 100%;
+  overflow: hidden;
+}
+.section .scroll-emulate .scroll-emulate-area {
+  margin-right: 15px;
+}
+.section .scroll-emulate .scroll-bar {
+  position: absolute;
+  width: 9px;
+  right: 4px;
+  top: 0px;
+  height: 100%;
+  background-image: url("../images/scroll-bar.gif");
+  background-repeat: no-repeat;
+  background-position: 3px 0;
+  _background: none;
+  cursor: pointer;
+}
+.section .scroll-emulate .scroll-bg {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 40%;
+}
+.section .scroll-emulate .scroll-bar-up {
+  width: 100%;
+  height: 95%;
+  background-image: url("../images/scroll-bar.gif");
+  background-repeat: no-repeat;
+  background-position: -12px 50%;
+  _background: none;
+}
+.section .scroll-emulate .scroll-up-point {
+  height: 4px;
+  background-image: url("../images/scroll-bar.gif");
+  background-repeat: no-repeat;
+  background-position: -36px 0;
+  _background: none;
+}
+.section .scroll-emulate .scroll-down-point {
+  height: 4px;
+  background-image: url("../images/scroll-bar.gif");
+  background-repeat: no-repeat;
+  background-position: -36px -4px;
+  _background: none;
+}
+.section .page {
+  padding-bottom: 20px;
 }

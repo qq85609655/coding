@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>mouseup</title>
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1"/>
+		<meta name="renderer"content="webkit">
+		
+		<style>
+		.mouse{
+			background-color:lightgreen;
+			height:190px;
+		}
+		.mouse-1{
+			width:700px;
+			background-color:#000;
+			height:150px;
+		}
+		.mouse-2{
+			width:500px;
+			background-color:red;
+			height:130px;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="mouse">
+			<div class="mouse-1">
+				<div class="mouse-2"></div>
+			</div>
+		</div>
+		<script>
+		// document.querySelector(".mouse-1").addEventListener('mouseleave', function(){
+		// 	alert(" .mouse-1 mouseleave");//mouseleave事件不会冒泡，进入子元素不会触发改事件
+		// });
+		// document.querySelector(".mouse-2").addEventListener('mouseleave', function(){
+		// 	alert(" .mouse-2 mouseleave");
+		// })
+		document.querySelector(".mouse-1").addEventListener('mouseover', function(){
+			alert(" .mouse-1 mouseover");//mouseleave事件不会冒泡，进入子元素不会触发改事件
+		});
+		document.querySelector(".mouse-2").addEventListener('mouseover', function(){
+			alert(" .mouse-2 mouseover");
+		})
+		// document.querySelector(".mouse-1").addEventListener('mouseenter', function(){
+		// 	alert(" .mouse-1 mouseenter");//mouseenter事件不会冒泡，进入子元素不会触发改事件
+		// });
+		// document.querySelector(".mouse-2").addEventListener('mouseenter', function(){
+		// 	alert(" .mouse-2 mouseenter");
+		// })
+		// document.querySelector(".mouse-1").addEventListener('mouseup', function(){
+		// 	alert(" .mouse-1 mouseup");//冒泡
+		// })
+		// document.querySelector(".mouse-1").addEventListener('mousedown', function(){
+		// 	alert(" .mouse-1 mousedown");
+		// })
+		// document.querySelector(".mouse-1").addEventListener('mousemove', function(){
+		// 	alert(" .mouse-1 mousemove");
+		// })
+		</script>
+	</body>
+</html>
