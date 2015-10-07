@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>scroll-emulate</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="renderer" content="webkit">
+		<link rel="stylesheet"href="css/normalize.css">
+		<link rel="stylesheet"href="css/common.css">
+		<script type="text/javascript"src="js/page.js"></script>
+		<script type="text/javascript"src="js/scroll-emulate.js"></script>
+		<script type="text/javascript">
+			window.addEventListener("DOMContentLoaded", function() {
+				new Page({
+					"container": document.getElementById("coll-div")
+					}).init();
+				new Scroll(document.querySelectorAll(".scroll-emulate").item(0)).init();
+			});
+		</script>
+		<style type="text/css">
+			.intro,.demo{
+				width: 80%;
+				margin:0 auto;
+			}
+			.scroll-emulate{
+				border:1px solid #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="intro">
+			<h3>模拟对象：百度地图收藏滚动列表以及分页，用于仿站</h3>
+			<br>
+			<img src="pic/scroll-page.png">
+			<div class="scroll">
+				<h3>滚动条模拟</h3>
+				<p class="p">
+					滚动条模拟百度地图中收藏的滚动条进行编码<br>
+					使用方式：<br>
+					new Scroll(document.querySelectorAll(".scroll-emulate").item(0)).init();
+					<br>
+				</p>
+			</div>
+			<div class="scroll">
+				<h3>分页</h3>
+				<p class="p">
+					分页模拟百度地图收藏中的分页设计风格编码，效果见滚动条的最后一行<br>
+					使用方式：<br>
+					new Page({
+					"container": document.getElementById("coll-div")
+					}).init();<br>
+					container为定义的盒子
+				</p>
+			</div>
+		</div>
+		<div class="demo">
+			<h3>效果演示：</h3>
+			<br>
+			<div class="scroll-emulate">
+				<div class="scroll-emulate-area">
+					<ul class="s-coll-ul-sub">
+						<li class="s-coll-item item-name">山东省公安厅1</li>
+						<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
+						<li class="s-coll-item item-date">2015-09-11 来自手机</li>
+						<li class="s-coll-item">
+							<i class="fa fa-mark"></i>标签
+							<i class="fa fa-rename"></i>重命名
+							<i class="fa fa-del"></i>删除
+						</li>
+					</ul>
+					<ul class="s-coll-ul-sub">
+						<li class="s-coll-item item-name">山东省公安厅2</li>
+						<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
+						<li class="s-coll-item item-date">2015-09-11 来自手机</li>
+						<li class="s-coll-item">
+							<i class="fa fa-mark"></i>标签
+							<i class="fa fa-rename"></i>重命名
+							<i class="fa fa-del"></i>删除
+						</li>
+					</ul>
+					<ul class="s-coll-ul-sub">
+						<li class="s-coll-item item-name">山东省公安厅3</li>
+						<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
+						<li class="s-coll-item item-date">2015-09-11 来自手机</li>
+						<li class="s-coll-item">
+							<i class="fa fa-mark"></i>标签
+							<i class="fa fa-rename"></i>重命名
+							<i class="fa fa-del"></i>删除
+						</li>
+					</ul>
+					<ul class="s-coll-ul-sub">
+						<li class="s-coll-item item-name">山东省公安厅4</li>
+						<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
+						<li class="s-coll-item item-date">2015-09-11 来自手机</li>
+						<li class="s-coll-item">
+							<i class="fa fa-mark"></i>标签
+							<i class="fa fa-rename"></i>重命名
+							<i class="fa fa-del"></i>删除
+						</li>
+					</ul>
+					<ul class="s-coll-ul-sub">
+						<li class="s-coll-item item-name">山东省公安厅5</li>
+						<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
+						<li class="s-coll-item item-date">2015-09-11 来自手机</li>
+						<li class="s-coll-item">
+							<i class="fa fa-mark"></i>标签
+							<i class="fa fa-rename"></i>重命名
+							<i class="fa fa-del"></i>删除
+						</li>
+					</ul>
+					<ul class="s-coll-ul-sub">
+						<li class="s-coll-item item-name">山东省公安厅6</li>
+						<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
+						<li class="s-coll-item item-date">2015-09-11 来自手机</li>
+						<li class="s-coll-item">
+							<i class="fa fa-mark"></i>标签
+							<i class="fa fa-rename"></i>重命名
+							<i class="fa fa-del"></i>删除
+						</li>
+					</ul>
+					<ul class="s-coll-ul-sub">
+						<li class="s-coll-item item-name">山东省公安厅7</li>
+						<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
+						<li class="s-coll-item item-date">2015-09-11 来自手机</li>
+						<li class="s-coll-item">
+							<i class="fa fa-mark"></i>标签
+							<i class="fa fa-rename"></i>重命名
+							<i class="fa fa-del"></i>删除
+						</li>
+					</ul>
+					<ul class="s-coll-ul-sub">
+						<li class="s-coll-item item-name">山东省公安厅8</li>
+						<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
+						<li class="s-coll-item item-date">2015-09-11 来自手机</li>
+						<li class="s-coll-item">
+							<i class="fa fa-mark"></i>标签
+							<i class="fa fa-rename"></i>重命名
+							<i class="fa fa-del"></i>删除
+						</li>
+					</ul>
+					<ul class="s-coll-ul-sub">
+						<li class="s-coll-item item-name">山东省公安厅9</li>
+						<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
+						<li class="s-coll-item item-date">2015-09-11 来自手机</li>
+						<li class="s-coll-item">
+							<i class="fa fa-mark"></i>标签
+							<i class="fa fa-rename"></i>重命名
+							<i class="fa fa-del"></i>删除
+						</li>
+					</ul>
+					<ul class="s-coll-ul-sub">
+						<li class="s-coll-item item-name">山东省公安厅10</li>
+						<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
+						<li class="s-coll-item item-date">2015-09-11 来自手机</li>
+						<li class="s-coll-item">
+							<i class="fa fa-mark"></i>标签
+							<i class="fa fa-rename"></i>重命名
+							<i class="fa fa-del"></i>删除
+						</li>
+					</ul>
+					<div id="coll-div"></div>
+				</div>
+				<div class="scroll-bar">
+					<div class="scroll-bg">
+						<div class="scroll-up-point"></div>
+						<div class="scroll-bar-up"></div>
+						<div class="scroll-down-point"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

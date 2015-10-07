@@ -8,13 +8,21 @@
 		<link rel="stylesheet"href="css/normalize.css">
 		<link rel="stylesheet"href="css/page-baidu-map.css">
 		<script type="text/javascript"src="js/jquery-1.7.2.min.js"></script>
-		<script type="text/javascript"src="js/baidu-map-index.js"></script>
 		<script type="text/javascript"src="js/page.js"></script>
-		<script type="text/javascript"src="js/scroll-bar-emulate.js"></script>
+		<script type="text/javascript"src="js/scroll-emulate.js"></script>
+		<script type="text/javascript"src="js/baidu-map-index.js"></script>
 		<!--[if lt IE 9]>
 		<script type="text/javascript"src="js/json2.js"></script>
 		<script type="text/javascript"src="js/html5shiv.js"></script>
 		<![endif]-->
+		<script type="text/javascript">
+			window.addEventListener("DOMContentLoaded", function() {
+				new Page({
+					"container": document.getElementById("coll-div")
+					}).init();
+				new Scroll(document.querySelectorAll(".scroll-emulate").item(0)).init();
+			});
+		</script>
 	</head>
 	<body>
 		<div class="main-full">
@@ -287,7 +295,7 @@
 											<div class="s-coll-itmes scroll-emulate">
 												<div class="scroll-emulate-area">
 													<ul class="s-coll-ul-sub">
-														<li class="s-coll-item item-name">山东省公安厅</li>
+														<li class="s-coll-item item-name">山东省公安厅1</li>
 														<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
 														<li class="s-coll-item item-date">2015-09-11 来自手机</li>
 														<li class="s-coll-item">
@@ -297,7 +305,7 @@
 														</li>
 													</ul>
 													<ul class="s-coll-ul-sub">
-														<li class="s-coll-item item-name">山东省公安厅</li>
+														<li class="s-coll-item item-name">山东省公安厅2</li>
 														<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
 														<li class="s-coll-item item-date">2015-09-11 来自手机</li>
 														<li class="s-coll-item">
@@ -307,7 +315,7 @@
 														</li>
 													</ul>
 													<ul class="s-coll-ul-sub">
-														<li class="s-coll-item item-name">山东省公安厅</li>
+														<li class="s-coll-item item-name">山东省公安厅3</li>
 														<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
 														<li class="s-coll-item item-date">2015-09-11 来自手机</li>
 														<li class="s-coll-item">
@@ -317,7 +325,7 @@
 														</li>
 													</ul>
 													<ul class="s-coll-ul-sub">
-														<li class="s-coll-item item-name">山东省公安厅</li>
+														<li class="s-coll-item item-name">山东省公安厅4</li>
 														<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
 														<li class="s-coll-item item-date">2015-09-11 来自手机</li>
 														<li class="s-coll-item">
@@ -327,7 +335,7 @@
 														</li>
 													</ul>
 													<ul class="s-coll-ul-sub">
-														<li class="s-coll-item item-name">山东省公安厅</li>
+														<li class="s-coll-item item-name">山东省公安厅5</li>
 														<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
 														<li class="s-coll-item item-date">2015-09-11 来自手机</li>
 														<li class="s-coll-item">
@@ -337,7 +345,47 @@
 														</li>
 													</ul>
 													<ul class="s-coll-ul-sub">
-														<li class="s-coll-item item-name">山东省公安厅</li>
+														<li class="s-coll-item item-name">山东省公安厅6</li>
+														<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
+														<li class="s-coll-item item-date">2015-09-11 来自手机</li>
+														<li class="s-coll-item">
+															<i class="fa fa-mark"></i>标签
+															<i class="fa fa-rename"></i>重命名
+															<i class="fa fa-del"></i>删除
+														</li>
+													</ul>
+													<ul class="s-coll-ul-sub">
+														<li class="s-coll-item item-name">山东省公安厅7</li>
+														<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
+														<li class="s-coll-item item-date">2015-09-11 来自手机</li>
+														<li class="s-coll-item">
+															<i class="fa fa-mark"></i>标签
+															<i class="fa fa-rename"></i>重命名
+															<i class="fa fa-del"></i>删除
+														</li>
+													</ul>
+													<ul class="s-coll-ul-sub">
+														<li class="s-coll-item item-name">山东省公安厅8</li>
+														<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
+														<li class="s-coll-item item-date">2015-09-11 来自手机</li>
+														<li class="s-coll-item">
+															<i class="fa fa-mark"></i>标签
+															<i class="fa fa-rename"></i>重命名
+															<i class="fa fa-del"></i>删除
+														</li>
+													</ul>
+													<ul class="s-coll-ul-sub">
+														<li class="s-coll-item item-name">山东省公安厅9</li>
+														<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
+														<li class="s-coll-item item-date">2015-09-11 来自手机</li>
+														<li class="s-coll-item">
+															<i class="fa fa-mark"></i>标签
+															<i class="fa fa-rename"></i>重命名
+															<i class="fa fa-del"></i>删除
+														</li>
+													</ul>
+													<ul class="s-coll-ul-sub">
+														<li class="s-coll-item item-name">山东省公安厅10</li>
 														<li class="s-coll-item item-addr">山东省济南市经二路185号</li>
 														<li class="s-coll-item item-date">2015-09-11 来自手机</li>
 														<li class="s-coll-item">

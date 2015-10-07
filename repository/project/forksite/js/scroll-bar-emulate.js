@@ -43,6 +43,7 @@
 			dragflag = true;
 			x = event.clientX;
 			y = event.clientY;
+			oy = y;
 			top = parseInt(window.getComputedStyle(this).top);
 			event.stopPropagation(); //阻止底层滑动槽接受事件冒泡
 		});
@@ -50,7 +51,7 @@
 			if (dragflag) {
 				var offsetx = event.clientX - x,
 					offsety = event.clientY - y;
-				if (Math.abs(offsety)< maxtop) {
+				if (Math.abs(offsety) < maxtop) {
 					var topy = top + offsety;
 					if (topy < 0) {
 						topy = 0;
@@ -58,9 +59,7 @@
 						topy = maxtop;
 					}
 					domscrollbar.style.top = topy + "px";
-					console.log(offsety);
-					console.log(maxtop);
-					scrollArea(-(event.clientY - oy) / maxtop * maxAreaHeight);
+					scrollArea(Math.round(-(event.clientY - oy) * (maxAreaHeight / maxtop)));
 					oy = event.clientY;
 				}
 			}
