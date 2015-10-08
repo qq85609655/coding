@@ -72,6 +72,7 @@
   font-size: 13px;
   text-align: center;
   .ff;
+  .hide;
 }
 .section {
   .wrap-b {
@@ -92,7 +93,7 @@
   .s-nav {
     .ff;
     .fl;
-    width: 24%;
+    width: 300px;
     color: #fff;
     line-height: 50px;
     font-size: 16px;
@@ -106,7 +107,7 @@
     padding-left: 22px;
   }
   .s-nav-title {
-    width: 65%;
+    width: 70%;
     display: inline-block;
     vertical-align: top;
     padding-left: 8px;
@@ -200,6 +201,7 @@
   .s-item-title {
     .txtl;
     .ovh;
+
     .fa {
       padding-left: 30px;
       padding-right: 30px;
@@ -250,11 +252,10 @@
       width: 18%;
       border-radius: 10px;
       .mr(10px);
-      .b(#ccc);
+      .mt(3px);
       .fl;
       height: 100px;
       .bgimgs("../images/portrait-floris.jpg", center center);
-      background-size: 100% 200%;
     }
     .s-sub-r {
       .bfc;
@@ -323,70 +324,87 @@
     .bgimgs("../images/baidu-map.png", center center)
   }
   .icon-blvyou {
-    .bgimgs("../images/baidu-map.png", center center)
+    .bgimgs("../images/baidulvyou.png", center center);
+    .bgcolor(#0C92F2);
   }
   .icon-aly {
-    .bgimgs("../images/baidu-map.png", center center)
+    .bgimg("../images/aliyun.jpg", 50px  0);
+    background-size: cover;
+    .bgcolor(#00A2C9);
   }
   .icon-wb {
-    .bgimgs("../images/baidu-map.png", center center)
+    .bgimg("../images/weibo.png", center center)
   }
   .icon-tb {
-    .bgimgs("../images/baidu-map.png", center center)
+    .bgimg("../images/taobao.png", 60px 5px);
+  }
+  .fa-home {
+    line-height: 45px;
   }
 }
-
-.list-li{
+#aboutme {
+  .checkout {
+    .color(#fff);
+    .fs(13px);
+    .ff("宋体");
+    .ml(30px);
+    text-decoration: underline;
+  }
+  .s-item-body {
+    .txtl;
+  }
+}
+.list-li {
   .ff("宋体");
   .txtl;
-  .list-abstract{
-  .color(#fff);
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
-  background-image:linear-gradient(0,#512D30,#6C4932);
-  .fa{
-    .pr(5px);
-    .pl(10px);
+
+  .list-abstract {
+    .color(#fff);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    background-image: linear-gradient(0, #4D3748, #613B46);
+    .m(0px 10px);
+    .mb(15px);
+
+    .fa {
+      .pr(5px);
+      .pl(10px);
+    }
   }
-  }
-  .list-abs-body{
+  .list-abs-body {
     .fs(12px);
     .m(0px);
   }
-  .list-abs-title{
-    .ff;
+  .list-abs-title {
     .pl(10px);
-  }
-  .list-abstract{
-    margin-top:20px;
   }
 }
 
 /**
  * 分页
  */
-.pages{
-  .mt(30px);.mb(30px);
+.pages {
+  .mt(30px);
+  .mb(30px);
 }
 .page {
   .page-index {
     .inline-block;
     .b(#ccc);
     .p(6px 10px);
-    width:20px;
+    width: 20px;
     .txtc;
     .ml(5px);
     .fs(12px);
     .color(#fff);
     line-height: 20px;
   }
-
   .inline-block;
 
-  .page-up,.page-down {
+  .page-up, .page-down {
     .p(6xp 15px);
-    width:60px;
+    width: 60px;
   }
-  .cur-index{
+  .cur-index {
     .fw;
   }
 }
