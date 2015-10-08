@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>popup test</title>
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1"/>
+		<meta name="renderer"content="webkit">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/common.css">
+		<script src="js/popup.js"></script>
+		<style>
+		.p{
+			line-height: 1.5;
+			border:1px solid #ccc;
+			margin:20px;
+			padding:8px;
+		}</style>
+	</head>
+	<body>
+		<div class="main-full">
+			<button id="btn">点击弹层弹出</button><br>
+			<button id="btn2">点击弹层弹出2</button><br>
+			<h2>弹层组件使用办法：</h2>
+			<p class="p">
+				引入js/popup.js组件<br>
+				new Popup(document.getElementById("btn"),document.getElementById("popup-main")).init();<br>其中document.getElementById("btn")弹层触发按钮，<br>document.getElementById("popup-main")为用户自定义的弹出界面，弹出界面要添加&lt;div class="popup-main" id="popup-main"&gt;&lt;/p&gt;包裹
+				<div class="popup-main" id="popup-main">
+					<div class="popup-titile">
+						<div class="pop-close"></div>
+					</div>
+					<div class="popup-body">
+						<div>
+							<div class="float-three">1</div>
+							<div class="float-three">2</div>
+							<div class="float-three">3</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="popup-footer">
+						<div class="popup-btns">
+							<button class="popup-btn">取消</button>
+							<button class="popup-btn">确定</button>
+						</div>
+					</div>
+				</div>
+				<div class="popup-main" id="popup-main2">
+					<div class="popup-titile">
+						<div class="pop-close"></div>
+					</div>
+					<div class="popup-body">
+						<div>
+							<div class="float-three">4</div>
+							<div class="float-three">5</div>
+							<div class="float-three">6</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="popup-footer">
+						<div class="popup-btns">
+							<button class="popup-btn">取消</button>
+							<button class="popup-btn">确定</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script>
+			var popup=new Popup(document.getElementById("btn"),document.getElementById("popup-main")).init();
+			var popup2=new Popup(document.getElementById("btn2"),document.getElementById("popup-main2")).init();
+			</script>
+		</body>
+	</html>

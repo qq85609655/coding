@@ -526,6 +526,7 @@
 	width: 500px;
 	.pr;
 	.ovh;
+
 	.scroll-emulate-area {
 		.mr(15px);
 	}
@@ -573,4 +574,34 @@
 	.page-up, .page-down {
 		width: 50px;
 	}
+}
+
+/**
+ * 蒙版
+ */
+.mask {
+	.hide;
+	.pa;
+	width: 100%;
+	height: 100%;
+	.bgcolor(#000);
+	top: 0;
+	left: 0;
+	.opacity(0.3);
+	z-index: 99;
+}
+
+/**
+ * 弹层
+ */
+.popup-main {
+	.hide;
+	.pa;
+	z-index: 999;
+	min-width: 600px;
+	min-height: 300px;
+	top: 100px;
+	left: 50%;
+	.ml(-300px);
+	.bgcolor(#fff);
 }

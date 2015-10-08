@@ -431,7 +431,7 @@
 			.inline-block;
 			.vm;
 			.fs(13px);
-			.pr(5px);
+			.mr(5px);
 		}
 		.fa-station {
 			.bgimg("../images/map-subway-icon-1.png", -20px 0);
@@ -604,36 +604,54 @@
 		}
 		.scroll-bar {
 			.pa;
-			width:9px;
-			right:4px;
-			top:0px;
-			height:100%;
-			.bgimg("../images/scroll-bar.gif",3px 0);
+			width: 9px;
+			right: 4px;
+			top: 0px;
+			height: 100%;
+			.bgimg("../images/scroll-bar.gif", 3px 0);
 			.poi;
 		}
-		
-		.scroll-bg{
+		.scroll-bg {
 			.pa;
-			width:100%;
-			top:0;
-			left:0;
-			height:40%;
+			width: 100%;
+			top: 0;
+			left: 0;
+			height: 40%;
 		}
-		.scroll-bar-up{
-			width:100%;
-			height:95%;
-			.bgimg("../images/scroll-bar.gif",-12px 50%);
+		.scroll-bar-up {
+			width: 100%;
+			height: 95%;
+			.bgimg("../images/scroll-bar.gif", -12px 50%);
 		}
-		.scroll-up-point{
-			height:4px;
-			.bgimg("../images/scroll-bar.gif",-36px 0);
+		.scroll-up-point {
+			height: 4px;
+			.bgimg("../images/scroll-bar.gif", -36px 0);
 		}
-		.scroll-down-point{
-			height:4px;
-			.bgimg("../images/scroll-bar.gif",-36px -4px);
+		.scroll-down-point {
+			height: 4px;
+			.bgimg("../images/scroll-bar.gif", -36px -4px);
+		}
+		&:hover .scroll-bar{
+			.bgimg("../images/scroll-bar.gif", -3px 0);
 		}
 	}
-	.page{
+	.page {
 		.pb(20px);
+	}
+}
+.popup-main {
+	.popup-titile {
+		.ovh;
+	}
+	.pop-close {
+		width: 37px;
+		height: 37px;
+		.fr;
+		.b(#f2f2f2);
+		.bgimg("../images/pop-close-icon.jpg", center center);
+	}
+	.pop-close:hover{
+		.bgimg("../images/pop-close-active.jpg", center center);
+		.bgcolor(#5097D7);
 	}
 }

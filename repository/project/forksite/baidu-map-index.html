@@ -2,27 +2,19 @@
 <html>
 	<head>
 		<title>baidu map fork by ynchuan</title>
-		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
-		<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1"/>
-		<meta name="renderer"content="webkit">
-		<link rel="stylesheet"href="css/normalize.css">
-		<link rel="stylesheet"href="css/page-baidu-map.css">
-		<script type="text/javascript"src="js/jquery-1.7.2.min.js"></script>
-		<script type="text/javascript"src="js/page.js"></script>
-		<script type="text/javascript"src="js/scroll-emulate.js"></script>
-		<script type="text/javascript"src="js/baidu-map-index.js"></script>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<meta name="renderer" content="webkit">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/page-baidu-map.css">
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/page.js"></script>
+		<script type="text/javascript" src="js/scroll-emulate.js"></script>
+		<script type="text/javascript" src="js/baidu-map-index.js"></script>
 		<!--[if lt IE 9]>
-		<script type="text/javascript"src="js/json2.js"></script>
-		<script type="text/javascript"src="js/html5shiv.js"></script>
+		<script type="text/javascript" src="js/json2.js"></script>
+		<script type="text/javascript" src="js/html5shiv.js"></script>
 		<![endif]-->
-		<script type="text/javascript">
-			window.addEventListener("DOMContentLoaded", function() {
-				new Page({
-					"container": document.getElementById("coll-div")
-					}).init();
-				new Scroll(document.querySelectorAll(".scroll-emulate").item(0)).init();
-			});
-		</script>
 	</head>
 	<body>
 		<div class="main-full">
@@ -45,7 +37,7 @@
 						<div class="search">
 							<div class="search-class">
 								<ul class="up">
-									<li class="fsl active">
+									<li class="fsl">
 										<a href="#">新闻</a>
 									</li>
 									<li class="fsl">
@@ -423,22 +415,20 @@
 		</div>
 		<div class="mask"id="mask">
 		</div>
-		<div class="popup-main"id="popup-main">
+		<div class="popup-main" id="popup-main">
 			<div class="popup-titile">
 				<div class="pop-close"></div>
 			</div>
 			<div class="popup-body">
 				<div>
-					<div class="float-three">1</div>
-					<div class="float-three">2</div>
-					<div class="float-three">3</div>
+					<div class="float-three"><img src="images/pop-demo.png" alt=""></div>
+					<div class="float-three"><h2>记录我的足迹</h2></div>
+					<div class="float-three"><img src="images/downloadicon.png" alt=""></div>
 					<div class="clear"></div>
 				</div>
 			</div>
 			<div class="popup-footer">
 				<div class="popup-btns">
-					<button class="popup-btn">取消</button>
-					<button class="popup-btn">确定</button>
 				</div>
 			</div>
 		</div>
