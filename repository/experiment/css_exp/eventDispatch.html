@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>title</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="renderer" content="webkit">
+		<style>
+			
+		</style>
+		<script type="text/javascript">
+			function InitMouseDown (event) {
+		if (event.initMouseEvent) {     // all browsers except IE before version 9
+		var mousedownEvent = document.createEvent ("MouseEvent");
+		mousedownEvent.initMouseEvent ("mousedown", true, true, window, 0,
+		event.screenX, event.screenY, event.clientX, event.clientY,
+		event.ctrlKey, event.altKey, event.shiftKey, event.metaKey,
+		0, null);
+		event.target.dispatchEvent (mousedownEvent);
+		} else {
+		if (document.createEventObject) {   // IE before version 9
+		var mousedownEvent = document.createEventObject (window.event);
+		mousedownEvent.button = 1;  // left button is down
+		event.srcElement.fireEvent ("onmousedown", mousedownEvent);
+		}
+		}
+		}
+		var $ = function(el) {
+		return new _$(el);
+		};
+		var _$ = function(el) {
+		this.el = (el && el.nodeType == 1)? el: document;
+		};
+		_$.prototype = {
+		constructor: this,
+		addEvent: function(type, fn, capture) {
+		var el = this.el;
+		if (window.addEventListener) {
+		el.addEventListener(type, fn, capture);
+		var ev = document.createEvent("HTMLEvents");
+		ev.initEvent(type, capture || false, false);
+		
+		if (!el["ev" + type]) {
+		el["ev" + type] = ev;
+		}
+		} else if (window.attachEvent) {
+		el.attachEvent("on" + type, fn);
+		if (isNaN(el["cu" + type])) {
+		// 自定义属性
+		el["cu" + type] = 0;
+		}
+		var fnEv = function(event) {
+		if (event.propertyName == "cu" + type) { fn.call(el); }
+		};
+		el.attachEvent("onpropertychange", fnEv);
+		if (!el["ev" + type]) {
+		el["ev" + type] = [fnEv];
+		} else {
+		el["ev" + type].push(fnEv);
+		}
+		}
+		return this;
+		},
+		fireEvent: function(type) {
+		var el = this.el;
+		if (typeof type === "string") {
+		if (document.dispatchEvent) {
+		if (el["ev" + type]) {
+		el.dispatchEvent(el["ev" + type]);
+		}
+		} else if (document.attachEvent) {
+		el["cu" + type]++;
+		}
+		}
+		return this;
+		},
+		removeEvent: function(type, fn, capture) {
+		var el = this.el;
+		if (window.removeEventListener) {
+		el.removeEventListener(type, fn, capture || false);
+		} else if (document.attachEvent) {
+		el.detachEvent("on" + type, fn);
+		var arrEv = el["ev" + type];
+		if (arrEv instanceof Array) {
+		for (var i=0; i<arrEv.length; i+=1) {
+			el.detachEvent("onpropertychange", arrEv[i]);
+			}
+			}
+			}
+			return this;
+			}
+			};
+			</script>
+		</head>
+		<body>
+		</body>
+	</html>
