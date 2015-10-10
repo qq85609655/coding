@@ -214,6 +214,14 @@ function position(dom) {
 	}
 }
 
+function testCaller(a){
+	caller();
+}
+function caller(){
+	var t=arguments.callee.caller;
+	console.log(t);
+	console.log(t.arguments);
+}
 
 
 var obj={"test":"43"};

@@ -251,6 +251,7 @@
   position: relative;
   background-image: -webkit-linear-gradient(45deg, #372b42, #c09b71);
   background-image: linear-gradient(45deg, #372b42, #c09b71);
+  background-color: #372B42;
 }
 .wrap {
   max-width: 100%;
