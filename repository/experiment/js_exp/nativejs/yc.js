@@ -8,7 +8,7 @@
 		slice = Array.prototype.slice,
 		push = Array.prototype.push,
 		sort = Array.prototype.sort,
-		toString = Object.prototype.toString,
+		toString = Object.prototype.toString, 
 		class2type = {},
 		cache = {};
 

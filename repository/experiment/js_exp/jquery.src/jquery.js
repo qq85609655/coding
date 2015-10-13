@@ -322,7 +322,7 @@
 		// Give the init function the jQuery prototype for later instantiation
 		jQuery.fn.init.prototype = jQuery.fn;
 
-		jQuery.extend = 	 {
+		jQuery.extend = jQuery.fn.extend = function() {
 			var options, name, src, copy, copyIsArray, clone,
 				target = arguments[0] || {},
 				i = 1,
