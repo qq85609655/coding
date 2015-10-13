@@ -1062,6 +1062,7 @@
 						add(elem);
 					} else if (type === "function") {
 						// Add if not in unique mode and callback is not in
+						//当不存在该元素，则添加；不存在唯一性限制的时候不管存不存在都要添加。
 						if (!flags.unique || !self.has(elem)) {
 							list.push(elem);
 						}
@@ -1079,7 +1080,7 @@
 				firingLength = list.length;
 				for (; list && firingIndex < firingLength; firingIndex++) {
 					if (list[firingIndex].apply(context, args) === false && flags.stopOnFalse) {
-						memory = true; // Mark as halted
+						memory = true; // Mark as halted  
 						break;
 					}
 				}
@@ -1088,12 +1089,12 @@
 					if (!flags.once) {
 						if (stack && stack.length) {
 							memory = stack.shift();
-							self.fireWith(memory[0], memory[1]);
+							self.fireWith(memory[0], memory[1]);//记忆优先，记忆执行的情况下
 						}
 					} else if (memory === true) {
-						self.disable();
+						self.disable();// stopOnfalse的时候，fire执行后将不可用
 					} else {
-						list = [];
+						list = [];//once的情况下，执行一次就清空。
 					}
 				}
 			},
