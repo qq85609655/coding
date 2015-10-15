@@ -1062,6 +1062,7 @@
 						add(elem);
 					} else if (type === "function") {
 						// Add if not in unique mode and callback is not in
+						//当不存在该元素，则添加；不存在唯一性限制的时候不管存不存在都要添加。
 						if (!flags.unique || !self.has(elem)) {
 							list.push(elem);
 						}
@@ -1079,7 +1080,7 @@
 				firingLength = list.length;
 				for (; list && firingIndex < firingLength; firingIndex++) {
 					if (list[firingIndex].apply(context, args) === false && flags.stopOnFalse) {
-						memory = true; // Mark as halted
+						memory = true; // Mark as halted  
 						break;
 					}
 				}
@@ -1088,12 +1089,12 @@
 					if (!flags.once) {
 						if (stack && stack.length) {
 							memory = stack.shift();
-							self.fireWith(memory[0], memory[1]);
+							self.fireWith(memory[0], memory[1]); //记忆优先，记忆执行的情况下
 						}
 					} else if (memory === true) {
-						self.disable();
+						self.disable(); // stopOnfalse的时候，fire执行后将不可用
 					} else {
-						list = [];
+						list = []; //once的情况下，执行一次就清空。
 					}
 				}
 			},
@@ -1226,7 +1227,7 @@
 	jQuery.extend({
 
 		Deferred: function(func) {
-			var doneList = jQuery.Callbacks("once memory"),//一个defer对象只需要执行一次resolve或者eject方法，但是可以执行多次notify方法
+			var doneList = jQuery.Callbacks("once memory"), //一个defer对象只需要执行一次resolve或者eject方法，但是可以执行多次notify方法
 				failList = jQuery.Callbacks("once memory"),
 				progressList = jQuery.Callbacks("memory"),
 				state = "pending",
@@ -1296,7 +1297,7 @@
 						return obj;
 					}
 				},
-				deferred = promise.promise({}),//deferred 就是一个promise对象---含有三个回调队列的对象
+				deferred = promise.promise({}), //deferred 就是一个promise对象---含有三个回调队列的对象
 				key;
 			//对外释放回调队列的调用接口resolve reject notify，计6个方法
 			for (key in lists) {
@@ -1334,9 +1335,9 @@
 				jQuery.Deferred(),
 				promise = deferred.promise();
 
-			function resolveFunc(i) {//resolve方法探测
+			function resolveFunc(i) { //resolve方法探测，i 的作用为搜集每一个defer对象在resolve时候的触发参数，并将参数传递于defer跟踪对象中
 				return function(value) {
-					args[i] = arguments.length > 1 ? sliceDeferred.call(arguments, 0) : value;//对多个defer对象参数进行收集
+					args[i] = arguments.length > 1 ? sliceDeferred.call(arguments, 0) : value; //对多个defer对象参数进行收集
 					if (!(--count)) {
 						//减法计数，当所有的defer都执行了resolve方法以后调用defer监控方法
 						deferred.resolveWith(deferred, args);
@@ -2171,11 +2172,11 @@
 			return data === undefined ?
 				this :
 				this.each(function() {
-					var queue = jQuery.queue(this, type, data);//成动画队列的添加
+					var queue = jQuery.queue(this, type, data); //成动画队列的添加
 					//添加动画队列后，由于执行时间可能会很久，所以后续的动画会由动画函数类调用，不会自我启动调用。
 					//问题：动画函数完全执行完成的时候的调用在哪里？
 					if (type === "fx" && queue[0] !== "inprogress") {
-						jQuery.dequeue(this, type);//完启动执行队列。
+						jQuery.dequeue(this, type); //完启动执行队列。
 					}
 				});
 		},
@@ -3099,7 +3100,7 @@
 				// (avoids potential for endless recursion during removal of special event handlers)
 				if (eventType.length === 0 && origCount !== eventType.length) {
 					if (!special.teardown || special.teardown.call(elem, namespaces) === false) {
-						jQuery.removeEvent(elem, type, elemData.handle);//由于触发的操作事件方法为空，所以删除该dom上的事件侦听。
+						jQuery.removeEvent(elem, type, elemData.handle); //由于触发的操作事件方法为空，所以删除该dom上的事件侦听。
 					}
 
 					delete events[type];
@@ -5228,7 +5229,7 @@
 				};
 
 				for (var prop in oldSizzle) {
-					Sizzle[prop] = oldSizzle[prop];// 因为变量名被重新赋值，所以其原来指向的对象上的属性为空了，此处进行了浅复制。
+					Sizzle[prop] = oldSizzle[prop]; // 因为变量名被重新赋值，所以其原来指向的对象上的属性为空了，此处进行了浅复制。
 				}
 
 				// release memory in IE
@@ -5470,7 +5471,7 @@
 			if (typeof selector !== "string") {
 				return jQuery(selector).filter(function() {
 					for (i = 0, l = self.length; i < l; i++) {
-						if (jQuery.contains(self[i], this)) {//对于jquery object进行二次过滤
+						if (jQuery.contains(self[i], this)) { //对于jquery object进行二次过滤
 							return true;
 						}
 					}
@@ -5482,7 +5483,7 @@
 
 			for (i = 0, l = this.length; i < l; i++) {
 				length = ret.length;
-				jQuery.find(selector, this[i], ret);//通过上下文查找好处>全文查找并进行二次过滤。
+				jQuery.find(selector, this[i], ret); //通过上下文查找好处>全文查找并进行二次过滤。
 				//进行dom节点唯一性校验，该处特别之处在于只是对于该次轮差的结果值进行唯一校验，length实现轮查的作用
 				//另：获取的dom节点的值无论通过何种方式获取，同一个节点只有一个实例。ret[r] === ret[n]可以看出。
 				if (i > 0) {
@@ -5946,9 +5947,9 @@
 				(elem = this[i]) != null; i++) {
 				//删除节点 1-将节点进行selector的过滤  2-将目标删除节点以及节点下的数据和事件缓存清除 3、删除节点
 				if (!selector || jQuery.filter(selector, [elem]).length) {
-					if (!keepData && elem.nodeType === 1) {//keepData用于detach方法：只删除节点，不删除缓存
-						jQuery.cleanData(elem.getElementsByTagName("*"));//删除该节点下的子节点的事件和数据缓存
-						jQuery.cleanData([elem]);//删除该节点下的事件和数据缓存
+					if (!keepData && elem.nodeType === 1) { //keepData用于detach方法：只删除节点，不删除缓存
+						jQuery.cleanData(elem.getElementsByTagName("*")); //删除该节点下的子节点的事件和数据缓存
+						jQuery.cleanData([elem]); //删除该节点下的事件和数据缓存
 					}
 
 					if (elem.parentNode) {
@@ -6646,7 +6647,7 @@
 
 	jQuery.fn.css = function(name, value) {
 		return jQuery.access(this, function(elem, name, value) {
-		//采用access实现object对象参数的拆解以及dom参数的非jquery封装传参。
+			//采用access实现object对象参数的拆解以及dom参数的非jquery封装传参。
 			return value !== undefined ?
 				jQuery.style(elem, name, value) :
 				jQuery.css(elem, name);
@@ -7313,7 +7314,7 @@
 	// Attach a bunch of functions for handling common AJAX events
 	jQuery.each("ajaxStart ajaxStop ajaxComplete ajaxError ajaxSuccess ajaxSend".split(" "), function(i, o) {
 		jQuery.fn[o] = function(f) {
-			return this.on(o, f);//快捷方式，挂在dom上
+			return this.on(o, f); //快捷方式，挂在dom上
 		};
 	});
 
@@ -7428,8 +7429,8 @@
 			}
 		},
 
-		ajaxPrefilter: addToPrefiltersOrTransports(prefilters),//是一个闭包函数，该闭包行数执行完成以后生成一个prefilters的Object
-		ajaxTransport: addToPrefiltersOrTransports(transports),//是一个闭包函数，该闭包行数执行完成以后生成一个transports的Object
+		ajaxPrefilter: addToPrefiltersOrTransports(prefilters), //是一个闭包函数，该闭包行数执行完成以后生成一个prefilters的Object
+		ajaxTransport: addToPrefiltersOrTransports(transports), //是一个闭包函数，该闭包行数执行完成以后生成一个transports的Object
 
 		// Main method
 		ajax: function(url, options) {
@@ -7690,7 +7691,7 @@
 			}
 
 			// Apply prefilters
-			inspectPrefiltersOrTransports(prefilters, s, options, jqXHR);//完成jsonp的s.url的路径修改以及对应方法的创建，设置不缓存
+			inspectPrefiltersOrTransports(prefilters, s, options, jqXHR); //完成jsonp的s.url的路径修改以及对应方法的创建，设置不缓存
 
 			// If request was aborted inside a prefilter, stop there
 			if (state === 2) {
@@ -8414,7 +8415,7 @@
 						// we need to manually fire the callback
 						// ansyc为true表示xhr对象会进行请求完成以后进行下面代码的执行，此句以上为阻塞代码。
 						if (!s.async || xhr.readyState === 4) {
-							callback();//直接进行回调函数调用
+							callback(); //直接进行回调函数调用
 						} else {
 							handle = ++xhrId;
 							if (xhrOnUnloadAbort) {
@@ -8660,7 +8661,7 @@
 				}
 
 				for (p in prop) {
-					e = new jQuery.fx(this, opt, p);//对每一个动作创建一个fx对象，但是一个动画里的动作拥有相同的opt，即拥有相同的complete方法。
+					e = new jQuery.fx(this, opt, p); //对每一个动作创建一个fx对象，但是一个动画里的动作拥有相同的opt，即拥有相同的complete方法。
 					val = prop[p];
 
 					if (rfxtypes.test(val)) {
@@ -8842,7 +8843,7 @@
 				}
 
 				if (opt.queue) {
-					jQuery.dequeue(this, opt.queue);//该处才是实现队列的遍历接力。
+					jQuery.dequeue(this, opt.queue); //该处才是实现队列的遍历接力。
 				} else if (noUnmark !== false) {
 					jQuery._unmark(this);
 				}
@@ -8923,7 +8924,7 @@
 				}
 			};
 
-			if (t() && jQuery.timers.push(t) && !timerId) {//初始化动作并完成动作添加到动作队列
+			if (t() && jQuery.timers.push(t) && !timerId) { //初始化动作并完成动作添加到动作队列
 				timerId = setInterval(fx.tick, fx.interval);
 			}
 		},
@@ -9012,7 +9013,7 @@
 					if (complete) {
 
 						options.complete = false;
-						complete.call(elem);//准备下一个动画后清除本动画
+						complete.call(elem); //准备下一个动画后清除本动画
 					}
 				}
 
@@ -9041,7 +9042,7 @@
 	jQuery.extend(jQuery.fx, {
 		tick: function() {
 			var timer,
-				timers = jQuery.timers,//其中存储了本次动画的所有动作
+				timers = jQuery.timers, //其中存储了本次动画的所有动作
 				i = 0;
 
 			for (; i < timers.length; i++) {
