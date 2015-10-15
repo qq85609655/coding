@@ -70,11 +70,11 @@
 			alert("onclick fun");
 			// return false;
 		}
-		// var cbk=jQuery.Callbacks("stopOnFalse")
-		// cbk.add(function(a){console.info("first"+" "+a)});
-		// cbk.fire("first");
-		// cbk.add(function(a){console.info("second"+" "+a)});
-		// cbk.fire("second");
+		var cbk=jQuery.Callbacks("once memory")
+		cbk.add(function(a){console.info("first"+" "+a)});
+		cbk.fire("first");
+		cbk.add(function(a){console.info("second"+" "+a)});
+		cbk.fire("second");
 		// cbk.fire("third");
 		// cbk.add(function(a){console.info("third"+" "+a)});
 

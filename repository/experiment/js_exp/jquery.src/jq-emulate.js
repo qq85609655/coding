@@ -19,29 +19,43 @@
 		}
 	})();
 	 */
-	var conflict, jq = function(selectors) {
+	var conflict;
+	var jq = function(selectors) {
 		return new jq.prototype.init(selectors); //调用$方法，创建一个对象，便于使用this变量
 	}
-	jq.prototype.init = function(selectors) {
-		var dom = document.querySelectorAll(selectors);
-		this.length = dom.length;
-		for (var i = 0; i < dom.length; i++) {
-			this[i] = dom.item(i);
-		}
+	jq.prototype = {
+		constructor: jq,
+		init: function(selectors) {
+			var dom = document.querySelectorAll(selectors);
+			this.length = dom.length;
+			for (var i = 0; i < dom.length; i++) {
+				this[i] = dom.item(i);
+			}
+		},
+
+		each: function(fun) {
+			for (var i = 0; i < this.length; i++) {
+				fun.call(this[i], i, this[i]);
+			}
+			return this;
+		},
+		hide: function() {
+			this.each(function() {
+				this.style.display = "none";
+			});
+		},
+		length: 0,
+		splice: Array.prototype.splice,
+		toString: String.prototype.toString,
+		push: push,
+		sort: [].sort
 	}
 	jq.prototype.init.prototype = jq.prototype; //将jq的方法原型全部指向init原型，便于this调用。
-	jq.prototype.each = function(fun) {
-		for (var i = 0; i < this.length; i++) {
-			fun.call(this[i], i, this[i]);
-		}
-		return this;
-	}
-	jq.prototype.hide = function() {
-		this.each(function() {
-			this.style.display = "none";
-		});
-	}
+
 	jq.extends = function(orgin, append) {
+
+	};
+	jq.callback = function() {
 
 	}
 
