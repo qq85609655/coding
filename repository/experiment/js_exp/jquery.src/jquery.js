@@ -1715,7 +1715,12 @@
 			if (!jQuery.acceptData(elem)) {
 				return;
 			}
-
+			/**
+			 * 1、从elem节点取属性为jQuery.expando的值，并通过该属性值获取缓存为第几个缓存
+			 * 2、从$.cache中获取该值对应的值obj1
+			 * 3、从obj1中取得data属性值obj2
+			 * 4、从obj2中查询该name对应的值，如果没有name，返回obj2
+			 */
 			var privateCache, thisCache, ret,
 				internalKey = jQuery.expando,
 				getByName = typeof name === "string",
@@ -1935,7 +1940,7 @@
 				i = 0,
 				data = null;
 
-			// Gets all values
+			// 获取该节点下缓存的所有的data
 			if (key === undefined) {
 				if (this.length) {
 					data = jQuery.data(elem);
@@ -1976,8 +1981,8 @@
 
 					// Try to fetch any internally stored data first
 					if (data === undefined && elem) {
-						data = jQuery.data(elem, key);
-						data = dataAttr(elem, key, data);
+						data = jQuery.data(elem, key);//完成两步取值：1、从$.cache中取值
+						data = dataAttr(elem, key, data);// 2、当取不到值的时候从dom的data-key字段取值，同时将值插进缓存里面
 					}
 
 					return data === undefined && parts[1] ?
@@ -2010,7 +2015,7 @@
 
 			var name = "data-" + key.replace(rmultiDash, "-$1").toLowerCase();
 
-			data = elem.getAttribute(name);
+			data = elem.getAttribute(name);//获取节点data-*的属性
 
 			if (typeof data === "string") {
 				try {
