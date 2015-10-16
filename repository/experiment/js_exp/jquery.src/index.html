@@ -63,7 +63,10 @@
 		// console.log("first"+first);
 		// console.log("last"+last);
 		$("body").on("click",".name",function(event){
-			// console.log(event.target)
+			console.log(event.target)
+		});
+		$("body").on("click",".name",function(event){
+			console.log(event.target)
 		});
 
 		function func2(){
@@ -93,6 +96,7 @@
 
 		aa1.on("click",".namet,.name1","i am data",inner);
 		aa1.on("click", outter);
+		aa1.on("scroll", outter);
 		// $(".name").off("click",".namet",inner);
 		// $(".namet").trigger("click");
 		//sizzle selector test 

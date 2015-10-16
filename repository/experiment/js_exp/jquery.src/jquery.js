@@ -2929,8 +2929,22 @@
 	 * Helper functions for managing events -- not part of the public interface.
 	 * Props to Dean Edwards' addEvent library for many of the ideas.
 	 */
+	/**
+	 * jquery的事件处理体系：
+	 * jquery中对待事件队里的处理采用数据缓存的方式处理，即将事件全部缓存到该dom节点所对应cache中events字段中，
+	 * 并将各类事件通过不同的key值进行保存，各个key对应的value为事件处理数组，数组中以object进行管理，保存参数、函数等等信息，
+	 * 如此可以保证一个事件可以对应多个处理函数，且数据以及处理方法全部被保存下来。
+	 * 同时所有事件使用一个引导函数，即events下的handler字段对应的函数，当该dom节点执行或者冒泡得到任何事件的时候，引导函数就会
+	 * 查询该节点对应的cache中的events的值，并对应事件type查找方法，然后通过event.target->this之间dom节点遍历并判断是否满足事件代理
+	 * 的选择器条件进行相应方法的执行。
+	 * 但是对于手动触发事件的情况，此处并未使用原生dispatch或者fireObject方法（大概因为兼容性吧），而是在该触发节点上溯
+	 * 查找节点并检查cache中events，进行选择器筛选，完成事件方法的执行。其实也是模拟事件冒泡的的过程
+	 * 
+	 * 细节1：对于dom本身事件，处理函数排在event.eventType的后面，代理事件前置，并记录代理事件的个数delegateCount
+	 */
+		
 	jQuery.event = {
-
+		
 		add: function(elem, types, handler, data, selector) {
 
 			var elemData, eventHandle, events,
@@ -3029,10 +3043,10 @@
 				}
 
 				// Add to the element's handler list, delegates in front
-				if (selector) {
+				if (selector) {//对于代理事件，在队列里将新的事件插入到最后一个代理事件后面，保证代理事件和本身事件的归类排放
 					handlers.splice(handlers.delegateCount++, 0, handleObj);
 				} else {
-					handlers.push(handleObj);
+					handlers.push(handleObj);//自身事件push到数组以后
 				}
 
 				// Keep track of which events have ever been used, for event optimization
