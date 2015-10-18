@@ -4043,6 +4043,7 @@
 				soFar = selector;
 
 			// Reset the position of the chunker regexp (start from head)
+			// 进行查询词的拆解
 			do {
 				chunker.exec("");
 				m = chunker.exec(soFar);
@@ -4060,7 +4061,7 @@
 			} while (m);
 
 			if (parts.length > 1 && origPOS.exec(selector)) {
-				//从左向右查询分支：shift()
+				//从左向右查询分支：shift()   eg: $.find("div:first-child");  
 				if (parts.length === 2 && Expr.relative[parts[0]]) {
 					set = posProcess(parts[0] + parts[1], context, seed);
 
@@ -4081,7 +4082,7 @@
 				}
 
 			} else {
-				//从右向左查询分支pop()
+				//从右向左查询分支pop() eg:$.find("body #test .namet");
 				// Take a shortcut and set the context if the root selector is an ID
 				// (but not if it'll be faster if the inner selector is an ID)
 				if (!seed && parts.length > 1 && context.nodeType === 9 && !contextXML &&
