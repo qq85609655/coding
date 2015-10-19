@@ -1,0 +1,94 @@
+@import "base.less";
+
+/**
+ * 滚动条
+ */
+.scroll-emulate {
+	height: 400px;
+	width: 500px;
+	.pv;
+	.ovh;
+
+	.scroll-emulate-area {
+		.mr(15px);
+	}
+	.scroll-bar {
+		.pa;
+		width: 9px;
+		right: 4px;
+		top: 0px;
+		height: 100%;
+		.bgimg("../images/scroll-bar.gif", 3px 0);
+		.poi;
+	}
+	.scroll-bg {
+		.pa;
+		width: 100%;
+		top: 0;
+		left: 0;
+		height: 40%;
+	}
+	.scroll-bar-up {
+		width: 100%;
+		height: 95%;
+		.bgimg("../images/scroll-bar.gif", -12px 50%);
+	}
+	.scroll-up-point {
+		height: 4px;
+		.bgimg("../images/scroll-bar.gif", -36px 0);
+	}
+	.scroll-down-point {
+		height: 4px;
+		.bgimg("../images/scroll-bar.gif", -36px -4px);
+	}
+}
+
+/**
+ * 模拟滑动条
+ */
+@slideheihgt: 20px;
+@barheihgt: 20px;
+
+.slidebar-emulate {
+	width: 100%;
+	height: @slideheihgt;
+
+	.bgcolor(yellow);
+	.pv;
+
+	.slidebar-left {
+		.pa;
+		left: 20px;
+		width: @barheihgt;
+		height: @barheihgt;
+		.bgcolor(red);
+		z-index: 2;
+	}
+	.slidebar-range {
+		.pa;
+		.bgcolor(blue);
+		width: 120px;
+		left: 20px;
+		height: @barheihgt;
+	}
+	.slidebar-right {
+		.slidebar-left;
+		left: 120px;
+	}
+}
+.slidebar {
+	-webkit-user-select:none;
+
+	.pa;
+	.b(red);
+	.slidetxt { 
+		.slideage {
+			width: 70px;
+			.fl;
+			.bl(#ccc);
+			.color(#5D76AF);
+			.fs(14px);
+			box-sizing: border-box;
+		}
+	}
+}

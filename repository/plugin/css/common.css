@@ -5,7 +5,7 @@
 /**
  * position
  */
-.pr {
+.pv {
   position: relative;
 }
 .pa {
@@ -261,7 +261,6 @@
   font-family: 'Microsoft Yahei';
   font-size: 14px;
   position: relative;
-  padding-right: 5px;
   color: #aeaeae;
 }
 .time-axis .tl-year {
@@ -388,7 +387,6 @@
 }
 .time-axis .tli {
   position: relative;
-  padding-right: 5px;
   zoom: 1;
 }
 * + html .time-axis .triangle-left {
@@ -801,7 +799,6 @@
   height: 400px;
   width: 500px;
   position: relative;
-  padding-right: 5px;
   overflow: hidden;
 }
 .scroll-emulate .scroll-emulate-area {
