@@ -61,12 +61,10 @@
 		var first=cl.first();
 		var last=cl.last();
 		// console.log("first"+first);
-		// console.log("last"+last);
-		$("body").on("click",".name",function(event){
-			console.log(event.target)
-		});
-		$("body").on("click",".name",function(event){
-			console.log(event.target)
+		// console.log("last"+last); 
+		$("body").on("click",".name,.namet",function(event){
+			$(this).hasClass(".namet")?event.stopPropagation():null;
+			console.log(".namet");
 		});
 
 		function func2(){
