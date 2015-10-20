@@ -230,23 +230,27 @@
  * 滚动条
  */
 .scroll-emulate {
-  height: 400px;
-  width: 500px;
+  height: 645px;
+  width: 303px;
+  background-image: url("../images/win_tc_03.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  _background: none;
   position: relative;
   overflow: hidden;
 }
 .scroll-emulate .scroll-emulate-area {
-  margin-right: 15px;
+  margin-right: 25px;
 }
 .scroll-emulate .scroll-bar {
   position: absolute;
   width: 9px;
-  right: 4px;
-  top: 0px;
-  height: 100%;
-  background-image: url("../images/scroll-bar.gif");
+  right: 11px;
+  top: 48px;
+  height: 90%;
+  background-image: url("../images/scroller_08.png");
   background-repeat: no-repeat;
-  background-position: 3px 0;
+  background-position: 0 0;
   _background: none;
   cursor: pointer;
 }
@@ -255,37 +259,81 @@
   width: 100%;
   top: 0;
   left: 0;
-  height: 40%;
+  height: 150px;
 }
 .scroll-emulate .scroll-bar-up {
   width: 100%;
-  height: 95%;
-  background-image: url("../images/scroll-bar.gif");
+  height: 100%;
+  background-image: url("../images/scoller_03.png");
   background-repeat: no-repeat;
-  background-position: -12px 50%;
+  background-position: 0 0;
   _background: none;
 }
-.scroll-emulate .scroll-up-point {
-  height: 4px;
-  background-image: url("../images/scroll-bar.gif");
-  background-repeat: no-repeat;
-  background-position: -36px 0;
-  _background: none;
+.scroll-emulate .scroll-area {
+  overflow: hidden;
+  height: 580px;
+  margin-top: 10px;
 }
-.scroll-emulate .scroll-down-point {
-  height: 4px;
-  background-image: url("../images/scroll-bar.gif");
+/**
+ * 页面样式
+ */
+.scroll-container {
+  font-family: 'Microsoft Yahei';
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.scroll-container .scroll-ul-res {
+  list-style: none;
+  padding-left: 20px;
+  color: #ffffff;
+  margin: 0;
+}
+.scroll-container .scroll-contain-title {
+  line-height: 40px;
+  color: #333333;
+  font-size: 17px;
+}
+.scroll-container .scroll-contain-title .scroll-title-txt {
+  margin-left: 20px;
+}
+.scroll-container .scroll-contain-title .icon-del {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 13px;
+  height: 11px;
+  vertical-align: middle;
+  float: right;
+  margin: 15px 5px;
+  background-image: url("../images/cha_03.png");
   background-repeat: no-repeat;
-  background-position: -36px -4px;
+  background-position: 0 0;
   _background: none;
+  cursor: pointer;
+}
+.scroll-container .scroll-contain-body .li-res-item {
+  line-height: 38px;
+  cursor: pointer;
+  padding-left: 15px;
+}
+.scroll-container .scroll-contain-body .active {
+  background-color: #0d3056;
+  border-radius: 20px;
+}
+.scroll-container .red {
+  color: #FE0100;
 }
 /**
  * 模拟滑动条
  */
 .slidebar-emulate {
+  height: 6px;
   width: 100%;
-  height: 20px;
-  background-color: #ffff00;
+  cursor: pointer;
+  background-color: #9aa4ad;
+  border-top: 1px solid #8f989f;
   position: relative;
 }
 .slidebar-emulate .slidebar-left {
@@ -293,35 +341,114 @@
   left: 20px;
   width: 20px;
   height: 20px;
-  background-color: #ff0000;
+  background-image: url("../images/pointer_06.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  _background: none;
+  _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/pointer_06.png", sizingMethod='crop');
   z-index: 2;
+  top: -8px;
 }
 .slidebar-emulate .slidebar-range {
   position: absolute;
-  background-color: #0000ff;
+  background-color: #3382cd;
+  border-top: 1px solid #ffffff;
   width: 120px;
   left: 20px;
-  height: 20px;
+  height: 4px;
+  top: 0px;
+  font-size: 0px;
 }
 .slidebar-emulate .slidebar-right {
   position: absolute;
   left: 20px;
   width: 20px;
   height: 20px;
-  background-color: #ff0000;
+  background-image: url("../images/pointer_06.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  _background: none;
+  _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/pointer_06.png", sizingMethod='crop');
   z-index: 2;
+  top: -8px;
   left: 120px;
+}
+.slidebar-emulate .slidebar-tip {
+  height: 23px;
+  line-height: 23px;
+  width: 65px;
+  position: absolute;
+  top: -35px;
+  left: 50px;
+  background-color: #fdeecf;
+  font-size: 13px;
+  border-radius: 3px;
+  color: #656668;
+  text-align: center;
+  display: none;
+}
+.slidebar-emulate .slidebar-round-l {
+  position: absolute;
+  width: 4px;
+  height: 7px;
+  left: -3px;
+  top: -1px;
+  background-image: url("../images/scroller_03.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  _background: none;
+  _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/scroller_03.png", sizingMethod='crop');
+}
+.slidebar-emulate .slidebar-round-r {
+  position: absolute;
+  width: 4px;
+  height: 7px;
+  right: -3px;
+  top: -1px;
+  background-image: url("../images/scroller_05.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  _background: none;
+  _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/scroller_05.png", sizingMethod='crop');
+}
+.slidebar-emulate .down-arrow {
+  width: 0;
+  height: 0;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #cccccc transparent transparent;
+  -webkit-transform: rotate(0);
+      -ms-transform: rotate(0);
+          transform: rotate(0);
+  font-family: 'Microsoft Yahei';
+  vertical-align: top;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  border-top-color: #FDEECF;
+  border-width: 6px;
+  margin-left: -6px;
 }
 .slidebar {
   -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  *width: 560px;
   position: absolute;
-  border: 1px solid #ff0000;
+}
+.slidebar .slidetxt {
+  margin-top: 10px;
 }
 .slidebar .slidetxt .slideage {
   width: 70px;
   float: left;
-  border-left: 1px solid #cccccc;
   color: #5d76af;
   font-size: 14px;
   box-sizing: border-box;
+  position: relative;
+  left: -15px;
 }

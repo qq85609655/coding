@@ -4,21 +4,22 @@
  * 滚动条
  */
 .scroll-emulate {
-	height: 400px;
-	width: 500px;
+	height: 645px;
+	width: 303px;
+	.bgimg("../images/win_tc_03.png", 0 0);
 	.pv;
 	.ovh;
 
 	.scroll-emulate-area {
-		.mr(15px);
+		.mr(25px);
 	}
 	.scroll-bar {
 		.pa;
 		width: 9px;
-		right: 4px;
-		top: 0px;
-		height: 100%;
-		.bgimg("../images/scroll-bar.gif", 3px 0);
+		right: 11px;
+		top: 48px;
+		height: 90%;
+		.bgimg("../images/scroller_08.png", 0 0);
 		.poi;
 	}
 	.scroll-bg {
@@ -26,34 +27,80 @@
 		width: 100%;
 		top: 0;
 		left: 0;
-		height: 40%;
+		height: 150px;
 	}
 	.scroll-bar-up {
 		width: 100%;
-		height: 95%;
-		.bgimg("../images/scroll-bar.gif", -12px 50%);
+		height: 100%;
+		.bgimg("../images/scoller_03.png", 0 0);
 	}
-	.scroll-up-point {
-		height: 4px;
-		.bgimg("../images/scroll-bar.gif", -36px 0);
+	.scroll-area {
+		.ovh;
+		height: 580px;
+		.mt(10px);
 	}
-	.scroll-down-point {
-		height: 4px;
-		.bgimg("../images/scroll-bar.gif", -36px -4px);
+}
+
+/**
+ * 页面样式
+ */
+.scroll-container {
+	.ff;
+	user-select: none;
+
+	.scroll-ul-res {
+		list-style: none;
+		.pl(20px);
+		.color(#fff);
+		.m(0);
+	}
+	.scroll-contain-title {
+		line-height: 40px;
+		color: #333333;
+		.fs(17px);
+
+		.scroll-title-txt {
+			.ml(20px);
+		}
+		.icon-del {
+			.inline-block;
+			width: 13px;
+			height: 11px;
+			.vm;
+			.fr;
+			.m(15px 5px);
+			.bgimg("../images/cha_03.png", 0 0);
+			.poi;
+		}
+	}
+	.scroll-contain-body {
+		.li-res-item {
+			line-height: 38px;
+			.poi;
+			.pl(15px);
+		}
+		.active {
+			.bgcolor(#0D3056);
+			border-radius: 20px;
+		}
+	}
+	.red {
+		color: #FE0100;
 	}
 }
 
 /**
  * 模拟滑动条
  */
-@slideheihgt: 20px;
+@slideheihgt: 6px;
 @barheihgt: 20px;
 
 .slidebar-emulate {
-	width: 100%;
 	height: @slideheihgt;
-
-	.bgcolor(yellow);
+	width: 100%;
+	.poi;
+	.bgcolor(#9AA4AD);
+	.bt(#8F989F);
 	.pv;
 
 	.slidebar-left {
@@ -61,34 +108,84 @@
 		left: 20px;
 		width: @barheihgt;
 		height: @barheihgt;
-		.bgcolor(red);
+		.bgimg("../images/pointer_06.png", 0 0);
+		.ie6filter("images/pointer_06.png");
 		z-index: 2;
+		top: -8px;
 	}
 	.slidebar-range {
 		.pa;
-		.bgcolor(blue);
+		.bgcolor(#3382CD);
+		.bt(#fff);
 		width: 120px;
 		left: 20px;
-		height: @barheihgt;
+		height: 4px;
+		top: 0px;
+		font-size: 0px;
 	}
 	.slidebar-right {
 		.slidebar-left;
 		left: 120px;
 	}
+	.slidebar-tip {
+		.pa;
+		height: 23px;
+		line-height: 23px;
+		width: 65px;
+		.pa;
+		top: -35px;
+		left: 50px;
+		.bgcolor(#FDEECF);
+		.fs(13px);
+		border-radius: 3px;
+		color: #656668;
+		.txtc;
+		.hide;
+	}
+	.slidebar-round-l {
+		.pa;
+		width: 4px;
+		height: 7px;
+		left: -3px;
+		top: -1px;
+		.bgimg("../images/scroller_03.png", 0 0);
+		.ie6filter("images/scroller_03.png");
+	}
+	.slidebar-round-r {
+		.pa;
+		width: 4px;
+		height: 7px;
+		right: -3px;
+		top: -1px;
+		.bgimg("../images/scroller_05.png", 0 0);
+		.ie6filter("images/scroller_05.png");
+	}
+	.down-arrow {
+		.triangle-down;
+		.pa;
+		left: 50%;
+		top: 100%;
+		border-top-color: #FDEECF;
+		border-width: 6px;
+		.ml(-6px);
+	}
 }
 .slidebar {
-	-webkit-user-select:none;
-
+	user-select: none;
+	*width: 560px;
 	.pa;
-	.b(red);
-	.slidetxt { 
+
+	.slidetxt {
+		.mt(10px);
+
 		.slideage {
 			width: 70px;
 			.fl;
-			.bl(#ccc);
 			.color(#5D76AF);
 			.fs(14px);
 			box-sizing: border-box;
+			.pv;
+			left: -15px;
 		}
 	}
 }
