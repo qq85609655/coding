@@ -14,8 +14,8 @@
 				$(document).on("click",".icon-del,.li-res-item",function(event){
 					var tar=$(this);
 					tar.hasClass("icon-del") && (function() {
-			 			tar.parents(".scroll-emulate").hide();
-					})(); 
+						tar.parents(".scroll-emulate").hide();
+					})();
 					tar.hasClass("li-res-item") && (function() {
 						tar.siblings().removeClass("active");
 						tar.addClass('active');
@@ -24,8 +24,16 @@
 				});
 			});
 		</script>
+		<style type="text/css">
+		code{
+			padding-left:30px
+			border:1 px solid #ccc;
+			background-color: lightgreen;
+			margin:0;
+		}
+		</style>
 	</head>
-	<body>
+	<body> 
 		<div class="demo">
 			<div class="scroll-emulate">
 				<div class="scroll-emulate-area">

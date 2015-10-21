@@ -7,6 +7,7 @@
 	height: 645px;
 	width: 303px;
 	.bgimg("../images/win_tc_03.png", 0 0);
+	_background-image: url("../images/tc_nav_03.gif");
 	.pv;
 	.ovh;
 
@@ -20,6 +21,7 @@
 		top: 48px;
 		height: 90%;
 		.bgimg("../images/scroller_08.png", 0 0);
+		.ie6filter("images/scroller_08.png");
 		.poi;
 	}
 	.scroll-bg {
@@ -33,6 +35,7 @@
 		width: 100%;
 		height: 100%;
 		.bgimg("../images/scoller_03.png", 0 0);
+		.ie6filter("images/scoller_03.png");
 	}
 	.scroll-area {
 		.ovh;
@@ -70,10 +73,13 @@
 			.fr;
 			.m(15px 5px);
 			.bgimg("../images/cha_03.png", 0 0);
+			.ie6filter("images/cha_03.png");
 			.poi;
 		}
 	}
 	.scroll-contain-body {
+		.mt(0);
+
 		.li-res-item {
 			line-height: 38px;
 			.poi;
@@ -167,6 +173,7 @@
 		top: 100%;
 		border-top-color: #FDEECF;
 		border-width: 6px;
+		border-bottom: none;
 		.ml(-6px);
 	}
 }

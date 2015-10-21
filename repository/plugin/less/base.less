@@ -224,16 +224,12 @@
 /**
 **向下三角
 */
-.triangle-down(@deg:0, @color:#ccc) {
-	width: 0;
-	height: 0;
-	border-width: 5px;
-	border-style: solid;
-	border-color: @color transparent transparent;
-	transform: rotate(@deg);
-	.ff;
-	.vt;
-	.inline-block;
+.triangle-down(@color:#ccc) {
+  width: 0;
+  height: 0;
+  border-width: 5px;
+  border-style: solid dashed dotted dashed;
+  border-color: @color transparent transparent transparent;
 }
 .triangle-left(@color:#ccc) {
 	width: 0;

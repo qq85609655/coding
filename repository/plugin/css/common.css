@@ -367,15 +367,8 @@
   width: 0;
   height: 0;
   border-width: 5px;
-  border-style: solid;
-  border-color: #cccccc transparent transparent;
-  -webkit-transform: rotate(0);
-      -ms-transform: rotate(0);
-          transform: rotate(0);
-  font-family: 'Microsoft Yahei';
-  vertical-align: top;
-  *display: inline;
-  *zoom: 1;
+  border-style: solid dashed dotted dashed;
+  border-color: #cccccc transparent transparent transparent;
   display: inline-block;
 }
 .time-axis .rote180 {
@@ -415,16 +408,7 @@
   width: 0;
   height: 0;
   border-width: 5px;
-  border-style: solid;
-  border-color: #cccccc transparent transparent;
-  -webkit-transform: rotate(0);
-      -ms-transform: rotate(0);
-          transform: rotate(0);
-  font-family: 'Microsoft Yahei';
-  vertical-align: top;
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
+  border-color: #cccccc transparent transparent transparent;
   display: block;
   float: right;
   cursor: pointer;
