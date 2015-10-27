@@ -4061,7 +4061,7 @@
 			} while (m);
 
 			if (parts.length > 1 && origPOS.exec(selector)) {
-				//从左向右查询分支：shift()   eg: $.find("div:first-child");  
+				//对于存在：的选择器，采用从左向右查询分支：shift()   eg: $.find("div:first-child");  
 				if (parts.length === 2 && Expr.relative[parts[0]]) {
 					set = posProcess(parts[0] + parts[1], context, seed);
 
@@ -4082,7 +4082,7 @@
 				}
 
 			} else {
-				//从右向左查询分支pop() eg:$.find("body #test .namet");
+				//对于不含伪类形式的查询字段，从右向左查询分支pop() eg:$.find("body #test .namet");
 				// Take a shortcut and set the context if the root selector is an ID
 				// (but not if it'll be faster if the inner selector is an ID)
 				if (!seed && parts.length > 1 && context.nodeType === 9 && !contextXML &&
@@ -4111,7 +4111,7 @@
 					} else {
 						prune = false;
 					}
-
+					//进行多词的循环过滤，其中主要处理选择关系符号，通过进行查询关系符号字典进行过滤
 					while (parts.length) {
 						cur = parts.pop();
 						pop = cur;
@@ -4125,7 +4125,8 @@
 						if (pop == null) {
 							pop = context;
 						}
-
+						//pop为从右向左的上一个关键字
+						//cur为挂席符号，可以为""、"+"、"~"、">",每种符号配置有筛选函数Expr.relative
 						Expr.relative[cur](checkSet, pop, contextXML);
 					}
 
@@ -5357,7 +5358,7 @@
 				}
 			}
 		}
-
+		//关系符号过滤函数
 		function dirCheck(dir, cur, doneName, checkSet, nodeCheck, isXML) {
 			for (var i = 0, l = checkSet.length; i < l; i++) {
 				var elem = checkSet[i];
@@ -8676,7 +8677,7 @@
 				}
 
 				for (p in prop) {
-					e = new jQuery.fx(this, opt, p); //对每一个动作创建一个fx对象，但是一个动画里的动作拥有相同的opt，即拥有相同的complete方法。
+					e = new jQuery.fx(this, opt, p); //(一个动画属性看做一个动作)对每一个动作创建一个fx对象，但是一个动画里的动作拥有相同的opt，即拥有相同的complete方法。
 					val = prop[p];
 
 					if (rfxtypes.test(val)) {
@@ -8913,6 +8914,8 @@
 		},
 
 		// Start an animation from one number to another
+		// 进行动画的定制，每一个动作产生一个t对象，并将t对象保存于数组队列中，通过遍历实现动画的动作交替进行
+		// 
 		custom: function(from, to, unit) {
 			var self = this,
 				fx = jQuery.fx;
@@ -8938,8 +8941,9 @@
 					}
 				}
 			};
-
-			if (t() && jQuery.timers.push(t) && !timerId) { //初始化动作并完成动作添加到动作队列
+			//将一个动画中的每一个属性看做一个动作，多个属性就是多个连续动作，这些动作将在一个定时中完成，
+		    //即在fx.tick方法中完成对所有动作在定时时间内的遍历执行
+			if (t() && jQuery.timers.push(t) && !timerId) { //初始化动作并完成动作添加到动作队列jquery.timer
 				timerId = setInterval(fx.tick, fx.interval);
 			}
 		},
@@ -8975,7 +8979,7 @@
 			this.custom(this.cur(), 0);
 		},
 
-		// Each step of an animation
+		// 动作帧的实现
 		step: function(gotoEnd) {
 			var p, n, complete,
 				t = fxNow || createFxNow(),
@@ -8984,6 +8988,7 @@
 				options = this.options;
 
 			if (gotoEnd || t >= options.duration + this.startTime) {
+				//当动作在动画执行规定时间外完成的时候将样式置为最终样式，并启动下一个动画
 				this.now = this.end;
 				this.pos = this.state = 1;
 				this.update();
@@ -9028,7 +9033,7 @@
 					if (complete) {
 
 						options.complete = false;
-						complete.call(elem); //准备下一个动画后清除本动画
+						complete.call(elem); //启动下一个动画
 					}
 				}
 
@@ -9039,6 +9044,7 @@
 				if (options.duration == Infinity) {
 					this.now = t;
 				} else {
+					//动画帧计算，根据当前动画启动时间间隔在动画总历时的比重进行帧的计算
 					n = t - this.startTime;
 					this.state = n / options.duration;
 
@@ -9055,6 +9061,7 @@
 	};
 
 	jQuery.extend(jQuery.fx, {
+		//该方法实现定时之时动作的遍历，其中!timer() 方法实现动作帧
 		tick: function() {
 			var timer,
 				timers = jQuery.timers, //其中存储了本次动画的所有动作
@@ -9063,14 +9070,14 @@
 			for (; i < timers.length; i++) {
 				timer = timers[i]; //执行动作i，如果执行动作的时间在规定时间以外，返回false
 				// Checks the timer has not already been removed
-				if (!timer() && timers[i] === timer) {
+				if (!timer() && timers[i] === timer) {// !timer() 动画执行启动动作1
 					//动作执行超时以后返回false会将执行动作的队列的对应动作删除
 					timers.splice(i--, 1);
 				}
 			}
 
 			if (!timers.length) {
-				jQuery.fx.stop();
+				jQuery.fx.stop();//该动画完成，即该定时将结束，调用stop完成定时清空，可以开启下一个定时。
 			}
 		},
 

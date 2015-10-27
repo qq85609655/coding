@@ -29,10 +29,10 @@
 	</style>
 </head>
 <body>
-<div style="height:600px;width: 221px"></div>
+<!-- <div style="height:600px;width: 221px"></div> -->
 	<div id="test" class="name" hello="wxx" data-v="ds" click="func2()">
 		<div class="namet" id="namet">hellp0</div>
-		<!-- <div class="namet">hellp1</div> -->
+		<div class="namet">hellp1</div>
 	</div>
 	<span></span>
 
@@ -106,6 +106,7 @@
 		$.find("[hello=wxx]"); 
 		$.find(":input"); 
 		$.find(":input:text"); 
+		$.find("div+.namet"); 
 		$("#test").filter(".namet");
 
 		var t=$("#test").clone(true);
@@ -116,7 +117,7 @@
 		  // div.show("slow");
 		  div.animate({"margin-left":'150px','opacity':'0.5'},10000);
 		  div.animate({opacity:'0.3'},2000); 
-		  div.animate({"margin-left":'300px'},5000); 
+		  // div.animate({"margin-left":'300px'},5000); 
 		  // div.slideToggle(1000);
 		  // div.slideToggle("fast");
 		  // div.animate({left:'-=200'},1500);
@@ -131,7 +132,7 @@
 		  setTimeout(showIt, 100);
 		}
  
-		// runIt();
+		runIt();
 		// showIt();
 		function testAjax(){
 			$.ajax({
