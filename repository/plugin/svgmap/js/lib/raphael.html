@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>raphael demo</title>
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1"/>
+		<meta name="renderer"content="webkit">
+		<script src="raphael.js"></script>
+	</head>
+	<body>
+		<script>
+				var paper = Raphael(10, 50, 320, 200);
+				// Creates circle at x = 50, y = 40, with radius 10
+				var circle = paper.circle(50, 40, 10);
+				// Sets the fill attribute of the circle to red (#f00)
+				circle.attr("fill", "#f00");
+				// Sets the stroke attribute of the circle to white
+				circle.attr("stroke", "#ccc");
+		</script>
+	</body> 
+</html>

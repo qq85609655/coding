@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>border-radius-emulate</title>
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1"/>
+		<meta name="renderer"content="webkit">
+		<style>
+			.top {
+				border-bottom: 3px solid red;
+				border-left: 3px solid transparent;
+				border-right: 3px solid transparent;
+				width: 500px;
+			}
+			.bottom {
+				border-top: 3px solid red;
+				border-left: 3px solid transparent;
+				border-right: 3px solid transparent;
+				width: 500px;
+			}
+			.content {
+				background-color: red;
+				width: 506px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="top"></div>
+		<div class="content">this is emulate border-radius</div>
+		<div class="bottom"></div>
+	</body>
+</html>
