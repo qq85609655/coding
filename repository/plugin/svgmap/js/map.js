@@ -115,7 +115,7 @@
         SVGMap.prototype._scaleRaphael = function(a, b, c) {
             document.getElementById(a).style.width = b + "px";
             var f = new Raphael(a, b, c);
-            // f.canvas.setAttribute("viewBox", "0 0 " + b + " " + c);
+            f.canvas.setAttribute("viewBox", "0 0 " + b + " " + c);
             return f;
         };
         SVGMap.prototype.render = function() {

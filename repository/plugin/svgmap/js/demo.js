@@ -173,8 +173,8 @@ $(function() {
 	};
 	var mapRegion = $('#RegionMap').SVGMap({
 		external: true,
-		mapName: 'china',
-		stateData: data,
+		mapName: 'shandong',
+		stateData: "",
 		mapTipHtml: function(mapData, obj) {
 			var _value = mapData[obj.id].value;
 			var _idx = mapData[obj.id].index;
