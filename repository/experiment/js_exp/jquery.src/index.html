@@ -138,8 +138,8 @@
 			$.ajax({
 				url:"https://api.github.com",
 				// url:"https://www.baidu.com",
-				async:false,
-				dataType:"json",
+				async:true,
+				dataType:"json",//从服务器返回你期望的数据类型
 				statusCode:{
 					"404":function(){alert("404")},
 					"200":function(){alert("200")},
