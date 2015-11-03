@@ -138,6 +138,8 @@
                     return a && a.pageX ? (b = a.pageX, c = a.pageY) : (b = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft, c = event.clientY + document.body.scrollTop + document.documentElement.scrollTop), b = b - d / 2 + opt.mapTipX < 0 ? 0 : b - d / 2 + opt.mapTipX, c = c - e + opt.mapTipY < 0 ? c - opt.mapTipY : c - e + opt.mapTipY, [b, c]
                 };
             this.R = r;
+            this.mapConfig = mapConfig;
+
             for (var state in mapConfig.shapes) {
                 var csd = stateData[state],
                     initColor = csd && opt.stateColorList[csd.stateInitColor] || opt.stateInitColor,
@@ -223,43 +225,10 @@
                 yy = st.getBBox().y + (st.getBBox().height / 2);
             opt = this.options;
             //***修改部分地图文字偏移坐标
-            switch (chinaMapConfig['names'][state]) {
-                case "江苏":
-                    xx += 5;
-                    yy -= 10;
-                    break;
-                case "河北":
-                    xx -= 10;
-                    yy += 20;
-                    break;
-                case "天津":
+            switch (this.mapConfig['names'][state]) {
+                case "济南":
                     xx += 10;
-                    yy += 10;
-                    break;
-                case "上海":
-                    xx += 10;
-                    break;
-                case "广东":
-                    yy -= 10;
-                    break;
-                case "澳门":
-                    yy += 10;
-                    break;
-                case "香港":
-                    xx += 20;
                     yy += 5;
-                    break;
-                case "甘肃":
-                    xx -= 40;
-                    yy -= 30;
-                    break;
-                case "陕西":
-                    xx += 5;
-                    yy += 10;
-                    break;
-                case "内蒙古":
-                    xx -= 15;
-                    yy += 65;
                     break;
                 default:
             }
@@ -269,17 +238,17 @@
                 stroke: opt.circleStrokeList[opt.stateData[state].stateInitColor] || opt.circleStrokeDefault,
                 "stroke-width": 4
             });
-            var domTxt = R.text(xx, yy, chinaMapConfig['names'][state]).attr(textAttr);
+            var domTxt = R.text(xx, yy, this.mapConfig['names'][state]).attr(textAttr);
             this.domCache.text.push(domTxt);
             this.domCache.circle.push(circle);
         };
         SVGMap.prototype.renderArc = function() {
             // var c3x = this.arcRefer.getBBox().x,
             //     c3y = this.arcRefer.getBBox().y;  
-            var c3x = 455,
-                c3y = 240;
-            var c2x = 300,
-                c2y = 150;
+            var c3x = 150,
+                c3y = 210;
+            var c2x = 130,
+                c2y = 140;
             var domTxt = this.domCache.circle;
             for (var i = 0; i < domTxt.length; i++) {
                 var arc = this.R.path("M" + domTxt[i].attr().cx + " " + domTxt[i].attr().cy + " Q" + c2x + " " + c2y + " " + c3x + " " + c3y)
