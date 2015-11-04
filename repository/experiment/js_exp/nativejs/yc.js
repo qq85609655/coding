@@ -22,9 +22,12 @@ yc.fn = yc.prototype = {
 		context = context || document;
 		if (yc.type(selector) == "string") {
 			doms = context.querySelectorAll(selector);
-		} else {
+		} else if (yc.type(selector) == "array") {
 			doms = selector;
-			selector = "DOM";
+			selector = "DOMArray";
+		} else {
+			doms = yc.until.makeArray(selector);
+			selector = "DOMOOne";
 		}
 		this.selector = selector;
 		this.length = doms.length;
@@ -59,16 +62,7 @@ yc.fn = yc.prototype = {
 		return this.constructor(tmp);
 	},
 	makeArray: function(eles) {
-		var ret = [];
-		if (yc.type(eles) !== "Array") {
-			//对于非数组对象进行数组对象转换
-			ret.push(eles);
-		} else {
-			for (var i = 0; i < eles.length; i++) {
-				ret[i] = eles[i];
-			}
-		}
-		return ret;
+		return yc.until.makeArray(eles);
 	}
 };
 /**
@@ -142,11 +136,18 @@ yc.noConflict = function() {
 	window.$ = _$;
 }
 yc.each = function(arr, fun, param) {
-	var l = arr.length,
-		i = 0;
-	for (; i < l; i++) {
-		fun.apply(arr[i], param ? [i, arr[i]].push(param) : [i, arr[i]]);
+	if (yc.type(arr) == "array") {
+		var l = arr.length,
+			i = 0;
+		for (; i < l; i++) {
+			fun.apply(arr[i], param ? [i, arr[i]].push(param) : [i, arr[i]]);
+		}
+	} else if (yc.type(arr) == "object") {
+		for (var key in arr) {
+			fun.apply(arr, param ? [key, arr[key]].push(param) : [key, arr[key]]);
+		}
 	}
+
 }
 yc.each("Boolean Number String Function Array Date RegExp Object".split(" "), function(i, name) {
 	class2type["[object " + name + "]"] = name.toLowerCase();
@@ -195,18 +196,134 @@ yc.sheet = {
 		}
 	}
 }
-yc.position={
-	position:function(dom){
-		if(){
+yc.position = {
+	position: function(dom) {
+		if (null) {
 
-		}else{
+		} else {
 
-		} 
+		}
 	},
-	offset:function(dom){
+	offset: function(dom) {
 
 	}
-};
+}
+yc.dom = {
+	//dom操作 
+	html: function(ele, htmlStr) {
+		ele.innerHTML = htmlStr;
+	},
+	append: function(ele, htmlStr) {
+		ele.innerHTML += htmlStr;
+	},
+	remove: function(ele, tar) {
+		ele.removeChild(tar);
+	},
+	insertBefore: function(ele, ref, tar) {
+		ele.inserBefore(ref, tar);
+	},
+	//关系查找
+	children: function(ele) {
+		if (ele.chilren) {
+			return yc.until.makeArray(ele.chidren);
+		} else {
+			var childNodes = ele.childNodes,
+				ret = [],
+				i = 0;
+			for (; i < childNodes.length; i++) {
+				if (childNodes[i].nodeType == 1) {
+					ret.push(childNodes[i]);
+				}
+			}
+			return ret;
+		}
+	},
+	parent: function(ele) {
+		return ele.parentNode ? ele.parentNode : ele.parentElement ? ele.parentElement : null;
+	},
+	parents: function(ele) {
+		var tmp = ele,
+			ret = [];
+		if (ele.parentElement) {
+			while (tmp = tmp.parentElement) {
+				ret.push(tmp);
+			}
+		} else {
+			while (tmp = tmp.parentNode) {
+				if (tmp.nodeType == 1) {
+					ret.push(tmp);
+				}
+			}
+		}
+		return ret;
+	}
+}
+yc.each({
+	"prevAll": "previous",
+	"nextAll": "next"
+}, function(key, vaule) {
+	yc.dom[key] = function(ele) {
+		var tmp = ele,
+			ret = [];
+		if (ele[vaule + "ElementSibling"]) {
+			while (tmp = tmp[vaule + "ElementSibling"]) {
+				ret.push(tmp);
+			}
+		} else {
+			while (tmp = tmp[vaule + "Sibling"]) {
+				if (tmp.nodeType == 1) {
+					ret.push(tmp);
+				}
+			}
+		}
+		return ret;
+	}
+});
+yc.each({
+	"prev": "previous",
+	"next": "next"
+}, function(key, vaule) {
+	yc.dom[key] = function(ele) {
+		if (ele[vaule + "ElementSibling"]) {
+			return ele[vaule + "ElementSibling"];
+		} else {
+			var tmp = ele;
+			while (tmp = tmp[value + "Sibling"]) {
+				if (tmp.nodeType == 1) {
+					return tmp;
+				}
+			}
+			return null;
+		}
+	}
+});
+
+yc.attr = {
+	getArribute: function(ele, attr) {
+		if (attr) {
+			return ele.getAttribute(attr);
+		} else {
+			return ele.attributes;
+		}
+	},
+	setAttribute: function(ele, attr, value) {
+		if (value) {
+			ele.setAttribute(attr, value);
+		}
+	},
+	getProperty: function(ele, attr) {
+		if (attr) {
+			return ele[attr];
+		} else {
+			return null;
+		}
+	},
+	setProperty: function(ele, attr, value) {
+		if (value) {
+			ele[attr] = value;
+		}
+	}
+}
 yc.event = {
 	// event(事件)工具集 github.com/markyun
 	readyEvent: function(fn) {
@@ -294,19 +411,15 @@ yc.event = {
 
 }
 yc.extend(yc.fn, {
-	addEvent: function() {
+	on: function() {
 
 	},
-	fireEvent: function() {
+	trigger: function() {
 
 	},
-	removeEvent: function() {
-
-	},
-	readyEvent: function() {
+	off: function() {
 
 	}
-
 });
 yc.callback = function() {
 	this.callList = [];
@@ -334,7 +447,89 @@ yc.data = {
 
 	}
 }
-
+yc.until = {
+	test: [1, 12, 4, 124.45, 8, 99998, 456],
+	/**
+	 * 冒泡排序
+	 * 注意：冒泡方向跟j的值相关；j=i--向前冒泡；j=0--向后冒泡
+	 * @return {[type]} [description]
+	 */
+	bubbleSort: function(arr) {
+		for (var i = 0; i < arr.length - 1; i++) {
+			for (var j = 0; j < arr.length - 1 - i; j++) {
+				if (arr[j] < arr[j + 1]) {
+					var tmp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = tmp;
+				}
+			}
+		}
+		return arr;
+	},
+	/**
+	 * 比较排序
+	 * @return {[type]} [description]
+	 */
+	compareSort: function(arr) {
+		for (var i = 0; i < arr.length - 1; i++) {
+			for (var j = i + 1; j < arr.length; j++) {
+				if (arr[i] > arr[j]) {
+					var tmp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = tmp;
+				}
+			}
+		}
+		return arr;
+	},
+	max: function(arr) {
+		var max = arr[0];
+		for (var i = 1; i < arr.length; i++) {
+			if (max < arr[i]) {
+				max = arr[i];
+			}
+		}
+		return max;
+	},
+	min: function(arr) {
+		var min = arr[0];
+		for (var i = 1; i < arr.length; i++) {
+			if (min > arr[i]) {
+				min = arr[i];
+			}
+		}
+		return min;
+	},
+	/**
+	 * 某个方法只能执行指定的次数
+	 * ps：未测试
+	 * @param  {[type]} fun [description]
+	 * @param  {[type]} t   [description]
+	 * @return {[type]}     [description]
+	 */
+	executeSome: function(fun, t) {
+		var count = 0,
+			args = Array.prototype.slice(arguments, 2);
+		return function() {
+			if (count < t) {
+				fun.apply(this, args);
+				count++;
+			}
+		}
+	},
+	makeArray: function(eles) {
+		var ret = [];
+		if (yc.type(eles) !== "Array") {
+			//对于非数组对象进行数组对象转换
+			ret.push(eles);
+		} else {
+			for (var i = 0; i < eles.length; i++) {
+				ret[i] = eles[i];
+			}
+		}
+		return ret;
+	}
+}
 
 
 if (typeof define == "function" && define.amd) {

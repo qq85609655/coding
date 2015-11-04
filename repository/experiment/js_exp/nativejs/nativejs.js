@@ -126,7 +126,6 @@ function getEleStyle(mark) {
 		return document.defaultView.getComputedStyle(ele, null);
 	} else {
 		return ele.currentStyle;
-
 	}
 }
 /**

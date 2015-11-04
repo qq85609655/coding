@@ -8,13 +8,17 @@
 		<script src="yc.js"></script>
 	</head>
 	<body>
-		<div class="yc">1</div>
+		<div class="yc">1
+			<div class="i">5</div>
+			<div class="i">6</div>
+			<div class="i">7</div>
+			<div class="i">8</div>
+		</div>
 		<div class="yc">2</div>
 		<div class="yc">3</div>
 		<div class="yc">4</div>
 	</body>
 	<script>
-
 		console.log($(".yc").eq(0));
 		var dp1={
 			"name":"wxx",
@@ -26,10 +30,11 @@
 			"age":"22",
 			"habit":["ping","pang"]
 		};
-		var dp2=["wxx",{"a":"jn","b":"wh","c":"bj"},"22",["ping","pang"]]; 
+		var dp2=["wxx",{"a":"jn","b":"wh","c":"bj"},"22",["ping","pang"]];
 		var dc1=yc.deepCopy(dp1);
 		var dc2=yc.deepCopy(dp2);
 		console.info( dc1);
 		console.info( dc2);
+		var  td=document.querySelectorAll(".yc").item(2);
 	</script>
 </html>
