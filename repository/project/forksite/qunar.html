@@ -5,27 +5,282 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="renderer" content="webkit">
-		<style>
-			
-		</style>
-		<script type="text/javascript">
-		</script>
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/qunar.css">
+		<script type="text/javascript" src="js/yc-1.0.js"></script>
+		<script type="text/javascript" src="js/qunar.js"></script>
+		
 	</head>
 	<body>
+		<div class="nav-left-menu">
+			<div class="nav-left-container">
+				<div class="nav-items">
+					<ul class="ul-items">
+						<li class="li-item nl-close "><i class="icon"></i></li>
+						<li class="li-item nl-usr "><i class="icon"></i></li>
+						<li class="devide-line"></li>
+						<li class="li-item nl-mesg active"><i class="icon"></i><br>消息</li>
+						<li class="li-item nl-order"><i class="icon"></i><br> 订单</li>
+						<li class="li-item nl-account"><i class="icon"></i><br> 账户</li>
+						<li class="devide-line"></li>
+						<li class="li-item nl-advice"><i class="icon"></i><br> 建议</li>
+						<li class="li-item nl-swapcode"><i class="icon"></i><br> 扫码</li>
+						<li class="li-item nl-top"><i class="icon"></i><br> 置顶</li>
+						<li class="li-item nl-toggle"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 		<div class="main-flow">
 			<header class="header">
 				<div class="wrap">
-					
+					<div class="h-b-head">
+						<span href="#"class="h-b-forward">
+							请<a href="#" class="login inner-a">登陆</a>
+							或<a href="#" class="reg inner-a">免费注册</a>
+						</span> |
+						<a href="#"class="h-b-forward">
+							<i class="icon-message"></i>
+							消息
+							<i class="icon-arrow-down"></i>
+						</a> |
+						<a href="#"class="h-b-forward">查看订单 <i class="icon-arrow-down"></i></a> |
+						<a href="#"class="h-b-forward">积分商城</a> |
+						<a href="#"class="h-b-forward">联系客服</a> |
+						<a href="#"class="h-b-forward">
+							<i class="icon-eng"></i> In English
+						</a>
+					</div>
 				</div>
 			</header>
 			<nav class="nav">
 				<div class="wrap">
-					
+					<div class="n-banner"></div>
+					<div class="n-catalog">
+						<div class="catalog">
+							<div class="catalog-class">
+								<ul class="up">
+									<li class="fsl active">
+										<a href="#">首页</a>
+									</li>
+									<li class="fsl">
+										<a href="#">机票</a>
+									</li>
+									<li class="fsl">
+										<a href="#">酒店</a>
+									</li>
+									<li class="fsl">
+										<a href="#">团购</a>
+									</li>
+									<li class="fsl">
+										<a href="#">度假</a>
+									</li>
+									<li class="fsl">
+										<a href="#">门票</a>
+									</li>
+									<li class="fsl">
+										<a href="#">火车票</a>
+									</li>
+									<li class="fsl">
+										<a href="#">攻略</a>
+									</li>
+									<li class="fsl">
+										<a href="#">公寓</a>
+									</li>
+									<li class="fsl">
+										<a href="#">当地人</a>
+									</li>
+									<li class="fsl">
+										<a href="#">车车</a>
+									</li>
+									<li class="fsl">
+										<a href="#">汽车票</a>
+									</li>
+									<li class="fsl">
+										<a href="#">礼品卡</a>
+									</li>
+									<li class="fsl">
+										<a href="#">金融</a>
+									</li>
+									<div class="clear"></div>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
 				</div>
 			</nav>
 			<section class="section">
 				<div class="wrap">
-					
+					<div class="div-section search-all">
+						<div class="tab-pannel">
+							<div class="tab-pannel-l">
+								<ul class="ul-tab">
+									<li class="li-tab" data-tab="search-air-ticket">机票</li>
+									<li class="li-tab" data-tab="search-hotel">酒店</li>
+									<li class="li-tab" data-tab="search-train-ticket">火车票</li>
+									<li class="li-tab" data-tab="search-vacation">度假</li>
+									<li class="li-tab" data-tab="search-entrance-ticket">门票</li>
+									<li class="li-tab" data-tab="search-group-purchase">团购</li>
+									<li class="li-tab" data-tab="search-car">车车</li>
+								</ul>
+							</div>
+							<div class="tab-pannel-r">
+								<div id="search-air-ticket" class="tab-toggle-pannel">
+									
+								</div>
+								<div id="search-hotel" class="tab-toggle-pannel">
+									
+								</div>
+								<div id="search-train-ticket" class="tab-toggle-pannel">
+									
+								</div>
+								<div id="search-vacation" class="tab-toggle-pannel">
+									
+								</div>
+								<div id="search-entrance-ticket" class="tab-toggle-pannel">
+									
+								</div>
+								<div id="search-group-purchase" class="tab-toggle-pannel">
+									
+								</div>
+								<div id="search-car" class="tab-toggle-pannel">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="div-section discount">
+						<div class="tab-pannel">
+							<div class="tab-pannel-t">
+								<div class="more">
+									更多 &gt;
+								</div>
+								<ul class="ul-tab">
+									<li class="li-tab active" data-tab="discount-today">今日特惠</li>
+									<li class="li-tab" data-tab="discount-ticket">特惠门票</li>
+									<li class="li-tab" data-tab="discount-hotel">特惠住宿</li>
+								</ul>
+								
+							</div>
+							<div class="tab-pannel-b">
+								<div id="discount-today" class="tab-toggle-pannel">
+									<div class="pro-row">
+										<a href="#" class="pro-link-a pro-first">
+											<div class="pro-show-p">
+												<div class="pro-show-pl">
+													<img src="images/qunar/4.1" alt="厦门黄金海滩" class="pro-img">
+												</div>
+												<div class="pro-show-pr">
+													<div class="pro-title">厦门-黄金沙滩 玻璃海景房</div>
+													<div class="pro-describe">“晚上睡着看星星，早上阳光自然醒。”
+													</div>
+													<div class="pro-price">¥183</div>
+												</div>
+											</div>
+										</a>
+										<a href="#" class="pro-link-a">
+											<div class="pro-show-p">
+												<div class="pro-show-pt">
+													<img src="images/qunar/16.2" alt="厦门黄金海滩" class="pro-img">
+												</div>
+												<div class="pro-show-pb">
+													<div class="pro-title">天津-塘沽站  极客美学公寓</div>
+													<div class="pro-describe">“文艺范，连洗发液和沐浴液都是MUJI的”
+													</div>
+													<div class="pro-price">¥230</div>
+												</div>
+											</div>
+										</a>
+										<a href="#" class="pro-link-a">
+											<div class="pro-show-p">
+												<div class="pro-show-pt">
+													<img src="images/qunar/9.2" alt="厦门黄金海滩" class="pro-img">
+												</div>
+												<div class="pro-show-pb">
+													<div class="pro-title">成都-春熙路   双人套房</div>
+													<div class="pro-describe"> “很舒服的公寓，还用房间里的洗衣机洗了脏衣服”
+													</div>
+													<div class="pro-price">¥201</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="pro-row">
+										<a href="#" class="pro-link-a pro-first">
+											<div class="pro-show-p">
+												<div class="pro-show-pl">
+													<img src="images/qunar/4.1" alt="厦门黄金海滩" class="pro-img">
+												</div>
+												<div class="pro-show-pr">
+													<div class="pro-title">厦门-黄金沙滩 玻璃海景房</div>
+													<div class="pro-describe">“晚上睡着看星星，早上阳光自然醒。”
+													</div>
+													<div class="pro-price">¥183</div>
+												</div>
+											</div>
+										</a>
+										<a href="#" class="pro-link-a">
+											<div class="pro-show-p">
+												<div class="pro-show-pt">
+													<img src="images/qunar/16.2" alt="厦门黄金海滩" class="pro-img">
+												</div>
+												<div class="pro-show-pb">
+													<div class="pro-title">天津-塘沽站  极客美学公寓</div>
+													<div class="pro-describe">“文艺范，连洗发液和沐浴液都是MUJI的”
+													</div>
+													<div class="pro-price">¥230</div>
+												</div>
+											</div>
+										</a>
+										<a href="#" class="pro-link-a">
+											<div class="pro-show-p">
+												<div class="pro-show-pt">
+													<img src="images/qunar/9.2" alt="厦门黄金海滩" class="pro-img">
+												</div>
+												<div class="pro-show-pb">
+													<div class="pro-title">成都-春熙路   双人套房</div>
+													<div class="pro-describe"> “很舒服的公寓，还用房间里的洗衣机洗了脏衣服”
+													</div>
+													<div class="pro-price">¥201</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div id="discount-ticket" class="tab-toggle-pannel">
+									
+								</div>
+								<div id="discount-hotel" class="tab-toggle-pannel">
+									
+								</div>
+							</div>
+						</div>
+						<div class="carousel-regin">
+							
+						</div>
+					</div>
+					<div class="div-section hot-tourism">
+						
+					</div>
+					<div class="div-section hot-ticket">
+						
+					</div>
+					<div class="div-section recomand-hotel">
+						
+					</div>
+					<div class="div-section department">
+						
+					</div>
+					<div class="div-section travel-strategy">
+						
+					</div>
+					<div class="div-section camel-book">
+						
+					</div>
+					<div class="div-section other-link">
+						
+					</div>
 				</div>
 			</section>
 			<footer class="footer">
