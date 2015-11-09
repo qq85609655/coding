@@ -36,6 +36,7 @@ function myReady(fn){
         //监听document的加载状态
         d.onreadystatechange = function() {
             // 如果用户是在domReady之后绑定的函数，就立马执行
+            console.log(d.readyState);
             if (d.readyState == 'complete') {
                 d.onreadystatechange = null;
                 init();
