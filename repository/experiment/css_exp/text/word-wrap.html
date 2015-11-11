@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>word wrap</title>
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1"/>
+		<meta name="renderer"content="webkit">
+		<style>
+			.wr{
+				width:250px;
+				border:1px solid #ccc;
+				word-wrap:break-word;
+				white-space:pre-line;
+			}
+			.wr1{  
+				letter-spacing:5px;
+				direction:ltr;
+
+			}
+			.test p {
+				width: 100px;
+				border: 1px solid #000;
+			}
+			.normal p {
+				word-wrap: normal;
+			}
+			.break-word p {
+				word-wrap: break-word;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wr">
+			所有主流浏览器都支持 word-wrap 属性。定义和用法 word-wrap 属性允许长单词或 URL 地址换行到下一行。 默认值: normal 继承性: yes 版本: CSS3 JavaScript 语
+			Millions of amazing sites across the web are being built with Bootstrap.Getstartedon your ownwithourgrowingcollection of examples or by exploring some of our favorites.
+		</div>
+		<div class="wr1">
+			 所有主 your ownwithourgrowingcollection  of examples or by exploring some of our favorites.
+		</div>
+		<ul class="test">
+			<li class="normal">
+				<strong>normal：</strong>
+				<p>aaabbbcccdddeeefffggghhhiiijjjkkklllmmmnnn</p>
+			</li>
+			<li class="break-word">
+				<strong>break-word：</strong>
+				<p>aaabbbcccdddeeefffggghhhiiijjjkkklllmmmnnn</p>
+			</li>
+		</ul>
+	</body>
+</html>

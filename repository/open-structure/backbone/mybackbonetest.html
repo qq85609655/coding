@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>backbone test </title>
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1"/>
+		<meta name="renderer"content="webkit">
+		<script src="jquery-2.0.3.min.js"></script>
+		<script src="underscore-min.js"></script>
+		<script src="backbone-min.js"></script>
+	</head>
+	<body>
+	<script>
+ 		var model=new Backbone.Model();
+ 		model.set("name","wxx");
+ 		model.set("sex","male");
+ 		console.log(model.get("name"));
+ 		var M1=Backbone.Model.extend({
+ 			innerA:function(){
+ 				console.log(arguments);
+ 			}
+ 		},{
+ 			staticB:function(){
+ 				console.log(arguments);
+ 			}
+ 		});
+ 		M1.staticB();
+ 		var m1=new M1();
+ 		m1.innerA();
+ 		m1.set("age","23");
+ 		var M2=Backbone.Model.extend({
+ 			defaults:{
+ 				name:"ynchuan"
+ 			},
+ 			initialize:function(){
+ 				this.on("change",function(){
+ 					console.log(arguments);
+ 				});
+ 			}
+ 		});
+ 		var m2=new M2;
+		//创建数据模型
+		//创建视图（initialize）
+		//视图和数据模型绑定：newＶ({model:new M()})
+ 		var V=Backbone.View.extend({
+ 			initialize:function(){
+ 				this.listenTo(this.model,"change",this.show);
+ 			},
+ 			show:function(model){
+ 				$("body").append(""+model.get("name"));
+ 			}
+ 		});
+
+ 		var v=new V({
+ 			model:m2
+ 		});
+
+
+ 		m2.set("name","wxx");
+	</script>
+	</body>
+</html>
