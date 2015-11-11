@@ -1,6 +1,6 @@
 #ynchuan
 
-> 这里是ynchuan的前端学习库、仿站库、demo实验库...
+> 这里是ynchuan的前端学习代码积累库、仿站库、demo实验库...
 
 ###1、工作台--个人门户
 该页设计稿来源于网络，个人比较喜欢该工作台风格，页面图标采用font-icon，所以浏览器支持IE11|Chrome|FireFox等现代浏览器，未进行低版本兼容；
@@ -13,7 +13,9 @@
 为了提高个人的前端实现能力，业余时间进行了仿站练习。
 
 - 百度地图（只是进行了骨架的仿站，未进行低版本浏览器兼容；IE9+|Chrome） [查看](http://ynchuan.github.io/coding/repository/project/forksite/baidu-map-index.html)
-- 去哪儿网（仿站去哪儿主页，兼容至IE7+|Chrome）[查看](http://ynchuan.github.io/coding/qunar.html)
+- 去哪儿网（仿站去哪儿主页，兼容至IE7+|Chrome）[查看](http://ynchuan.github.io/coding/repository/project/forksite/qunar.html)
+
+
 ###3、基于项目的个人插件
 
 由于不同项目中的风格各异的特点，所以作者自己造了轮子，由于封装组件已经不能实现项目中前端风格迥异尤其是样式迥异的要求，所以根据项目中的实际情况，参考开源插件进行了常用组件的半封装，即将组件交互进行了封装，根据设计稿进行样式以及内容的调整；更好的满足前端多样化的特点，同时提高开发效率

@@ -15,7 +15,7 @@
 
 - [数据缓存](jq-data-cache.md)
 
-- [动画队列+效果函数](jq-fx.md)
+- [动画队列+效果函数](jq-animate.md)
 
 - [dom节点属性](jq-dom-attr.md)
 
