@@ -1,4 +1,3 @@
-;
 // (function(window) {
 var document = window.document,
 	navigator = window.navigator,
@@ -20,7 +19,10 @@ yc.fn = yc.prototype = {
 	init: function(selector, context) {
 		var doms;
 		context = context || document;
-		if (yc.type(selector) == "string") {
+		if (yc.type(selector) == "function") {
+			yc.event.readyEvent(selector);
+			return;
+		} else if (yc.type(selector) == "string") {
 			doms = context.querySelectorAll(selector);
 		} else if (yc.type(selector) == "array") {
 			doms = selector;
@@ -136,19 +138,20 @@ yc.noConflict = function() {
 	window.$ = _$;
 }
 yc.each = function(arr, fun, param) {
-	if (yc.type(arr) == "array") {
+	if (yc.type(arr) == "object") {
+		for (var key in arr) {
+			fun.apply(arr, param ? [key, arr[key]].push(param) : [key, arr[key]]);
+		}
+	} else {
 		var l = arr.length,
 			i = 0;
 		for (; i < l; i++) {
 			fun.apply(arr[i], param ? [i, arr[i]].push(param) : [i, arr[i]]);
 		}
-	} else if (yc.type(arr) == "object") {
-		for (var key in arr) {
-			fun.apply(arr, param ? [key, arr[key]].push(param) : [key, arr[key]]);
-		}
 	}
 
 }
+
 yc.each("Boolean Number String Function Array Date RegExp Object".split(" "), function(i, name) {
 	class2type["[object " + name + "]"] = name.toLowerCase();
 });
