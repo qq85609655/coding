@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>todos backbone demo</title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="renderer" content="webkit">
+		<script type="text/javascript" src="jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="underscore.js"></script>
+		<script type="text/javascript" src="backbone.js"></script> 
+	    <script type="text/javascript" src="todo.js"></script>
+	    <style>
+	    	
+	    </style>
+	</head>
+	<body>
+			<div id="todoapp">
+				<header>
+					<h1>todos</h1>
+					<input type="text" id="new-todo">
+				</header>
+				<section id="main">
+					<input type="checkbox" id="toggle-all">
+					<label for="toggle-all">mark all as complete</label>
+					<ul id="todo-list"></ul>
+				</section>
+				<footer>
+					<a href="#" id="clear-completed">clear completed</a>
+					<div id="todo-count"></div>
+				</footer> 
+			</div>
+			<script type="text/template" id="item-template">
+			<div class="view">
+				<input type="checkbox" class="toggle" <%=done? 'checked="checked"':'' %> />
+				<label><%=title%></label>
+				<a class="destroy"></a>
+			</div>
+			<input type="text" class="edit" value="<%=title%>"/>
+			</script>
+
+			<script id="state-template" type="text/template">
+			<%
+			if(done){
+				%>
+				<a href="#" class="clear-completed">Clear <%=done%> completed <%=done==1?'item':'items'%></a>
+				<%
+			}
+			%>
+			<div class="todo-count">
+				<b>
+				<%=remaining%>
+				</b>
+				<%=remaining==1?'item':'items'%>left
+			</div>
+			</script>
+	</body>
+</html>
+     
