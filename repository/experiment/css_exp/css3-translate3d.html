@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <style type="text/css">
+    .s {
+        width: 300px;
+        height: 300px;
+        float: left;
+        margin: 15px;
+        position: relative;
+        background: url(http://i13.tietuku.com/42a31a7ad86db39b.jpg) repeat center center;
+        
+        -webkit-perspective: 1200px;
+        -moz-perspective: 1200px;
+        -ms-perspective: 1200px;
+        -o-perspective: 1200px;
+        perspective: 1200px;
+    }
+    .s3 {
+        -webkit-perspective: none;
+        -moz-perspective: none;
+        -ms-perspective: none;
+        -o-perspective: none;
+        perspective: none;
+    }
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        -o-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+    .container img {
+        position: absolute;
+        margin-left: -35px;
+        margin-top: -50px; 
+    }
+    .container img:nth-child(1){
+        z-index: 1;
+        opacity: .6;
+    }
+    .s1 img:nth-child(2){
+        z-index: 2;    
+        -webkit-transform: translate3d(30px,30px,200px);
+        -moz-transform: translate3d(30px,30px,200px);
+        -ms-transform: translate3d(30px,30px,200px);
+        -o-transform: translate3d(30px,30px,200px);
+        transform: translate3d(30px,30px,200px);
+    }
+    .s2 img:nth-child(2){
+        z-index: 2;    
+        -webkit-transform: translate3d(30px,30px,-200px);
+        -moz-transform: translate3d(30px,30px,-200px);
+        -ms-transform: translate3d(30px,30px,-200px);
+        -o-transform: translate3d(30px,30px,-200px);
+        transform: translate3d(30px,30px,-200px);
+    }
+    .s3 img:nth-child(2){
+        z-index: 2;    
+        -webkit-transform: translate3d(30px,30px,200px);
+        -moz-transform: translate3d(30px,30px,200px);
+        -ms-transform: translate3d(30px,30px,200px);
+        -o-transform: translate3d(30px,30px,200px);
+        transform: translate3d(30px,30px,200px);
+    }
+    .c1 {
+        -webkit-transform-style: flat;
+        -moz-transform-style: flat;
+        -ms-transform-style: flat;
+        -o-transform-style: flat;
+        transform-style: flat;
+    }
+    .s4 img:nth-child(2){
+        z-index: 2;    
+        -webkit-transform: translate3d(30px,30px,-200px);
+        -moz-transform: translate3d(30px,30px,-200px);
+        -ms-transform: translate3d(30px,30px,-200px);
+        -o-transform: translate3d(30px,30px,-200px);
+        transform: translate3d(30px,30px,-200px);
+    }
+  </style>
+</head>
+<body>
+
+<div class="s s1">
+    <div class="container">
+        <img src="http://i13.tietuku.com/ac99ad6b3a13d255.png" alt="" width="70" height="100" />
+        <img src="http://i13.tietuku.com/ac99ad6b3a13d255.png" alt="" width="70" height="100" />
+    </div>
+</div>
+  
+<div class="s s2">
+    <div class="container">
+        <img src="http://i13.tietuku.com/ac99ad6b3a13d255.png" alt="" width="70" height="100" />
+        <img src="http://i13.tietuku.com/ac99ad6b3a13d255.png" alt="" width="70" height="100" />
+    </div>
+</div>
+<div class="s s3">
+    <div class="container">
+        <img src="http://i13.tietuku.com/ac99ad6b3a13d255.png" alt="" width="70" height="100" />
+        <img src="http://i13.tietuku.com/ac99ad6b3a13d255.png" alt="" width="70" height="100" />
+    </div>
+</div>
+<div class="s s4">
+    <div class="container c1">
+        <img src="http://i13.tietuku.com/ac99ad6b3a13d255.png" alt="" width="70" height="100" />
+        <img src="http://i13.tietuku.com/ac99ad6b3a13d255.png" alt="" width="70" height="100" />
+    </div>
+</div>
+
+</body>
+</html>

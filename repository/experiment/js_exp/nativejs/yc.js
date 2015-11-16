@@ -65,6 +65,14 @@ yc.fn = yc.prototype = {
 	},
 	makeArray: function(eles) {
 		return yc.until.makeArray(eles);
+	},
+	html: function(htmlStr) {
+		var that = this;
+		yc.dom.html(this[0], htmlStr);
+	},
+
+	hasClass: function(cn) {
+		return yc.sheet.hasClass(this[0], cn);
 	}
 };
 /**
@@ -456,8 +464,8 @@ yc.event = {
 
 }
 yc.extend(yc.fn, {
-	on: function() {
-
+	on: function(type, fun) {
+		yc.event.addEvent(this[0], type, fun);
 	},
 	trigger: function() {
 
@@ -642,6 +650,10 @@ if (typeof define == "function" && define.amd) {
 	});
 } else if (typeof module == "function" && module.exports) {
 	module.exports = yc;
+} else if (typeof define === "function" && define.cmd) {
+	define(function(require, exports, module) {
+		module.exports = yc;
+	});
 } else {
 	window.yc = yc;
 }

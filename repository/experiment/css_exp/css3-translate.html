@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body {
+        margin:60px;
+        }
+        div.polaroid {
+        width:294px;
+        padding:10px 10px 20px 10px;
+        border:1px solid #BFBFBF;
+        background-color:white;
+        box-shadow:2px 2px 3px #aaaaaa;
+        
+        transition: transform 1s;
+        -ms-transition: -ms-transform 1s;
+        -moz-transition: -moz-transform 1s;
+        -webkit-transition: -webkit-transform 1s;
+        -o-transition: -o-transform 1s;
+        }
+        /* 鼠标滑过图片归正 */
+        div.polaroid:hover {
+        -ms-transform:rotate(0); /* IE 9 */
+        -moz-transform:rotate(0); /* Firefox */
+        -webkit-transform:rotate(0); /* Safari and Chrome */
+        -o-transform:rotate(0); /* Opera */
+        transform:rotate(0);
+        }
+        div.rotate_left {
+        float:left;
+        -ms-transform:rotate(7deg); /* IE 9 */
+        -moz-transform:rotate(7deg); /* Firefox */
+        -webkit-transform:rotate(7deg); /* Safari and Chrome */
+        -o-transform:rotate(7deg); /* Opera */
+        transform:rotate(7deg);
+        }
+        div.rotate_right {
+        float:left;
+        -ms-transform:rotate(-8deg); /* IE 9 */
+        -moz-transform:rotate(-8deg); /* Firefox */
+        -webkit-transform:rotate(-8deg); /* Safari and Chrome */
+        -o-transform:rotate(-8deg); /* Opera */
+        transform:rotate(-8deg);
+        }
+        </style>
+    </head>
+    <body>
+        <div class="polaroid rotate_left">
+            <img src="http://i13.tietuku.com/d17ea072b13a1a71.jpg" width="284" height="213" />
+            <p class="caption">上海鲜花港的郁金香，花名：Ballade Dream。</p>
+        </div>
+        <div class="polaroid rotate_right">
+            <img src="http://i13.tietuku.com/755395ac04d54cc6.jpg" width="284" height="213" />
+            <p class="caption">2010年上海世博会，中国馆。</p>
+        </div>
+    </body>
+</html>
