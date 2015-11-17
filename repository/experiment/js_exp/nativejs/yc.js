@@ -60,6 +60,9 @@ yc.fn = yc.prototype = {
 		return this.pushStack(this.get(i));
 	},
 	pushStack: function(eles) {
+		if(yc.type(eles)=="object"){
+
+		}
 		var tmp = this.makeArray(eles);
 		return this.constructor(tmp);
 	},
@@ -90,7 +93,7 @@ yc.extend = yc.fn.extend = function(a, b, deep) {
 			a[i] = _b[i];
 		}
 	} else {
-
+		//深度复制
 	}
 	return a;
 }
@@ -100,14 +103,17 @@ yc.isPlainObject = function(a) {
 	}
 	for (var key in a) {
 		if (/object|array/.test(yc.type(a[key]))) {
-			break;
 			return false;
 		}
 	}
 	return true;
 }
 
-
+/**
+ * 深度复制
+ * @param  {[type]} a [description]
+ * @return {[type]}   [description]
+ */
 yc.deepCopy = function(a) {
 	var _a, i = 0;
 	if (yc.type(a) == "array") {
@@ -144,20 +150,24 @@ yc.type = function(obj) {
 yc.prototype.init.prototype = yc.prototype;
 yc.noConflict = function() {
 	window.$ = _$;
-}
+};
+
+/**
+ * 数组或者对象的遍历 
+ */
 yc.each = function(arr, fun, param) {
+	var l = arr.length,
+		i = 0;
+	for (; i < l; i++) {
+		fun.apply(arr[i], param ? [i, arr[i]].push(param) : [i, arr[i]]);
+	}
+}
+yc.traverse = function(arr, fun, param) {
 	if (yc.type(arr) == "object") {
 		for (var key in arr) {
 			fun.apply(arr, param ? [key, arr[key]].push(param) : [key, arr[key]]);
 		}
-	} else {
-		var l = arr.length,
-			i = 0;
-		for (; i < l; i++) {
-			fun.apply(arr[i], param ? [i, arr[i]].push(param) : [i, arr[i]]);
-		}
 	}
-
 }
 
 yc.each("Boolean Number String Function Array Date RegExp Object".split(" "), function(i, name) {
@@ -203,8 +213,6 @@ yc.sheet = {
 				return ele.style[sheetName];
 			} else if (document.defaultView) {
 				return document.defaultView.getComputedStyle(ele, null)[sheeName];
-			} else if (window.getComputedStyle) {
-				return window.getComputedStyle(ele, null)[sheeName];
 			} else {
 				return ele.currentStyle[sheeName];
 			}
@@ -295,7 +303,7 @@ yc.dom = {
 		return ret;
 	}
 }
-yc.each({
+yc.traverse({
 	"prevAll": "previous",
 	"nextAll": "next"
 }, function(key, vaule) {
@@ -316,7 +324,7 @@ yc.each({
 		return ret;
 	}
 });
-yc.each({
+yc.traverse({
 	"prev": "previous",
 	"next": "next"
 }, function(key, vaule) {
@@ -474,32 +482,9 @@ yc.extend(yc.fn, {
 
 	}
 });
-yc.callback = function() {
-	this.callList = [];
-}
-yc.callback.prototype = {
-	add: function() {
 
-	},
-	remove: function() {
 
-	},
-	fire: function() {
 
-	}
-}
-
-yc.data = {
-	add: function() {
-
-	},
-	remove: function() {
-
-	},
-	get: function() {
-
-	}
-}
 yc.ajax = {
 	createXHR: function() {
 		// IE7以及更高版本的浏览器 支持就直接返回
@@ -643,6 +628,39 @@ yc.until = {
 	}
 }
 
+/**
+ * 回调函数系列
+ * @return {Function} [description]
+ */
+yc.callback = function() {
+	this.callList = [];
+}
+yc.callback.prototype = {
+	add: function() {
+
+	},
+	remove: function() {
+
+	},
+	fire: function() {
+
+	}
+}
+/**
+ * 数据缓存系列
+ * @return {Function} [description]
+ */
+yc.data = {
+	add: function() {
+
+	},
+	remove: function() {
+
+	},
+	get: function() {
+
+	}
+}
 
 if (typeof define == "function" && define.amd) {
 	define(function() {
