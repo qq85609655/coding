@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>a page by ynchuan</title>
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1"/>
+		<meta name="renderer"content="webkit">
+		<link rel="stylesheet"href="css/normalize.css">
+		<link rel="stylesheet"href="css/page-demo.css">
+		<script type="text/javascript"src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript"src="js/jquery.tab.js"></script>
+		<script type="text/javascript"src="js/demo.js"></script>
+		<!--[if lt IE 9]>
+		<script type="text/javascript"src="js/json2.js"></script>
+		<script type="text/javascript"src="js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="main-full">
+			<header class="header">
+				<div class="wrap">
+					<div class="header-title"> <span>年终奖分配方案</span></div>
+					<div class="header-body">
+						<span class="header-item">
+						</span>
+						<span class="header-item">
+						</span>
+						<a class="header-item header-home">关于</a>
+					</div>
+				</div>
+			</header>
+			<section class="section">
+				<div class="wrap">
+					<div class="grp_tab_1">
+						<div class="yc_tab_h">
+							<ul class="yc_tab_ul">
+								<li class="yc_tab_li active">
+									<span class="hosticon icon">个人年终奖分配方案</span>
+								</li>
+								<li class="yc_tab_li">
+									<span class="dataicon icon">企业年终奖分配方案</span>
+								</li>
+							</ul>
+						</div>
+						<div class="yc_tab_container">
+							<div class="main-pannel">
+								<div class="div-input-area">
+									<span class="span-title">
+										年终奖金额
+									</span>
+									<input type="text"class="input-year"> 元
+									<br>
+									<span class="span-title">月计税工资额</span>
+									<input type="text"class="input-month"> 元
+									<span class="cal-btn">计算</span>
+								</div>
+								<div class="div-result-area">
+									<span class="span-title">年终奖<strong class="blue">综合计税</strong>发放金额</span>
+									<span class="span-out span-out-0"><strong class="orange"></strong></span><br>
+									<span class="span-title">年终奖<strong class="blue">第一个月</strong>发放金额</span>
+									<span class="span-out  span-out-1"><strong class="orange"></strong></span><br>
+									<span class="span-title">年终奖<strong class="blue">第二个月</strong>发放金额</span>
+									<span class="span-out  span-out-2"><strong class="orange"></strong></span><br>
+									<span class="span-title">年终奖税后<strong class="blue">实发</strong>总金额</span>
+									<span class="span-out span-out-3"><strong class="orange"></strong></span>
+								</div>
+							</div>
+						</div>
+						<div class="yc_tab_container yc_tab_hide">
+							<div class="main-pannel">
+								<div class="div-input-area">
+								<div class="div-filename"></div>
+									<form action="">
+										<span class="upload-btn">选择文件</span>
+										<input type="file"class="upfile-btn">
+										<input type="submit" class="submit-btn" value="上传">
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<footer class="footer">
+				<div class="wrap">
+					Copyright©2014-2015 竞赛 All Rights Reserved
+				</div>
+			</footer>
+			<div class="about">
+				<div class="div-discribe">
+					<h1>
+					年终奖分配题目说明 <a  class="a-close"></a>
+					</h1>
+					<div class="div-describe-body">
+						<p>
+							根据现有个人所得税计税办法，个人薪酬计税有两种方式，一种为月工资（含月奖金）计税，一种为年终奖综合计税。在年终奖综合计税发放过程中，在某些区间会出现税前奖金增加，税后实际收入反而减少的情况。为了合理避税，某公司计划拆分年终奖为综合计税发放和随月工资发放两种形式，随月工资发放次数最多为2个月。
+						</p>
+						<p>请你帮该公司设计一个年终奖自动拆分程序，输入为计税月工资额、应发年终奖，输出为综合计税应发年终奖、第1个月随月工资发放奖金、第2个月随工资发放奖金。要求税后总收入最大，如税后收入相同，拆分发放次数约少越好。
+						</p>
+						<p>附注:1、计税月工资额为应发月工资额扣除社保、公积金等免税收入后的金额
+							2、月工资计税和年终奖综合计税方法参见附件一、附件二
+						</p>
+						<h3>附件一：月工资计税办法</h3>
+						<p>应纳税额 = 月工资应纳税所得额×适用税率-速算扣除数</p>
+						<p>月工资应纳税所得额 = 计税月工资额 - 3500</P>
+						<p>注:3500 为个人所得税起征点，即税法规定的费用扣除额。</p>
+						<p>个人所得税税率表(工资、薪金所得适用）</p>
+						<table>
+							<thead>
+								<tr>
+									<th width="12%">级数</th>
+									<th width="50%">月工资应纳税所得额</th>
+									<th width="20%">适用税率</th>
+									<th width="20%">速算扣除数</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td width="12%">1</td>
+									<td width="50%">不超过1, 500元的部分(X ≤ 1500)</td>
+									<td width="20%">3%</td>
+									<td width="20%">0</td>
+								</tr>
+								<tr>
+									<td width="12%">2</td>
+									<td width="50%">超过1, 500元至4, 500元的部分</td>
+									<td width="20%">10%</td>
+									<td width="20%">105</td>
+								</tr>
+								<tr>
+									<td width="12%">3</td>
+									<td width="50%">超过4, 500元至9, 000元的部分</td>
+									<td width="20%">25%</td>
+									<td width="20%">1, 005</td>
+								</tr>
+								<tr>
+									<td width="12%">4</td>
+									<td width="50%">超过9, 000元至35, 000元的部分</td>
+									<td width="20%">3%</td>
+									<td width="20%">0</td>
+								</tr>
+								<tr>
+									<td width="12%">5</td>
+									<td width="50%">超过35, 000元至55, 000元的部分</td>
+									<td width="20%">30%</td>
+									<td width="20%">2, 755</td>
+								</tr>
+								<tr>
+									<td width="12%">6</td>
+									<td width="50%">超过55, 000元至80, 000元的部分</td>
+									<td width="20%">35%</td>
+									<td width="20%">5, 505</td>
+								</tr>
+							</tr>
+							<tr>
+								<td width="12%">7</td>
+								<td width="50%">超过80, 000元的部分(X > 80, 000)</td>
+								<td width="20%">45%</td>
+								<td width="20%">13, 505</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>如某员工10月 “计税月工资额”为7500元，</p>
+					<p>月工资应纳税所得额 = 7500 – 3500 = 4000元</P>
+					<p>查个人所得税税率表，可得“适用税率”为10%，“速算扣除数”为105</P>
+					<p>个人所得税应纳税额 = 4000*10% - 105 = 295元</P>
+					<p>月度实发工资 = 7500 – 295 = 7205 元</P>
+					<h3>附件二：年终奖综合计税办法</h3>
+					<p>纳税人取得全年一次性奖金，单独作为一个月工资、薪金所得计算纳税，并按以下办法计税：</P>
+					<p>(一)先将雇员当月内取得的全年一次性奖金，除以12个月，按其商数确定适用税率和速算扣除数。</P>
+					<p>如果在发放年终一次性奖金的当月，雇员当月计税工资额低于税法规定的费用扣除额（个人所得税起征点3500元），应将全年一次性奖金减除“雇员当月计税工资额与费用扣除额的差额”后的余额，按上述办法确定全年一次性奖金的适用税率和速算扣除数。</P>
+					<p>(二)将雇员个人当月内取得的全年一次性奖金，按第(一)项确定的适用税率和速算扣除数计算征税，计算公式如下：</P>
+					<p>1．如果雇员当月工资薪金所得高于(或等于)税法规定的费用扣除额的，适用公式为：</P>
+					<p>应纳税额＝雇员当月取得全年一次性奖金×适用税率一速算扣除数</P>
+					<p>2．如果雇员当月计税工资额低于税法规定的费用扣除额的，适用公式为：</P>
+					<p>应纳税额＝(雇员当月取得全年一次性奖金一雇员当月计税工资额与费用扣除额的差额)×适用税率一速算扣除数</P>
+					<p>(三)在一个纳税年度内，对每一个纳税人，该计税办法只允许采用一次。</P>
+					<p>如某员工年终奖为50000元，月计税工资为3000元</P>
+					<p>商数 = (50000-（3500-3000）) / 12 = 4125</P>
+					<p>查个人所得税税率表，可得“适用税率”为10%，“速算扣除数”为105</P>
+					<p>年终奖个人所得税应纳税额 =(50000-（3500-3000）) *10% - 105 = 4845元 </P>
+					<p>税后实发年终奖  = 50000 – 4845 = 45155元</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mask"></div>
+	<div class="loading">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		&nbsp;
+		&nbsp;
+		计算中...
+	</div>
+	<div class="alert">
+		<h1>提示<a  class="a-close"></a></h1>
+		<div class="alert-pannel">
+			s
+		</div>
+	</div>
+</body>
+</html>

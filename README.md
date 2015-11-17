@@ -67,6 +67,8 @@
 
 - [position的一些应用说明](repository/blog/css_b/position的一些应用说明.md)
 
+- [项目管理：项目搭建结构](repository/blog/项目搭建结构.md)
+
 ###5、个人简历
 
 [关于我](http://ynchuan.github.io/coding/repository/aboutme/aboutme.html)
