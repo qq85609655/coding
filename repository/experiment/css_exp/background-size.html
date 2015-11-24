@@ -1,27 +1,59 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	    <title>background-size test</title>
-	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>background-size test</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="renderer" content="webkit">
-	    <style>
-	    	.background{
-	    		background-image: url('mm1.jpg');
-	    		background-repeat: no-repeat;
-	    		background-position: 0 0;
-	    		background-size: 100%;
-	    		width:256px;
-	    		height: 190px;
-	    		border:1px solid #ccc;
-	    	}
-	    </style>
-	    <script type="text/javascript">
-
-	    </script>
+		<style>
+			.background{
+				background-image: url('mm1.jpg');
+				background-repeat: no-repeat;
+				background-position: 0 0;
+				background-size: 50%;
+				width:256px;
+				height: 190px;
+				border:1px solid red;
+			}
+			.background1{
+				background-image: url('mm1.jpg');
+				background-repeat: no-repeat;
+				background-position: 100% 100%;
+				width:256px;
+				height: 190px;
+				border:1px solid red;
+			}
+			.img{
+				object-position: 50% 100%;
+			width: 256px;
+			height: 100px;
+			object-fit: contain;
+			background-color: red;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="background"></div>
+		图片大小：512*380，盒子大小：256*190，background-size：50% 50%，百分数是相对于盒子的宽高而言，而非相对于图片
+		<div class="background1"></div>
+		A.background-position:50% 50%;
+		等同于left：{容器(container)的宽度—背景图片的宽度}*left百分比，超出的部分隐藏。
+		等同于right：{容器(container)的高度—背景图片的高度}*right百分比，超出的部分隐藏。
+		例如：background-position:50% 50%;就是background-position:(1000-2000)*50%px,(500-30)*50%px;即background-position:-500px,235px;也就是背景图片从容器(container)的左上角向左移500px，向下移235px； <br>
+		B.background-position:-50% -50%;
+		（这种情况背景图片应该用bg2.jpg才能看出效果,bg.jpg的高度太小效果不明显）
+		等同于left：-{{容器(container)的宽度—背景图片的宽度}*left百分比（百分比都取正值）}，超出的部分隐藏。
+		等同于right：-{{容器(container)的高度—背景图片的高度}*right百分比（百分比都取正值）}，超出的部分隐藏。
+		例如：background-position:-50% -50%;就是background-position:-{(1000-500)*50%}px,-{(500-360)*50%}px;即background- position:-250px,-70px;也就是背景图片从容器(container)的左上角向左移250px，向上移70px；<br>
+		<img src="./mm1.jpg" alt="" class="img">
+		<p>
+			object-position和object-fit只针对替换元素有作用 就是form表单家族控件系列，老牌劲旅img图片，HTML5新贵video视频等元素
+			.fill { object-fit: fill; }
+			.contain { object-fit: contain; }
+			.cover { object-fit: cover; }
+			.none { object-fit: none; }
+			.scale-down { object-fit: scale-down; }
+			scale-down: 中文释义“降低”。就好像依次设置了none或contain, 最终呈现的是尺寸比较小的那个。
+		</p>
 	</body>
 </html>
-     

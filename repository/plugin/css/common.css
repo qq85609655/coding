@@ -868,6 +868,10 @@
  * 日历
  */
 .data-pannel {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   width: 250px;
   text-align: center;
   position: absolute;
@@ -876,8 +880,8 @@
   border: 1px solid #eeeeee;
   font-family: 'Microsoft Yahei';
 }
-.data-pannel .ul-date {
-  overflow: hidden;
+.data-pannel .active {
+  background-color: #8684e6;
 }
 .data-pannel .li-empty,
 .data-pannel .li-date {
@@ -902,6 +906,7 @@
   color: #fff;
 }
 .data-pannel .li-date:hover {
+  background-color: #8684e6;
   background-color: #3388ff;
   color: #fff;
   cursor: pointer;
@@ -921,8 +926,32 @@
   width: 25%;
   min-height: 2px;
   line-height: 30px;
+  position: relative;
 }
-.data-pannel .icon-down {
+.data-pannel .icon-down-year {
+  border-top: 5px solid #ccc;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  vertical-align: middle;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  cursor: pointer;
+}
+.data-pannel .ul-date-list {
+  position: absolute;
+  right: 0;
+  z-index: 99;
+  border: 1px solid #eeeeee;
+  background-color: #ffffff;
+  font-size: 13px;
+  width: 60px;
+  line-height: 22px;
+}
+.data-pannel .ul-date-list .li-date-list {
+  border-bottom: 1px solid #eeeeee;
+}
+.data-pannel .icon-down-month {
   border-top: 5px solid #ccc;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;

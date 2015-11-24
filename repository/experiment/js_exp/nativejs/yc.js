@@ -19,23 +19,25 @@ yc.fn = yc.prototype = {
 	init: function(selector, context) {
 		var doms;
 		context = context || document;
-		if (yc.type(selector) == "function") {
+		if (!selector) {
+			return;
+		} else if (yc.type(selector) == "function") {
 			yc.event.readyEvent(selector);
 			return;
 		} else if (yc.type(selector) == "string") {
+			//字符串选择器
 			doms = context.querySelectorAll(selector);
 		} else if (yc.type(selector) == "array") {
+			//原生DOM经过数组变换但是未经yc封装的dom
 			doms = selector;
 			selector = "DOMArray";
 		} else {
-			doms = yc.until.makeArray(selector);
-			selector = "DOMOOne";
+			//原生dom或者yc dom
+			doms = this.makeArray(selector);
+			selector = "DOMNativeOrYc";
 		}
 		this.selector = selector;
-		this.length = doms.length;
-		for (var i = 0, size = doms.length; i < size; i++) {
-			this[i] = doms[i];
-		}
+		this.pushStack(doms);
 	},
 	version: "1.0",
 	length: 0,
@@ -57,14 +59,16 @@ yc.fn = yc.prototype = {
 		}
 	},
 	eq: function(i) {
-		return this.pushStack(this.get(i));
+		return this.constructor(this.get(i));
 	},
 	pushStack: function(eles) {
-		if(yc.type(eles)=="object"){
-
+		var count = this.length;
+		for (var i = 0, size = eles.length; i < size; i++) {
+			this[count] = eles[i];
+			count++;
+			this.length = count;
 		}
-		var tmp = this.makeArray(eles);
-		return this.constructor(tmp);
+		return this;
 	},
 	makeArray: function(eles) {
 		return yc.until.makeArray(eles);
@@ -218,7 +222,24 @@ yc.sheet = {
 			}
 		}
 	}
-}
+};
+/**
+ * 批量添加样式操作到yc原型中 ---只操作第一个dom，多dom操作后期实现
+ */
+(function() {
+	for (var item in yc.sheet) {
+		yc.fn[item] = (function(item) {
+			//采用闭包保存变量item
+			return function() {
+				var args = arguments;
+				var ret;
+				ret = yc.sheet[item](this[0], args[0], args[1]); //最多两个参数，可以继续追加但是暂无需求
+				return ret || this;
+			}
+		})(item);
+	}
+})();
+
 yc.position = {
 	position: function(dom) {
 		if (dom.getBoundingClientRect) {
@@ -252,11 +273,32 @@ yc.position = {
 		}
 		return h;
 	}
-}
+};
+/**
+ * 批量添加位置函数到yc原型中 ---操作第一个dom
+ */
+(function() {
+	for (var item in yc.position) {
+		yc.fn[item] = (function(item) {
+			//采用闭包保存变量item
+			return function() {
+				var args = arguments;
+				var ret;
+				ret = yc.position[item](this[0], args[0], args[1]); //最多两个参数，可以继续追加但是暂无需求
+				return ret || this;
+			}
+		})(item);
+	}
+})();
 yc.dom = {
 	//dom操作 
 	html: function(ele, htmlStr) {
-		ele.innerHTML = htmlStr;
+		if (htmlStr) {
+			ele.innerHTML = htmlStr;
+		} else {
+			return ele.innerHTML;
+		}
+
 	},
 	append: function(ele, htmlStr) {
 		ele.innerHTML += htmlStr;
@@ -303,6 +345,8 @@ yc.dom = {
 		return ret;
 	}
 }
+
+
 yc.traverse({
 	"prevAll": "previous",
 	"nextAll": "next"
@@ -342,6 +386,26 @@ yc.traverse({
 		}
 	}
 });
+/**
+ * 批量添加dom操作到yc原型中 
+ */
+(function() {
+	for (var item in yc.dom) {
+		yc.fn[item] = (function(item) {
+			//采用闭包保存变量item
+			return function() {
+				var args = arguments;
+				var ret;
+				this.each(function(i, ele) {
+					var re = yc.dom[item](ele, args[0], args[1]); //最多两个参数，可以继续追加但是暂无需求
+					!ret && (ret = yc(re));
+					ret && ret.pushStack(re);
+				});
+			}
+		})(item);
+	}
+})();
+
 
 yc.attr = {
 	getArribute: function(ele, attr) {
@@ -395,9 +459,7 @@ yc.event = {
 			//事件类型、需要执行的函数、是否捕捉
 			element.addEventListener(type, handler, false);
 		} else if (element.attachEvent) {
-			element.attachEvent('on' + type, function() {
-				handler.call(element);
-			});
+			element.attachEvent('on' + type, handler);
 		} else {
 			element['on' + type] = handler;
 		}
@@ -469,17 +531,22 @@ yc.event = {
 			return [x, y];
 		}
 	}
-
 }
 yc.extend(yc.fn, {
 	on: function(type, fun) {
-		yc.event.addEvent(this[0], type, fun);
+		this.each(function(i, ele) {
+			yc.event.addEvent(ele, type, fun);
+		});
 	},
-	trigger: function() {
-
+	trigger: function(type) {
+		this.each(function(i, ele) {
+			yc.event.trigger(ele, type);
+		});
 	},
 	off: function() {
-
+		this.each(function(i, ele, fun) {
+			yc.event.removeEvent(ele, type, fun);
+		});
 	}
 });
 
@@ -636,20 +703,20 @@ yc.callback = function() {
 	this.callList = [];
 }
 yc.callback.prototype = {
-	add: function() {
+		add: function() {
 
-	},
-	remove: function() {
+		},
+		remove: function() {
 
-	},
-	fire: function() {
+		},
+		fire: function() {
 
+		}
 	}
-}
-/**
- * 数据缓存系列
- * @return {Function} [description]
- */
+	/**
+	 * 数据缓存系列
+	 * @return {Function} [description]
+	 */
 yc.data = {
 	add: function() {
 

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>层叠上下文</title>
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1"/>
+		<meta name="renderer"content="webkit">
+		<style>
+		div {
+		width: 100px;
+		height: 100px;
+		}
+		#box1 {background: red;
+	/*	position: absolute;
+		
+		top: 40px;
+		left: 40px;*/
+		}
+		#box2 {
+		background: blue;
+		}
+		#box3 {
+		background: yellow;
+		}
+		#box2 {
+			/*opacity: .9;*/
+			/*transform: scale(1);*/
+			/*mix-blend-mode: difference;*/
+			/*isolation: isolate;*/
+			/*-webkit-filter: blur(1px);*/
+		}
+		#fixed {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: blue;
+		}
+		#transform {
+		background: red;
+		padding: 20px;
+		transform: scale(1);
+		}
+		#relative {
+		position: relative;
+		width: 100px;
+		height: 100px;
+		background: green;
+		}
+		#absolute {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: blue;
+		word
+		}
+		#transform1 {
+		background: red;
+		width: 60px;
+		height: 60px;
+		transform: scale(1);
+		}
+		.ab{
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			background-color: green;
+		}
+		</style>
+	</head>
+	
+	<body>
+		<div id="box1">box1 是绝对定位（层级为“Z-index: 0”级）<div class="ab">1</div></div>
+		<div id="box2"> box2 opacity: .9;只是创建层级上下文，并不存在定位属性<div class="ab">2</div></div>
+		<div id="box3"> box3 正常流</div>
+		<br>
+
+		<div id="transform">
+			<div id="fixed"></div>
+		</div>
+		<br>
+		<div id="relative">
+			<div id="transform1">
+				<div id="absolute"> transform  transform  创   建    了局    部层叠上下文，absolute 的包含块不再是 relative 而是 transform 了</div>
+			</div>
+		</div>
+	</body>
+</html>

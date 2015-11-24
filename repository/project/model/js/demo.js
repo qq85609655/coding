@@ -33,6 +33,10 @@ $(function() {
 			}
 			loading.show();
 			mask.show();
+			setTimeout(function() {
+				loading.hide();
+				mask.hide()
+			}, 2000);
 			calulate(parseFloat(year), parseFloat(month));
 		})();
 		tar.hasClass("upload-btn") && (function() {
@@ -58,24 +62,28 @@ $(function() {
 	});
 
 	function calulate(a, b) {
-		$.ajax({
-			url: "",
-			data: {
-				"bonus": a,
-				"salary": b
-			}
-		}).success(function(data) {
-			data=JSON.parse(data);
-			for (var i = 0; i < data.length; i++) {
-				$(".span-out-" + i).find(".orange").text(data[i]);;
-			}
-			loading.hide();
-			mask.hide()
-		}).fail(function() {
-			alertPl.show().find(".alert-pannel").text("计算失败!");
-			loading.hide();
-		}).complete(function() {
+		// $.ajax({
+		// 	url: "",
+		// 	data: {
+		// 		"bonus": a,
+		// 		"salary": b
+		// 	}
+		// }).success(function(data) {
+		// 	data=JSON.parse(data); 
+		// 	for (var i = 0; i < data.length; i++) {
+		// 		$(".span-out-" + i).find(".orange").text(data[i]);;
+		// 	}
+		// 	loading.hide();
+		// 	mask.hide()
+		// }).fail(function() {
+		// 	alertPl.show().find(".alert-pannel").text("计算失败!");
+		// 	loading.hide();
+		// }).complete(function() {
 
-		});
+		// });
+		data = [200, 100, 200, 300];
+		for (var i = 0; i < data.length; i++) {
+			$(".span-out-" + i).find(".orange").text(data[i]);;
+		}
 	}
 });

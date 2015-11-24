@@ -15,8 +15,9 @@
     .first{
       margin:20px;
       background:lightgreen;
-      width:100px;
+      width:100%;
       height:100px;
+      display:inline-block
     }
     ul{
       /*display:inline-block;*/
@@ -33,11 +34,21 @@
 
 <body class="claro"> 
   <div class="first"></div>
+  <div class="first"></div>
   <ul>
     <li>1</li>
     <li>2</li>
     <li>3</li>
-  </ul>
+  </ul> 
+  <div class="first">
+    著作权归作者所有。
+商业转载请联系作者获得授权，非商业转载请注明出处。
+作者：貘吃馍香
+链接：http://www.zhihu.com/question/24563593/answer/28254084
+来源：知乎
+
+Margins of the root element's box do not collapse.（根元素不折叠）If the top and bottom margins of an element with clearance are adjoining, its margins collapse with the adjoining margins of following siblings but that resulting margin does not collapse with the bottom margin of the parent block.（有间隙不折叠）Margins between a floated box and any other box do not collapse (not even between a float and its in-flow children). （浮动不折叠）Margins of elements that establish new block formatting contexts (such as floats and elements with 'overflow' other than 'visible') do not collapse with their in-flow children.（创建BFC与子不折叠）Margins of absolutely positioned boxes do not collapse (not even with their in-flow children).（positioned 不折叠）Margins of inline-block boxes do not collapse (not even with their in-flow children).（inline-box 不折叠）The bottom margin of an in-flow block-level element always collapses with the top margin of its next in-flow block-level sibling, unless that sibling has clearance.（兄弟有间隙不折叠）The top margin of an in-flow block element collapses with its first in-flow block-level child's top margin if the element has no top border, no top padding, and the child has no clearance.（父子间有padding 和 border 不折叠）
+  </div>
 </body> 
 
 </html>
