@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>vue test</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="renderer" content="webkit">
+		<script src="http://cdn.jsdelivr.net/vue/1.0.7/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<div>{{message}}</div>
+			<input type="text" v-model="message">
+			<table>
+				<tr v-for="book in books " v-cloak="">
+					<td>{{book.id}}</td>
+					<td>{{book.name}}</td>
+					<td>{{book.author}}</td>
+					<td>{{book.price}}</td>
+				</tr>
+			</table>
+			<button v-on:click="doSomething">doSomething</button>
+		</div> 
+		<script type="text/javascript" src="vue-t.js"></script>
+	</body>
+</html>
