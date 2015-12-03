@@ -239,9 +239,9 @@
 }
 .triangle-left(@color:#ccc) {
 	width: 0;
-	height: 0; 
+	height: 0;
 	border-width: 5px;
-	border-style: dashed solid dashed dotted ;
+	border-style: dashed solid dashed dotted;
 	border-color: transparent @color  transparent transparent;
 	.ff;
 	.vm;
@@ -261,7 +261,7 @@
 	width: 0;
 	height: 0;
 	border-width: 5px;
-	border-style:  dashed dotted dashed solid;
+	border-style: dashed dotted dashed solid;
 	border-color: transparent  transparent transparent @color;
 	.ff;
 	.vm;
@@ -354,13 +354,11 @@
  * 页面整体布局样式
  */
 .main-flow {
-	margin-right: calc(~"100% - 100vw");
 	position: relative;
 	*text-align: center;
 	//ie6兼容居中
 }
 .main-full {
-	margin-right: calc(~"100% - 100vw");
 	position: absolute;
 	width: 100%;
 	min-height: 100%;
@@ -373,4 +371,5 @@
 .wrap {
 	.mw;
 	.center;
+	margin-left: calc(~"100% - 100vw");
 }

@@ -218,12 +218,10 @@
  * 页面整体布局样式
  */
 .main-flow {
-  margin-right: calc(100% - 100vw);
   position: relative;
   *text-align: center;
 }
 .main-full {
-  margin-right: calc(100% - 100vw);
   position: absolute;
   width: 100%;
   min-height: 100%;
@@ -240,4 +238,5 @@
   margin-right: auto;
   *display: inline;
   *zoom: 1;
+  margin-left: calc(100% - 100vw);
 }

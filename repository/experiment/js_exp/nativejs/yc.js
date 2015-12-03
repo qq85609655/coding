@@ -692,9 +692,33 @@ yc.until = {
 			}
 		}
 		return ret;
-	}
-}
+	},
+	multi: function(n) {
+		var fn=function(x){
 
+		}
+	}
+};
+yc.browser = {
+	detectZoom: function() {
+		var radio = 0,
+			ua = navigator.userAgent.toLowerCase(),
+			screen = window.screen;
+		if (window.devicePixelRatio) {
+			radio = window.devicePixelRatio;
+		} else if (~ua.indexOf("msie")) {
+			if (screen.deviceXDPI && screen.logicalXDPI) {
+				radio = screen.deviceXDPI / screen.logicalXDPI;
+			}
+		} else if (window.innerWidth) {
+			radio = window.outerWidth / window.innerWidth;
+		}
+		if (radio) {
+			radio = Math.round(radio * 100);
+		}
+		return radio;
+	}
+};
 /**
  * 回调函数系列
  * @return {Function} [description]

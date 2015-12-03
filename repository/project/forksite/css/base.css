@@ -21,9 +21,6 @@
 .vt {
   vertical-align: top;
 }
-.vb {
-  vertical-align: bottom;
-}
 /*边距*/
 /**
  font
@@ -102,6 +99,11 @@
   *display: inline;
   *zoom: 1;
 }
+.inline-block {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
 /* 清除浮动-1*/
 .clearfix:after {
   content: '.';
@@ -109,9 +111,6 @@
   height: 0;
   clear: both;
   visibility: hidden;
-}
-.clear {
-  clear: both;
 }
 /* 清除浮动-2*/
 .fix {
@@ -129,6 +128,13 @@
 .trans {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+/* 大小不定元素垂直居中 */
+.dib-vm {
+  display: inline-block;
+  width: 0;
+  height: 100%;
+  vertical-align: middle;
 }
 /* 无框文本框文本域 */
 .b-none {
@@ -161,12 +167,6 @@
 .inline-box {
   font-size: 1em;
   letter-spacing: -0.25em;
-}
-.inline-fix {
-  display: inline-block;
-  width: 100%;
-  height: 0;
-  overflow: hidden;
 }
 .inline-two,
 .inline-three,
@@ -206,4 +206,36 @@
 .inline-six,
 .float-six {
   width: 16.6%;
+}
+.inline-fix {
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+}
+/**
+ * 页面整体布局样式
+ */
+.main-flow {
+  position: relative;
+  *text-align: center;
+}
+.main-full {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  _height: 100%;
+  top: 0;
+  left: 0;
+  *text-align: center;
+}
+.wrap {
+  max-width: 100%;
+  min-width: 1100px;
+  *width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  *display: inline;
+  *zoom: 1;
+  margin-left: calc(100% - 100vw);
 }

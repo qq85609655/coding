@@ -6,8 +6,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="renderer" content="webkit">
 		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/common.css">
 		<link rel="stylesheet" href="css/qunar.css">
 		<script type="text/javascript" src="../../experiment/js_exp/nativejs/yc.js"></script>
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.tab-v2.js"></script>
 		<script type="text/javascript" src="js/qunar.js"></script>
 		
 	</head>
@@ -114,38 +118,39 @@
 				<div class="wrap">
 					<div class="div-section search-all">
 						<div class="tab-pannel">
-							<div class="tab-pannel-l">
-								<ul class="ul-tab">
-									<li class="li-tab" data-tab="search-air-ticket">机票</li>
-									<li class="li-tab" data-tab="search-hotel">酒店</li>
-									<li class="li-tab" data-tab="search-train-ticket">火车票</li>
-									<li class="li-tab" data-tab="search-vacation">度假</li>
-									<li class="li-tab" data-tab="search-entrance-ticket">门票</li>
-									<li class="li-tab" data-tab="search-group-purchase">团购</li>
-									<li class="li-tab" data-tab="search-car">车车</li>
+							<div class="yc-tab-v2">
+								<ul class="yc-vertab-titles">
+									<li class="yc-vertab-title active" data-vertab="search-air-ticket">机票</li>
+									<li class="yc-vertab-title" data-vertab="search-hotel">酒店</li>
+									<li class="yc-vertab-title" data-vertab="search-train-ticket">火车票</li>
+									<li class="yc-vertab-title" data-vertab="search-vacation">度假</li>
+									<li class="yc-vertab-title" data-vertab="search-entrance-ticket">门票</li>
+									<li class="yc-vertab-title" data-vertab="search-group-purchase">团购</li>
+									<li class="yc-vertab-title" data-vertab="search-car">车车</li>
+									<li class="clear"></li>
 								</ul>
-							</div>
-							<div class="tab-pannel-r">
-								<div id="search-air-ticket" class="tab-toggle-pannel">
-									
-								</div>
-								<div id="search-hotel" class="tab-toggle-pannel">
-									
-								</div>
-								<div id="search-train-ticket" class="tab-toggle-pannel">
-									
-								</div>
-								<div id="search-vacation" class="tab-toggle-pannel">
-									
-								</div>
-								<div id="search-entrance-ticket" class="tab-toggle-pannel">
-									
-								</div>
-								<div id="search-group-purchase" class="tab-toggle-pannel">
-									
-								</div>
-								<div id="search-car" class="tab-toggle-pannel">
-									
+								<div class="yc-vertab-bodys">
+									<div id="search-air-ticket" class="yc-vertab-body">
+										1
+									</div>
+									<div id="search-hotel" class="yc-vertab-body yc-tab-hide">
+										2
+									</div>
+									<div id="search-train-ticket" class="yc-vertab-body yc-tab-hide">
+										3
+									</div>
+									<div id="search-vacation" class="yc-vertab-body yc-tab-hide">
+										4
+									</div>
+									<div id="search-entrance-ticket" class="yc-vertab-body yc-tab-hide">
+										
+									</div>
+									<div id="search-group-purchase" class="yc-vertab-body yc-tab-hide">
+										
+									</div>
+									<div id="search-car" class="yc-vertab-body yc-tab-hide">
+										
+									</div>
 								</div>
 							</div>
 						</div>

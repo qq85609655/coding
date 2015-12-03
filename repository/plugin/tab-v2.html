@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>tab version 2</title>
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1"/>
+		<meta name="renderer"content="webkit">
+		<link rel="stylesheet"type="text/css"href="css/normalize.css">
+		<link rel="stylesheet"type="text/css"href="css/common.css">
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.tab-v2.js"></script>
+		<script>
+		$(function(){
+			$(".yc-tab-v2").tabV2();
+		})
+		</script>
+		<style>
+			.yc-tab-v2{
+				width: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="yc-tab-v2">
+			<ul class="yc-tab-titles">
+				<li class="yc-tab-title active">
+					<i class="icon-arrow-down"></i>
+					内容概览
+				</li>
+				<li class="yc-tab-title">
+					<i class="icon-arrow-down"></i>
+					访问情况
+				</li>
+				<li class="clear"></li>
+			</ul>
+			<div class="yc-tab-bodys">
+				<div class="yc-tab-body">
+					TAB1
+				</div>
+				<div class="yc-tab-body yc-tab-hide">
+					TAB2
+				</div>
+			</div>
+		</div>
+		<p>
+			tab只是将切换tab卡的事件进行了封装，其余全部靠个人手动渲染，实现半封装
+		</p>
+	</body>
+</html>
