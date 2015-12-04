@@ -2,18 +2,17 @@
 <html>
 	<head>
 		<title>fork qunar.com for learn </title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="renderer" content="webkit">
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/base.css">
-		<link rel="stylesheet" href="css/common.css">
-		<link rel="stylesheet" href="css/qunar.css">
-		<script type="text/javascript" src="../../experiment/js_exp/nativejs/yc.js"></script>
-		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-		<script type="text/javascript" src="js/jquery.tab-v2.js"></script>
-		<script type="text/javascript" src="js/qunar.js"></script>
-		
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible"content="IE=edge"/>
+		<meta name="renderer"content="webkit">
+		<link rel="stylesheet"href="css/normalize.css">
+		<link rel="stylesheet"href="css/base.css">
+		<link rel="stylesheet"href="css/common.css">
+		<link rel="stylesheet"href="css/qunar.css">
+		<script type="text/javascript"src="../../experiment/js_exp/nativejs/yc.js"></script>
+		<script type="text/javascript"src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript"src="js/jquery.tab-v2.js"></script>
+		<script type="text/javascript"src="js/qunar.js"></script>
 	</head>
 	<body>
 		<div class="nav-left-menu">
@@ -40,8 +39,8 @@
 				<div class="wrap">
 					<div class="h-b-head">
 						<span href="#"class="h-b-forward">
-							请<a href="#" class="login inner-a">登陆</a>
-							或<a href="#" class="reg inner-a">免费注册</a>
+							请<a href="#"class="login inner-a">登陆</a>
+							或<a href="#"class="reg inner-a">免费注册</a>
 						</span> |
 						<a href="#"class="h-b-forward">
 							<i class="icon-message"></i>
@@ -118,40 +117,394 @@
 				<div class="wrap">
 					<div class="div-section search-all">
 						<div class="tab-pannel">
-							<div class="yc-tab-v2">
+							<div class="yc-tab-v2 tab-container">
 								<ul class="yc-vertab-titles">
-									<li class="yc-vertab-title active" data-vertab="search-air-ticket">机票</li>
-									<li class="yc-vertab-title" data-vertab="search-hotel">酒店</li>
-									<li class="yc-vertab-title" data-vertab="search-train-ticket">火车票</li>
-									<li class="yc-vertab-title" data-vertab="search-vacation">度假</li>
-									<li class="yc-vertab-title" data-vertab="search-entrance-ticket">门票</li>
-									<li class="yc-vertab-title" data-vertab="search-group-purchase">团购</li>
-									<li class="yc-vertab-title" data-vertab="search-car">车车</li>
-									<li class="clear"></li>
+									<li class="yc-vertab-title active"data-vertab="search-air-ticket">机票</li>
+									<li class="yc-vertab-title"data-vertab="search-hotel">酒店</li>
+									<li class="yc-vertab-title"data-vertab="search-train-ticket">火车票</li>
+									<li class="yc-vertab-title"data-vertab="search-vacation">度假</li>
+									<li class="yc-vertab-title"data-vertab="search-entrance-ticket">门票</li>
+									<li class="yc-vertab-title"data-vertab="search-group-purchase">团购</li>
+									<li class="yc-vertab-title"data-vertab="search-car">车车</li>
 								</ul>
 								<div class="yc-vertab-bodys">
-									<div id="search-air-ticket" class="yc-vertab-body">
-										1
+									<div id="search-air-ticket"class="yc-vertab-body">
+										<div class="yc-tab-v2">
+											<ul class="yc-tab-titles">
+												<li class="yc-tab-title active">
+													国内机票
+												</li>
+												<li class="yc-tab-title">
+													国际 港澳台机票
+												</li>
+												<li class="li-tabInner-title">
+													<i class="icon i-ticket-q"></i><a href="#"class="a-t-l">出票状态查询</a>
+													<i class="icon i-return-t"></i><a href="#"class="a-t-l">退票改签</a>
+												</li>
+											</ul>
+											<div class="yc-tab-bodys">
+												<div class="yc-tab-body">
+													<form action="https://api.github.com">
+														<div class="div-cont-tt">
+															<a href="#"class="a-tips">买机票获预订酒店5折特权</a>
+															<input type="radio"name="isreturn"id="single"checked data-m=".div-cont-commom">
+															<label for="single">单程</label>
+															<input type="radio"name="isreturn"id="retrun" data-m=".div-cont-commom">
+															<label for="retrun">往返</label>
+														</div>
+														<div class="div-cont-bd div-cont-commom">
+															<span class="span-tip">出发</span>
+															<input type="text"class="input-start">
+															<i class="icon icon-s"></i>
+															<span class="span-tip">日期</span>
+															<input type="text"class="input-start-date">
+															<i class="icon icon-c"></i>
+															<br>
+															<span class="span-tip">到达</span>
+															<input type="text"class="input-start-date" placeholder="输入国家/城市/机场">
+															<i class="icon icon-s"></i>
+															<span class="span-tip">日期</span>
+															<input type="text"class="input-start-date">
+															<i class="icon icon-c"></i>
+															<i class="i-exchange"></i>
+															<div class="div-search-btn">
+																可实时搜索 <strong>28万</strong> 条国内国际 航线
+																<span class="span-search-btn">立即搜索</span>
+															</div>
+														</div>
+													</form>
+												</div>
+												<div class="yc-tab-body yc-tab-hide">
+													<form action="https://api.github.com">
+														<div class="div-cont-tt">
+															<input type="radio" data-m=".div-cont-commom" name="internal"id="isingle"checked>
+															<label for="isingle">单程</label>
+															<input type="radio" data-m=".div-cont-commom" name="internal"id="iretrun">
+															<label for="iretrun">往返</label>
+															<input type="radio" data-m=".div-cont-search" name="internal"id="search">
+															<label for="search">智能搜索</label>
+															<input type="radio" data-m=".div-cont-mult" name="internal"id="multithread">
+															<label for="multithread"> 多程（<a href="#" class="a-mult">含缺口</a>）</label>
+															<input type="radio" data-m=".div-cont-price" name="internal"id="price">
+															<label for="price"> 价格趋势</label>
+														</div>
+														<div class="div-cont-bd div-cont-commom">
+															<span class="span-tip">出发</span>
+															<input type="text"class="input-start">
+															<i class="icon icon-s"></i>
+															<span class="span-tip">日期</span>
+															<input type="text"class="input-start-date">
+															<i class="icon icon-c"></i>
+															<br>
+															<span class="span-tip">到达</span>
+															<input type="text"class="input-start-date">
+															<i class="icon icon-s"></i>
+															<span class="span-tip">日期</span>
+															<input type="text"class="input-start-date">
+															<i class="icon icon-c"></i>
+															<i class="i-exchange"></i>
+															<div class="div-search-btn">
+																可实时搜索 <strong>28万</strong> 条国内国际 航线
+																<span class="span-search-btn">立即搜索</span>
+															</div>
+														</div>
+														<div class="div-cont-bd div-cont-search">
+															<input type="text"class="input-from">
+															<span class="span-tip">出发</span>
+															<span class="span-tip-to">我想去</span>
+															<input type="text"class="input-to">
+															<div class="div-search-btn">
+																<span class="span-search-btn">立即搜索</span>
+															</div>
+															<div>
+																<span class="span-commom">大家都在搜：</span>
+																<div class="div-search-links">
+																	<a href="#" class="a-link">
+																	免签/落地签</a>
+																	<a href="#" class="a-link">
+																	海滩</a>
+																	<a href="#" class="a-link">
+																	第1次出国</a>
+																	<a href="#" class="a-link">
+																	暑假</a>
+																	<a href="#" class="a-link">
+																	蜜月</a>
+																	<a href="#" class="a-link">
+																	亲子</a>
+																	<a href="#" class="a-link">
+																	文化遗产</a>
+																	<a href="#" class="a-link">
+																	美食</a>
+																	<a href="#" class="a-link">
+																	潜水</a>
+																	<a href="#" class="a-link">
+																	购物</a><br>
+																	<a href="#" class="a-link">
+																	电影/音乐</a>
+																	<a href="#" class="a-link">
+																	山岭/滑雪</a>
+																	<a href="#" class="a-link">
+																	中世纪城堡</a>
+																	<a href="#" class="a-link">
+																	穷游</a>
+																	<a href="#" class="a-link">
+																	世界杯</a>
+																	<a href="#" class="a-link">
+																	古迹</a>
+																	<a href="#" class="a-link">
+																	都市</a>
+																	<a href="#" class="a-link">
+																	毕业季</a>
+																	<a href="#" class="a-link">
+																	出国特价</a>
+																</div>
+															</div>
+														</div>
+														<div class="div-cont-bd div-cont-mult">
+															<span class="span-tip-mul">第<strong>1</strong>站</span>
+															<span class="span-tip">出发</span>
+															<input type="text"class="input-start" placeholder="出发地">
+															<i class="icon icon-s"></i>
+															<span class="span-tip">到达</span>
+															<input type="text"class="input-start" placeholder="目的地">
+															<i class="icon icon-s"></i>
+															<span class="span-tip">日期</span>
+															<input type="text"class="input-start-date">
+															<i class="icon icon-c"></i>
+															<br>
+															<span class="span-tip-mul">第<strong>2</strong>站</span>
+															<span class="span-tip">出发</span>
+															<input type="text"class="input-start" placeholder="出发地">
+															<i class="icon icon-s"></i>
+															<span class="span-tip">到达</span>
+															<input type="text"class="input-start" placeholder="目的地">
+															<i class="icon icon-s"></i>
+															<span class="span-tip">日期</span>
+															<input type="text"class="input-start-date">
+															<i class="icon icon-c"></i>
+															<div class="div-search-btn">
+																<span class="span-search-btn">立即搜索</span>
+															</div>
+														</div>
+														<div class="div-cont-bd div-cont-price">
+															<span class="span-tip">出发</span>
+															<input type="text"class="input-start">
+															<i class="icon icon-s"></i>
+															<span class="span-tip">日期</span>
+															<input type="text"class="input-start-date">
+															<i class="icon icon-c"></i>
+															<br>
+															<span class="span-tip">到达</span>
+															<input type="text"class="input-start-date" placeholder="城市名(必填)">
+															<i class="icon icon-s"></i>
+															<i class="i-exchange"></i>
+															<div class="div-search-btn">
+																<span class="span-search-btn">立即搜索</span>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
 									</div>
 									<div id="search-hotel" class="yc-vertab-body yc-tab-hide">
-										2
+										<div class="yc-tab-v2">
+											<ul class="yc-tab-titles">
+												<li class="yc-tab-title active">
+													酒店搜索
+												</li>
+												<li class="yc-tab-title">
+													客栈民宿
+												</li>
+												<li class="yc-tab-title">
+													高端酒店
+												</li>
+											</ul>
+											<div class="yc-tab-bodys">
+												<div class="yc-tab-body">
+													<form action="https://api.github.com">
+														<div class="div-cont-tt">
+															<input type="radio"name="hotelType"id="innerHotel"checked data-m=".div-cont-commom">
+															<label for="innerHotel">国内酒店</label>
+															<input type="radio"name="hotelType"id="internalHotel" data-m=".div-cont-commom">
+															<label for="internalHotel">国际 港澳台酒店</label>
+														</div>
+														<div class="div-cont-bd div-cont-commom">
+															<span class="span-tip">目的地</span>
+															<input type="text"class="input-aim">
+															<i class="icon icon-s"></i>
+															<input type="text"class="input-hotel">
+															<i class="icon icon-c"></i>
+															<br>
+															<span class="span-tip">入住时间</span>
+															<input type="text"class="input-in-date" placeholder="输入国家/城市/机场">
+															<i class="icon icon-s"></i>
+															<span class="span-tip">离店时间</span>
+															<input type="text"class="input-out-date">
+															<i class="icon icon-c"></i>
+															<div class="div-search-btn">
+																可实时搜索 <strong>382</strong> 个网站 航线，<strong>71360</strong> 个城市，<strong>730000</strong> 家酒店报价信息
+																<span class="span-search-btn">立即搜索</span>
+															</div>
+														</div>
+													</form>
+												</div>
+												<div class="yc-tab-body yc-tab-hide">
+													<form action="https://api.github.com">
+														<div class="div-cont-bd div-cont-commom">
+															<span class="span-tip">目的地</span>
+															<input type="text"class="input-aim">
+															<i class="icon icon-s"></i>
+															<input type="text"class="input-hotel">
+															<i class="icon icon-c"></i>
+															<br>
+															<span class="span-tip">入住时间</span>
+															<input type="text"class="input-in-date" placeholder="输入国家/城市/机场">
+															<i class="icon icon-s"></i>
+															<span class="span-tip">离店时间</span>
+															<input type="text"class="input-out-date">
+															<i class="icon icon-c"></i>
+															<div class="div-search-btn">
+																搜索上万家客栈、度假公寓、家庭旅馆、青年旅舍...
+																<span class="span-search-btn">立即搜索</span>
+															</div>
+														</div>
+													</form>
+												</div>
+												<div class="yc-tab-body yc-tab-hide">
+													<form action="https://api.github.com">
+														<div class="div-cont-bd div-cont-commom">
+															<span class="span-tip">目的地</span>
+															<input type="text"class="input-aim">
+															<i class="icon icon-s"></i>
+															<input type="text"class="input-hotel">
+															<i class="icon icon-c"></i>
+															<br>
+															<span class="span-tip">入住时间</span>
+															<input type="text"class="input-in-date" placeholder="输入国家/城市/机场">
+															<i class="icon icon-s"></i>
+															<span class="span-tip">离店时间</span>
+															<input type="text"class="input-out-date">
+															<i class="icon icon-c"></i>
+															<div class="div-search-btn">
+																全国高端酒店，花更少，住更好！
+																<span class="span-search-btn">立即搜索</span>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
 									</div>
-									<div id="search-train-ticket" class="yc-vertab-body yc-tab-hide">
-										3
+									<div id="search-train-ticket"class="yc-vertab-body yc-tab-hide">
+										<div class="yc-tab-v2">
+											<ul class="yc-tab-titles">
+												<li class="yc-tab-title active">
+													站站搜索
+												</li>
+												<li class="yc-tab-title">
+													车次搜索
+												</li>
+												<li class="yc-tab-title">
+													车站搜索
+												</li> 
+												<li class="li-tabInner-title">
+													<i class="icon i-ticket-q"></i><a href="#"class="a-t-l">出票状态查询</a>
+													<i class="icon i-return-t"></i><a href="#"class="a-t-l">退票申请</a>
+												</li>
+											</ul>
+											<div class="yc-tab-bodys">
+												<div class="yc-tab-body">
+													<form action="https://api.github.com"> 
+														<div class="div-cont-bd div-cont-commom">
+															<span class="span-tip">出发</span>
+															<input type="text"class="input-start">
+															<i class="icon icon-s"></i>
+															<span class="span-tip">日期</span>
+															<input type="text"class="input-start-date">
+															<i class="icon icon-c"></i>
+															<br>
+															<span class="span-tip">到达</span>
+															<input type="text"class="input-start-date" placeholder="输入国家/城市/机场">
+															<i class="icon icon-s"></i> 
+															<i class="i-exchange"></i>
+															<div class="div-search-btn">
+																支持汽车票查询啦！
+																<span class="span-search-btn">立即搜索</span>
+															</div>
+														</div>
+													</form>
+												</div>
+												<div class="yc-tab-body yc-tab-hide">
+													<form action="https://api.github.com"> 
+														<div class="div-cont-bd div-cont-commom">
+															<span class="span-tip">出发</span>
+															<input type="text"class="input-start">
+															<i class="icon icon-s"></i>
+															<span class="span-tip">日期</span>
+															<input type="text"class="input-start-date">
+															<i class="icon icon-c"></i>
+															<br>
+															<br> 
+															<div class="div-search-btn">
+																支持汽车票查询啦！
+																<span class="span-search-btn">立即搜索</span>
+															</div>
+														</div> 
+													</form>
+												</div>
+												<div class="yc-tab-body yc-tab-hide">
+													<form action="https://api.github.com"> 
+														<div class="div-cont-bd div-cont-commom">
+															<span class="span-tip">出发</span>
+															<input type="text"class="input-from input-ticket-station">
+															<i class="icon icon-s"></i> 
+															<div class="div-search-btn">
+															   	支持汽车票查询啦！
+																<span class="span-search-btn">立即搜索</span>
+															</div>
+															<div>
+																<span class="span-commom">热门车站:</span>
+																<div class="div-search-links">
+																	<a href="#" class="a-link">
+																	北京</a>
+																	<a href="#" class="a-link">
+																	上海</a>
+																	<a href="#" class="a-link">
+																	广州</a>
+																	<a href="#" class="a-link">
+																	深圳</a>
+																	<a href="#" class="a-link">
+																	重庆</a>
+																	<a href="#" class="a-link">
+																	南京</a>
+																	<a href="#" class="a-link">
+																	天津</a>
+																	<a href="#" class="a-link">
+																	长沙</a>
+																	<a href="#" class="a-link">
+																	长春</a>
+																	<a href="#" class="a-link">
+																	成都</a>
+																</div>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
 									</div>
-									<div id="search-vacation" class="yc-vertab-body yc-tab-hide">
+									<div id="search-vacation"class="yc-vertab-body yc-tab-hide">
 										4
 									</div>
-									<div id="search-entrance-ticket" class="yc-vertab-body yc-tab-hide">
-										
+									<div id="search-entrance-ticket"class="yc-vertab-body yc-tab-hide">
 									</div>
-									<div id="search-group-purchase" class="yc-vertab-body yc-tab-hide">
-										
+									<div id="search-group-purchase"class="yc-vertab-body yc-tab-hide">
 									</div>
-									<div id="search-car" class="yc-vertab-body yc-tab-hide">
-										
+									<div id="search-car"class="yc-vertab-body yc-tab-hide">
 									</div>
 								</div>
+								<div class="div-vertab-footer"></div>
 							</div>
 						</div>
 					</div>
@@ -162,19 +515,18 @@
 									更多 &gt;
 								</div>
 								<ul class="ul-tab">
-									<li class="li-tab active" data-tab="discount-today">今日特惠</li>
-									<li class="li-tab" data-tab="discount-ticket">特惠门票</li>
-									<li class="li-tab" data-tab="discount-hotel">特惠住宿</li>
+									<li class="li-tab active"data-tab="discount-today">今日特惠</li>
+									<li class="li-tab"data-tab="discount-ticket">特惠门票</li>
+									<li class="li-tab"data-tab="discount-hotel">特惠住宿</li>
 								</ul>
-								
 							</div>
 							<div class="tab-pannel-b">
-								<div id="discount-today" class="tab-toggle-pannel">
+								<div id="discount-today"class="tab-toggle-pannel">
 									<div class="pro-row">
-										<a href="#" class="pro-link-a pro-first">
+										<a href="#"class="pro-link-a pro-first">
 											<div class="pro-show-p">
 												<div class="pro-show-pl">
-													<img src="images/qunar/4.1" alt="厦门黄金海滩" class="pro-img">
+													<img src="images/qunar/4.1"alt="厦门黄金海滩"class="pro-img">
 												</div>
 												<div class="pro-show-pr">
 													<div class="pro-title">厦门-黄金沙滩 玻璃海景房</div>
@@ -184,10 +536,10 @@
 												</div>
 											</div>
 										</a>
-										<a href="#" class="pro-link-a">
+										<a href="#"class="pro-link-a">
 											<div class="pro-show-p">
 												<div class="pro-show-pt">
-													<img src="images/qunar/16.2" alt="厦门黄金海滩" class="pro-img">
+													<img src="images/qunar/16.2"alt="厦门黄金海滩"class="pro-img">
 												</div>
 												<div class="pro-show-pb">
 													<div class="pro-title">天津-塘沽站  极客美学公寓</div>
@@ -197,10 +549,10 @@
 												</div>
 											</div>
 										</a>
-										<a href="#" class="pro-link-a">
+										<a href="#"class="pro-link-a">
 											<div class="pro-show-p">
 												<div class="pro-show-pt">
-													<img src="images/qunar/9.2" alt="厦门黄金海滩" class="pro-img">
+													<img src="images/qunar/9.2"alt="厦门黄金海滩"class="pro-img">
 												</div>
 												<div class="pro-show-pb">
 													<div class="pro-title">成都-春熙路   双人套房</div>
@@ -212,10 +564,10 @@
 										</a>
 									</div>
 									<div class="pro-row">
-										<a href="#" class="pro-link-a pro-first">
+										<a href="#"class="pro-link-a pro-first">
 											<div class="pro-show-p">
 												<div class="pro-show-pl">
-													<img src="images/qunar/4.1" alt="厦门黄金海滩" class="pro-img">
+													<img src="images/qunar/4.1"alt="厦门黄金海滩"class="pro-img">
 												</div>
 												<div class="pro-show-pr">
 													<div class="pro-title">厦门-黄金沙滩 玻璃海景房</div>
@@ -225,10 +577,10 @@
 												</div>
 											</div>
 										</a>
-										<a href="#" class="pro-link-a">
+										<a href="#"class="pro-link-a">
 											<div class="pro-show-p">
 												<div class="pro-show-pt">
-													<img src="images/qunar/16.2" alt="厦门黄金海滩" class="pro-img">
+													<img src="images/qunar/16.2"alt="厦门黄金海滩"class="pro-img">
 												</div>
 												<div class="pro-show-pb">
 													<div class="pro-title">天津-塘沽站  极客美学公寓</div>
@@ -238,10 +590,10 @@
 												</div>
 											</div>
 										</a>
-										<a href="#" class="pro-link-a">
+										<a href="#"class="pro-link-a">
 											<div class="pro-show-p">
 												<div class="pro-show-pt">
-													<img src="images/qunar/9.2" alt="厦门黄金海滩" class="pro-img">
+													<img src="images/qunar/9.2"alt="厦门黄金海滩"class="pro-img">
 												</div>
 												<div class="pro-show-pb">
 													<div class="pro-title">成都-春熙路   双人套房</div>
@@ -253,44 +605,33 @@
 										</a>
 									</div>
 								</div>
-								<div id="discount-ticket" class="tab-toggle-pannel">
-									
+								<div id="discount-ticket"class="tab-toggle-pannel">
 								</div>
-								<div id="discount-hotel" class="tab-toggle-pannel">
-									
+								<div id="discount-hotel"class="tab-toggle-pannel">
 								</div>
 							</div>
 						</div>
 						<div class="carousel-regin">
-							
 						</div>
 					</div>
 					<div class="div-section hot-tourism">
-						
 					</div>
 					<div class="div-section hot-ticket">
-						
 					</div>
 					<div class="div-section recomand-hotel">
-						
 					</div>
 					<div class="div-section department">
-						
 					</div>
 					<div class="div-section travel-strategy">
-						
 					</div>
 					<div class="div-section camel-book">
-						
 					</div>
 					<div class="div-section other-link">
-						
 					</div>
 				</div>
 			</section>
 			<footer class="footer">
 				<div class="wrap">
-					
 				</div>
 			</footer>
 		</div>
