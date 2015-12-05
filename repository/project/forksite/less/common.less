@@ -1,34 +1,4 @@
-@import "base.less";
-
-/**
- * 页面整体布局样式
- */
-.main-flow {
-	margin-left: calc(~"100vm - 100%");
-	position: relative;
-	*text-align: center;
-	//ie6兼容居中
-}
-.main-full {
-	margin-right: calc(~"100%-100vw");
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	*text-align: center;
-	//ie6兼容居中
-}
-.wrap {
-	.mw;
-	.center;
-}
-.header {
-}
-.section {
-}
-.footer {
-}
+@import (reference) "base.less";
 
 /**
  *time axis  IE7+
@@ -349,4 +319,35 @@
 	.cur-index{
 		.fw;
 	}
+}
+
+/**
+ * tab v2.0
+ */
+.yc-tab-v2 {
+	.yc-tab-titles {
+		line-height: 45px; 
+		.color(#999999);
+		.fs(17px);
+		.bfc;
+	}
+	.yc-tab-title { 
+		.fl;
+		.txtc; 
+		.color(#767676);
+		.fs(15px); 
+		.poi; 
+		.pl(20px);
+		.pr(20px);
+	}
+	.active {
+		.color(#000);
+		.fw; 
+		.bb(#098CB5);
+		border-width: 2px;  
+	}
+	.yc-tab-hide {
+		.hide;
+	}
+	
 }

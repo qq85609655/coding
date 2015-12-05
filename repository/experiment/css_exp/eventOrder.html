@@ -15,7 +15,7 @@
 	</head>
 	<body>
 		<div class="demo" onclick="fun1()">
-			<div>2222</div>
+			<div onclick="alert(11)">2222</div>
 		</div>
 	</body>
 	<script type="text/javascript">
@@ -24,14 +24,14 @@
 		alert(0);
 	},true);
 	
-	dom.addEventListener("click",function(event){
-		alert(2);
-		event.preventDefault();
-		return false;
-	});
-	dom.addEventListener("click",function(){
-		alert(3);
-	});
+	// dom.addEventListener("click",function(event){
+	// 	alert(2);
+	// 	event.preventDefault();
+	// 	return false;
+	// });
+	// dom.addEventListener("click",function(){
+	// 	alert(3);
+	// });
 	
 	function fun1(){
 		alert(1);

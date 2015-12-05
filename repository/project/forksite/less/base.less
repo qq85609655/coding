@@ -24,9 +24,6 @@
 .vt {
   vertical-align: top;
 }
-.vb {
-  vertical-align: bottom;
-}
 
 /*边距*/
 .m(@num:5px) {
@@ -181,20 +178,21 @@
   background-repeat: no-repeat;
   background-position: @pos;
   background-size: contain;
-  //ie6|7不支持size, ie6不支持position
+  //ie6\7不支持size, ie6不支持position
 }
 .bgimg(@url, @pos) {
   background-image: url(@url);
   background-repeat: no-repeat;
   background-position: @pos;
-  _background: none;
-}
-.bgimg_(@url) {
-  background-image: url(@url);
-  background-repeat: no-repeat;
 }
 .ie6filter(@url) {
+  _background: none;
   _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=@url, sizingMethod='crop');
+}
+.inline-block {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
 }
 .line-height(@a) {
   height: @a;
@@ -213,9 +211,6 @@
   height: 0;
   clear: both;
   visibility: hidden;
-}
-.clear {
-  clear: both;
 }
 
 /* 清除浮动-2*/
@@ -236,17 +231,18 @@
   height: 0;
   border-width: 5px;
   border-style: solid dashed dotted dashed;
-  border-color: @color transparent transparent;
+  border-color: @color transparent transparent transparent;
+  .vm;
   .inline-block;
-  .vb;
 }
 .triangle-left(@color:#ccc) {
   width: 0;
   height: 0;
   border-width: 5px;
-  border-style: dashed solid  dashed dotted;
+  border-style: dashed solid dashed dotted;
   border-color: transparent @color  transparent transparent;
-  .vb;
+  .ff;
+  .vm;
   .inline-block;
 }
 .triangle-up(@color:#ccc) {
@@ -255,16 +251,18 @@
   border-width: 5px;
   border-style: dotted dashed solid dashed;
   border-color: transparent  transparent @color;
-  .vb;
+  .ff;
+  .vm;
   .inline-block;
 }
 .triangle-right(@color:#ccc) {
   width: 0;
   height: 0;
   border-width: 5px;
-  border-style: dashed dotted  dashed solid;
+  border-style: dashed dotted dashed solid;
   border-color: transparent  transparent transparent @color;
-  .vb;
+  .ff;
+  .vm;
   .inline-block;
 }
 
@@ -272,6 +270,14 @@
 .trans {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+/* 大小不定元素垂直居中 */
+.dib-vm {
+  display: inline-block;
+  width: 0;
+  height: 100%;
+  vertical-align: middle;
 }
 
 /* 无框文本框文本域 */
@@ -310,12 +316,6 @@
   font-size: 1em;
   letter-spacing: -.25em;
 }
-.inline-fix {
-  display: inline-block;
-  width: 100%;
-  height: 0;
-  overflow: hidden;
-}
 .inline-two, .inline-three, .inline-four, .inline-five, .inline-six, .inline-any {
   display: inline-block;
   *display: inline;
@@ -340,4 +340,34 @@
 }
 .inline-six, .float-six {
   width: 16.6%;
+}
+.inline-fix {
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+}
+
+/**
+ * 页面整体布局样式
+ */
+.main-flow {
+  position: relative;
+  *text-align: center;
+  //ie6兼容居中
+}
+.main-full {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  _height: 100%;
+  top: 0;
+  left: 0;
+  *text-align: center;
+  //ie6兼容居中
+}
+.wrap {
+  .mw;
+  .center;
+  margin-left: calc(~"100% - 100vw");
 }

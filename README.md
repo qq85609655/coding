@@ -27,6 +27,8 @@
 
 - 折叠页界面 [查看](http://ynchuan.github.io/coding/repository/plugin/collapse.html) [查看代码](repository/plugin/collapse.html)
 
+- 折叠页界面V2 [查看](http://ynchuan.github.io/coding/repository/plugin/collapse-v2.html) [查看代码](repository/plugin/collapse-v2.html)
+
 - 图片懒加载 [查看](http://ynchuan.github.io/coding/repository/plugin/lazyload.html) [查看代码](repository/plugin/lazyload.html)
 
 - 弹出层 [查看](http://ynchuan.github.io/coding/repository/plugin/popup.html) [查看代码](repository/plugin/popup.html)
@@ -42,6 +44,8 @@
 - 滑动条组件 [查看](http://ynchuan.github.io/coding/repository/plugin/slidebar.html) [查看代码](repository/plugin/slidebar.html)
 
 - tab切换 [查看](http://ynchuan.github.io/coding/repository/plugin/tab.html) [查看代码](repository/plugin/tab.html)
+
+- tabV2切换 [查看](http://ynchuan.github.io/coding/repository/plugin/tab-v2.html) [查看代码](repository/plugin/tab-v2.html)
 
 - table [查看](http://ynchuan.github.io/coding/repository/plugin/table.html) [查看代码](repository/plugin/table.html)
 

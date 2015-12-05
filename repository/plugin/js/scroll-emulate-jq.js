@@ -1,4 +1,5 @@
 ;
+
 function Scroll(_tar) {
 	//初始化滚动区域，依次为滚动集合区域、滚动区域、滚动条、滚动槽
 	this.target = _tar;
@@ -18,12 +19,18 @@ function Scroll(_tar) {
  */
 Scroll.prototype.init = function() {
 	this.render();
-	this.dragBarListen();
-	this.mouseWheelListen();
-	this.slotClickListen();
+	if (this.maxAreaHeight < 0) {
+		this.domscrollbar.hide();
+		this.domslotbar.hide();
+	} else {
+		this.dragBarListen();
+		this.mouseWheelListen();
+		this.slotClickListen();
+	}
+
 };
 /**
- * 滚动条监听区域dom渲染，此处不予添加
+ * 滚动条监听区域dom渲染，此处暂时不予添加
  * @return {[type]} [description]
  */
 Scroll.prototype.render = function() {
@@ -122,7 +129,7 @@ Scroll.prototype.scrollBar = function(offsety) {
 	} else if (top > this.maxtop) {
 		top = this.maxtop;
 	}
-	console.log("top=" + top);
+	// console.log("top=" + top);
 	this.domscrollbar.css("top", top + "px");
 };
 /**

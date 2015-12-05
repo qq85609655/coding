@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>collapse demo</title>
+        <meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+        <meta http-equiv="X-UA-Compatible"content="IE=edge"/>
+        <meta name="renderer"content="webkit">
+        <link rel="stylesheet"type="text/css"href="css/normalize.css">
+        <link rel="stylesheet"type="text/css"href="css/common.css">
+        <script type="text/javascript"src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript"src="js/jquery.collapse-v2.js"></script>
+        <style type="text/css">
+        .div-collapse-v2 {
+        width: 20%;
+        }
+        </style>
+        <script type="text/javascript">
+        $(function() {
+        //菜单导航数据--uid 必须唯一
+        var data = [{
+        title: "通知公告",
+        uid: "notice",
+        sublist: [{
+        title: "信息查看",
+        uid: "noti-read",
+        sublist: []
+        }]
+        }, {
+        title: "布控管理",
+        uid: "manage",
+        sublist: [{
+        title: "布控管理",
+        uid: "mag-dispatch",
+        sublist: []
+        }, {
+        title: "布控审批",
+        uid: "mag-approve",
+        sublist: []
+        }, {
+        title: "典型案例审批",
+        uid: "mag-std-approve",
+        sublist: []
+        }]
+        }, {
+        title: "预警管理",
+        uid: "alarmManage",
+        sublist: [{
+        title: "典型案例查询",
+        uid: "am-std-case",
+        sublist: []
+        }, {
+        title: "预警信息",
+        uid: "am-info",
+        sublist: []
+        }]
+        }, {
+        title: "布控配置",
+        uid: "configure",
+        sublist: [{
+        title: "布控源配置",
+        uid: "cfg-src",
+        sublist: []
+        }, {
+        title: "布控范围",
+        uid: "cfg-range",
+        sublist: []
+        }, {
+        title: "布控规则管理",
+        uid: "cfg-rule",
+        sublist: []
+        }, {
+        title: "报警方式配置",
+        uid: "cfg-alarm",
+        sublist: []
+        }]
+        }, {
+        title: "布控统计",
+        uid: "statistic",
+        sublist: [{
+        title: "布控信息查询",
+        uid: "sta-consult",
+        sublist: []
+        }, {
+        title: "布控排名",
+        uid: "sta-rank",
+        sublist: []
+        }, {
+        title: "布控统计",
+        uid: "sta-dispatch",
+        url: "",
+        sublist: []
+        }]
+        }, {
+        title: "系统管理",
+        uid: "sys-manage",
+        sublist: [{
+        title: "部门管理",
+        uid: "sysm-depart",
+        sublist: []
+        }, {
+        title: "用户管理",
+        uid: "sysm-user",
+        sublist: []
+        }, {
+        title: "角色管理",
+        uid: "sysm-rule",
+        sublist: []
+        }, {
+        title: "功能管理",
+        uid: "sysm-func",
+        sublist: []
+        }, {
+        title: "系统消息",
+        uid: "sysm-info",
+        sublist: []
+        }, {
+        title: "日志管理",
+        uid: "sysm-log",
+        sublist: []
+        }]
+        }];
+        //使用菜单导航数据初始化右侧菜单
+        $(".div-collapse-v2").grpcollapse({
+        "data": data,
+        "isHidePre": true,
+        clickEvent: function(event, data) {
+        console.log("点击item的uid为：" + $(this).data("uid")); //当点击折叠页内部的item时候会触发该方法
+        }
+        }).grpcollapse("mag-dispatch"); //该方法初始化选中noti-read的item
+        });
+        </script>
+    </head>
+    <body>  
+        <div class="div-collapse-v2"></div>
+        <p>该版本去除了ie6的图片滤镜样式兼容，将代码整理优化，页面预留出图片添加dom节点，请审查元素自行添加</p>
+    </body>
+</html>

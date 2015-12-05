@@ -60,6 +60,9 @@ $(function() {
 		alertPl.hide();
 		loading.hide();
 	});
+	// document.querySelector(".upfile-btn").addEventListener("click", function(){
+	// 	alert("jj")
+	// });
 
 	function calulate(a, b) {
 		// $.ajax({

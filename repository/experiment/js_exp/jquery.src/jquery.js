@@ -3253,6 +3253,7 @@
 				if (handle) {
 					handle.apply(cur, data);
 				}
+				// console.log(handle);
 				// Note that this is a bare JS function and not a jQuery handler
 				// trigger方法并未采用createEvent|dispatchEvent的方式进行事件的手动触发，而是采用在触发点上溯树节点
 				// 并从事件缓存中查找各个树对应的事件方法，并手动执行，效率应该和原生触发差不多。
@@ -3286,6 +3287,7 @@
 
 						// Prevent re-triggering of the same event, since we already bubbled it above
 						jQuery.event.triggered = type;
+						//该处使用ele.event的方法触发原生的dom事件 ,即采用原生的事件绑定方法，可以实现jquery的trigger事件触发
 						elem[type]();
 						jQuery.event.triggered = undefined;
 
