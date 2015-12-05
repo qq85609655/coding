@@ -57,6 +57,8 @@
 
 - [jQuery源码学习系列](repository/blog/js_b/jquery-src.md)
 
+- [jQuery的事件代理](repository/blog/js_b/jQuery的事件代理.md)
+
 - [怎样清除浮动](repository/blog/css_b/怎样清除浮动.md)
 
 - [应该怎样写样式表](repository/blog/css_b/我们应该怎样写样式表.md)

@@ -72,4 +72,19 @@ inline box 模型参考:
 
 x的底部就是baseline线，当调整verticle-align时，也是调整该行级盒子的垂直位置，当为middle的时候会将该该盒子的lineHeight高度的垂直中线于字母x的垂直中线对齐，所以该盒子会适当下降，产生的效果就是x字母向上去，因为上面空了。
 
-4、当盒子变成inline-blcok的时候会是行级盒子具有了块级盒子的一些属性，表现为高度就是lineHeight而不仅仅是四线的高度，所以绿色边框表示对的高度也变化了,高度为lineHeight(fontSize+行级盒子半间距，ps半间距可正可负),注意去除边框上下高度的影响。
+4、当盒子变成inline-blcok的时候会是行级盒子具有了块级盒子的一些属性，表现为高度就是lineHeight而不仅仅是四线的高度，所以绿色边框表示对的高度也变化了,高度为lineHeight(fontSize+行级盒子半间距，ps：半间距可正可负),注意去除边框上下高度的影响。
+
+
+----------
+
+补充：
+
+1、对于inline-block元素，其具有bfc特性，它本身具有块状特性，所以高度为lineHeight*行数，但是这个整体又具有inline行级特性（即对内展示块状特性，对外展示行级特性），可以将这个整体看成一个行块元素，与其他行级文本（例如文本）相同特性展示。
+
+其特性主要有：vertical-align在line-box中的表现：整体作为inline盒子位置移动。
+
+注意：如果其中没有文字，其不会构成lineHeight盒子，因为没有字就没有高度，该盒子可以手动设置高度，但是内部没有lineHeihgt模型，跟img替换元素一样。
+
+2、对于inline元素，它本身和文本一样，但是其跟着vertical-align进行山下移动的过程中是带着其本身的lineHeight盒子的。即top时是指该lineHeight盒子的上边沿与**向上最近块级祖先级盒子**的行模型的上边沿对齐。注意：baseline不带lineHeihgt盒子进行垂直方向的对齐。
+
+[第三方测试demo](http://www.zhangxinxu.com/study/201005/verticle-align-test-demo.html)
