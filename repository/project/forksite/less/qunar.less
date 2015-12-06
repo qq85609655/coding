@@ -101,6 +101,7 @@
 .nav-left-menu {
 	z-index: 1;
 	.pa;
+	position: fixed;
 	left: 0;
 	top: 0;
 	height: 100%;
@@ -241,6 +242,308 @@
 		}
 	}
 }
+.tab-pannel {
+	.bfc;
+}
+.tab-container {
+	.bgcolor(#00AFC7);
+	.fl;
+	.bfc;
+	.p(7px);
+
+	.yc-vertab-titles {
+		width: 80px;
+		line-height: 45px;
+		.fl;
+		.txtc;
+		.fs(16px);
+		color: #fff;
+
+		.active {
+			.bgcolor(#fff);
+			background-image: none;
+			color: #00B6D8;
+		}
+	}
+	.yc-vertab-title {
+		.bb(#239EB6);
+	}
+	.yc-vertab-bodys {
+		width: 650px;
+		height: 290px;
+		.bfc;
+		.bgcolor(#00AFC7);
+		.pl(15px);
+		.bgcolor(#fff);
+	}
+	.div-vertab-footer {
+		height: 31px;
+		.bfc;
+		.bgcolor(#fff);
+	}
+	.li-tabInner-title {
+		.txtr;
+		.bfc;
+		.fs(13px);
+		.mr(10px);
+	}
+	.a-t-l {
+		.color(#999999);
+	}
+	.icon {
+		.inline-block;
+		width: 18px;
+		height: 20px;
+		vertical-align: -5px;
+	}
+	.i-ticket-q {
+		.bgimg("../images/qunar/home_v5.png", -282px -28px);
+	}
+	.i-return-t {
+		.bgimg("../images/qunar/home_v5.png", -282px -1px);
+	}
+	.yc-tab-body {
+		.txtl;
+		.bgcolor(#F4FBFC);
+		line-height: 50px;
+		.fs(13px);
+	}
+	.div-cont-tt, .div-cont-tto {
+		.pt(5px);
+		.pl(32px);
+	}
+	.div-cont-bd {
+		.pt(5px);
+		.fs(13px);
+		color: #999;
+		.pl(30px);
+		.pv;
+		.hide;
+
+		.span-search-btn {
+			.mr(10px);
+			.inline-block;
+			.fs(18px);
+			.color;
+			width: 130px;
+			line-height: 38px;
+			.bgcolor(#FF5722);
+			border-radius: 3px;
+			.ff;
+			.txtc;
+			.poi;
+			.mr(100px);
+		}
+	}
+	.div-cont-commom {
+		display: block;
+	}
+	.div-search-btn {
+		.bfc;
+		.txtr;
+		.mt(10px);
+		.mb(10px);
+	}
+	.a-tips {
+		.fr;
+		color: #1CAFCF;
+		.pr(10px);
+	}
+	.input-start-date, .input-start, .input-from, .input-to, .input-start-area, .input-visa, .input-airport, .input-incity, .input-decity, .input-et {
+		line-height: 35px;
+		height: 35px;
+		.b(#ccc);
+		outline: none;
+		.fs(16px);
+		.pl(32px);
+		.pr(32px);
+		width: 240px;
+		.ml(-38px);
+		.fs(13px);
+	}
+	.input-from {
+		width: 120px;
+		.ml(0);
+		.pl(2px);
+	}
+	.input-visa {
+		width: 240px;
+	}
+	.input-to {
+		width: 460px;
+		.ml(0);
+		.pl(45px);
+	}
+	.input-et {
+		width: 460px;
+		.ml(0);
+		.pl(5px);
+	}
+	.input-to-1 {
+		.input-to;
+		.ml(-38px);
+	}
+	.input-ticket-station {
+		width: 540px;
+		.ml(-38px);
+		.pl(38px);
+	}
+	.input-start-area, .input-decity {
+		.ml(0);
+		.pl(2px);
+	}
+	.input-3word {
+		.ml(-51px);
+		.pl(45px);
+	}
+	.input-airport {
+		.input-3word;
+	}
+	.input-4word {
+		.ml(-64px);
+		.pl(58px);
+	}
+	.div-cont-search {
+		.span-tip {
+			.ml(-37px);
+		}
+		.span-tip-to {
+			.mr(-48px);
+			.ml(20px);
+			.pv;
+			z-index: 1;
+		}
+		.span-search-btn {
+			.mr(6px);
+		}
+	}
+	.span-tip {
+		color: #999999;
+		.fs(13px);
+		.pv;
+		z-index: 1;
+	}
+	.icon-s {
+		.bgimg("../images/qunar/calander.png", 2px 3px);
+		.ml(-32px);
+		.mr(40px);
+		.poi;
+	}
+	.icon-c {
+		width: 22px;
+		.bgimg("../images/qunar/calander.png", -23px 1px);
+		.ml(-32px);
+		.poi;
+	}
+	.icon-d {
+		.bgimg("../images/qunar/icon_a.png", 4px 5px);
+		width: 20px;
+		height: 16px;
+		.poi;
+		.ml(-32px);
+		.mr(20px);
+		.bl(#eee);
+	}
+	.i-exchange {
+		width: 23px;
+		height: 56px;
+		.bgimg("../images/qunar/home_v5.png", -141px 0);
+		.pa;
+		left: 265px;
+		top: 30px;
+		.poi;
+	}
+	.span-commom {
+		.fl;
+		line-height: 25px;
+	}
+	.div-search-links {
+		.bfc;
+		line-height: 25px;
+
+		.a-link {
+			color: #999;
+			.pr(6px);
+			.br(#999);
+		}
+		.a-link:last-child {
+			border: none;
+		}
+	}
+	.div-cont-mult {
+		.input-start {
+			width: 150px;
+		}
+		.input-start-date {
+			width: 180px;
+		}
+		.span-tip-mul {
+			.mr(4px);
+		}
+		.span-search-btn {
+			.mr(20px);
+		}
+	}
+	label, input[type=radio] {
+		.poi;
+	}
+	.div-vocation-clsfy {
+		line-height: 30px;
+		.pt(30px);
+		.pb(30px);
+
+		.a-link {
+			.ml(5px);
+			.mr(5px);
+		}
+	}
+	.div-tab-gp {
+		.mt(20px);
+		line-height: 50px;
+		.yc-tab-body;
+
+		.span-commom {
+			.fw;
+			.pr(10px);
+		}
+	}
+	.h3-et-tt {
+		.color(#00AFD1);
+	}
+}
+.search-all {
+	.mt(20px);
+}
+#search-hotel {
+	.div-cont-commom {
+		.input-aim, .input-hotel, .input-in-date, .input-out-date {
+			line-height: 35px;
+			height: 35px;
+			.pr(25px);
+		}
+		.input-aim {
+			width: 240px;
+			.pl(45px);
+			.ml(-52px);
+		}
+		.input-hotel {
+			width: 300px;
+			.ml(-7px);
+		}
+		.input-in-date, .input-out-date {
+			width: 270px;
+			.ml(-65px);
+			.pl(58px);
+		}
+		.span-search-btn {
+			.mr(20px);
+		}
+		.icon-s {
+			.ml(-30px);
+			.mr(20px);
+		}
+	}
+}
 .discount {
 	.tab-pannel-t {
 		border-bottom: 2px solid #00AFC7;
@@ -262,13 +565,16 @@
 		&.active {
 			.bgcolor(#3BB0D0);
 			.color(#fff);
+			border-bottom: none;
 		}
 	}
 	.more {
 		.fr;
 		.mb(8px);
+		line-height: 30px;
 		.fs(13px);
 		.poi;
+		color: #666;
 	}
 	.pro-link-a {
 		.inline-block;
@@ -361,244 +667,162 @@
 		.mt(16px);
 	}
 }
-.tab-pannel {
-	.bfc;
-}
-.tab-container {
-	.bgcolor(#00AFC7);
-	.fl;
-	.bfc;
-	.p(7px);
-
-	.yc-vertab-titles {
-		width: 80px;
-		line-height: 45px;
+.div-section {
+	.div-home-tt {
+		line-height: 40px;
+		.ff;
+		.color(#00AFC7);
+		.fs(22px);
+		.bb(#00AFC7);
+		border-width: 2px;
+	}
+	.div-aside {
+		width: 175px;
 		.fl;
-		.txtc;
+		line-height: 28px;
+		.mr(20px);
+	}
+	.h3-aside-tt {
 		.fs(16px);
-		color: #fff;
-
-		.active {
-			.bgcolor(#fff);
-			background-image: none;
-			color: #00B6D8;
-		}
+		color: #0286A0;
+		.bgcolor(#E2F3F8);
+		.pl(10px);
 	}
-	.yc-vertab-title {
-		.bb(#239EB6);
-	}
-	.yc-vertab-bodys {
-		width: 650px;
-		height: 290px;
-		.bfc;
-		.bgcolor(#00AFC7);
-		.pl(15px);
-		.bgcolor(#fff);
-	}
-	.div-vertab-footer{
-		height: 32px;
-		.bfc;
-		.bgcolor(#fff);
-	}
-
-	.li-tabInner-title {
-		.txtr;
-		.bfc;
+	.p-aside-bd {
 		.fs(13px);
-		.mr(10px);
-	}
-	.a-t-l {
-		.color(#999999);
-	}
-	.icon {
-		.inline-block;
-		width: 18px;
-		height: 20px;
-		vertical-align: -5px;
-	}
-	.i-ticket-q {
-		.bgimg("../images/qunar/home_v5.png", -282px -28px);
-	}
-	.i-return-t {
-		.bgimg("../images/qunar/home_v5.png", -282px -1px);
-	}
-	.yc-tab-body {
-		.txtl;
-		.bgcolor(#F4FBFC);
-		line-height: 50px;
-	}
-	.div-cont-tt {
-		.pt(5px);
-		.pl(32px);
-	}
-	.div-cont-bd {
-		.pt(5px);
-		.fs(13px);
-		color: #999;
-		.pl(30px);
-		.pv;
-		.hide;
-
-		.span-search-btn {
-			.mr(10px);
-			.inline-block;
-			.fs(18px);
-			.color;
-			width: 130px;
-			line-height: 38px;
-			.bgcolor(#FF5722);
-			border-radius: 3px;
-			.ff;
-			.txtc;
-			.poi;
-			.mr(100px);
-		}
-	}
-	.div-cont-commom {
-		display: block;
-	}
-	.div-search-btn {
-		.bfc;
-		.txtr;
-		.mt(10px);
-		.mb(10px);
-	}
-	.a-tips {
-		.fr;
-		color: #1CAFCF;
-		.pr(10px);
-	}
-	.input-start-date, .input-start, .input-from, .input-to {
-		line-height: 35px;
-		height: 35px;
-		.b(#ccc);
-		outline: none;
-		.fs(16px);
-		.pl(32px);
-		.pr(32px);
-		width: 240px;
-		.ml(-38px);
-		.fs(13px);
-	}
-	.input-from {
-		width: 120px;
-		.ml(0);
-		.pl(2px);
-	}
-	.input-to {
-		width: 460px;
-		.ml(0);
-		.pl(45px);
-	}
-	.input-ticket-station{
-		width: 540px;
-		.ml(-38px);
-		.pl(38px);
-
-	}
-	.div-cont-search {
-		.span-tip {
-			.ml(-37px);
-		}
-		.span-tip-to {
-			.mr(-48px);
-			.ml(20px);
-			.pv;
-			z-index: 1;
-		}
-		.span-search-btn {
-			.mr(6px);
-		}
-	}
-	.span-tip {
-		color: #999999;
-		.fs(13px);
-		.pv;
-		z-index: 1;
-	}
-	.icon-s {
-		.bgimg("../images/qunar/calander.png", 2px 3px);
-		.ml(-32px);
-		.mr(40px);
-		.poi;
-	}
-	.icon-c {
-		width: 22px;
-		.bgimg("../images/qunar/calander.png", -23px 1px);
-		.ml(-32px);
-		.poi;
-	}
-	.i-exchange {
-		width: 23px;
-		height: 56px;
-		.bgimg("../images/qunar/home_v5.png", -141px 0);
-		.pa;
-		left: 265px;
-		top: 30px;
-		.poi;
-	}
-	.span-commom {
-		.fl;
-		line-height: 25px;
-	}
-	.div-search-links {
-		.bfc;
-		line-height: 25px;
+		.b(#E2F3F8);
+		.mt(0);
+		.p(5px 10px);
 
 		.a-link {
-			color: #999;
-			.pr(6px);
-			.br(#999);
+			color: #666666;
 		}
-		.a-link:last-child {
-			border: none;
-		}
+		word-break: keep-all;
 	}
-	.div-cont-mult {
-		.input-start {
-			width: 150px;
-		}
-		.input-start-date {
-			width: 180px;
-		}
-		.span-tip-mul {
-			.mr(4px);
-		}
-		.span-search-btn {
-			.mr(20px);
-		}
+	.div-pro-show {
+		.bfc;
 	}
-	label, input[type=radio] {
-		.poi;
+	.li-pro-item {
+		.inline-block;
+		line-height: 25px;
+		.b(#eee);
+		.mr(10px);
+		.mb(20px);
+	}
+	.fg-item {
+		.pv;
+		.m(0);
+		.mb(5px);
+		.pv;
+	}
+	.p-pro-tt {
+		.pa;
+		bottom: 0;
+		left: 50%;
+		.m(0);
+		.ml(-64px);
+		width: 128px;
+		line-height: 35px;
+		.bgcolor(#4C625F);
+		.bgcolor(rgba(0, 0, 0, .5));
+		.txtc;
+	}
+	.st-from-to {
+		.color;
+	}
+	.st-from-desc {
+		color: #FFDE00
+	}
+	.st-desc, .span-older-price, .span-now-price {
+		.pl(10px);
+		color: #000;
+	}
+	.span-older-price {
+		color: #666;
+		.fs(13px);
+	}
+	.span-now-price {
+		color: #FF5555;
+	}
+	.st-discnt {
+		.bgcolor(#FF5555);
+		.color;
+		.p(2px 4px);
+		.pv;
+	}
+	.st-discnt:after {
+		content: "";
+		display: block;
+		.triangle-right(#FF5555);
+		.pa;
+		left: 100%;
+		top: 6px;
+		border-width: 3px;
+	}
+	.ins-now-pr {
+		text-decoration: none;
+		.fw;
+		.fs(17px);
+	}
+	.icon-hot-sale {
+		.pa;
+		top: 0;
+		right: 0;
+		width: 50px;
+		height: 45px;
+		.bgimg("../images/qunar/home_v5.png", 0 -90px);
+		.txtc;
+		.ff;
+		.color;
+		.fs(16px);
 	}
 }
-#search-hotel {
-	.div-cont-commom {
-		.input-aim, .input-hotel, .input-in-date, .input-out-date {
-			line-height: 35px;
-			height: 35px;
-			.pr(25px);
+.div-other-link {
+	.bgcolor(#009FBE);
+	height: 200px;
+
+	.wrap:after {
+		content: "";
+		.clear;
+		display: block;
+	}
+	.div-img-l {
+		width: 330px;
+		height: 240px;
+		.fl;
+		.bgimg("../images/qunar/app_footer_v3.png", 0 0);
+		.mt(-39px);
+		.ml(50px);
+		.pv;
+	}
+	.div-img-r {
+		width: 330px;
+		height: 240px;
+		.fr;
+		.bgimg("../images/qunar/app_footer_v3.png", 100% 0);
+		.mt(-39px);
+		.mr(100px);
+	}
+	.a-download {
+		.pa;
+		width: 120px;
+		height: 30px;
+		bottom: 34px;
+		left: 9px;
+	}
+	.div-foot-link {
+		line-height: 25px;
+		.m(0 40px);
+		.fs(13px);
+		.clear;
+		.color;
+		.mb(100px);
+		.a-link {
+			color: #999999; 
 		}
-		.input-aim {
-			width: 240px;
-			.pl(45px);
-			.ml(-52px);
-		}
-		.input-hotel {
-			width: 300px;
-			.ml(-7px);
-		}
-		.input-in-date, .input-out-date {
-			width: 270px;
-			.ml(-65px);
-			.pl(58px);
-		}
-		.span-search-btn {
-			.mr(20px);
-		}
-		.icon-s {
-			.ml(-30px);
-			.mr(20px);
+		.span-va-tt { 
+			color: #616161; 
+			.pr(5px);
 		}
 	}
 }

@@ -361,6 +361,7 @@
   font-size: 17px;
   overflow: hidden;
   *zoom: 1;
+  border-bottom: 1px solid #97d3d9;
 }
 .yc-tab-v2 .yc-tab-title {
   float: left;

@@ -38,7 +38,7 @@
 
 $(function() {
 	$(".yc-tab-v2").tabV2({
-		proxy: ".yc-vertab-title,.yc-tab-title",
-		body: ".yc-vertab-body,.yc-tab-body"
+		proxy: ".yc-vertab-title,.yc-tab-title,.li-tab",
+		body: ".yc-vertab-body,.yc-tab-body,.tab-toggle-pannel"
 	});
 })

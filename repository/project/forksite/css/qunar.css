@@ -109,6 +109,7 @@
 .nav-left-menu {
   z-index: 1;
   position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   height: 100%;
@@ -219,6 +220,347 @@
 .nav-left-menu .nl-toggle .icon {
   background-position: 0px 0px;
 }
+.tab-pannel {
+  overflow: hidden;
+  *zoom: 1;
+}
+.tab-container {
+  background-color: #00afc7;
+  float: left;
+  overflow: hidden;
+  *zoom: 1;
+  padding: 7px;
+}
+.tab-container .yc-vertab-titles {
+  width: 80px;
+  line-height: 45px;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+}
+.tab-container .yc-vertab-titles .active {
+  background-color: #ffffff;
+  background-image: none;
+  color: #00B6D8;
+}
+.tab-container .yc-vertab-title {
+  border-bottom: 1px solid #239eb6;
+}
+.tab-container .yc-vertab-bodys {
+  width: 650px;
+  height: 290px;
+  overflow: hidden;
+  *zoom: 1;
+  background-color: #00afc7;
+  padding-left: 15px;
+  background-color: #ffffff;
+}
+.tab-container .div-vertab-footer {
+  height: 31px;
+  overflow: hidden;
+  *zoom: 1;
+  background-color: #ffffff;
+}
+.tab-container .li-tabInner-title {
+  text-align: right;
+  overflow: hidden;
+  *zoom: 1;
+  font-size: 13px;
+  margin-right: 10px;
+}
+.tab-container .a-t-l {
+  color: #999999;
+}
+.tab-container .icon {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 18px;
+  height: 20px;
+  vertical-align: -5px;
+}
+.tab-container .i-ticket-q {
+  background-image: url("../images/qunar/home_v5.png");
+  background-repeat: no-repeat;
+  background-position: -282px -28px;
+}
+.tab-container .i-return-t {
+  background-image: url("../images/qunar/home_v5.png");
+  background-repeat: no-repeat;
+  background-position: -282px -1px;
+}
+.tab-container .yc-tab-body {
+  text-align: left;
+  background-color: #f4fbfc;
+  line-height: 50px;
+  font-size: 13px;
+}
+.tab-container .div-cont-tt,
+.tab-container .div-cont-tto {
+  padding-top: 5px;
+  padding-left: 32px;
+}
+.tab-container .div-cont-bd {
+  padding-top: 5px;
+  font-size: 13px;
+  color: #999;
+  padding-left: 30px;
+  position: relative;
+  display: none;
+}
+.tab-container .div-cont-bd .span-search-btn {
+  margin-right: 10px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  font-size: 18px;
+  color: #ffffff;
+  width: 130px;
+  line-height: 38px;
+  background-color: #ff5722;
+  border-radius: 3px;
+  font-family: 'Microsoft Yahei';
+  text-align: center;
+  cursor: pointer;
+  margin-right: 100px;
+}
+.tab-container .div-cont-commom {
+  display: block;
+}
+.tab-container .div-search-btn {
+  overflow: hidden;
+  *zoom: 1;
+  text-align: right;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.tab-container .a-tips {
+  float: right;
+  color: #1CAFCF;
+  padding-right: 10px;
+}
+.tab-container .input-start-date,
+.tab-container .input-start,
+.tab-container .input-from,
+.tab-container .input-to,
+.tab-container .input-start-area,
+.tab-container .input-visa,
+.tab-container .input-airport,
+.tab-container .input-incity,
+.tab-container .input-decity,
+.tab-container .input-et {
+  line-height: 35px;
+  height: 35px;
+  border: 1px solid #cccccc;
+  outline: none;
+  font-size: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
+  width: 240px;
+  margin-left: -38px;
+  font-size: 13px;
+}
+.tab-container .input-from {
+  width: 120px;
+  margin-left: 0;
+  padding-left: 2px;
+}
+.tab-container .input-visa {
+  width: 240px;
+}
+.tab-container .input-to {
+  width: 460px;
+  margin-left: 0;
+  padding-left: 45px;
+}
+.tab-container .input-et {
+  width: 460px;
+  margin-left: 0;
+  padding-left: 5px;
+}
+.tab-container .input-to-1 {
+  line-height: 35px;
+  height: 35px;
+  border: 1px solid #cccccc;
+  outline: none;
+  font-size: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
+  width: 240px;
+  font-size: 13px;
+  width: 460px;
+  margin-left: 0;
+  padding-left: 45px;
+  margin-left: -38px;
+}
+.tab-container .input-ticket-station {
+  width: 540px;
+  margin-left: -38px;
+  padding-left: 38px;
+}
+.tab-container .input-start-area,
+.tab-container .input-decity {
+  margin-left: 0;
+  padding-left: 2px;
+}
+.tab-container .input-3word {
+  margin-left: -51px;
+  padding-left: 45px;
+}
+.tab-container .input-airport {
+  margin-left: -51px;
+  padding-left: 45px;
+}
+.tab-container .input-4word {
+  margin-left: -64px;
+  padding-left: 58px;
+}
+.tab-container .div-cont-search .span-tip {
+  margin-left: -37px;
+}
+.tab-container .div-cont-search .span-tip-to {
+  margin-right: -48px;
+  margin-left: 20px;
+  position: relative;
+  z-index: 1;
+}
+.tab-container .div-cont-search .span-search-btn {
+  margin-right: 6px;
+}
+.tab-container .span-tip {
+  color: #999999;
+  font-size: 13px;
+  position: relative;
+  z-index: 1;
+}
+.tab-container .icon-s {
+  background-image: url("../images/qunar/calander.png");
+  background-repeat: no-repeat;
+  background-position: 2px 3px;
+  margin-left: -32px;
+  margin-right: 40px;
+  cursor: pointer;
+}
+.tab-container .icon-c {
+  width: 22px;
+  background-image: url("../images/qunar/calander.png");
+  background-repeat: no-repeat;
+  background-position: -23px 1px;
+  margin-left: -32px;
+  cursor: pointer;
+}
+.tab-container .icon-d {
+  background-image: url("../images/qunar/icon_a.png");
+  background-repeat: no-repeat;
+  background-position: 4px 5px;
+  width: 20px;
+  height: 16px;
+  cursor: pointer;
+  margin-left: -32px;
+  margin-right: 20px;
+  border-left: 1px solid #eeeeee;
+}
+.tab-container .i-exchange {
+  width: 23px;
+  height: 56px;
+  background-image: url("../images/qunar/home_v5.png");
+  background-repeat: no-repeat;
+  background-position: -141px 0;
+  position: absolute;
+  left: 265px;
+  top: 30px;
+  cursor: pointer;
+}
+.tab-container .span-commom {
+  float: left;
+  line-height: 25px;
+}
+.tab-container .div-search-links {
+  overflow: hidden;
+  *zoom: 1;
+  line-height: 25px;
+}
+.tab-container .div-search-links .a-link {
+  color: #999;
+  padding-right: 6px;
+  border-right: 1px solid #999999;
+}
+.tab-container .div-search-links .a-link:last-child {
+  border: none;
+}
+.tab-container .div-cont-mult .input-start {
+  width: 150px;
+}
+.tab-container .div-cont-mult .input-start-date {
+  width: 180px;
+}
+.tab-container .div-cont-mult .span-tip-mul {
+  margin-right: 4px;
+}
+.tab-container .div-cont-mult .span-search-btn {
+  margin-right: 20px;
+}
+.tab-container label,
+.tab-container input[type=radio] {
+  cursor: pointer;
+}
+.tab-container .div-vocation-clsfy {
+  line-height: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.tab-container .div-vocation-clsfy .a-link {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.tab-container .div-tab-gp {
+  margin-top: 20px;
+  text-align: left;
+  background-color: #f4fbfc;
+  line-height: 50px;
+  font-size: 13px;
+}
+.tab-container .div-tab-gp .span-commom {
+  font-weight: bold;
+  padding-right: 10px;
+}
+.tab-container .h3-et-tt {
+  color: #00afd1;
+}
+.search-all {
+  margin-top: 20px;
+}
+#search-hotel .div-cont-commom .input-aim,
+#search-hotel .div-cont-commom .input-hotel,
+#search-hotel .div-cont-commom .input-in-date,
+#search-hotel .div-cont-commom .input-out-date {
+  line-height: 35px;
+  height: 35px;
+  padding-right: 25px;
+}
+#search-hotel .div-cont-commom .input-aim {
+  width: 240px;
+  padding-left: 45px;
+  margin-left: -52px;
+}
+#search-hotel .div-cont-commom .input-hotel {
+  width: 300px;
+  margin-left: -7px;
+}
+#search-hotel .div-cont-commom .input-in-date,
+#search-hotel .div-cont-commom .input-out-date {
+  width: 270px;
+  margin-left: -65px;
+  padding-left: 58px;
+}
+#search-hotel .div-cont-commom .span-search-btn {
+  margin-right: 20px;
+}
+#search-hotel .div-cont-commom .icon-s {
+  margin-left: -30px;
+  margin-right: 20px;
+}
 .discount .tab-pannel-t {
   border-bottom: 2px solid #00AFC7;
   line-height: 30px;
@@ -239,12 +581,15 @@
 .discount .li-tab.active {
   background-color: #3bb0d0;
   color: #ffffff;
+  border-bottom: none;
 }
 .discount .more {
   float: right;
   margin-bottom: 8px;
+  line-height: 30px;
   font-size: 13px;
   cursor: pointer;
+  color: #666;
 }
 .discount .pro-link-a {
   display: inline-block;
@@ -335,259 +680,177 @@
 .discount .pro-row {
   margin-top: 16px;
 }
-.tab-pannel {
-  overflow: hidden;
-  *zoom: 1;
-}
-.tab-container {
-  background-color: #00afc7;
-  float: left;
-  overflow: hidden;
-  *zoom: 1;
-  padding: 7px;
-}
-.tab-container .yc-vertab-titles {
-  width: 80px;
-  line-height: 45px;
-  float: left;
-  text-align: center;
-  font-size: 16px;
-  color: #fff;
-}
-.tab-container .yc-vertab-titles .active {
-  background-color: #ffffff;
-  background-image: none;
-  color: #00B6D8;
-}
-.tab-container .yc-vertab-title {
-  border-bottom: 1px solid #239eb6;
-}
-.tab-container .yc-vertab-bodys {
-  width: 650px;
-  height: 290px;
-  overflow: hidden;
-  *zoom: 1;
-  background-color: #00afc7;
-  padding-left: 15px;
-  background-color: #ffffff;
-}
-.tab-container .div-vertab-footer {
-  height: 32px;
-  overflow: hidden;
-  *zoom: 1;
-  background-color: #ffffff;
-}
-.tab-container .li-tabInner-title {
-  text-align: right;
-  overflow: hidden;
-  *zoom: 1;
-  font-size: 13px;
-  margin-right: 10px;
-}
-.tab-container .a-t-l {
-  color: #999999;
-}
-.tab-container .icon {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  width: 18px;
-  height: 20px;
-  vertical-align: -5px;
-}
-.tab-container .i-ticket-q {
-  background-image: url("../images/qunar/home_v5.png");
-  background-repeat: no-repeat;
-  background-position: -282px -28px;
-}
-.tab-container .i-return-t {
-  background-image: url("../images/qunar/home_v5.png");
-  background-repeat: no-repeat;
-  background-position: -282px -1px;
-}
-.tab-container .yc-tab-body {
-  text-align: left;
-  background-color: #f4fbfc;
-  line-height: 50px;
-}
-.tab-container .div-cont-tt {
-  padding-top: 5px;
-  padding-left: 32px;
-}
-.tab-container .div-cont-bd {
-  padding-top: 5px;
-  font-size: 13px;
-  color: #999;
-  padding-left: 30px;
-  position: relative;
-  display: none;
-}
-.tab-container .div-cont-bd .span-search-btn {
-  margin-right: 10px;
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  font-size: 18px;
-  color: #ffffff;
-  width: 130px;
-  line-height: 38px;
-  background-color: #ff5722;
-  border-radius: 3px;
+.div-section .div-home-tt {
+  line-height: 40px;
   font-family: 'Microsoft Yahei';
-  text-align: center;
-  cursor: pointer;
-  margin-right: 100px;
+  color: #00afc7;
+  font-size: 22px;
+  border-bottom: 1px solid #00afc7;
+  border-width: 2px;
 }
-.tab-container .div-cont-commom {
+.div-section .div-aside {
+  width: 175px;
+  float: left;
+  line-height: 28px;
+  margin-right: 20px;
+}
+.div-section .h3-aside-tt {
+  font-size: 16px;
+  color: #0286A0;
+  background-color: #e2f3f8;
+  padding-left: 10px;
+}
+.div-section .p-aside-bd {
+  font-size: 13px;
+  border: 1px solid #e2f3f8;
+  margin-top: 0;
+  padding: 5px 10px;
+  word-break: keep-all;
+}
+.div-section .p-aside-bd .a-link {
+  color: #666666;
+}
+.div-section .div-pro-show {
+  overflow: hidden;
+  *zoom: 1;
+}
+.div-section .li-pro-item {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  line-height: 25px;
+  border: 1px solid #eeeeee;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+.div-section .fg-item {
+  margin: 0;
+  margin-bottom: 5px;
+  position: relative;
+}
+.div-section .p-pro-tt {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin: 0;
+  margin-left: -64px;
+  width: 128px;
+  line-height: 35px;
+  background-color: #4c625f;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+.div-section .st-from-to {
+  color: #ffffff;
+}
+.div-section .st-from-desc {
+  color: #ffde00;
+}
+.div-section .st-desc,
+.div-section .span-older-price,
+.div-section .span-now-price {
+  padding-left: 10px;
+  color: #000;
+}
+.div-section .span-older-price {
+  color: #666;
+  font-size: 13px;
+}
+.div-section .span-now-price {
+  color: #FF5555;
+}
+.div-section .st-discnt {
+  background-color: #ff5555;
+  color: #ffffff;
+  padding: 2px 4px;
+  position: relative;
+}
+.div-section .st-discnt:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-width: 5px;
+  border-style: dashed dotted dashed solid;
+  border-color: transparent transparent transparent #ff5555;
+  font-family: 'Microsoft Yahei';
+  vertical-align: middle;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  position: absolute;
+  left: 100%;
+  top: 6px;
+  border-width: 3px;
+}
+.div-section .ins-now-pr {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 17px;
+}
+.div-section .icon-hot-sale {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 45px;
+  background-image: url("../images/qunar/home_v5.png");
+  background-repeat: no-repeat;
+  background-position: 0 -90px;
+  text-align: center;
+  font-family: 'Microsoft Yahei';
+  color: #ffffff;
+  font-size: 16px;
+}
+.div-other-link {
+  background-color: #009fbe;
+  height: 200px;
+}
+.div-other-link .wrap:after {
+  content: "";
+  clear: both;
   display: block;
 }
-.tab-container .div-search-btn {
-  overflow: hidden;
-  *zoom: 1;
-  text-align: right;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.tab-container .a-tips {
-  float: right;
-  color: #1CAFCF;
-  padding-right: 10px;
-}
-.tab-container .input-start-date,
-.tab-container .input-start,
-.tab-container .input-from,
-.tab-container .input-to {
-  line-height: 35px;
-  height: 35px;
-  border: 1px solid #cccccc;
-  outline: none;
-  font-size: 16px;
-  padding-left: 32px;
-  padding-right: 32px;
-  width: 240px;
-  margin-left: -38px;
-  font-size: 13px;
-}
-.tab-container .input-from {
-  width: 120px;
-  margin-left: 0;
-  padding-left: 2px;
-}
-.tab-container .input-to {
-  width: 460px;
-  margin-left: 0;
-  padding-left: 45px;
-}
-.tab-container .input-ticket-station {
-  width: 540px;
-  margin-left: -38px;
-  padding-left: 38px;
-}
-.tab-container .div-cont-search .span-tip {
-  margin-left: -37px;
-}
-.tab-container .div-cont-search .span-tip-to {
-  margin-right: -48px;
-  margin-left: 20px;
-  position: relative;
-  z-index: 1;
-}
-.tab-container .div-cont-search .span-search-btn {
-  margin-right: 6px;
-}
-.tab-container .span-tip {
-  color: #999999;
-  font-size: 13px;
-  position: relative;
-  z-index: 1;
-}
-.tab-container .icon-s {
-  background-image: url("../images/qunar/calander.png");
-  background-repeat: no-repeat;
-  background-position: 2px 3px;
-  margin-left: -32px;
-  margin-right: 40px;
-  cursor: pointer;
-}
-.tab-container .icon-c {
-  width: 22px;
-  background-image: url("../images/qunar/calander.png");
-  background-repeat: no-repeat;
-  background-position: -23px 1px;
-  margin-left: -32px;
-  cursor: pointer;
-}
-.tab-container .i-exchange {
-  width: 23px;
-  height: 56px;
-  background-image: url("../images/qunar/home_v5.png");
-  background-repeat: no-repeat;
-  background-position: -141px 0;
-  position: absolute;
-  left: 265px;
-  top: 30px;
-  cursor: pointer;
-}
-.tab-container .span-commom {
+.div-other-link .div-img-l {
+  width: 330px;
+  height: 240px;
   float: left;
+  background-image: url("../images/qunar/app_footer_v3.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  margin-top: -39px;
+  margin-left: 50px;
+  position: relative;
+}
+.div-other-link .div-img-r {
+  width: 330px;
+  height: 240px;
+  float: right;
+  background-image: url("../images/qunar/app_footer_v3.png");
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  margin-top: -39px;
+  margin-right: 100px;
+}
+.div-other-link .a-download {
+  position: absolute;
+  width: 120px;
+  height: 30px;
+  bottom: 34px;
+  left: 9px;
+}
+.div-other-link .div-foot-link {
   line-height: 25px;
+  margin: 0 40px;
+  font-size: 13px;
+  clear: both;
+  color: #ffffff;
+  margin-bottom: 100px;
 }
-.tab-container .div-search-links {
-  overflow: hidden;
-  *zoom: 1;
-  line-height: 25px;
+.div-other-link .div-foot-link .a-link {
+  color: #999999;
 }
-.tab-container .div-search-links .a-link {
-  color: #999;
-  padding-right: 6px;
-  border-right: 1px solid #999999;
-}
-.tab-container .div-search-links .a-link:last-child {
-  border: none;
-}
-.tab-container .div-cont-mult .input-start {
-  width: 150px;
-}
-.tab-container .div-cont-mult .input-start-date {
-  width: 180px;
-}
-.tab-container .div-cont-mult .span-tip-mul {
-  margin-right: 4px;
-}
-.tab-container .div-cont-mult .span-search-btn {
-  margin-right: 20px;
-}
-.tab-container label,
-.tab-container input[type=radio] {
-  cursor: pointer;
-}
-#search-hotel .div-cont-commom .input-aim,
-#search-hotel .div-cont-commom .input-hotel,
-#search-hotel .div-cont-commom .input-in-date,
-#search-hotel .div-cont-commom .input-out-date {
-  line-height: 35px;
-  height: 35px;
-  padding-right: 25px;
-}
-#search-hotel .div-cont-commom .input-aim {
-  width: 240px;
-  padding-left: 45px;
-  margin-left: -52px;
-}
-#search-hotel .div-cont-commom .input-hotel {
-  width: 300px;
-  margin-left: -7px;
-}
-#search-hotel .div-cont-commom .input-in-date,
-#search-hotel .div-cont-commom .input-out-date {
-  width: 270px;
-  margin-left: -65px;
-  padding-left: 58px;
-}
-#search-hotel .div-cont-commom .span-search-btn {
-  margin-right: 20px;
-}
-#search-hotel .div-cont-commom .icon-s {
-  margin-left: -30px;
-  margin-right: 20px;
+.div-other-link .div-foot-link .span-va-tt {
+  color: #616161;
+  padding-right: 5px;
 }
