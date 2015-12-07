@@ -77,7 +77,7 @@
 
 ###5、个人简历
 
-[关于我](repository/blog/aboutme.md)
+[关于我](http://ynchuan.github.io/coding/repository/blog/aboutme.html)
 
 
 
