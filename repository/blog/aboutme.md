@@ -7,7 +7,7 @@
 
 # 个人信息
 
- - 王训训/男/1990 
+ - [王训训](http://ynchuan.github.io/coding/repository/blog/aboutme.html)/男/1990 
  - 本科/青岛科技大学 
  - 工作年限：2.5年
  - 微博：[@鼠标点的手腕疼](http://weibo.com/1883606305) 
@@ -27,10 +27,10 @@
 个人供职于浪潮软件政法事业部UI小组，主要负责将设计稿转换成静态页面、js实现交互接口，将实现发包至开发并支持后端实现也业务数据渲染。
 作为部门唯一专职前端人员，参与了部门所有产品线的前端重构，其中包括不同用户不同风格的资源平台、搜索系统、各类子功能系统的前端实现。
 
-- 个人在多个项目的前端实践中，整理了基于less的常用样式表库[base.less](../plugin/less/base.less)，实现快速切图，同时对浏览器兼容性(主要IE6-IE8浏览器)做了简单积累;
+- 个人在多个项目的前端实践中，整理了基于less的常用样式表库[base.less](https://github.com/ynchuan/coding/tree/master/repository/plugin/less/base.less)，实现快速切图，同时对浏览器兼容性(主要IE6-IE8浏览器)做了简单积累;
 - 为了实现页面中个性化的交互，采用基于jquery的插件半封装的方式封装页面交互组件，并按照设计稿定制页面样式，同时积累了项目常用[插件库](https://github.com/ynchuan/coding);
-- 对于前端项目工程化规范化也做了一些思考和整理，输出了[相关文档](项目搭建结构.md);
-- 业余时间通过jquery源码的学习和理解，整理了[jquery源码理解文档记录系列](js_b/jquery-src.md),并按照jquery框架结构仿制[yc前端框架](../experiment/js_exp/nativejs/yc.js)，深化对优秀框架机制的理解。
+- 对于前端项目工程化规范化也做了一些思考和整理，输出了[相关文档](https://github.com/ynchuan/coding/blob/master/repository/blog/项目搭建结构.md);
+- 业余时间通过jquery源码的学习和理解，整理了[jquery源码理解文档记录系列](https://github.com/ynchuan/coding/blob/master/repository/blog/js_b/jquery-src.md),并按照jquery框架结构仿制[yc前端框架](https://github.com/ynchuan/coding/tree/master/repository/experiment/js_exp/nativejs/yc.js)，深化对优秀框架机制的理解。
 
 ### 移动端开发
 移动端开发主要基于浪潮移动开发平台(IMP),即基于phoneGap搭建的Hybird App开发平台,基于html5和css3，配合移动设备本地接口，开发了云搜移动HD版，并重构移动手机版。该项目为前后端分离的前端项目，个人作为负责人，除完成主要页面切图实现，交互开发，同时梳理业务逻辑，理解业务需求，控制开发进度，保证项目上线。
@@ -54,7 +54,7 @@
 
 # 技术分享
 
-- [前端项目搭建标准化](项目搭建结构.md);
+- [前端项目搭建标准化](https://github.com/ynchuan/coding/blob/master/repository/blog/项目搭建结构.md);
 
 # 技能清单
 
