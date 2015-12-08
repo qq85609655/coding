@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>inline-block and float exp</title>
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1"/>
+		<meta name="renderer"content="webkit">
+		<style>
+		.div1{
+			line-height: 30px;
+			width: 200px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.span-l{
+			float:right;
+			background-color:red;
+		}
+		.span-r{
+			display: inline-block;
+			background-color:#ccc; 
+		}
+		</style>
+	</head>
+	<body>
+		<div class="div1">
+			<span class="span-l">float</span>
+			<span class="span-r">inline-block inline-block inline-block</span>
+		</div>
+		<h2>文本超长的情况下产生省略号的办法：</h2>
+		<p>
+			由于存在浮动，所以当块级或者行块级盒子定宽的时候会使用text-overflow:ellipse可以满足省略号出现
+
+			但是内容区如果出现inline-block元素,由于bfc的产生不会产生省略号，因为没法定宽度，如此会由于white-space的nowrap出现导致不换行的覆盖，即使是float元素 
+
+		</p>
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>react copy-demo</title>
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1"/>
+		<meta name="renderer"content="webkit">
+		<script src="../build/react.js"></script>
+		<script src="../build/react-dom.js"></script>
+		<script src="../build/browser.min.js"></script>
+	</head>
+	<body>
+	<div id="demo1"></div>
+	<div id="demo2"></div>
+	<div id="demo3"></div>
+	<div id="demo4"></div>
+	<div id="demo5"></div>
+	</body>
+	<script type="text/babel">
+		ReactDOM.render(
+			<h1> 1、hello react</h1>,
+			document.getElementById("demo1")
+		);
+
+		var names=["james","lili","hanmeimei"];
+		ReactDOM.render(
+			<div> 2、
+			{
+				names.map(function (name){
+					return <h1> {name}</h1>
+				})//小心，分号不可用
+			} 
+			</div>,
+			document.getElementById("demo2")
+		);
+		var attrs=[
+		 <h2>hello</h2>,
+		 <h2>react</h2>
+		];
+		ReactDOM.render( 
+			<div>3、
+			{
+				attrs.map(function(attr){
+					return attr;
+				})
+			}<div>{attrs}</div>
+			</div>,//只允许放置一层标签，不能有同级标签
+			document.getElementById("demo3") 
+		);
+
+		var HellMsg=React.createClass({//类名必须大写--组件名称必须大写字母开头
+			render:function(){
+				return <h3>4、yc {this.props.name}</h3>
+			}
+		});
+		ReactDOM.render(
+			<HellMsg name="yc"/>,
+			document.getElementById("demo4")
+		);
+
+		var HellMsgs=React.createClass({//类名必须大写--组件名称必须大写字母开头
+			render:function(){
+				return React.Children.map(function(child){
+					return child;
+				})
+			}
+		});
+		ReactDOM.render(
+			<HellMsgs name="yc">
+				<span>2----2</span>
+				<span>1----1</span>
+			</HellMsgs>,
+			document.getElementById("demo5")
+		);
+	</script>
+</html>
