@@ -11,12 +11,13 @@
  - 本科/青岛科技大学 
  - 工作年限：2.5年
  - 微博：[@鼠标点的手腕疼](http://weibo.com/1883606305) 
- - 技术博客：https://github.com/ynchuan
+ - 技术博客：https://github.com/ynchuan/coding
  - Github: https://github.com/ynchuan
  - 期望职位：Web前端中高级程序员
  - 期望薪资：税前月薪15k~22k，特别喜欢的公司可例外
  - 期望城市：北京
-
+ - 个人线上简历地址：[http://ynchuan.github.io/coding/repository/blog/aboutme.html](http://ynchuan.github.io/coding/repository/blog/aboutme.html)
+ 
 ---
 
 # 工作经历
@@ -49,6 +50,7 @@
 
 ### 移动核查项目 
 人员车辆的核查是公安业务的主要领域，随着移动设备的出现，为现场核查带来了可能。
+
 该系统分为核查终端和管理系统两个部分，系统采用jsp+jquery+spring+mybatis+oracle技术开发框架，本人主要负责核查终端Android原生App外围辅助功能业务编写以及管理系统前端和后端的全栈开发，前端部分采用开源前端框架ligerUI完成业务功能的 构建。该系统已经在济宁市公安局得到了使用和推广，并作为公安信息化建设的重点项目
 
 
