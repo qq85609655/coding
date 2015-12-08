@@ -10,6 +10,7 @@
 	}
 	.div-section {
 		.mb(20px);
+		*margin-bottom: 40px;
 	}
 }
 
@@ -92,6 +93,9 @@
 		a {
 			color: #0096C3;
 		}
+	}
+	.up {
+		.bfc;
 	}
 }
 
@@ -276,8 +280,9 @@
 		.pl(15px);
 		.bgcolor(#fff);
 	}
-	.div-vertab-footer {
+	.div-vertab-footer { 
 		height: 31px;
+		line-height: 31px;
 		.bfc;
 		.bgcolor(#fff);
 	}
@@ -358,6 +363,7 @@
 		.pl(32px);
 		.pr(32px);
 		width: 240px;
+		*width: 170px;
 		.ml(-38px);
 		.fs(13px);
 	}
@@ -520,18 +526,24 @@
 			line-height: 35px;
 			height: 35px;
 			.pr(25px);
+			.b(#ccc);
+			outline: none;
+			.fs(16px);
 		}
 		.input-aim {
 			width: 240px;
+			*width: 160px;
 			.pl(45px);
 			.ml(-52px);
 		}
 		.input-hotel {
 			width: 300px;
+			*width: 270px;
 			.ml(-7px);
 		}
 		.input-in-date, .input-out-date {
 			width: 270px;
+			*width: 180px;
 			.ml(-65px);
 			.pl(58px);
 		}
@@ -780,6 +792,7 @@
 .div-other-link {
 	.bgcolor(#009FBE);
 	height: 200px;
+	zoom: 1;
 
 	.wrap:after {
 		content: "";
@@ -810,19 +823,21 @@
 		bottom: 34px;
 		left: 9px;
 	}
-	.div-foot-link {
-		line-height: 25px;
-		.m(0 40px);
-		.fs(13px);
-		.clear;
-		.color;
-		.mb(100px);
-		.a-link {
-			color: #999999; 
-		}
-		.span-va-tt { 
-			color: #616161; 
-			.pr(5px);
-		}
+}
+.div-foot-link {
+	line-height: 25px;
+	.m(0 40px);
+	.fs(13px);
+	.clear;
+	.color;
+	.mb(100px);
+	zoom: 1;
+
+	.a-link {
+		color: #999999;
+	}
+	.span-va-tt {
+		color: #616161;
+		.pr(5px);
 	}
 }
