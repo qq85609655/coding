@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FE MODEL</title>
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1"/>
+		<meta name="renderer"content="webkit">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/base.css">
+		<link rel="stylesheet" type="text/css" href="css/common.css">
+		<link rel="stylesheet" type="text/css" href="css/frame.css">
+		<!-- <link rel="stylesheet"href="css/page-main.css"> -->
+		<script type="text/javascript"src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript"src="js/frame.js"></script>
+		<!-- // <script type="text/javascript"src="js/main.js"></script> -->
+		<!--[if lt IE 9]>
+		<script type="text/javascript"src="js/json2.js"></script>
+		<script type="text/javascript"src="js/html5shiv.js"></script>
+		<![endif]-->
+		<!--[if lt IE 8]>
+		<script type="text/javascript"src="js/es5-shim.js"></script>
+		<![endif]-->
+		<style>
+		.iframe{
+			margin-top:50px;
+			width: 70%;
+			/*display: none;*/
+		}
+		</style>
+	</head>
+	<body>
+		<div class="main-flow">
+			<header class="header">
+				<div class="wrap">
+					
+				</div>
+			</header>
+			<section class="section">
+				<div class="wrap">
+					<div class="div-aside"></div>
+					<div class="div-content">
+						<div class="div-bread-nav"></div>
+						<div class="div-main">
+							您上传的东西为：<br><br>
+							<div class="data">
+								(无)
+							</div>
+							<br>
+							<button class="choose">上传东西</button>
+							<iframe src="./upl" frameborder="1" id="upl" class="iframe" onload="iframeload()"></iframe>
+						</div>
+					</div>
+				</div>
+			</section>
+			<footer class="footer">
+				<div class="wrap">
+					Copyright©2014-2015 ** All Rights Reserved
+				</div>
+			</footer>
+		</div>
+		<script type="text/javascript">
+		// var iframe;
+		// // function load() {
+		// //     iframe = document.getElementById("iframe");
+		// //     // iframe. onload = iframe.onreadystatechange = iframeload;
+		// //     iframe.src = "./demo.html";
+		// // }
+		// // load();
+		// function iframeload() {
+		// 	var iframe=document.getElementById("iframe");
+		// 	if (!iframe.readyState || iframe.readyState == "complete") {
+		// 	var ifm= document.getElementById("iframe");
+		// 		var subWeb = document.frames ? document.frames["iframe"].document : ifm.contentDocument;
+		// 		if(ifm != null && subWeb != null) {
+		// 		ifm.height = subWeb.body.scrollHeight+30;
+		// 		// ifm.width = subWeb.body.scrollWidth;
+		// 		}
+		// 	}
+		// }
+		var frame;
+		$(function(){
+			 frame= $("#upl")[0];
+			 frame.onload=function(){
+			 	var cd = frame.contentDocument.body;
+			    var img = $(cd).find("#data")[0]
+	            if(img){
+	                img.onchange = function(){
+	                    $(cd).find("#sub").click();
+	                }
+	            }
+	            $(".choose").click(function(){
+	               $(cd).find("#data").click();
+	            });
+			 }
+		});
+		</script>
+	</body>
+</html>

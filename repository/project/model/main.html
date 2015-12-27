@@ -9,20 +9,21 @@
 		<link rel="stylesheet"href="css/base.css">
 		<link rel="stylesheet"href="css/common.css">
 		<link rel="stylesheet"href="css/frame.css">
-		<link rel="stylesheet"href="css/page-main.css">
+		<!-- <link rel="stylesheet"href="css/page-main.css"> -->
 		<script type="text/javascript"src="js/jquery-1.7.2.min.js"></script>
 		<script type="text/javascript"src="js/frame.js"></script>
-		<script type="text/javascript"src="js/main.js"></script>
+		<!-- // <script type="text/javascript"src="js/main.js"></script> -->
 		<!--[if lt IE 9]>
 		<script type="text/javascript"src="js/json2.js"></script>
 		<script type="text/javascript"src="js/html5shiv.js"></script>
 		<![endif]-->
-		<!--[if lt IE 8]> 
+		<!--[if lt IE 8]>
 		<script type="text/javascript"src="js/es5-shim.js"></script>
-		<![endif]--> 
+		<![endif]-->
 		<style>
 		.iframe{
-			width: 100%; 
+			margin-top:50px;
+			width: 70%;
 		}
 		</style>
 	</head>
@@ -39,7 +40,7 @@
 					<div class="div-content">
 						<div class="div-bread-nav"></div>
 						<div class="div-main">
-							<iframe src="" frameborder="0" id="iframe" class="iframe" onload="iFrameHeight()"></iframe>
+							<iframe src="./test.html" frameborder="1" id="iframe" class="iframe" onload="iframeload()"></iframe>
 						</div>
 					</div>
 				</div>
@@ -50,27 +51,25 @@
 				</div>
 			</footer>
 		</div>
-		<script type="text/javascript">  
-		    var iframe;  
-		    function load() {  
-		        iframe = document.getElementById("iframe");  
-		        iframe. onload = iframe. onreadystatechange = iframeload;   
-		        iframe.src = "http://www.baidu.com";  
-		    }  
-		    load();
-		    function iframeload() {  
-		        if (!iframe.readyState || iframe.readyState == "complete") {  
-		            var ifm= document.getElementById("iframe");   
-					var subWeb = document.frames ? document.frames["iframe"].document : ifm.contentDocument;   
-					if(ifm != null && subWeb != null) {
-					   ifm.height = subWeb.body.scrollHeight;
-					   ifm.width = subWeb.body.scrollWidth;
-					}     
-		        }  
-		    }  
-		    function iFrameHeight() {   
-				
-			}   
-		</script>  
+		<script type="text/javascript">
+		var iframe;
+		// function load() {
+		//     iframe = document.getElementById("iframe");
+		//     // iframe. onload = iframe.onreadystatechange = iframeload;
+		//     iframe.src = "./demo.html";
+		// }
+		// load();
+		function iframeload() {
+			var iframe=document.getElementById("iframe");
+			if (!iframe.readyState || iframe.readyState == "complete") {
+			var ifm= document.getElementById("iframe");
+				var subWeb = document.frames ? document.frames["iframe"].document : ifm.contentDocument;
+				if(ifm != null && subWeb != null) {
+				   ifm.height = subWeb.body.scrollHeight+30;
+				// ifm.width = subWeb.body.scrollWidth;
+				}
+			}
+		} 
+		</script>
 	</body>
 </html>
