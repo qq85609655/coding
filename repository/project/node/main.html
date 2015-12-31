@@ -9,15 +9,24 @@
 		<link rel="stylesheet" type="text/css" href="css/base.css">
 		<link rel="stylesheet" type="text/css" href="css/common.css">
 		<link rel="stylesheet" type="text/css" href="css/frame.css">
+		<!-- <link rel="stylesheet"href="css/page-main.css"> -->
 		<script type="text/javascript"src="js/jquery-1.7.2.min.js"></script>
 		<script type="text/javascript"src="js/frame.js"></script>
+		<!-- // <script type="text/javascript"src="js/main.js"></script> -->
 		<!--[if lt IE 9]>
 		<script type="text/javascript"src="js/json2.js"></script>
 		<script type="text/javascript"src="js/html5shiv.js"></script>
 		<![endif]-->
 		<!--[if lt IE 8]>
 		<script type="text/javascript"src="js/es5-shim.js"></script>
-		<![endif]--> 
+		<![endif]-->
+		<style>
+		.iframe{
+			margin-top:50px;
+			width: 70%;
+			/*display: none;*/
+		}
+		</style>
 	</head>
 	<body>
 		<div class="main-flow">
@@ -49,5 +58,41 @@
 				</div>
 			</footer>
 		</div>
+		<script type="text/javascript">
+		// var iframe;
+		// // function load() {
+		// //     iframe = document.getElementById("iframe");
+		// //     // iframe. onload = iframe.onreadystatechange = iframeload;
+		// //     iframe.src = "./demo.html";
+		// // }
+		// // load();
+		// function iframeload() {
+		// 	var iframe=document.getElementById("iframe");
+		// 	if (!iframe.readyState || iframe.readyState == "complete") {
+		// 	var ifm= document.getElementById("iframe");
+		// 		var subWeb = document.frames ? document.frames["iframe"].document : ifm.contentDocument;
+		// 		if(ifm != null && subWeb != null) {
+		// 		ifm.height = subWeb.body.scrollHeight+30;
+		// 		// ifm.width = subWeb.body.scrollWidth;
+		// 		}
+		// 	}
+		// }
+		var frame;
+		$(function(){
+			 frame= $("#upl")[0];
+			 frame.onload=function(){
+			 	var cd = frame.contentDocument.body;
+			    var img = $(cd).find("#data")[0]
+	            if(img){
+	                img.onchange = function(){
+	                    $(cd).find("#sub").click();
+	                }
+	            }
+	            $(".choose").click(function(){
+	               $(cd).find("#data").click();
+	            });
+			 }
+		});
+		</script>
 	</body>
 </html>

@@ -75,6 +75,10 @@
 
 - [项目管理：项目搭建结构](repository/blog/项目搭建结构.md)
 
+- [前端样式学习引导](repository/blog/fe-css-learn.md)
+
+- [Javascript中object的使用](repository/blog/js-object.md)
+
 ###5、个人简历
 
 [关于我](http://ynchuan.github.io/coding/repository/blog/aboutme.html)
