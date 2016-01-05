@@ -57,11 +57,11 @@
 	
 个人入行前端经验尚浅，博客部分为个人积累，有不对之处恳请指正
 
-- [关于前端代码的一些习惯](repository/blog/关于前段代码的一些习惯.md)
+- [关于前端代码的一些习惯](repository/blog/关于前端代码的一些习惯.md)
 
 - [jQuery源码学习系列](repository/blog/js_b/jquery-src.md)
 
-- [jQuery的事件代理](repository/blog/js_b/jQuery的事件代理.md)
+- [jQuery的事件代理](repository/blog/js_b/jquery的事件代理.md)
 
 - [怎样清除浮动](repository/blog/css_b/怎样清除浮动.md)
 
