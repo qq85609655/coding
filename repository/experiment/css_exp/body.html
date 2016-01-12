@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>body</title>
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1"/>
+		<meta name="renderer"content="webkit">
+		<style>
+			html{
+				background-color: green;
+			}
+			body{
+				background-color: red;
+			}
+			.div-b{
+				/*height: 800px;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div-b">
+		背景色变化为全屏红色；但是body高度并不是全屏
+		通过设置html,可以解决body全屏色的问题。
+		body颜色会产生上溯到window
+			<br>
+			Chrome:垂直方向滚动量：window.scrollY||window.pageYOffset||document.body.scrollTop
+			<br>
+			Chrome:设置滚动：document.body.scrollTop=0;可以实现
+			<br> 
+			html 对应 document.documentElement、body 对应 document.body
+		</div>
+	</body>
+</html>

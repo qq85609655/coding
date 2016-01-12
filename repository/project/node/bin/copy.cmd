@@ -1,0 +1,1 @@
+@node ../copy.js ../content.txt ../content-cc.txt

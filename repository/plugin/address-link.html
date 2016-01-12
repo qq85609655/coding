@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>仿淘宝收货地址城市联动组件</title>
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1"/>
+		<meta name="renderer"content="webkit">
+		<link rel="stylesheet"href="css/address-link.css">
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/dic_city.js"></script>
+		<script type="text/javascript" src="js/address-link.js"></script>
+		<script>
+		/**
+		* 地址获取配置接口
+		* @param  {[type]} code [description]
+		* @return {[type]}      [description]
+		*/
+		var addressConfig={
+			street:false,//是否有街道
+			getTargetAddress:function(code){//获取最后点中的区县的code
+				alert(code);
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<div class="address-link">
+			<div class="adr-input-area">
+				<div class="adr-text-area">
+				</div>
+				<i class="icon-dw"></i>
+				<i class="icon-mask"></i>
+			</div>
+			<div class="adr-select-area hide">
+				<ul class="ul-tabs-tt">
+					<li class="li-tab-tt active adr-tt-pro">省份</li>
+					<li class="li-tab-tt adr-tt-city">城市</li>
+					<li class="li-tab-tt adr-tt-area">县区</li>
+					<li class="li-tab-tt adr-tt-street hide">街道</li>
+				</ul>
+				<ul class="ul-tabs-bd">
+					<li class="li-tab-bd active">
+						<dl class="dl-adr dl-province">
+						</dl>
+					</li>
+					<li class="li-tab-bd">
+						<div class="adr-itms adr-itms-city">
+						</div>
+					</li>
+					<li class="li-tab-bd">
+						<div class="adr-itms adr-itms-area">
+						</div>
+					</li>
+					<li class="li-tab-bd">
+						<div class="adr-itms adr-itms-street hide">
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

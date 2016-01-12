@@ -29,15 +29,15 @@ var fs = require("fs");
 //   console.log('The "data to append" was appended to file!');
 // });
 
-fs.readdir("./",function(err,files){
-	files.forEach(function(i,f){ 
-		console.log(f.toString());
-	})
-});
+// fs.readdir("./", function(err, files) {
+// 	files.forEach(function(i, f) {
+// 		console.log(f.toString());
+// 	})
+// });
 
-fs.readlink("./",function(e,l){
-	console.log(l);
-});
+// fs.readlink("./", function(e, l) {
+// 	console.log(l);
+// });
 
 // fs.watch('./', function (event, filename) {
 //   console.log('event is: ' + event);
@@ -47,3 +47,28 @@ fs.readlink("./",function(e,l){
 //     console.log('filename not provided');
 //   }
 // });
+
+// fs.writeFile('message.txt', 'Hello Node.js', function(err) {
+// 	if (err) throw err;
+// 	console.log('It\'s saved!');
+// });
+
+fs.open('content.txt', 'a', function(err, fd) {
+	if (err) {
+		throw err;
+	}
+	var data = '123123123 hello world';
+	fs.write(fd, data, 0, 'utf-8', function(err, written, string) {
+		if (err) {
+			throw err;
+		}
+		console.log(written);
+		console.log(string); 
+		fs.close(fd, function(err) {
+			if (err) {
+				throw err;
+			}
+			console.log('file closed');
+		})
+	})
+})

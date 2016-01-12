@@ -1,0 +1,588 @@
+@charset "utf-8";
+/**
+ * position
+ */
+.pv {
+  position: relative;
+}
+.pa {
+  position: absolute;
+}
+/**
+ * vertical align
+ */
+.vm {
+  vertical-align: middle;
+}
+.vt {
+  vertical-align: top;
+}
+/*边距*/
+/**
+ font
+ */
+/* cursor */
+.poi {
+  cursor: pointer;
+}
+.def {
+  cursor: default;
+}
+/*overflow*/
+.ovh {
+  overflow: hidden;
+}
+.ova {
+  overflow: auto;
+}
+/* visibility */
+.vh {
+  visibility: hidden;
+}
+.vv {
+  visibility: visible;
+}
+.hide {
+  display: none;
+}
+/**
+ * float
+ */
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+/**
+ * text-align
+ */
+.txtr {
+  text-align: right;
+}
+.txtc {
+  text-align: center;
+}
+.txtl {
+  text-align: left;
+}
+.clear {
+  clear: both;
+}
+/******** multiple css **************/
+.mw {
+  max-width: 100%;
+  min-width: 1100px;
+  *width: 1100px;
+}
+.bfc {
+  overflow: hidden;
+  *zoom: 1;
+}
+.txto {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  *display: inline;
+  *zoom: 1;
+}
+.inline-block {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+.inline-block {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+/* 清除浮动-1*/
+.clearfix:after {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/* 清除浮动-2*/
+.fix {
+  *zoom: 1;
+}
+.fix:after {
+  display: table;
+  content: '';
+  clear: both;
+}
+/**
+**向下三角
+*/
+/* css3过渡动画效果 */
+.trans {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/* 大小不定元素垂直居中 */
+.dib-vm {
+  display: inline-block;
+  width: 0;
+  height: 100%;
+  vertical-align: middle;
+}
+/* 无框文本框文本域 */
+.b-none {
+  border: 0;
+  outline: none;
+}
+/* 绝对定位隐藏 */
+.abs-out {
+  position: absolute;
+  left: -999em;
+  top: -999em;
+}
+.abs-clip {
+  position: absolute;
+  clip: rect(0 0 0 0);
+}
+/* 按钮禁用 */
+.disabled {
+  color: #acacac !important;
+  border-color: #acacac !important;
+  text-shadow: 1px 1px #fff !important;
+  outline: 0 !important;
+  cursor: default !important;
+  pointer-events: none;
+}
+.disabled:hover {
+  text-decoration: none !important;
+}
+/*inline-block与float等宽列表*/
+.inline-box {
+  font-size: 1em;
+  letter-spacing: -0.25em;
+}
+.inline-two,
+.inline-three,
+.inline-four,
+.inline-five,
+.inline-six,
+.inline-any {
+  display: inline-block;
+  *display: inline;
+  letter-spacing: 0;
+  vertical-align: top;
+  *zoom: 1;
+}
+.float-two,
+.float-three,
+.float-four,
+.float-five,
+.float-six {
+  float: left;
+}
+.inline-two,
+.float-two {
+  width: 49.9%;
+}
+.inline-three,
+.float-three {
+  width: 33.3%;
+}
+.inline-four,
+.float-four {
+  width: 24.9%;
+}
+.inline-five,
+.float-five {
+  width: 19.9%;
+}
+.inline-six,
+.float-six {
+  width: 16.6%;
+}
+.inline-fix {
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+}
+/**
+ * 页面整体布局样式
+ */
+.main-flow {
+  position: relative;
+  *text-align: center;
+}
+.main-full {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  *text-align: center;
+  overflow-y: hidden;
+  _overflow-x: auto;
+}
+.wrap {
+  margin-left: auto;
+  margin-right: auto;
+  *display: inline;
+  *zoom: 1;
+  min-width: 1300px;
+  max-width: 1440px;
+  _width: 1300px;
+  text-align: left;
+}
+/**
+ * 清除ie6、7中的竖直方向的滚动条
+ */
+body {
+  font-family: "宋体", "Microsoft YaHei", Arial, Helvetica, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+input,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+ul,
+li {
+  list-style: none;
+}
+html,
+body,
+div,
+figure,
+ul,
+li,
+header,
+article,
+footer,
+nav,
+aside,
+section,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+select,
+span,
+dd,
+dl {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+a {
+  background: transparent;
+  text-decoration: none;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+.address-link {
+  margin: 50px;
+  font-size: 13px;
+  width: 300px;
+  position: relative;
+}
+.address-link .adr-input-area {
+  line-height: 30px;
+  border: 1px solid #cccccc;
+  cursor: pointer;
+  position: relative;
+}
+.address-link .icon-dw {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 5px;
+  border-style: solid dashed dotted dashed;
+  border-color: #cccccc transparent transparent transparent;
+  vertical-align: middle;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  top: 12px;
+  right: 10px;
+  border-width: 7px;
+}
+.address-link .icon-mask {
+  width: 0;
+  height: 0;
+  border-width: 5px;
+  border-style: solid dashed dotted dashed;
+  border-color: #ffffff transparent transparent transparent;
+  vertical-align: middle;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  border-width: 6px;
+  position: absolute;
+  top: 10px;
+  right: 11px;
+}
+.address-link .adr-select-area {
+  position: absolute;
+  width: 100%;
+  top: 32px;
+  left: 0;
+}
+.address-link .adr-text-area:hover {
+  outline: 2px solid #A5C7FE;
+}
+.address-link .adr-text-area {
+  padding-left: 5px;
+  height: 30px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.address-link .ul-tabs-bd {
+  line-height: 26px;
+}
+.address-link .ul-tabs-tt {
+  line-height: 35px;
+  overflow: hidden;
+  *zoom: 1;
+  border-right: 1px solid #cccccc;
+}
+.address-link .li-tab-tt {
+  float: left;
+  width: 99.66666667px;
+  *width: 98.33333333px;
+  text-align: center;
+  background-color: #f0f0f0;
+  border-left: 1px solid #cccccc;
+  cursor: pointer;
+  border-bottom: 1px solid #cccccc;
+}
+.address-link .ul-tabs-tt .active {
+  background-color: #ffffff;
+  border-bottom: none;
+}
+.address-link .ul-tabs-bd .active {
+  display: block;
+}
+.address-link .li-tab-bd {
+  border-left: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  display: none;
+}
+.address-link .li-tab-bd .checked {
+  background-color: #ff6600;
+  color: #ffffff;
+}
+.address-link .dl-adr {
+  overflow: hidden;
+  *zoom: 1;
+  padding: 10px;
+}
+.address-link .dt-adr {
+  float: left;
+  width: 50px;
+  text-align: center;
+  font-family: 'Microsoft Yahei';
+}
+.address-link .dd-adr {
+  overflow: hidden;
+  *zoom: 1;
+}
+.address-link .adr-itm {
+  float: left;
+  display: block;
+  padding: 0px 6px;
+  cursor: pointer;
+  overflow: hidden;
+  *zoom: 1;
+}
+.address-link .adr-itms {
+  overflow: hidden;
+  *zoom: 1;
+  padding: 10px;
+}
