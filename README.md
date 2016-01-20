@@ -53,9 +53,9 @@
 
 - 模拟百度搜索 [查看](http://ynchuan.github.io/coding/repository/plugin/search.html) [查看代码](repository/plugin/search.html)
 
-- 仿淘宝收货地址城市联动组件 [查看](http://ynchuan.github.io/coding/repository/plugin/search.html) [查看代码](repository/plugin/address-link.html)
+- 仿淘宝收货地址城市联动组件 [查看](http://ynchuan.github.io/coding/repository/plugin/address-link.html) [查看代码](repository/plugin/address-link.html)
 
-- 联想输入[查看](http://ynchuan.github.io/coding/repository/plugin/search.html) [查看代码](repository/plugin/context-input.html)
+- 联想输入[查看](http://ynchuan.github.io/coding/repository/plugin/context-input.html) [查看代码](repository/plugin/context-input.html)
 
 ###4、个人博客
 	
