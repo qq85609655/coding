@@ -15,8 +15,8 @@
  - Github: https://github.com/ynchuan
  - 期望职位：Web前端中高级程序员
  - 期望薪资：税前月薪15k~22k，特别喜欢的公司可例外
- - 期望城市：北京
- - 个人线上简历地址：[http://ynchuan.github.io/coding/repository/blog/aboutme.html](http://ynchuan.github.io/coding/repository/blog/aboutme.html)
+ - 期望城市：北京|上海   
+ - 现在城市：济南
  
 ---
 
@@ -25,13 +25,13 @@
 ## 浪潮软件集团 （ 2015年2月 ~ 目前 ）
 
 ### 前端切图实现静态页面和页面交互
-个人供职于浪潮软件政法事业部UI小组，主要负责将设计稿转换成静态页面、js实现交互接口，将实现发包至开发并支持后端实现也业务数据渲染。
-作为部门唯一专职前端人员，参与了部门所有产品线的前端重构，其中包括不同用户不同风格的资源平台、搜索系统、各类子功能系统的前端实现。
+个人供职于浪潮软件政法事业部UI小组，主要负责设计稿转换成静态页面、js交互实现以及接口提供，将切图发包至开发并支持后端实现也业务数据渲染。
+作为部门专职前端人员，参与部门所有产品线的前端重构，其中包括不同用户不同风格的资源平台、搜索系统、各类子功能系统的前端实现。
 
 - 个人在多个项目的前端实践中，整理了基于less的常用样式表库[base.less](https://github.com/ynchuan/coding/tree/master/repository/plugin/less/base.less)，实现快速切图，同时对浏览器兼容性(主要IE6-IE8浏览器)做了简单积累;
-- 为了实现页面中个性化的交互，采用基于jquery的插件半封装的方式封装页面交互组件，并按照设计稿定制页面样式，同时积累了项目常用[插件库](https://github.com/ynchuan/coding);
+- 为了实现页面中个性化的交互，采用基于jquery的插件半封装的方式封装页面交互组件，并按照设计稿定制页面样式，同时积累了常用项目[插件库](https://github.com/ynchuan/coding);
 - 对于前端项目工程化规范化也做了一些思考和整理，输出了[相关文档](https://github.com/ynchuan/coding/blob/master/repository/blog/项目搭建结构.md);
-- 业余时间通过jquery源码的学习和理解，整理了[jquery源码理解文档记录系列](https://github.com/ynchuan/coding/blob/master/repository/blog/js_b/jquery-src.md),并按照jquery框架结构仿制[yc前端框架](https://github.com/ynchuan/coding/tree/master/repository/experiment/js_exp/nativejs/yc.js)，深化对优秀框架机制的理解。
+- 学习jquery源码，整理[jquery源码理解文档记录系列](https://github.com/ynchuan/coding/blob/master/repository/blog/js_b/jquery-src.md),并仿制[yc前端框架](https://github.com/ynchuan/coding/tree/master/repository/experiment/js_exp/nativejs/yc.js)，深化对框架原理的理解。
 
 ### 移动端开发
 移动端开发主要基于浪潮移动开发平台(IMP),即基于phoneGap搭建的Hybird App开发平台,基于html5和css3，配合移动设备本地接口，开发了云搜移动HD版，并重构移动手机版。该项目为前后端分离的前端项目，个人作为负责人，除完成主要页面切图实现，交互开发，同时梳理业务逻辑，理解业务需求，控制开发进度，保证项目上线。
@@ -39,7 +39,7 @@
  
 ##威海北洋电气集团 （ 2013年7月 ~ 2014年10月 ）
 
-个人通过校招进入威海北洋从事软件全栈开发工作，基于java进行后端业务的编写，通过jsp完成页面前端交互呈现。
+个人通过校招进入威海北洋从事软件开发工作，基于java进行后台业务的编写，jsp完成页面前端交互呈现。
 
 ### 社区警务项目 
 社区警务为淄博市公安局周村分局在社区工作领域探索下而产生的项目，该项目以人员、车辆、单位的核录和基础数据采集为基础，结合移动平板终端设备，实现社区工作移动化。
@@ -57,19 +57,27 @@
 # 技术分享
 
 - [前端项目搭建标准化](https://github.com/ynchuan/coding/blob/master/repository/blog/项目搭建结构.md);
+- [前端样式基础](https://github.com/ynchuan/coding/blob/master/repository/blog/fe-css-learn.md);
+- [Javascript中object的使用](https://github.com/ynchuan/coding/blob/master/repository/blog/js-object.md);
 
 # 技能清单
 
-以下均为我熟练使用的技能
+以下均为我使用的技能
 
 - 个人熟练进行页面兼容切图、功能交互插件封装
 - 前端框架：精通Jquery 熟练使用原生DOM编程
+- Javascript编程基础以及CSS基础
 - 前端工具：Gulp/Less/Fiddler/Sublime，熟练进行浏览器调试、bug定位
 - Web开发：Java web
 - 移动原生开发：Android
 - 数据库相关：MySQL/Oracle
 - 版本管理、文档和自动化部署工具：Svn/Git
 
+
+# 学习
+
+- 已读书目：JavaScript高级程序设计、JavaScript设计模式与开发实践|css部分：w3cplus系列博客
+- 正在学习：web性能权威指南、http权威指南、nodejs实践
 # 参考技能关键字
 
 javascript jquery css html5 移动开发 前端开发
