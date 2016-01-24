@@ -1102,3 +1102,54 @@
 .div-collapse-v2 .grp_collpase_ul .checked .grp_collpase_txt {
   color: #fff;
 }
+body {
+  background-color: #eeeeee;
+}
+.downlist-menu {
+  margin-left: 20px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  position: relative;
+  line-height: 20px;
+}
+.downlist-menu .drop-down {
+  position: absolute;
+  line-height: 30px;
+  width: 100%;
+  left: 0;
+  top: 25px;
+}
+.downlist-menu .a-t {
+  padding: 2px 10px;
+  background-color: #ffffff;
+  cursor: pointer;
+  font-size: 13px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+.downlist-menu .ul-down {
+  margin-top: 12px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;
+  background-color: #ffffff;
+  padding-left: 10px;
+  font-size: 13px;
+}
+.downlist-menu .icon-arrow {
+  width: 0;
+  height: 0;
+  border-width: 5px;
+  border-style: dotted dashed solid dashed;
+  border-color: transparent transparent #ffffff;
+  font-family: 'Microsoft Yahei';
+  vertical-align: middle;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  position: absolute;
+  left: 50%;
+  top: -3px;
+  border-width: 8px;
+  line-height: 0px;
+}
