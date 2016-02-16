@@ -33,12 +33,12 @@
 			var div1=document.querySelector(".div1"),
 				div2=document.querySelector(".div2"),
 				div3=document.querySelector(".div3");
-				// div1.addEventListener("mouseleave",function(e){
-				// 	console.log("leave div1"+e.eventPhase);
-				// });
-				// div3.addEventListener("mouseleave",function(e){
-				// 	console.log("leave div3"+e.eventPhase);
-				// });
+				div1.addEventListener("mouseleave",function(e){
+					console.log("leave div1"+e.eventPhase);
+				});
+				div3.addEventListener("mouseleave",function(e){
+					console.log("leave div3"+e.eventPhase);
+				});
 				div1.addEventListener("mouseout",function(e){
 					console.log("out div1"+e.eventPhase);
 				});
