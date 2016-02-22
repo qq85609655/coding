@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>模块依赖注入</title>
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1"/>
+		<meta name="renderer"content="webkit">
+	</head>
+	<body>
+	需求：定义一个注射器，将一个方法依赖的对象通过是注射器注入，并执行该方法
+	<script>
+		document.designMode = "on";
+		var injector={
+			dependencies:{},
+			register:function(key,fn){
+				this.deps[key]=fn;
+			},
+			injects:function(deps,fn){
+				var args=[];
+				for(var i=0;i++;i<deps.length){
+					args.push(this.dependencies[i]);
+				}
+				return function(){
+					fn.call({},args.concat(Array.prototype.slice.call(arguments,0)));
+				}
+			}
+		};
+		function beInjectedMethod(service,router,other){
+			alert(other);
+		}
+		// injector.register();
+		var InjectedMethod=injector.injects(["service","router"],beInjectedMethod);
+
+		InjectedMethod("other");
+
+	</script>
+</body>
+</html>

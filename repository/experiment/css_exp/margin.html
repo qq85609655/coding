@@ -27,11 +27,29 @@
     li{
       margin:25px;
     }
+    .per-m-f{
+      width: 300px;
+      border:1px solid #ccc;
+    }
+    .per-m-b{
+      width:200px;
+      border:1px solid red; 
+      margin-left:50%;
+      margin-top:50%;
+      padding-top:50%;
+      padding-left:50%;
+    }
   </style> 
   
   
 </head> 
-
+<div class="per-m-f">
+  <div class="per-m-b">
+    marign为百分数的时候的参照点:<br>
+    margin为百分数的时候的参考尺寸为父元素的宽度，没有高度值作为参考，大概因为1、高度不易计算获取；2、高度即使获取以后再次设置margin-top|bottom会触发layout->painting
+    http://blog.doyoe.com/2013/11/30/css/margin%E7%B3%BB%E5%88%97%E4%B9%8B%E7%99%BE%E5%88%86%E6%AF%94/
+  </div>
+</div>
 <body class="claro"> 
   <div class="first"></div>
   <div class="first"></div>

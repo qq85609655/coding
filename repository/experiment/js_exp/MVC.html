@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MVC Test</title>
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1"/>
+		<meta name="renderer"content="webkit">
+	</head>
+	<body>
+		MVC:view--->controller--->model-->view  
+		view 变化引起controller变化 controller变化引起model变化  model变化引起view变化
+
+		<div class="div1" bind="model1"></div>
+		<div class="div2" bind="model2"></div>
+		<!-- 模型和视图关联 -->
+		<script>
+			/**
+			 * 完成model-->view的绑定
+			 *  
+			 */
+			function Model (value){
+				this._value=value;
+				this._listener=[];
+			}
+			Model.prototype.set=function(val){
+				this._value=val;
+				var self=this;
+				this._listener.forEach(function(callback) {
+					 callback.call(self,val);
+				});
+			}
+			Model.prototype.watch=function(fn){
+				this._listener.push(fn);
+			}
+			Model.prototype.bindView=function(node){
+				this.watch(function(val){
+					node.innerHTML=val;
+				}); 
+			}
+			/**
+			 * 完成view-->model的绑定
+			 */
+			function Controller(nodes,callback){
+				var _nodes=Array.prototype.slice.call(nodes,0);
+				var models=[];
+				_nodes.forEach(function(e){
+					var modelName=e.getAttribute("bind");
+					var m=models[modelName]=new Model();//一个视图对应一个model，controller负责对视图和model的绑定
+					m.bindView(e);
+				})
+				callback.call(this,models);
+			}
+			//测试 
+			var nodes=document.querySelectorAll("[bind]");
+			var model;
+			new Controller(nodes,function(models){
+				model=models.model1;
+				model.set("hello");
+			})
+			//问题：怎么样将视图变更部分逻辑抽取出来
+		</script>
+	</body>
+</html>
