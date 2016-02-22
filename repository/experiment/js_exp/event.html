@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>event test</title>
+		<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible"content="IE=edge,chrome=1"/>
+		<meta name="renderer"content="webkit">
+	</head>
+	<body>
+		<button id="btn" onclick="test(event)">click btn</button>
+		<script>
+		var btn=document.getElementById("btn");
+		function test(e){
+			alert(e.type);
+			alert(e.eventPhase);
+		}
+		btn.onclick=function(e){
+			var e=e||window.event;
+			alert(e.type+" v oo");
+		}
+		</script>
+	</body>
+</html>

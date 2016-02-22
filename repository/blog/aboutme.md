@@ -10,9 +10,9 @@
  - [王训训](http://ynchuan.github.io/coding/repository/blog/aboutme.html)/男/1990 
  - 本科/青岛科技大学 
  - 工作年限：2.5年
- - 微博：[@鼠标点的手腕疼](http://weibo.com/1883606305) 
- - 技术博客：https://github.com/ynchuan/coding
- - Github: https://github.com/ynchuan
+ - 微博：[@_ynchuan_](http://weibo.com/1883606305) 
+ - 技术博客：[https://github.com/ynchuan/coding](https://github.com/ynchuan/coding)
+ - Github: [https://github.com/ynchuan](https://github.com/ynchuan)
  - 期望职位：Web前端中高级程序员
  - 期望薪资：税前月薪15k~22k，特别喜欢的公司可例外
  - 期望城市：北京|上海   
@@ -24,17 +24,18 @@
 
 ## 浪潮软件集团 （ 2015年2月 ~ 目前 ）
 
-### 前端切图实现静态页面和页面交互
-个人供职于浪潮软件政法事业部UI小组，主要负责设计稿转换成静态页面、js交互实现以及接口提供，将切图发包至开发并支持后端实现也业务数据渲染。
+### pc前端开发
+个人供职于浪潮软件政法事业部UI小组，主要负责设计稿转换成静态页面、js交互实现以及接口提供，切图发包并支持后端实现也业务数据渲染。
 作为部门专职前端人员，参与部门所有产品线的前端重构，其中包括不同用户不同风格的资源平台、搜索系统、各类子功能系统的前端实现。
 
-- 个人在多个项目的前端实践中，整理了基于less的常用样式表库[base.less](https://github.com/ynchuan/coding/tree/master/repository/plugin/less/base.less)，实现快速切图，同时对浏览器兼容性(主要IE6-IE8浏览器)做了简单积累;
-- 为了实现页面中个性化的交互，采用基于jquery的插件半封装的方式封装页面交互组件，并按照设计稿定制页面样式，同时积累了常用项目[插件库](https://github.com/ynchuan/coding);
+- 个人在多个项目的前端实践中，整理了基于less的常用样式表库[base.less](https://github.com/ynchuan/coding/tree/master/repository/plugin/less/base.less)，实现快速切图，同时对浏览器兼容性(主要IE6-IE8浏览器)做了积累;
+- 为了实现页面中个性化的交互，采用基于jquery的插件半封装的方式封装页面交互组件，并按照设计稿定制页面样式，同时积累了常用项目[插件](https://github.com/ynchuan/coding);
 - 对于前端项目工程化规范化也做了一些思考和整理，输出了[相关文档](https://github.com/ynchuan/coding/blob/master/repository/blog/项目搭建结构.md);
 - 学习jquery源码，整理[jquery源码理解文档记录系列](https://github.com/ynchuan/coding/blob/master/repository/blog/js_b/jquery-src.md),并仿制[yc前端框架](https://github.com/ynchuan/coding/tree/master/repository/experiment/js_exp/nativejs/yc.js)，深化对框架原理的理解。
+- 学习require源码，通读require源码，理解AMD规范的实现方式。
 
 ### 移动端开发
-移动端开发主要基于浪潮移动开发平台(IMP),即基于phoneGap搭建的Hybird App开发平台,基于html5和css3，配合移动设备本地接口，开发了云搜移动HD版，并重构移动手机版。该项目为前后端分离的前端项目，个人作为负责人，除完成主要页面切图实现，交互开发，同时梳理业务逻辑，理解业务需求，控制开发进度，保证项目上线。
+移动端开发主要基于浪潮移动开发平台(IMP),即基于phoneGap/Cordova搭建的Hybird App开发平台,基于html5和css3，配合移动设备本地接口，开发了云搜移动HD版，并重构移动手机版。该项目为前后端分离的前端项目，个人作为负责人，除完成主要页面切图实现，交互开发，同时梳理业务逻辑，理解业务需求，控制开发进度，项目按时上线。
 
  
 ##威海北洋电气集团 （ 2013年7月 ~ 2014年10月 ）
@@ -62,7 +63,7 @@
 
 # 技能清单
 
-以下均为我使用的技能
+以下为个人技能栈
 
 - 个人熟练进行页面兼容切图、功能交互插件封装
 - 前端框架：精通Jquery 熟练使用原生DOM编程

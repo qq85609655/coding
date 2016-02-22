@@ -434,6 +434,8 @@
   border-top: 1px solid transparent;
   display: none;
   background-color: #ffffff;
+  position: relative;
+  z-index: 4;
 }
 .default-reset-select .reset-select-ul .active {
   background-color: #2193f0;

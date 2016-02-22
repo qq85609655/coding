@@ -8,10 +8,8 @@
 		left:0;
 		top:0;
 		height:100%;
-		background-color: red;
-		overflow: hidden;
-		z-index: -1;
-		display: block;
+		background-color: red; 
+		width: 50px;
 	}
 	.divposright{
 		position: absolute;
@@ -21,9 +19,17 @@
 		height:100%;
 		background-color: green;
 	}
+	html{
+		width:100%;height:100%;
+	}
+	body{
+		width:50%;height:50%;
+		border:1px solid #ccc;
+	}
 	</style>
 </head>
-<body style="height:100%">
+<body>
+
 	<div class="divposleft"></div>
 	<div class="divposright"></div>
 </body>
