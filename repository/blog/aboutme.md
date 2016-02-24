@@ -31,7 +31,7 @@
 - 个人在多个项目的前端实践中，为提高切图效率，整理了基于less的常用样式表库[base.less](https://github.com/ynchuan/coding/tree/master/repository/plugin/less/base.less)，实现快速切图，同时对浏览器兼容性(主要IE6-IE8浏览器)做了积累;
 - 为了实现页面中个性化的交互，采用基于jquery的插件半封装的方式封装页面交互组件，较高程度的还原设计稿，并积累常用[插件](https://github.com/ynchuan/coding); 
 - 通读jquery源码，整理学习记录[jquery源码理解文档记录系列](https://github.com/ynchuan/coding/blob/master/repository/blog/js_b/jquery-src.md),并仿制[yc前端框架](https://github.com/ynchuan/coding/tree/master/repository/experiment/js_exp/nativejs/yc.js)，深化对框架原理的理解。
-- 通读require源码，理解AMD规范的一种实现方式。
+- [通读require源码](https://github.com/ynchuan/coding/tree/master/repository/experiment/js_b/requirejs-src-note.md)，理解AMD规范的一种实现方式。
 - 对于前端项目工程化规范化也做了一些思考和整理，输出[相关文档](https://github.com/ynchuan/coding/blob/master/repository/blog/项目搭建结构.md);
 
 ### 移动端开发
