@@ -79,9 +79,15 @@
 
 - [项目管理：项目搭建结构](repository/blog/项目搭建结构.md)
 
-- [前端样式学习引导](repository/blog/fe-css-learn.md)
+- [前端样式学习引导](repository/blog/css_b/fe-css-learn.md)
 
-- [Javascript中object的使用](repository/blog/js-object.md)
+- [Javascript中object的使用](repository/blog/js_b/js-object.md)
+
+- [关于Object的属性](repository/blog/js_b/object-attribute.md)
+
+- [我的2015小结](repository/blog/summary/2015-end-summary.md)
+
+- [requirejs源码学习笔记](repository/blog/js_b/read-blog-note-about-js.md.md)
 
 ###5、个人简历
 
